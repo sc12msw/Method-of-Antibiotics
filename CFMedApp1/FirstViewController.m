@@ -59,6 +59,7 @@
     return cell;
 }
 
+//Sends the drug object to the detail view.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DrugSegue"]) {
         NSIndexPath *indexPath = [self.drugTable indexPathForSelectedRow];
