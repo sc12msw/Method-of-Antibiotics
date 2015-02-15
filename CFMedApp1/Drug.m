@@ -142,13 +142,13 @@
 -(NSArray *) getBrandNames{
     return brandNames;
 }
--(NSArray *) getBacteria{
-    return bacteria;
+-(NSArray *) getTreatmentOf{
+    return treatmentOf;
 }
 -(NSArray *) getSideEffects{
     return sideEffects;
 }
--(NSArray *) drugInteraction{
+-(NSArray *) getDrugInteraction{
     return drugInteraction;
 }
 -(id)init{
@@ -156,7 +156,7 @@
     typeOfDrug = @"Antibiotic";
     
     brandNames = [NSArray arrayWithObjects:@"brand1",@"brand2",@"brand3",nil];
-    bacteria = [NSArray arrayWithObjects:@"bacteria1",@"bacteria2",@"bacteria3",nil];
+    treatmentOf = [NSArray arrayWithObjects:@"bacteria1",@"bacteria2",@"bacteria3",nil];
     sideEffects = [NSArray arrayWithObjects:@"sideEffects1",@"sideEffects2",@"sideEffects3",nil];
     drugInteraction = [NSArray arrayWithObjects:@"interection1",@"interaction2",@"interaction3",nil];
     oralAdult = true;

@@ -12,7 +12,7 @@
     NSString *genericName, *typeOfDrug,*oralAdultDetail,*iVAdultDetail,
     *inhaledAdultDetail,*iMAdultDetail,*pRAdultDetail,*sCAdultDetail,*oralPaedDetail,*iVPaedDetail,
     *inhaledPaedDetail,*iMPaedDetail,*pRPaedDetail,*sCPaedDetail,*doseUnit,*administration;
-    NSArray *brandNames,*bacteria,*sideEffects,*drugInteraction;
+    NSArray *brandNames,*treatmentOf,*sideEffects,*drugInteraction;
     BOOL oralAdult,iVAdult,inhaledAdult,iMAdult,pRAdult,sCAdult,oralPaed,iVPaed,inhaledPaed,iMPaed,pRPaed,sCPaed,adult,paediatric;
 }
 -(NSString *)getGenericName;
@@ -44,10 +44,9 @@
 -(BOOL)isAdult;
 -(BOOL)isPaediatric;
 -(NSArray *) getBrandNames;
--(NSArray *) getBacteria;
+-(NSArray *) getTreatmentOf;
 -(NSArray *) getSideEffects;
--(NSArray *) drugInteraction;
--(void)createDrug;
+-(NSArray *) getDrugInteraction;
 
 
 
