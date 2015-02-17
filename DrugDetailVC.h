@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *sideEffects;
 @property (strong, nonatomic) IBOutlet UILabel *interactions;
 @property (strong, nonatomic) IBOutlet UILabel *administration;
+- (IBAction)adminSelector:(id)sender;
 
 - (IBAction)toggleAdult:(id)sender;
 - (IBAction)togglePaed:(id)sender;

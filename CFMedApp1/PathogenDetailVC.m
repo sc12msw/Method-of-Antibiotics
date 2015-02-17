@@ -15,12 +15,11 @@
 
 @implementation PathogenDetailVC
 
-@synthesize pathogenLabel;
-@synthesize pathogenName;
+@synthesize pathogen;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.pathogenLabel.text = pathogenName;
+    self.pathogenLabel.text = pathogen.getName;
     // Do any additional setup after loading the view, typically from a nib.
 }
 

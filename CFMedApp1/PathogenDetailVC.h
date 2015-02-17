@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pathogen.h"
 @interface PathogenDetailVC : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *pathogenLabel;
-@property (nonatomic, strong) NSString *pathogenName;
+@property (strong, nonatomic) Pathogen *pathogen;
 @end

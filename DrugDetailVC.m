@@ -28,6 +28,9 @@
 }
 
 
+- (IBAction)adminSelector:(id)sender {
+}
+
 // Method of the button to show adult information for the drug.
 - (IBAction)toggleAdult:(id)sender {
     _adultSwitch.selected = TRUE;
