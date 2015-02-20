@@ -13,12 +13,14 @@
 @property (strong, nonatomic) Drug *drug;
 @property (strong, nonatomic) IBOutlet UIButton *adultSwitch;
 @property (strong, nonatomic) IBOutlet UIButton *paedSwitch;
-@property (strong, nonatomic) IBOutlet UILabel *treatmentOf;
-@property (strong, nonatomic) IBOutlet UILabel *brandNames;
-@property (strong, nonatomic) IBOutlet UILabel *sideEffects;
-@property (strong, nonatomic) IBOutlet UILabel *interactions;
-@property (strong, nonatomic) IBOutlet UILabel *administration;
-- (IBAction)adminSelector:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextView *treatmentOf;
+@property (strong, nonatomic) IBOutlet UITextView *brandNames;
+@property (strong, nonatomic) IBOutlet UITextView *sideEffects;
+@property (strong, nonatomic) IBOutlet UITextView *interactions;
+@property (strong, nonatomic) IBOutlet UITextView *administration;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *adminBarDisplay;
+
+- (IBAction)adminTypeBar:(id)sender;
 
 - (IBAction)toggleAdult:(id)sender;
 - (IBAction)togglePaed:(id)sender;

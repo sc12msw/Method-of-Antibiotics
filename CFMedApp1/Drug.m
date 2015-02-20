@@ -154,11 +154,10 @@
 -(id)init{
     genericName = @"Generic Name";
     typeOfDrug = @"Antibiotic";
-    
     brandNames = [NSArray arrayWithObjects:@"brand1",@"brand2",@"brand3",nil];
     treatmentOf = [NSArray arrayWithObjects:@"bacteria1",@"bacteria2",@"bacteria3",nil];
     sideEffects = [NSArray arrayWithObjects:@"sideEffects1",@"sideEffects2",@"sideEffects3",nil];
-    drugInteraction = [NSArray arrayWithObjects:@"interection1",@"interaction2",@"interaction3",nil];
+    drugInteraction = [NSArray arrayWithObjects:@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",@"interection1",@"interaction2",@"interaction3",nil];
     oralAdult = true;
     iVAdult = true;
     inhaledAdult = false;

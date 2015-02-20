@@ -8,18 +8,19 @@
 
 
 #import "PathogenDetailVC.h"
+#import "Pathogen.h"
 
 @interface PathogenDetailVC ()
 
 @end
 
 @implementation PathogenDetailVC
-
 @synthesize pathogen;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.pathogenLabel.text = pathogen.getName;
+    self.navigationItem.title = pathogen.getName;
+    self.descriptionArea.text = pathogen.getDescription;
     // Do any additional setup after loading the view, typically from a nib.
 }
 

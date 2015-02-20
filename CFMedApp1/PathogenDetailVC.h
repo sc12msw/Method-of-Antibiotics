@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Pathogen.h"
 @interface PathogenDetailVC : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *pathogenLabel;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionArea;
 @property (strong, nonatomic) Pathogen *pathogen;
 @end

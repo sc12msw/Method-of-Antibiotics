@@ -9,6 +9,8 @@
 #import "Pathogen.h"
 
 @implementation Pathogen
+
+
 -(id)init{
     name = @"bacteria";
     description = @"I am a bacteria.";
