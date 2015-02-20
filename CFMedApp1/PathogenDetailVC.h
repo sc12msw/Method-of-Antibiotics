@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Pathogen.h"
-@interface PathogenDetailVC : UIViewController
+@interface PathogenDetailVC : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextView *descriptionArea;
+@property (strong, nonatomic) IBOutlet UIPickerView *firstLinePicker;
 @property (strong, nonatomic) Pathogen *pathogen;
+- (IBAction)selectFL:(id)sender;
+@property (strong, nonatomic) NSMutableArray *pickerData;
 @end

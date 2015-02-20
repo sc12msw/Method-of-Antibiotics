@@ -310,34 +310,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBl-6D-dQg">
-                                <rect key="frame" x="41" y="161" width="88" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBl-6D-dQg">
+                                <rect key="frame" x="42" y="93" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="This is bateria text area" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P9-Rq-DJF">
-                                <rect key="frame" x="42" y="200" width="517" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBP-z6-kt4">
+                                <rect key="frame" x="0.0" y="190" width="600" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oLu-Tv-E8F" id="GvW-Qc-OgE"/>
+                                    <outlet property="delegate" destination="oLu-Tv-E8F" id="XiF-DC-IuH"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E77-bM-muJ">
+                                <rect key="frame" x="454" y="352" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="XCc-l0-hVt"/>
+                                </constraints>
+                                <state key="normal" title="Select">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectFL:" destination="oLu-Tv-E8F" eventType="touchUpInside" id="296-3w-X1o"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This is bateria text area" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P9-Rq-DJF">
+                                <rect key="frame" x="0.0" y="122" width="600" height="65"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="TBl-6D-dQg" secondAttribute="centerX" constant="120" id="2B6-Gc-bCV"/>
-                            <constraint firstItem="7P9-Rq-DJF" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leadingMargin" constant="26" id="Nwt-m1-UhU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7P9-Rq-DJF" secondAttribute="trailing" constant="25" id="SDR-vM-E8V"/>
+                            <constraint firstItem="4fR-kn-MZB" firstAttribute="top" secondItem="E77-bM-muJ" secondAttribute="bottom" constant="169" id="7FU-Qd-2GL"/>
+                            <constraint firstItem="kBP-z6-kt4" firstAttribute="top" secondItem="7P9-Rq-DJF" secondAttribute="bottom" constant="3" id="860-Jk-d0W"/>
+                            <constraint firstItem="7P9-Rq-DJF" firstAttribute="trailing" secondItem="kBP-z6-kt4" secondAttribute="trailing" id="CtU-l0-bZp"/>
+                            <constraint firstItem="TBl-6D-dQg" firstAttribute="top" secondItem="MXb-Q7-JsR" secondAttribute="bottom" constant="29" id="JbQ-r7-jYa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E77-bM-muJ" secondAttribute="trailing" constant="84" id="SWb-T0-ndc"/>
+                            <constraint firstItem="TBl-6D-dQg" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leadingMargin" constant="26" id="Thg-8i-cId"/>
+                            <constraint firstItem="kBP-z6-kt4" firstAttribute="leading" secondItem="7P9-Rq-DJF" secondAttribute="leading" id="XGS-WE-cDx"/>
+                            <constraint firstItem="E77-bM-muJ" firstAttribute="top" secondItem="kBP-z6-kt4" secondAttribute="bottom" id="dJq-yV-uym"/>
+                            <constraint firstItem="7P9-Rq-DJF" firstAttribute="top" secondItem="TBl-6D-dQg" secondAttribute="bottom" constant="8" symbolic="YES" id="fKq-FC-4qs"/>
+                            <constraint firstItem="kBP-z6-kt4" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leading" id="hhH-aB-aWc"/>
+                            <constraint firstAttribute="trailing" secondItem="kBP-z6-kt4" secondAttribute="trailing" id="lLo-lr-czQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4xq-U0-EeP"/>
                     <connections>
                         <outlet property="descriptionArea" destination="7P9-Rq-DJF" id="sXT-BX-r7Y"/>
+                        <outlet property="firstLinePicker" destination="kBP-z6-kt4" id="veR-FY-g8j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63v-YR-UEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="706"/>
+            <point key="canvasLocation" x="2517" y="697"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

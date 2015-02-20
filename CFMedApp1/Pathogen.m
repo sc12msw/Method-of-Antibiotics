@@ -14,8 +14,8 @@
 -(id)init{
     name = @"bacteria";
     description = @"I am a bacteria.";
-    firstLine = @"antibiotic1,", @"antibiotic2,",@"antibiotic3.";
-    secondLine = @"antibiotic4,", @"antibiotic5,",@"antibiotic6.";
+    firstLine = [NSArray arrayWithObjects:@"antibiotic1", @"antibiotic2",@"antibiotic3", nil];
+    secondLine = [NSArray arrayWithObjects:@"antibiotic4", @"antibiotic5",@"antibiotic6", nil];
     return self;
 }
 -(NSString*)getName{
