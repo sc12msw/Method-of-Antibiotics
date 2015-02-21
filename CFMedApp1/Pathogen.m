@@ -15,7 +15,7 @@
     name = @"bacteria";
     description = @"I am a bacteria.";
     firstLine = [NSArray arrayWithObjects:@"antibiotic1", @"antibiotic2",@"antibiotic3", nil];
-    secondLine = [NSArray arrayWithObjects:@"antibiotic4", @"antibiotic5",@"antibiotic6", nil];
+    secondLine = [NSArray arrayWithObjects:@"antibiotic4", @"antibiotic5",@"antibiotic6", @"antibiotic7", @"antibiotic8",@"antibiotic9", @"antibiotic10", @"antibiotic11",@"antibiotic12",  nil];
     return self;
 }
 -(NSString*)getName{

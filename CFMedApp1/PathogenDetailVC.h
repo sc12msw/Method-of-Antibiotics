@@ -13,5 +13,7 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *firstLinePicker;
 @property (strong, nonatomic) Pathogen *pathogen;
 - (IBAction)selectFL:(id)sender;
-@property (strong, nonatomic) NSMutableArray *pickerData;
+- (IBAction)selectSL:(id)sender;
+@property (strong, nonatomic) NSArray *picker1Data;
+@property (strong, nonatomic) NSArray *picker2Data;
 @end

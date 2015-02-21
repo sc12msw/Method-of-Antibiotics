@@ -15,13 +15,14 @@
 
 @implementation PathogenDetailVC
 @synthesize pathogen, firstLinePicker;
-@synthesize pickerData;
+@synthesize picker1Data, picker2Data;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = pathogen.getName;
     self.descriptionArea.text = pathogen.getDescription;
-    pickerData = pathogen.getFirstLine;
+    picker1Data = pathogen.getFirstLine;
+    picker2Data = pathogen.getSecondLine;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,26 +35,40 @@
 //1
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 1;
+    return 2;
 }
 //2
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    NSArray *firstLine = pathogen.getFirstLine;
-    return firstLine.count;
+    if (component ==0){
+        
+    return picker1Data.count;
+    }
+    else return picker2Data.count;
 }
 //3
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSArray *firstLine = pathogen.getFirstLine;
-    return [firstLine objectAtIndex:row];
+    if (component ==0){
+    return [picker1Data objectAtIndex:row];
+    }
+    else return [picker2Data objectAtIndex:row];
 }
 
 - (IBAction)selectFL:(id)sender {
     NSInteger row;
     NSString *drug;
     row = [firstLinePicker selectedRowInComponent:0];
-    drug = [pickerData objectAtIndex:row];
-    
+    drug = [picker1Data objectAtIndex:row];
+    NSLog(@"%@",drug);    
 }
+- (IBAction)selectSL:(id)sender {
+    NSInteger row;
+    NSString *drug;
+    row = [firstLinePicker selectedRowInComponent:0];
+    drug = [picker2Data objectAtIndex:row];
+    NSLog(@"%@",drug);
+}
+
+
 @end
