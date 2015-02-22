@@ -296,6 +296,7 @@
 
 - (IBAction)ans:(id)sender {
     [storage addObject:answer];
+    self.calculatorOutput.text = [storage componentsJoinedByString:@""];
 }
 
 
