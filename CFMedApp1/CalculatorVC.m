@@ -23,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    double testans;
+    NSString *test = @"-5+6*10";
+    testans = [test doubleValue];
+    NSLog(@"%f",testans);
     storage = [[NSMutableArray alloc] init];
 }
 
@@ -105,12 +109,14 @@
 
 - (IBAction)equals:(id)sender {
     NSInteger currentIndex =0;
-    NSNumber *number;
+    NSNumber *number,*number2;
     NSUInteger sizeOfArray =storage.count;
     NSMutableString *numberStr;
-    NSMutableArray *calculationArray;
+    NSMutableArray *calculationArray,*operationArray;
     numberStr = [[NSMutableString alloc]init];
     calculationArray = [[NSMutableArray alloc]init];
+    operationArray = [[NSMutableArray alloc]init];
+    //Turns the button presses into numbers and operations separating them.
     @try {
         while (currentIndex < sizeOfArray){
             
@@ -123,8 +129,10 @@
                 }
                 
             }
-            number = @([numberStr intValue]);
-            [calculationArray addObject:number];
+            if (![numberStr isEqualToString:@""]) {
+                number = @([numberStr intValue]);
+                [calculationArray addObject:number];
+            }
             if (currentIndex < sizeOfArray){
                 [calculationArray addObject:[storage objectAtIndex:currentIndex]];
                 [numberStr setString:@""];
@@ -132,7 +140,114 @@
             }
             
         }
-        self.calculatorOutput.text = [calculationArray componentsJoinedByString:@" "];
+        
+        //Loop over - operations to make the numbers negative.
+        for (int i=0; i<calculationArray.count;i++){
+            
+            if ([[calculationArray objectAtIndex:i] isKindOfClass:[NSString class]]){
+                
+                if ([[calculationArray objectAtIndex:i ] isEqualToString:@"-"]){
+                    
+                }
+                if ([[calculationArray objectAtIndex:i ] isEqualToString:@"-"]){
+                    number =@([[calculationArray objectAtIndex:i+1]doubleValue]);
+                    number = @([number doubleValue] * -1);
+                    [calculationArray replaceObjectAtIndex:i+1 withObject: number];
+                    [calculationArray replaceObjectAtIndex:i withObject:@"+"];
+                }
+                
+            }
+        }
+        number = 0;
+        currentIndex =0;
+        for (int i =0; i<calculationArray.count; i++){
+            
+            if ([[calculationArray objectAtIndex:i]isKindOfClass:[NSString class]]){
+                
+                //Addition operation.
+                if([[calculationArray objectAtIndex:i] isEqualToString:@"+"]){
+                    //Checks to avoid operations such as 5 x - 6 as two operations would confuse it.
+                    //Changes it to 5 + (-6) which is valid.
+                    if(![[calculationArray objectAtIndex:currentIndex+1] isKindOfClass:[NSString class]]) {
+                        number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
+                    }else{
+                        [calculationArray removeObjectAtIndex:currentIndex+1];
+                        number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
+                    }
+                    number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
+                    
+                    if (currentIndex>0){
+                        number2 = @([[calculationArray objectAtIndex:currentIndex-1]doubleValue]);
+                        
+                        //Checks if this is a single calculation or calulation with multiple operators.
+                        if(!operationArray.count>0){
+                            number = @([number2 doubleValue] + [number doubleValue]);
+                            [operationArray addObject:number];
+                        }else [operationArray addObject:number];
+                    }
+                //Multiplication operation.
+                }else if ([[calculationArray objectAtIndex:i] isEqualToString:@"x"]){
+                    //Checks to avoid operations such as 5 x - 6 as two operations would confuse it.
+                    //Changes it to 5 x (-6) which is valid.
+                    if(![[calculationArray objectAtIndex:currentIndex+1] isKindOfClass:[NSString class]]) {
+                        number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
+                    }else{
+                        [calculationArray removeObjectAtIndex:currentIndex+1];
+                        number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
+                    }
+                    if (currentIndex>0){
+                        number2 = @([[calculationArray objectAtIndex:currentIndex-1]doubleValue]);
+                        
+                        //Checks if this is a single calculation or calulation with multiple operators.
+                        if(!operationArray.count>0){
+                            number = @([number2 doubleValue] * [number doubleValue]);
+                            [operationArray addObject:number];
+                        }else{
+                            number =@([[operationArray lastObject]doubleValue] * [number doubleValue]);
+                            [operationArray removeLastObject];
+                            [operationArray addObject:number];
+                        }
+                    }
+                    
+                    //Division operation.
+                }else if ([[calculationArray objectAtIndex:i] isEqualToString:@"/"]){
+                    //Checks to avoid operations such as 5 / - 6 as two operations would confuse it.
+                    //Changes it to 5 / (-6) which is valid.
+                    if(![[calculationArray objectAtIndex:currentIndex+1] isKindOfClass:[NSString class]]) {
+                        number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
+                    }else{
+                        [calculationArray removeObjectAtIndex:currentIndex+1];
+                        number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
+                    }
+                    if (currentIndex>0){
+                        number2 = @([[calculationArray objectAtIndex:currentIndex-1]doubleValue]);
+                        
+                        //Checks if this is a single calculation or calulation with multiple operators.
+                        if(!operationArray.count>0){
+                            number = @([number2 doubleValue] / [number doubleValue]);
+                            [operationArray addObject:number];
+                        }else{
+                            number =@([[operationArray lastObject]doubleValue] / [number doubleValue]);
+                            [operationArray removeLastObject];
+                            [operationArray addObject:number];
+                        }
+                    }
+                    
+                }
+
+                
+                
+            }
+            currentIndex = currentIndex+1;
+        }
+        number = 0;
+        for (NSNumber *temp in operationArray){
+            number = @([number doubleValue]+[temp doubleValue]);
+        }
+        self.calculatorOutput.text = [number stringValue];
+        [storage removeAllObjects];
+        [calculationArray removeAllObjects];
+        [operationArray removeAllObjects];
     }
     @catch (NSException *exception) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Math Error"
