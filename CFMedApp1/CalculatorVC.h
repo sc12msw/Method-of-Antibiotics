@@ -28,6 +28,7 @@
 - (IBAction)point:(id)sender;
 - (IBAction)zero:(id)sender;
 - (IBAction)divide:(id)sender;
+- (IBAction)ans:(id)sender;
 
 
 

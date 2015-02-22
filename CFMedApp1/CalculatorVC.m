@@ -9,9 +9,9 @@
 #import "CalculatorVC.h"
 
 @interface CalculatorVC (){
-    //Stores buttons pressed
+    //Global variables
     NSMutableArray *storage;
-    
+    NSNumber *answer;
 }
 
 @end
@@ -23,16 +23,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    double testans;
-    NSString *test = @"-5+6*10";
-    testans = [test doubleValue];
-    NSLog(@"%f",testans);
+    
+    //Initalises global variables
     storage = [[NSMutableArray alloc] init];
+    answer = [[NSNumber alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+//Button methods
 - (IBAction)seven:(id)sender {
     [storage addObject:[NSNumber numberWithDouble:7]];
     self.calculatorOutput.text = [storage componentsJoinedByString:@""];
@@ -141,24 +142,37 @@
             
         }
         
-        //Loop over - operations to make the numbers negative.
+        
+        //Loop over - operations to make the numbers negative and make all the decimal numbers .
         for (int i=0; i<calculationArray.count;i++){
             
             if ([[calculationArray objectAtIndex:i] isKindOfClass:[NSString class]]){
                 
-                if ([[calculationArray objectAtIndex:i ] isEqualToString:@"-"]){
+                //Checks if a . exsists then replaces the operation with a double number.
+                if ([[calculationArray objectAtIndex:i] isEqualToString:@"."]){
+                    number =@([[calculationArray objectAtIndex:i+1]doubleValue]);
+                    number2=@([[calculationArray objectAtIndex:i-1]doubleValue]);
+                    NSString *tempStr = [NSString stringWithFormat:@"%@%@%@",number2,@".",number];
+                    number = @([tempStr doubleValue]);
+                    [calculationArray removeObjectAtIndex:i+1];
+                    [calculationArray replaceObjectAtIndex:i withObject:number];
+                    [calculationArray removeObjectAtIndex:i-1];
+                    
+                    //Checks if a - exists then replaces the operation with a + and makes the number negative.
+                }else if ([[calculationArray objectAtIndex:i ] isEqualToString:@"-"]){
+                    if ([[calculationArray objectAtIndex:i ] isEqualToString:@"-"]){
+                        number =@([[calculationArray objectAtIndex:i+1]doubleValue]);
+                        number = @([number doubleValue] * -1);
+                        [calculationArray replaceObjectAtIndex:i+1 withObject: number];
+                        [calculationArray replaceObjectAtIndex:i withObject:@"+"];
+                    }
                     
                 }
-                if ([[calculationArray objectAtIndex:i ] isEqualToString:@"-"]){
-                    number =@([[calculationArray objectAtIndex:i+1]doubleValue]);
-                    number = @([number doubleValue] * -1);
-                    [calculationArray replaceObjectAtIndex:i+1 withObject: number];
-                    [calculationArray replaceObjectAtIndex:i withObject:@"+"];
-                }
-                
             }
         }
+        
         number = 0;
+        number2 = 0;
         currentIndex =0;
         for (int i =0; i<calculationArray.count; i++){
             
@@ -185,7 +199,7 @@
                             [operationArray addObject:number];
                         }else [operationArray addObject:number];
                     }
-                //Multiplication operation.
+                    //Multiplication operation.
                 }else if ([[calculationArray objectAtIndex:i] isEqualToString:@"x"]){
                     //Checks to avoid operations such as 5 x - 6 as two operations would confuse it.
                     //Changes it to 5 x (-6) which is valid.
@@ -234,17 +248,19 @@
                     }
                     
                 }
-
                 
                 
             }
             currentIndex = currentIndex+1;
         }
+        //Adds all calculations together.
         number = 0;
         for (NSNumber *temp in operationArray){
             number = @([number doubleValue]+[temp doubleValue]);
         }
+        //Sets answer label resets arrays and loads answer variable.
         self.calculatorOutput.text = [number stringValue];
+        answer = @([self.calculatorOutput.text doubleValue]);
         [storage removeAllObjects];
         [calculationArray removeAllObjects];
         [operationArray removeAllObjects];
@@ -276,6 +292,10 @@
 - (IBAction)divide:(id)sender {
     [storage addObject:@"/"];
     self.calculatorOutput.text = [storage componentsJoinedByString:@""];
+}
+
+- (IBAction)ans:(id)sender {
+    [storage addObject:answer];
 }
 
 
