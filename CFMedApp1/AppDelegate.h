@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GDataXMLNode.h"
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@class CF;
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    CF *_CFobject;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
-
+@property (nonatomic, retain) CF *CFObject;
 @end
 

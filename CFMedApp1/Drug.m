@@ -18,78 +18,157 @@
 -(NSString *)getTypeOfDrug{
     return typeOfDrug;
 }
--(NSString *)getOralAdultDetail{
+
+
+//Administration getters
+-(NSString *)getOralAdultAdministration{
     if(oralAdult){
-        return oralAdultDetail;
+        return oralAdultAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getIVAdultDetail{
+-(NSString *)getIVAdultAdministration{
     if(iVAdult){
-        return iVAdultDetail;
+        return iVAdultAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getInhaledAdultDetail{
+-(NSString *)getInhaledAdultAdministration{
     if(inhaledAdult){
-        return inhaledAdultDetail;
+        return inhaledAdultAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getIMAdultDetail{
+-(NSString *)getIMAdultAdministration{
     if(iMAdult){
-        return iMAdultDetail;
+        return iMAdultAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getPRAdultDetail{
+-(NSString *)getPRAdultAdministration{
     if(pRAdult){
-        return pRAdultDetail;
+        return pRAdultAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getSCAdultDetail{
+-(NSString *)getSCAdultAdministration{
     if(sCAdult){
-        return sCAdultDetail;
+        return sCAdultAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getOralPaedDetail{
+-(NSString *)getOralPaedAdministration{
     if(oralPaed){
-        return oralPaedDetail;
+        return oralPaedAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getIVPaedDetail{
+-(NSString *)getIVPaedAdministration{
     if(iVPaed){
-        return iVPaedDetail;
+        return iVPaedAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getInhaledPaedDetail{
+-(NSString *)getInhaledPaedAdministration{
     if(inhaledPaed){
-        return inhaledPaedDetail;
+        return inhaledPaedAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getIMPaedDetail{
+-(NSString *)getIMPaedAdministration{
     if(iMPaed){
-        return iMPaedDetail;
+        return iMPaedAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getPRPaedDetail{
+-(NSString *)getPRPaedAdministration{
     if(pRPaed){
-        return pRPaedDetail;
+        return pRPaedAdministration;
     }
     else return @"N/A";
 }
--(NSString *)getSCPaedDetail{
+-(NSString *)getSCPaedAdministration{
     if(sCPaed){
-        return sCPaedDetail;
+        return sCPaedAdministration;
     }
     else return @"N/A";
 }
+
+
+//Dose getters
+-(NSString *)getOralAdultDose{
+    if(oralAdult){
+        return oralAdultDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getIVAdultDose{
+    if(iVAdult){
+        return iVAdultDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getInhaledAdultDose{
+    if(inhaledAdult){
+        return inhaledAdultDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getIMAdultDose{
+    if(iMAdult){
+        return iMAdultDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getPRAdultDose{
+    if(pRAdult){
+        return pRAdultDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getSCAdultDose{
+    if(sCAdult){
+        return sCAdultDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getOralPaedDose{
+    if(oralPaed){
+        return oralPaedDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getIVPaedDose{
+    if(iVPaed){
+        return iVPaedDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getInhaledPaedDose{
+    if(inhaledPaed){
+        return inhaledPaedDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getIMPaedDose{
+    if(iMPaed){
+        return iMPaedDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getPRPaedDose{
+    if(pRPaed){
+        return pRPaedDose;
+    }
+    else return @"N/A";
+}
+-(NSString *)getSCPaedDose{
+    if(sCPaed){
+        return sCPaedDose;
+    }
+    else return @"N/A";
+}
+
 
 -(BOOL)isOralAdult{
     if (oralAdult){
@@ -168,48 +247,53 @@
     iVPaed = true;
     inhaledPaed = false;
     iMPaed = false;
-    pRPaed = true,
+    pRPaed = false,
     sCPaed = false;
     adult = true;
     paediatric = true;
     if (adult){
         if(oralAdult){
-            oralAdultDetail = @"Take 10mg tablet";
+            oralAdultAdministration = @"Take tablet";
+            oralAdultDose =@"50mg";
         }
         if (iVAdult){
-            iVAdultDetail = @"50mg in bag thing";
+            iVAdultAdministration = @" in bag thing";
+            iVAdultDose = @"150mg";
         }
         if (inhaledAdult){
-            inhaledAdultDetail = @"inhale adult";
+            inhaledAdultAdministration = @"inhale adult";
         }
         if (iMAdult){
-            iMAdultDetail = @"im it";
+            iMAdultAdministration = @"im it";
         }
         if (pRAdult){
-            pRAdultDetail = @"pr it";
+            pRAdultAdministration = @"pr it";
+            pRAdultDose =@"90mg";
         }
         if (sCAdult){
-            sCAdultDetail = @"sc it";
+            sCAdultAdministration = @"sc it";
         }
     }
     if (paediatric){
         if(oralPaed){
-            oralPaedDetail = @"Take 10mg tablet child";
+            oralPaedAdministration = @"Take tablet child size";
+            oralPaedDose =@"25mg";
         }
         if (iVPaed){
-            iVPaedDetail = @"50mg in bag thing child";
+            iVPaedAdministration = @"in bag thing child size";
+            iVPaedDose =@"75mg";
         }
         if (inhaledPaed){
-            inhaledPaedDetail = @"inhale child";
+            inhaledPaedAdministration = @"inhale child";
         }
         if (iMPaed){
-            iMPaedDetail = @"im it";
+            iMPaedAdministration = @"im it";
         }
         if (pRPaed){
-            pRPaedDetail = @"pr it";
+            pRPaedAdministration = @"pr it";
         }
         if (sCPaed){
-            sCPaedDetail = @"sc it";
+            sCPaedAdministration = @"sc it";
         }
     }
     return self;}

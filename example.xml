@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cystic_fibrosis>
+	<drug>
+        <name>
+            Acetylcysteine
+        </name>
+        <type>
+            Mucolytic
+        </type>
+		<indications>
+            <treatment>
+                <oral>
+                Treatment of distal intestinal obstuction
+			syndrome(DIOS) previously called meconium ileus equivalent.
+                </oral>
+                <nebulised>
+                    Mucolytic.
+                </nebulised>
+			</treatment>
+		</indications>
+		<side_effects>
+		N/A
+		</side_effects>
+		<r_o_admin>
+            <adult>
+                <nebulised>
+                    <administration>
+                        Use 2ml of acetylcysteine 200mg/ml and mix with 2ml sodium chloride 0.9%.
+                        Oxygen should not be used as driving gas as it can lead to deactivation.
+                    </administration>
+                    <dose>
+                        400mg TDS-QDS
+                    </dose>
+                </nebulised>
+                    <oral>
+                        <administration>
+                            Parvolex - Add to 120ml water, orange juice, blackcurrant juice or cola
+                            drink to mask the bitter taste
+                        </administration>
+                        <dose>
+                            Acetylcysteine 200mg/ml injection generally 4 to 6 gm (20-30ml) as a single
+                            dose for treatment of DIOS. For the prevention of DIOS - acetylcysteine sachet
+                            (1g sachet contains 200mg acetylcysteine) one to two sachets two to three times a day.
+                        </dose>
+                    </oral>
+                </adult>
+            <paediatric>
+                <oral>
+                    <administration>
+                        Dilute to a concentration of 50mg/ml with water, orange juice, blackcurrant juice or
+                        cola drink to mask the bitter taste
+                    </administration>
+                    <dose>
+                        Treatment of DIOS One month to 2 years; 0.4 to 3gm (2ml to 15ml) as single dose.
+                        Two to seven years; 2 to 3gm as single dose (10ml to 15ml) Greater than 7 years see adult dose.
+                        Prevention of DIOS (sachet) One month to 2 years; 100mg to 200mg tds Two to seven years;
+                        200mg tds Greater than 7 years see adult dose.
+                    </dose>
+                </oral>
+            </paediatric>
+            </r_o_admin>
+            <warning>
+                N/A
+            </warning>
+        </drug>
+	
+	
+</cystic_fibrosis>

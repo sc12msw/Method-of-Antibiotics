@@ -21,6 +21,8 @@
 		9736A7281A8906E1005BCE62 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9736A7261A8906E1005BCE62 /* LaunchScreen.xib */; };
 		9736A7341A8906E2005BCE62 /* CFMedApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A7331A8906E2005BCE62 /* CFMedApp1Tests.m */; };
 		97AE70101A9B4E8F00C899F3 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AE700F1A9B4E8F00C899F3 /* GDataXMLNode.m */; };
+		97AE70131A9B576400C899F3 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AE70121A9B576400C899F3 /* DataParser.m */; };
+		97AE70181A9B5E0100C899F3 /* example.xml in Resources */ = {isa = PBXBuildFile; fileRef = 97AE70171A9B5E0100C899F3 /* example.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		9736A7331A8906E2005BCE62 /* CFMedApp1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFMedApp1Tests.m; sourceTree = "<group>"; };
 		97AE700E1A9B4E8F00C899F3 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		97AE700F1A9B4E8F00C899F3 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		97AE70111A9B576400C899F3 /* DataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
+		97AE70121A9B576400C899F3 /* DataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
+		97AE70171A9B5E0100C899F3 /* example.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = example.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 				9736A7131A8906E1005BCE62 /* CFMedApp1 */,
 				9736A7301A8906E2005BCE62 /* CFMedApp1Tests */,
 				9736A7121A8906E1005BCE62 /* Products */,
+				97AE70171A9B5E0100C899F3 /* example.xml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +120,8 @@
 				9736A71F1A8906E1005BCE62 /* SecondViewController.m */,
 				973248811A892B0D003570AA /* PathogenDetailVC.h */,
 				973248821A892B0D003570AA /* PathogenDetailVC.m */,
+				97AE70111A9B576400C899F3 /* DataParser.h */,
+				97AE70121A9B576400C899F3 /* DataParser.m */,
 				9735F3391A98FB3100FD7D9D /* CalculatorVC.h */,
 				9735F33A1A98FB3100FD7D9D /* CalculatorVC.m */,
 				97AE700E1A9B4E8F00C899F3 /* GDataXMLNode.h */,
@@ -236,6 +244,7 @@
 			files = (
 				9736A7231A8906E1005BCE62 /* Main.storyboard in Resources */,
 				9736A7281A8906E1005BCE62 /* LaunchScreen.xib in Resources */,
+				97AE70181A9B5E0100C899F3 /* example.xml in Resources */,
 				9736A7251A8906E1005BCE62 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97AE70131A9B576400C899F3 /* DataParser.m in Sources */,
 				9732487F1A89288A003570AA /* DrugDetailVC.m in Sources */,
 				973248831A892B0D003570AA /* PathogenDetailVC.m in Sources */,
 				9736A7201A8906E1005BCE62 /* SecondViewController.m in Sources */,

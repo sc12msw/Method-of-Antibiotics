@@ -9,26 +9,49 @@
 #import <Foundation/Foundation.h>
 
 @interface Drug : NSObject{
-    NSString *genericName, *typeOfDrug,*oralAdultDetail,*iVAdultDetail,
-    *inhaledAdultDetail,*iMAdultDetail,*pRAdultDetail,*sCAdultDetail,*oralPaedDetail,*iVPaedDetail,
-    *inhaledPaedDetail,*iMPaedDetail,*pRPaedDetail,*sCPaedDetail,*doseUnit,*administration;
+    NSString *genericName, *typeOfDrug,
+    *oralAdultAdministration,*iVAdultAdministration,*inhaledAdultAdministration,*iMAdultAdministration,
+    *pRAdultAdministration,*sCAdultAdministration,*oralPaedAdministration,*iVPaedAdministration,
+    *inhaledPaedAdministration,*iMPaedAdministration,
+    *pRPaedAdministration,*sCPaedAdministration;
+    
+    NSString *oralAdultDose,*iVAdultDose,*inhaledAdultDose,
+    *iMAdultDose,*pRAdultDose,*sCAdultDose,*oralPaedDose,*iVPaedDose,*inhaledPaedDose,*iMPaedDose,*pRPaedDose,
+    *sCPaedDose;
+    
     NSArray *brandNames,*treatmentOf,*sideEffects,*drugInteraction;
     BOOL oralAdult,iVAdult,inhaledAdult,iMAdult,pRAdult,sCAdult,oralPaed,iVPaed,inhaledPaed,iMPaed,pRPaed,sCPaed,adult,paediatric;
 }
 -(NSString *)getGenericName;
 -(NSString *)getTypeOfDrug;
--(NSString *)getOralAdultDetail;
--(NSString *)getIVAdultDetail;
--(NSString *)getInhaledAdultDetail;
--(NSString *)getIMAdultDetail;
--(NSString *)getPRAdultDetail;
--(NSString *)getSCAdultDetail;
--(NSString *)getOralPaedDetail;
--(NSString *)getIVPaedDetail;
--(NSString *)getInhaledPaedDetail;
--(NSString *)getIMPaedDetail;
--(NSString *)getPRPaedDetail;
--(NSString *)getSCPaedDetail;
+
+-(NSString *)getOralAdultAdministration;
+-(NSString *)getIVAdultAdministration;
+-(NSString *)getInhaledAdultAdministration;
+-(NSString *)getIMAdultAdministration;
+-(NSString *)getPRAdultAdministration;
+-(NSString *)getSCAdultAdministration;
+-(NSString *)getOralPaedAdministration;
+-(NSString *)getIVPaedAdministration;
+-(NSString *)getInhaledPaedAdministration;
+-(NSString *)getIMPaedAdministration;
+-(NSString *)getPRPaedAdministration;
+-(NSString *)getSCPaedAdministration;
+
+-(NSString *)getOralAdultDose;
+-(NSString *)getIVAdultDose;
+-(NSString *)getInhaledAdultDose;
+-(NSString *)getIMAdultDose;
+-(NSString *)getPRAdultDose;
+-(NSString *)getSCAdultDose;
+-(NSString *)getOralPaedDose;
+-(NSString *)getIVPaedDose;
+-(NSString *)getInhaledPaedDose;
+-(NSString *)getIMPaedDose;
+-(NSString *)getPRPaedDose;
+-(NSString *)getSCPaedDose;
+
+
 -(BOOL)isOralAdult;
 -(BOOL)isIVAdult;
 -(BOOL)isInhaledAdult;

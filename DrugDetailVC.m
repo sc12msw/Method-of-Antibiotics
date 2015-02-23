@@ -1,5 +1,5 @@
 //
-//  DrugDetailVC.m
+//  DrugAdministrationVC.m
 //  CFMedApp1
 //
 //  Created by Matt Watson on 09/02/2015.
@@ -21,6 +21,7 @@
     self.navigationItem.title = drug.getGenericName;
     [self fillLabels:@"Oral_Adult"];
     [self adultSetting];
+    [self buttonLogic];
     
 }
 
@@ -34,31 +35,43 @@
     if (drug.isAdult){
         if (!drug.isOralAdult){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:0];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:0];
         
         if (!drug.isIVAdult){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:1];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:1];
         
         if (!drug.isInhaledAdult){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:2];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:2];
         
         if (!drug.isIMAdult){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:3];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
          else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:3];
         
         if (!drug.isPRAdult){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:4];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
          else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:4];
         
         if (!drug.isSCAdult){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:5];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
          else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:5];
     }
@@ -69,31 +82,43 @@
     if (drug.isPaediatric){
         if (!drug.isOralPaed){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:0];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:0];
         
         if (!drug.isIVPaed){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:1];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:1];
         
         if (!drug.isInhaledPaed){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:2];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:2];
         
         if (!drug.isIMPaed){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:3];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:3];
         
         if (!drug.isPRPaed){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:4];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:4];
         
         if (!drug.isSCPaed){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:5];
+            self.administration.text = @"";
+            self.doseLabel.text = @"";
         }
         else [adminBarDisplay setEnabled:TRUE forSegmentAtIndex:5];
     }
@@ -107,49 +132,61 @@
     {
         case 0:
             if ((drug.isOralAdult) && (self.adultSwitch.selected)){
-                self.administration.text = drug.getOralAdultDetail;
+                self.administration.text = drug.getOralAdultAdministration;
+                self.doseLabel.text = drug.getOralAdultDose;
             }else if ((drug.isOralPaed) && (self.paedSwitch.selected)){
-                self.administration.text = drug.getOralPaedDetail;
+                self.administration.text = drug.getOralPaedAdministration;
+                self.doseLabel.text = drug.getOralPaedDose;
             }
             break;
             
         case 1:
             if ((drug.isIVAdult) && (self.adultSwitch.selected)){
-                self.administration.text = drug.getIVAdultDetail;
+                self.administration.text = drug.getIVAdultAdministration;
+                self.doseLabel.text = drug.getIVAdultDose;
             }else if ((drug.isIVPaed) && (self.paedSwitch.selected)){
-                self.administration.text = drug.getIVPaedDetail;
+                self.administration.text = drug.getIVPaedAdministration;
+                self.doseLabel.text = drug.getIVPaedDose;
                 break;
             }
             
         case 2:
             if ((drug.isInhaledAdult) && (self.adultSwitch.selected)){
-                self.administration.text = drug.getInhaledAdultDetail;
+                self.administration.text = drug.getInhaledAdultAdministration;
+                self.doseLabel.text = drug.getInhaledAdultDose;
             }else if ((drug.isInhaledPaed) && (self.paedSwitch.selected)){
-                self.administration.text = drug.getInhaledPaedDetail;
+                self.administration.text = drug.getInhaledPaedAdministration;
+                self.doseLabel.text = drug.getInhaledPaedDose;
             }
             break;
             
         case 3:
             if ((drug.isIMAdult) && (self.adultSwitch.selected)){
-                self.administration.text = drug.getIMAdultDetail;
+                self.administration.text = drug.getIMAdultAdministration;
+                self.doseLabel.text = drug.getIMAdultDose;
             }else if ((drug.isIMPaed) && (self.paedSwitch.selected)){
-                self.administration.text = drug.getIMPaedDetail;
+                self.administration.text = drug.getIMPaedAdministration;
+                self.doseLabel.text = drug.getIMPaedDose;
                 break;
             }
             
         case 4:
             if ((drug.isPRAdult) && (self.adultSwitch.selected)){
-                self.administration.text = drug.getPRAdultDetail;
+                self.administration.text = drug.getPRAdultAdministration;
+                self.doseLabel.text = drug.getPRAdultDose;
             }else if ((drug.isPRPaed) && (self.paedSwitch.selected)){
-                self.administration.text = drug.getPRPaedDetail;
+                self.administration.text = drug.getPRPaedAdministration;
+                self.doseLabel.text = drug.getPRPaedDose;
             }
             break;
     
         case 5:
             if ((drug.isSCAdult) && (self.adultSwitch.selected)){
-                self.administration.text = drug.getSCAdultDetail;
+                self.administration.text = drug.getSCAdultAdministration;
+                self.doseLabel.text = drug.getSCAdultDose;
             }else if ((drug.isSCPaed) && (self.paedSwitch.selected)){
-                self.administration.text = drug.getSCPaedDetail;
+                self.administration.text = drug.getSCPaedAdministration;
+                self.doseLabel.text = drug.getSCPaedDose;
                 break;
             }
 
@@ -169,16 +206,15 @@
 - (IBAction)toggleAdult:(id)sender {
     self.adultSwitch.selected = TRUE;
     self.paedSwitch.selected = FALSE;
-    [self buttonLogic];
     [self adultSetting];
-}
+    [self buttonLogic];}
 
 //Method to the button to show the paediatric information for the drug.
 - (IBAction)togglePaed:(id)sender {
     self.paedSwitch.selected = TRUE;
     self.adultSwitch.selected = FALSE;
-    [self buttonLogic];
     [self paedSetting];
+    [self buttonLogic];
 }
 
 // Method to populate the view with data based on route of administration.
@@ -188,7 +224,7 @@
     self.sideEffects.text = [drug.getSideEffects componentsJoinedByString:@" "];
     self.interactions.text = [drug.getDrugInteraction componentsJoinedByString:@" "];
         if (drug.isOralAdult){
-            self.administration.text = drug.getOralAdultDetail;
+            self.administration.text = drug.getOralAdultAdministration;
         }else self.administration.text = @"N/A";
 
     self.brandNames.text = [drug.getBrandNames componentsJoinedByString:@" "];

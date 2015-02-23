@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "DataParser.h"
 @interface AppDelegate ()
 
 @end
@@ -15,7 +15,10 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSMutableArray *xmlObjects = [DataParser loadData];
     // Override point for customization after application launch.
     return YES;
 }
