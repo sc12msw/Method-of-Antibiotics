@@ -60,6 +60,7 @@
             GDataXMLElement *treatmentXML = (GDataXMLElement *) [treatmentsFor objectAtIndex:currentIndex];
             interaction = treatmentXML.stringValue;
         }else continue;
+        
 
         
         currentIndex = currentIndex +1;
