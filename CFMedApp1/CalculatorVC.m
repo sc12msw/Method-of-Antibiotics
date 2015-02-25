@@ -131,7 +131,7 @@
                 
             }
             if (![numberStr isEqualToString:@""]) {
-                number = @([numberStr intValue]);
+                number = @([numberStr doubleValue]);
                 [calculationArray addObject:number];
             }
             if (currentIndex < sizeOfArray){

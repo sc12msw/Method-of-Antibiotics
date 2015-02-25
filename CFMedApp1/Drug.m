@@ -15,9 +15,11 @@
 -(NSString *)getGenericName{
     return genericName;
 }
+
 -(void) setGenericName : (NSString*) set{
     genericName = set;
 }
+
 -(NSString *)getTypeOfDrug{
     return typeOfDrug;
 }
@@ -359,29 +361,29 @@
 -(NSArray *) getBrandNames{
     return brandNames;
 }
--(void) setBrandNames: (NSArray*)brandNamesInput{
-    brandNames =brandNamesInput;
+-(void) setBrandNames: (NSArray*)set{
+    brandNames =set;
 }
 -(NSArray *) getTreatmentOf{
     return treatmentOf;
 }
--(void) setTreatmentOf : (NSArray*) treatmentOfInput{
-    treatmentOf =treatmentOfInput;
+-(void) setTreatmentOf : (NSArray*) set{
+    treatmentOf =set;
 }
 -(NSArray *) getSideEffects{
     return sideEffects;
 }
--(void) setSideEffects: (NSArray*) sideEffectsInput{
-    sideEffects = sideEffectsInput;
+-(void) setSideEffects: (NSArray*) set{
+    sideEffects = set;
 }
 -(NSArray *) getDrugInteraction{
     return drugInteraction;
 }
--(void) setDrugInteraction: (NSArray*) drugInteractionInput{
-    drugInteraction = drugInteractionInput;
+-(void) setDrugInteraction: (NSArray*) set{
+    drugInteraction = set;
 }
 -(id)init{
-    genericName = @"Generic Name";
+    genericName = @"Drug Name";
     typeOfDrug = @"Antibiotic";
     brandNames = [NSArray arrayWithObjects:@"brand1",@"brand2",@"brand3",nil];
     treatmentOf = [NSArray arrayWithObjects:@"bacteria1",@"bacteria2",@"bacteria3",nil];

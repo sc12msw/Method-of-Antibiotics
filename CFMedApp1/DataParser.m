@@ -16,7 +16,7 @@
 }
 
 + (NSMutableArray *)loadData {
-    
+    Drug *drug;
     NSString *filePath = [self dataFilePath];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     NSError *error;
@@ -35,6 +35,7 @@
         if (drugs.count > 0) {
             GDataXMLElement *drugXML = (GDataXMLElement *) [drugNames objectAtIndex:currentIndex];
             drugName = drugXML.stringValue;
+            //[drug setGenericName:drugName];
         }else continue;
         
         NSArray *types =[obj elementsForName:@"type"];

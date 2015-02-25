@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = drug.getGenericName;
     [self fillLabels:@"Oral_Adult"];
     [self adultSetting];
     [self buttonLogic];
@@ -32,6 +31,18 @@
 
 //Changes the layout for adult setting.
 - (void)adultSetting{
+    
+    NSMutableString *title= [[NSMutableString alloc]init];
+    [title appendString:drug.getGenericName];
+    [title appendString:@" -Adult"];
+    self.navigationItem.title = title;
+    
+    self.adultSwitch.backgroundColor = [UIColor blackColor];
+    self.adultSwitch.titleLabel.textColor = [UIColor whiteColor];
+    self.paedSwitch.backgroundColor = [UIColor whiteColor];
+    self.paedSwitch.titleLabel.textColor = [UIColor blueColor];
+    
+    
     if (drug.isAdult){
         if (!drug.isOralAdult){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:0];
@@ -79,6 +90,17 @@
 
 //Changes the layout for paediatric setting.
 -(void) paedSetting{
+    
+    NSMutableString *title= [[NSMutableString alloc]init];
+    [title appendString:drug.getGenericName];
+    [title appendString:@" -Paediatric"];
+    self.navigationItem.title = title;
+    
+    self.paedSwitch.backgroundColor = [UIColor blackColor];
+    self.paedSwitch.titleLabel.textColor = [UIColor whiteColor];
+    self.adultSwitch.backgroundColor = [UIColor whiteColor];
+    self.adultSwitch.titleLabel.textColor = [UIColor blueColor];
+    
     if (drug.isPaediatric){
         if (!drug.isOralPaed){
             [adminBarDisplay setEnabled:FALSE forSegmentAtIndex:0];

@@ -18,7 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *sideEffects;
 @property (strong, nonatomic) IBOutlet UITextView *interactions;
 @property (strong, nonatomic) IBOutlet UITextView *administration;
-@property (strong, nonatomic) IBOutlet UILabel *doseLabel;
+@property (strong, nonatomic) IBOutlet UITextView *doseLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *adminBarDisplay;
 
 - (IBAction)adminTypeBar:(id)sender;

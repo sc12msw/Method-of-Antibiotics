@@ -22,6 +22,55 @@
     NSArray *brandNames,*treatmentOf,*sideEffects,*drugInteraction;
     BOOL oralAdult,iVAdult,inhaledAdult,iMAdult,pRAdult,sCAdult,oralPaed,iVPaed,inhaledPaed,iMPaed,pRPaed,sCPaed,adult,paediatric;
 }
+-(void) setGenericName : (NSString*) set;
+-(void) setTypeofDrug : (NSString*) set;
+
+-(void) setOralAdultAdministration : (NSString*) set;
+-(void) setIVAdultAdministration : (NSString*) set;
+-(void) setInhaledAdultAdministration : (NSString*) set;
+-(void) setIMAdultAdministration : (NSString*) set;
+-(void) setPRAdultAdministration : (NSString*) set;
+-(void) setSCAdultAdministration : (NSString*) set;
+-(void) setOralPaedAdministration : (NSString*) set;
+-(void) setIVPaedAdministration : (NSString*) set;
+-(void) setInhaledPaedAdministration : (NSString*) set;
+-(void) setIMPaedAdministration : (NSString*) set;
+-(void) setPRPaedAdministration : (NSString*) set;
+-(void) setSCPaedAdministration : (NSString*) set;
+
+-(void) setOralAdultDose : (NSString*) set;
+-(void) setIVAdultDose : (NSString*) set;
+-(void) setInhaledAdultDose : (NSString*) set;
+-(void) setIMAdultDose : (NSString*) set;
+-(void) setPRAdultDose : (NSString*) set;
+-(void) setSCAdultDose : (NSString*) set;
+-(void) setOralPaedDose : (NSString*) set;
+-(void) setIVPaedDose : (NSString*) set;
+-(void) setInhaledPaedDose : (NSString*) set;
+-(void) setIMPaedDose : (NSString*) set;
+-(void) setPRPaedDose : (NSString*) set;
+-(void) setSCPaedDose : (NSString*) set;
+
+
+-(void)setOralAdult : (BOOL*) set;
+-(void)setIVAdult : (BOOL*) set;
+-(void)setInhaledAdult : (BOOL*) set;
+-(void)setIMAdult : (BOOL*) set;
+-(void)setPRAdult : (BOOL*) set;
+-(void)setSCAdult : (BOOL*) set;
+-(void)setOralPaed : (BOOL*) set;
+-(void)setIVPaed : (BOOL*) set;
+-(void)setInhaledPaed : (BOOL*) set;
+-(void)setIMPaed : (BOOL*) set;
+-(void)setPRPaed : (BOOL*) set;
+-(void)setSCPaed : (BOOL*) set;
+-(void)setAdult : (BOOL*) set;
+-(void)setPaediatric: (BOOL*) set;
+-(void) setBrandNames :(NSArray*) set;
+-(void) setTreatmentOf:(NSArray*) set;
+-(void) setSideEffects:(NSArray*) set;
+-(void) setDrugInteraction:(NSArray*) set;
+
 -(NSString *)getGenericName;
 -(NSString *)getTypeOfDrug;
 
@@ -70,6 +119,7 @@
 -(NSArray *) getTreatmentOf;
 -(NSArray *) getSideEffects;
 -(NSArray *) getDrugInteraction;
+
 
 
 
