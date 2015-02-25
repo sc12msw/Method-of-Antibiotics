@@ -11,13 +11,11 @@
 #import "Drug.h"
 @implementation DataParser
 
-+ (NSString *)dataFilePath {
-    return [[NSBundle mainBundle] pathForResource:@"example" ofType:@"xml"];
-}
 
-+ (NSMutableArray *)loadData {
-    Drug *drug;
-    NSString *filePath = [self dataFilePath];
+
++(NSMutableArray *)loadData {
+    Drug *drug = [[Drug alloc]init];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"xml"];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     NSError *error;
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData
@@ -27,40 +25,64 @@
     NSLog(@"%@", doc.rootElement);
     
     int currentIndex =0;
-    NSString *drugName, *type, *sideEffect,*interaction;
+    NSString *temp;
     
+    //Gets all the drugs from the xml file
     NSArray *drugs = [doc.rootElement elementsForName:@"drug"];
     for (GDataXMLElement *obj in drugs){
         NSArray *drugNames = [obj elementsForName:@"name"];
         if (drugs.count > 0) {
             GDataXMLElement *drugXML = (GDataXMLElement *) [drugNames objectAtIndex:currentIndex];
-            drugName = drugXML.stringValue;
-            //[drug setGenericName:drugName];
-        }else continue;
-        
+            temp = drugXML.stringValue;
+            [drug setGenericName:temp];
+        }
+     
+    //Gets the types for the drugs from the xml file
         NSArray *types =[obj elementsForName:@"type"];
         if (types.count >0){
-            GDataXMLElement *typeXML = (GDataXMLElement *) [types objectAtIndex:currentIndex];
-            type = typeXML.stringValue;
-        }else continue;
+            for (GDataXMLElement *typeObj in types){
+                GDataXMLElement *typeXML = (GDataXMLElement *) typeObj;
+                temp = typeXML.stringValue;
+            }
+            [drug setIndication:temp];
+
+            [drug setTypeofDrug:temp];
+        }
         
+     //Gets the side effects for the drugs from the xml file
         NSArray *sideEffects =[obj elementsForName:@"side_effects"];
+        NSMutableArray *sideEffectList = [[NSMutableArray alloc]init];
         if (sideEffects.count >0){
-            GDataXMLElement *sideEffectXML = (GDataXMLElement *) [sideEffects objectAtIndex:currentIndex];
-            sideEffect = sideEffectXML.stringValue;
-        }else continue;
+            for (GDataXMLElement *sEObj in sideEffects){
+            GDataXMLElement *sideEffectXML = (GDataXMLElement *) sEObj;
+            temp = sideEffectXML.stringValue;
+            [sideEffectList addObject:temp];
+            }
+            [drug setSideEffects:sideEffectList];
+        }
         
+        //Gets the interactions for the drugs from the xml file
+        NSMutableArray *interactionList = [[NSMutableArray alloc]init];
         NSArray *interactions =[obj elementsForName:@"warning"];
         if (interactions.count >0){
-            GDataXMLElement *interactionXML = (GDataXMLElement *) [interactions objectAtIndex:currentIndex];
-            interaction = interactionXML.stringValue;
-        }else continue;
+            for (GDataXMLElement *interactObj in interactions){
+                GDataXMLElement *interactionXML = (GDataXMLElement *) interactObj;
+                temp = interactionXML.stringValue;
+                [interactionList addObject:temp];
+            }
+            [drug setDrugInteraction:interactionList];
+        }
         
-        NSArray *treatmentsFor =[obj elementsForName:@"treatment"];
+       //Gets the pathogens the drug treats from the xml file
+        NSArray *treatmentsFor =[obj elementsForName:@"indication"];
         if (treatmentsFor.count >0){
-            GDataXMLElement *treatmentXML = (GDataXMLElement *) [treatmentsFor objectAtIndex:currentIndex];
-            interaction = treatmentXML.stringValue;
-        }else continue;
+            for (GDataXMLElement *treatObj in treatmentsFor){
+                GDataXMLElement *treatXML = (GDataXMLElement *) treatObj;
+                temp = treatXML.stringValue;
+            }
+            [drug setIndication:temp];
+            
+        }
         
 
         

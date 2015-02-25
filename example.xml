@@ -7,13 +7,16 @@
         <type>
             Mucolytic
         </type>
-        <treatment>
+        <indication>
             Treatment of distal intestinal obstuction
 			syndrome(DIOS) previously called meconium ileus equivalent.
-        </treatment>
+        </indication>
 		<side_effects>
-		N/A
+		First Side effect
 		</side_effects>
+        <side_effects>
+        Second Side effect
+        </side_effects>
 		<r_o_admin>
             <adult>
                 <nebulised>

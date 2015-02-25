@@ -13,7 +13,7 @@
 @property (strong, nonatomic) Drug *drug;
 @property (strong, nonatomic) IBOutlet UIButton *adultSwitch;
 @property (strong, nonatomic) IBOutlet UIButton *paedSwitch;
-@property (strong, nonatomic) IBOutlet UITextView *treatmentOf;
+@property (strong, nonatomic) IBOutlet UITextView *indication;
 @property (strong, nonatomic) IBOutlet UITextView *brandNames;
 @property (strong, nonatomic) IBOutlet UITextView *sideEffects;
 @property (strong, nonatomic) IBOutlet UITextView *interactions;

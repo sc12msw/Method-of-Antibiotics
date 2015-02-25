@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fillLabels:@"Oral_Adult"];
+    [self fillFields];
     [self adultSetting];
     [self buttonLogic];
     
@@ -240,17 +240,20 @@
 }
 
 // Method to populate the view with data based on route of administration.
-- (void) fillLabels :(NSString*) administrationType{
-    if ([administrationType  isEqual: @"Oral_Adult"]){
-    self.treatmentOf.text = [drug.getTreatmentOf componentsJoinedByString:@" "];
+- (void) fillFields{
+   
+    self.indication.text = drug.getIndication;
     self.sideEffects.text = [drug.getSideEffects componentsJoinedByString:@" "];
     self.interactions.text = [drug.getDrugInteraction componentsJoinedByString:@" "];
         if (drug.isOralAdult){
             self.administration.text = drug.getOralAdultAdministration;
-        }else self.administration.text = @"N/A";
-
+            self.doseLabel.text = drug.getOralAdultDose;
+        }else{
+            self.administration.text = @" ";
+            self.doseLabel.text =@" ";
+        }
     self.brandNames.text = [drug.getBrandNames componentsJoinedByString:@" "];
-    }
+    
 }
 
 

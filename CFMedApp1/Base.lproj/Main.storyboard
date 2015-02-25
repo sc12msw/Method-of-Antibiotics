@@ -288,10 +288,10 @@
                         <outlet property="adultSwitch" destination="edh-6G-BHm" id="Ot2-WH-B90"/>
                         <outlet property="brandNames" destination="mDt-L0-9bD" id="zQj-Qj-KVa"/>
                         <outlet property="doseLabel" destination="g5D-Zc-2jO" id="8uC-kf-pIh"/>
+                        <outlet property="indication" destination="9tH-wQ-X6z" id="ZSw-Ta-Ah1"/>
                         <outlet property="interactions" destination="mVD-pP-g2n" id="9jH-Ny-aw6"/>
                         <outlet property="paedSwitch" destination="Pzo-wi-Awj" id="UeU-he-v8d"/>
                         <outlet property="sideEffects" destination="Zg3-g0-fXz" id="A0t-7e-3pU"/>
-                        <outlet property="treatmentOf" destination="9tH-wQ-X6z" id="jsn-5U-fzb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nre-wD-ImU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -358,17 +358,19 @@
 -(void)setPaediatric:(BOOL*) set{
     paediatric = set;
 }
+
+
 -(NSArray *) getBrandNames{
     return brandNames;
 }
 -(void) setBrandNames: (NSArray*)set{
     brandNames =set;
 }
--(NSArray *) getTreatmentOf{
-    return treatmentOf;
+-(NSString *) getIndication{
+    return indication;
 }
--(void) setTreatmentOf : (NSArray*) set{
-    treatmentOf =set;
+-(void) setIndication : (NSString*) set{
+    indication =set;
 }
 -(NSArray *) getSideEffects{
     return sideEffects;
@@ -383,70 +385,44 @@
     drugInteraction = set;
 }
 -(id)init{
-    genericName = @"Drug Name";
-    typeOfDrug = @"Antibiotic";
-    brandNames = [NSArray arrayWithObjects:@"brand1",@"brand2",@"brand3",nil];
-    treatmentOf = [NSArray arrayWithObjects:@"bacteria1",@"bacteria2",@"bacteria3",nil];
-    sideEffects = [NSArray arrayWithObjects:@"sideEffects1",@"sideEffects2",@"sideEffects3",nil];
-    drugInteraction = [NSArray arrayWithObjects:@"interection1",@"interaction2",@"interaction3",nil];
-    oralAdult = true;
-    iVAdult = true;
+    genericName = [[NSString alloc]init];
+    typeOfDrug = [[NSString alloc]init];
+    brandNames = [[NSArray alloc]init];
+    indication = [[NSString alloc]init];
+    sideEffects = [[NSArray alloc]init];
+    drugInteraction = [[NSArray alloc]init];
+    oralAdult = false;
+    iVAdult = false;
     inhaledAdult = false;
     iMAdult = false;
-    pRAdult = true,
+    pRAdult = false,
     sCAdult = false;
     oralPaed = true;
-    iVPaed = true;
+    iVPaed = false;
     inhaledPaed = false;
     iMPaed = false;
     pRPaed = false,
     sCPaed = false;
-    adult = true;
-    paediatric = true;
-    if (adult){
-        if(oralAdult){
-            oralAdultAdministration = @"Take tablet";
-            oralAdultDose =@"50mg";
-        }
-        if (iVAdult){
-            iVAdultAdministration = @" in bag thing";
-            iVAdultDose = @"150mg";
-        }
-        if (inhaledAdult){
-            inhaledAdultAdministration = @"inhale adult";
-        }
-        if (iMAdult){
-            iMAdultAdministration = @"im it";
-        }
-        if (pRAdult){
-            pRAdultAdministration = @"pr it";
-            pRAdultDose =@"90mg";
-        }
-        if (sCAdult){
-            sCAdultAdministration = @"sc it";
-        }
-    }
-    if (paediatric){
-        if(oralPaed){
-            oralPaedAdministration = @"Take tablet child size";
-            oralPaedDose =@"25mg";
-        }
-        if (iVPaed){
-            iVPaedAdministration = @"in bag thing child size";
-            iVPaedDose =@"75mg";
-        }
-        if (inhaledPaed){
-            inhaledPaedAdministration = @"inhale child";
-        }
-        if (iMPaed){
-            iMPaedAdministration = @"im it";
-        }
-        if (pRPaed){
-            pRPaedAdministration = @"pr it";
-        }
-        if (sCPaed){
-            sCPaedAdministration = @"sc it";
-        }
-    }
-    return self;}
+    adult = false;
+    paediatric = false;
+    oralAdultAdministration = [[NSString alloc]init];
+    oralAdultDose =[[NSString alloc]init];
+    iVAdultAdministration = [[NSString alloc]init];
+    iVAdultDose = [[NSString alloc]init];
+    inhaledAdultAdministration = [[NSString alloc]init];
+    iMAdultAdministration = [[NSString alloc]init];
+    pRAdultAdministration = [[NSString alloc]init];
+    pRAdultDose =[[NSString alloc]init];
+    sCAdultAdministration = [[NSString alloc]init];
+    oralPaedAdministration = [[NSString alloc]init];
+    oralPaedDose =[[NSString alloc]init];
+    iVPaedAdministration = [[NSString alloc]init];
+    iVPaedDose =[[NSString alloc]init];
+    inhaledPaedAdministration = [[NSString alloc]init];
+    iMPaedAdministration = [[NSString alloc]init];
+    pRPaedAdministration = [[NSString alloc]init];
+    sCPaedAdministration = [[NSString alloc]init];
+   
+    return self;
+}
 @end

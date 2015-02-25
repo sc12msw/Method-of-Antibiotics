@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Drug : NSObject{
-    NSString *genericName, *typeOfDrug,
+    NSString *genericName, *typeOfDrug,*indication,
     *oralAdultAdministration,*iVAdultAdministration,*inhaledAdultAdministration,*iMAdultAdministration,
     *pRAdultAdministration,*sCAdultAdministration,*oralPaedAdministration,*iVPaedAdministration,
     *inhaledPaedAdministration,*iMPaedAdministration,
@@ -19,7 +19,7 @@
     *iMAdultDose,*pRAdultDose,*sCAdultDose,*oralPaedDose,*iVPaedDose,*inhaledPaedDose,*iMPaedDose,*pRPaedDose,
     *sCPaedDose;
     
-    NSArray *brandNames,*treatmentOf,*sideEffects,*drugInteraction;
+    NSArray *brandNames,*sideEffects,*drugInteraction;
     BOOL oralAdult,iVAdult,inhaledAdult,iMAdult,pRAdult,sCAdult,oralPaed,iVPaed,inhaledPaed,iMPaed,pRPaed,sCPaed,adult,paediatric;
 }
 -(void) setGenericName : (NSString*) set;
@@ -67,7 +67,7 @@
 -(void)setAdult : (BOOL*) set;
 -(void)setPaediatric: (BOOL*) set;
 -(void) setBrandNames :(NSArray*) set;
--(void) setTreatmentOf:(NSArray*) set;
+-(void) setIndication:(NSString*) set;
 -(void) setSideEffects:(NSArray*) set;
 -(void) setDrugInteraction:(NSArray*) set;
 
@@ -116,7 +116,7 @@
 -(BOOL)isAdult;
 -(BOOL)isPaediatric;
 -(NSArray *) getBrandNames;
--(NSArray *) getTreatmentOf;
+-(NSString *) getIndication;
 -(NSArray *) getSideEffects;
 -(NSArray *) getDrugInteraction;
 
