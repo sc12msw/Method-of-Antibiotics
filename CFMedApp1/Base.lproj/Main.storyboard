@@ -242,6 +242,8 @@
                                     <constraint firstItem="mVD-pP-g2n" firstAttribute="top" secondItem="4Zx-d1-KzJ" secondAttribute="bottom" constant="2" id="AKh-pz-e0W"/>
                                     <constraint firstItem="ZrE-OZ-Cxr" firstAttribute="leading" secondItem="56l-S6-Pzj" secondAttribute="leadingMargin" id="BMD-U5-HF3"/>
                                     <constraint firstItem="edh-6G-BHm" firstAttribute="top" secondItem="Pzo-wi-Awj" secondAttribute="top" id="Baq-Us-OE8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pzo-wi-Awj" secondAttribute="trailing" constant="8" id="ETz-9d-bkQ"/>
+                                    <constraint firstItem="edh-6G-BHm" firstAttribute="height" secondItem="Pzo-wi-Awj" secondAttribute="height" id="GwH-Do-7gt"/>
                                     <constraint firstItem="g5D-Zc-2jO" firstAttribute="top" secondItem="D19-p2-BFp" secondAttribute="bottom" constant="1" id="HmG-iT-Mf9"/>
                                     <constraint firstItem="edh-6G-BHm" firstAttribute="baseline" secondItem="Pzo-wi-Awj" secondAttribute="firstBaseline" id="IN5-3n-0Sc"/>
                                     <constraint firstItem="mDt-L0-9bD" firstAttribute="top" secondItem="Umf-PD-BVY" secondAttribute="bottom" constant="8" symbolic="YES" id="JmR-49-Bu0"/>
@@ -266,6 +268,7 @@
                                     <constraint firstItem="Zg3-g0-fXz" firstAttribute="leading" secondItem="pMk-BM-zU7" secondAttribute="leading" id="dTn-JL-Yb2"/>
                                     <constraint firstAttribute="bottom" secondItem="mVD-pP-g2n" secondAttribute="bottom" constant="53" id="eVX-o2-t6i"/>
                                     <constraint firstItem="9tH-wQ-X6z" firstAttribute="leading" secondItem="mDt-L0-9bD" secondAttribute="leading" id="eXO-6B-Zu4"/>
+                                    <constraint firstItem="edh-6G-BHm" firstAttribute="width" secondItem="Pzo-wi-Awj" secondAttribute="width" id="f06-8V-P4o"/>
                                     <constraint firstItem="4Zx-d1-KzJ" firstAttribute="leading" secondItem="D19-p2-BFp" secondAttribute="leading" id="grr-fg-xCf"/>
                                     <constraint firstAttribute="trailing" secondItem="2d2-yS-uxJ" secondAttribute="trailing" constant="87" id="jSH-SZ-H90"/>
                                     <constraint firstItem="elt-by-37L" firstAttribute="leading" secondItem="edh-6G-BHm" secondAttribute="leading" id="kBb-av-Ugk"/>
