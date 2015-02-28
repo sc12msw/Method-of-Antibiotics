@@ -21,7 +21,10 @@
     [self fillFields];
     [self adultSetting];
     [self buttonLogic];
-    
+    //Disables paediatric button if none exists.
+    if(!drug.isPaediatric){
+        self.paedSwitch.enabled =false;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
