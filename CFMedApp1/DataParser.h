@@ -13,6 +13,6 @@
 @interface DataParser : NSObject {
 }
 
-+ (NSMutableArray *)loadData;
++ (NSMutableArray *)loadDrugData;
 
 @end

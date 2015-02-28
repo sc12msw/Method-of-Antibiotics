@@ -18,7 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSMutableArray *xmlObjects = [DataParser loadData];
     // Override point for customization after application launch.
     return YES;
 }

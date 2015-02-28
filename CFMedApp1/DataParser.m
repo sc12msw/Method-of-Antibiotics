@@ -13,8 +13,10 @@
 
 
 
-+(NSMutableArray *)loadData {
-    Drug *drug = [[Drug alloc]init];
+
++(NSMutableArray *)loadDrugData {
+    
+    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"xml"];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     NSError *error;
@@ -24,72 +26,95 @@
     
     NSLog(@"%@", doc.rootElement);
     
-    int currentIndex =0;
-    NSString *temp;
+    Drug *drug = [[Drug alloc]init];
+    NSString *temp = nil;
+    NSMutableArray *tempList = [[NSMutableArray alloc]init];
+
+    NSMutableArray *drugObjects = [[NSMutableArray alloc]init];
+    
+    //String variables for doeses and administration.
     
     //Gets all the drugs from the xml file
     NSArray *drugs = [doc.rootElement elementsForName:@"drug"];
     for (GDataXMLElement *obj in drugs){
         NSArray *drugNames = [obj elementsForName:@"name"];
         if (drugs.count > 0) {
-            GDataXMLElement *drugXML = (GDataXMLElement *) [drugNames objectAtIndex:currentIndex];
+            GDataXMLElement *drugXML = (GDataXMLElement *) [drugNames objectAtIndex:0];
             temp = drugXML.stringValue;
             [drug setGenericName:temp];
         }
-     
-    //Gets the types for the drugs from the xml file
+        
+        
+        //Gets the types for the drugs from the xml file
         NSArray *types =[obj elementsForName:@"type"];
         if (types.count >0){
-            for (GDataXMLElement *typeObj in types){
-                GDataXMLElement *typeXML = (GDataXMLElement *) typeObj;
-                temp = typeXML.stringValue;
-            }
-            [drug setIndication:temp];
-
+            GDataXMLElement *typeXML = (GDataXMLElement *) [types objectAtIndex:0];
+            temp = typeXML.stringValue;
             [drug setTypeofDrug:temp];
         }
         
-     //Gets the side effects for the drugs from the xml file
+        //Gets the side effects for the drugs from the xml file
         NSArray *sideEffects =[obj elementsForName:@"side_effects"];
-        NSMutableArray *sideEffectList = [[NSMutableArray alloc]init];
         if (sideEffects.count >0){
             for (GDataXMLElement *sEObj in sideEffects){
-            GDataXMLElement *sideEffectXML = (GDataXMLElement *) sEObj;
-            temp = sideEffectXML.stringValue;
-            [sideEffectList addObject:temp];
+                GDataXMLElement *sideEffectXML = (GDataXMLElement *) sEObj;
+                temp = sideEffectXML.stringValue;
+                [tempList addObject:temp];
+                
             }
-            [drug setSideEffects:sideEffectList];
+            [drug setSideEffects:tempList];
+            tempList=[[NSMutableArray alloc]init];
         }
         
         //Gets the interactions for the drugs from the xml file
-        NSMutableArray *interactionList = [[NSMutableArray alloc]init];
-        NSArray *interactions =[obj elementsForName:@"warning"];
+        NSArray *interactions =[obj elementsForName:@"interactions"];
         if (interactions.count >0){
             for (GDataXMLElement *interactObj in interactions){
                 GDataXMLElement *interactionXML = (GDataXMLElement *) interactObj;
                 temp = interactionXML.stringValue;
-                [interactionList addObject:temp];
+                [tempList addObject:temp];
             }
-            [drug setDrugInteraction:interactionList];
+            [drug setDrugInteraction:tempList];
+            tempList=[[NSMutableArray alloc]init];
         }
         
-       //Gets the pathogens the drug treats from the xml file
-        NSArray *treatmentsFor =[obj elementsForName:@"indication"];
-        if (treatmentsFor.count >0){
-            for (GDataXMLElement *treatObj in treatmentsFor){
-                GDataXMLElement *treatXML = (GDataXMLElement *) treatObj;
+        //Gets the brand names for the drugs from the xml file
+        NSArray *brandNames =[obj elementsForName:@"brand_name"];
+        if (brandNames.count >0){
+            for (GDataXMLElement *brandObj in brandNames){
+                GDataXMLElement *brandXML = (GDataXMLElement *) brandObj;
+                temp = brandXML.stringValue;
+                [tempList addObject:temp];
+            }
+            [drug setBrandNames:tempList];
+            tempList=[[NSMutableArray alloc]init];
+        }
+        
+        //Gets the indications from the xml file
+        NSArray *indications =[obj elementsForName:@"indication"];
+        if (indications.count >0){
+                GDataXMLElement *treatXML = (GDataXMLElement *) [indications objectAtIndex:0];
                 temp = treatXML.stringValue;
-            }
             [drug setIndication:temp];
-            
         }
         
-
-        
-        currentIndex = currentIndex +1;
-    }
+        //Checks for the adult detail from the xml file
+        NSArray *adult =[obj elementsForName:@"adult"];
+        if (adult.count >0){
+            for (GDataXMLElement *adultObj in adult){
+                GDataXMLElement *adultXML = (GDataXMLElement *) adultObj;
+                NSArray *children= [[NSArray alloc]init];
+                children = adultXML.children;
+                
+                
+            }
+        }
     
-    return nil;
+        [drugObjects addObject:drug];
+        //To prevent overwriting of the object and clear arrays
+        drug = [[Drug alloc] init];
+    }
+    return drugObjects;
     
 }
 

@@ -91,7 +91,7 @@
 //Changes the layout for paediatric setting.
 -(void) paedSetting{
     
-    NSMutableString *title= [[NSMutableString alloc]init];
+    NSMutableString *title= [[NSMutableString alloc] init];
     [title appendString:drug.getGenericName];
     [title appendString:@" -Paediatric"];
     self.navigationItem.title = title;

@@ -9,9 +9,9 @@
 #import "FirstViewController.h"
 #import "DrugDetailVC.h"
 #import "Drug.h"
-
+#import "DataParser.h"
 @interface FirstViewController (){
-    NSArray *drugs;
+    NSMutableArray *drugs;
 }
 
 @end
@@ -21,8 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Drug *drugObject = [[Drug alloc]init];;
-    drugs = [NSArray arrayWithObjects:drugObject,drugObject, nil];
+    drugs = [[NSMutableArray alloc]init];
+    drugs  = [DataParser loadDrugData];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -55,7 +55,9 @@
     }
     
     drugObject = [drugs objectAtIndex:indexPath.row];
-    cell.textLabel.text = drugObject.getGenericName;
+    NSString *temp = drugObject.getGenericName;
+    NSString *newString = [[temp componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
+    cell.textLabel.text = newString;
     return cell;
 }
 
