@@ -1,0 +1,2 @@
+127.0.0.1 - - [03/Mar/2015:19:14:17 +0000] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [03/Mar/2015:19:14:17 +0000] "GET /com.watson.jersey.cfmed/WEB-INF/classes/com/watson/jersey/cfmed/RestLogic.java HTTP/1.1" 404 949
