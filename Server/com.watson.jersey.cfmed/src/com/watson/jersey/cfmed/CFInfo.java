@@ -9,13 +9,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class CFInfo {
 
-private ArrayList<Drug> drug;
+private ArrayList<DrugInfo> drug;
 
-public ArrayList<Drug> getDrug() {
+public ArrayList<DrugInfo> getDrug() {
 	return drug;
 }
 
-public void setDrug(ArrayList<Drug> drug) {
+public void setDrug(ArrayList<DrugInfo> drug) {
 	this.drug = drug;
 } 
 
