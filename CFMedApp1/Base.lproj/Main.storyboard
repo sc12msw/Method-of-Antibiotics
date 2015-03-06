@@ -373,13 +373,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBl-6D-dQg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBl-6D-dQg">
                                 <rect key="frame" x="42" y="93" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E77-bM-muJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E77-bM-muJ">
                                 <rect key="frame" x="19" y="371" width="111" height="30"/>
                                 <state key="normal" title="Select First Line">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -388,17 +388,14 @@
                                     <action selector="selectFL:" destination="oLu-Tv-E8F" eventType="touchUpInside" id="296-3w-X1o"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This is bateria text area" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P9-Rq-DJF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="This is bateria text area" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P9-Rq-DJF">
                                 <rect key="frame" x="0.0" y="122" width="600" height="65"/>
                                 <color key="backgroundColor" red="0.062745098040000002" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="eZk-hr-cbQ"/>
-                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-Hc-Swt">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-Hc-Swt">
                                 <rect key="frame" x="451" y="371" width="133" height="30"/>
                                 <state key="normal" title="Select Second Line">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -407,7 +404,7 @@
                                     <action selector="selectSL:" destination="oLu-Tv-E8F" eventType="touchUpInside" id="LvA-8n-cqi"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBP-z6-kt4">
+                            <pickerView contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBP-z6-kt4">
                                 <rect key="frame" x="15" y="183" width="570" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="oLu-Tv-E8F" id="GvW-Qc-OgE"/>
@@ -416,16 +413,6 @@
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7P9-Rq-DJF" firstAttribute="top" secondItem="RLe-a8-3Mz" secondAttribute="top" constant="122" id="2j7-f8-oG8"/>
-                            <constraint firstItem="7P9-Rq-DJF" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leading" id="8hT-Nm-rWx"/>
-                            <constraint firstItem="E77-bM-muJ" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leadingMargin" constant="3" id="C9t-vL-B3d"/>
-                            <constraint firstItem="kBP-z6-kt4" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leadingMargin" constant="-1" id="Fr4-WI-1Mh"/>
-                            <constraint firstItem="7P9-Rq-DJF" firstAttribute="top" secondItem="TBl-6D-dQg" secondAttribute="bottom" constant="8" symbolic="YES" id="fvI-gz-DUk"/>
-                            <constraint firstAttribute="trailing" secondItem="7P9-Rq-DJF" secondAttribute="trailing" id="j3y-rQ-5NO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kBP-z6-kt4" secondAttribute="trailing" constant="-1" id="oZo-it-QZ1"/>
-                            <constraint firstItem="bcd-Hc-Swt" firstAttribute="trailing" secondItem="RLe-a8-3Mz" secondAttribute="trailingMargin" id="q70-aq-ajZ"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4xq-U0-EeP"/>
                     <connections>

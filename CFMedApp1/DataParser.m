@@ -16,8 +16,7 @@
 
 +(NSMutableArray *)loadDrugData {
     
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"xml"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tester" ofType:@"xml"];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     NSError *error;
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData
@@ -54,7 +53,7 @@
         }
         
         //Gets the side effects for the drugs from the xml file
-        NSArray *sideEffects =[obj elementsForName:@"side_effects"];
+        NSArray *sideEffects =[obj elementsForName:@"sideEffect"];
         if (sideEffects.count >0){
             for (GDataXMLElement *sEObj in sideEffects){
                 GDataXMLElement *sideEffectXML = (GDataXMLElement *) sEObj;
@@ -79,7 +78,7 @@
         }
         
         //Gets the brand names for the drugs from the xml file
-        NSArray *brandNames =[obj elementsForName:@"brand_name"];
+        NSArray *brandNames =[obj elementsForName:@"brandName"];
         if (brandNames.count >0){
             for (GDataXMLElement *brandObj in brandNames){
                 GDataXMLElement *brandXML = (GDataXMLElement *) brandObj;
@@ -117,7 +116,7 @@
                     NSString *routeOfAdmin = childrenObj.name;
                     
                     //Inhaled is set by finding the node then setting the current index 0.admin and 1.dose to set the data to the object
-                    if ([routeOfAdmin isEqualToString:@"nebulised"]){
+                    if ([routeOfAdmin isEqualToString:@"inhaled"]){
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
