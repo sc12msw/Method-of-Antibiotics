@@ -30,3 +30,7 @@
 127.0.0.1 - - [04/Mar/2015:15:02:18 +0000] "GET /com.watson.jersey.cfmed/rest/cfmed HTTP/1.1" 200 1016
 127.0.0.1 - - [04/Mar/2015:15:02:18 +0000] "GET /com.watson.jersey.cfmed/rest/cfmed HTTP/1.1" 200 1016
 127.0.0.1 - - [04/Mar/2015:15:02:18 +0000] "GET /com.watson.jersey.cfmed/rest/cfmed HTTP/1.1" 200 1016
+127.0.0.1 - - [04/Mar/2015:15:25:19 +0000] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [04/Mar/2015:15:25:20 +0000] "GET /com.watson.jersey.cfmed/WEB-INF/classes/com/watson/jersey/cfmed/RestLogic.java HTTP/1.1" 404 949
+127.0.0.1 - - [04/Mar/2015:15:25:27 +0000] "GET /com.watson.jersey.cfmed/rest/cfmed HTTP/1.1" 200 1016
+127.0.0.1 - - [04/Mar/2015:15:25:29 +0000] "GET /com.watson.jersey.cfmed/rest/cfmed HTTP/1.1" 200 1016

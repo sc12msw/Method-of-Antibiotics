@@ -1,5 +1,5 @@
 package com.watson.jersey.cfmed;
-
+// Xml Element classes.
 public class DrugInfo {
 	 private AdultInfo ad;
 	 private PaediatricInfo pae;
