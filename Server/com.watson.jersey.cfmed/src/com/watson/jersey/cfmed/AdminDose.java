@@ -1,5 +1,5 @@
 package com.watson.jersey.cfmed;
-
+//XML element classes.
 public class AdminDose {
 private String administration;
 private String dose;

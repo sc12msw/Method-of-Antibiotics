@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-
+//Root xml class
 @XmlRootElement
 public class CFInfo {
 
