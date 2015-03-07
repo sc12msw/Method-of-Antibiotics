@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		970CE5421AAA44BF00D060B0 /* tester.xml in Resources */ = {isa = PBXBuildFile; fileRef = 970CE5411AAA44BF00D060B0 /* tester.xml */; };
 		9727C0AB1A8CCF7B00EEA769 /* Drug.m in Sources */ = {isa = PBXBuildFile; fileRef = 9727C0AA1A8CCF7B00EEA769 /* Drug.m */; };
 		9732487F1A89288A003570AA /* DrugDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9732487E1A89288A003570AA /* DrugDetailVC.m */; };
 		973248831A892B0D003570AA /* PathogenDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 973248821A892B0D003570AA /* PathogenDetailVC.m */; };
@@ -36,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		970CE5411AAA44BF00D060B0 /* tester.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tester.xml; sourceTree = "<group>"; };
 		9727C0A91A8CCF7B00EEA769 /* Drug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drug.h; sourceTree = "<group>"; };
 		9727C0AA1A8CCF7B00EEA769 /* Drug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drug.m; sourceTree = "<group>"; };
 		9732487E1A89288A003570AA /* DrugDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrugDetailVC.m; path = ../DrugDetailVC.m; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 				9736A7131A8906E1005BCE62 /* CFMedApp1 */,
 				9736A7301A8906E2005BCE62 /* CFMedApp1Tests */,
 				9736A7121A8906E1005BCE62 /* Products */,
-				970CE5411AAA44BF00D060B0 /* tester.xml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				970CE5421AAA44BF00D060B0 /* tester.xml in Resources */,
 				9736A7231A8906E1005BCE62 /* Main.storyboard in Resources */,
 				9736A7281A8906E1005BCE62 /* LaunchScreen.xib in Resources */,
 				9736A7251A8906E1005BCE62 /* Images.xcassets in Resources */,

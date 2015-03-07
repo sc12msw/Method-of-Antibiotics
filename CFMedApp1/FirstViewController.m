@@ -10,6 +10,7 @@
 #import "DrugDetailVC.h"
 #import "Drug.h"
 #import "DataParser.h"
+#import "AppDelegate.h"
 @interface FirstViewController (){
     NSMutableArray *drugs;
 }
@@ -20,12 +21,45 @@
 @synthesize drugTable;
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    // Change the url string to the site address.
+    // The following block GETS the xml file from the restful service.
+    NSString *url = @"http://192.168.0.12:8080/com.watson.jersey.cfmed/rest/cfmed";
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    NSMutableData *data = [[NSMutableData alloc]init];
+    [self connection:urlConnection didReceiveData:data];
+  
+    
+   
+    
     drugs = [[NSMutableArray alloc]init];
     drugs  = [DataParser loadDrugData];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+    NSLog(@"%ld",statusCode);
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    
+    NSString *xmlStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", xmlStr);
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tester" ofType:@"xml"];
+    NSError *error;
+    NSData *data2 = [xmlStr dataUsingEncoding:NSUTF8StringEncoding];
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:data2
+                                                           options:0 error:&error];
+    data2 = doc.XMLData;
+    [data2 writeToFile:filePath atomically:YES];
+   
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

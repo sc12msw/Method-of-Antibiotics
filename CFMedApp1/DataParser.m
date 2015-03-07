@@ -18,6 +18,7 @@
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tester" ofType:@"xml"];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
+    NSLog(@"%@",filePath);
     NSError *error;
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData
                                                            options:0 error:&error];
@@ -227,7 +228,7 @@
                     NSString *routeOfAdmin = childrenObj.name;
                     
                     //Inhaled is set by finding the node then setting the current index 0.admin and 1.dose to set the data to the object
-                    if ([routeOfAdmin isEqualToString:@"nebulised"]){
+                    if ([routeOfAdmin isEqualToString:@"inhaled"]){
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){

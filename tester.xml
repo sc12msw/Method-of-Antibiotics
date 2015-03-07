@@ -2,6 +2,10 @@
 <cfInfo>
     <drug>
         <adult>
+            <inhaled>
+                <administration>take tablet</administration>
+                <dose>10mg</dose>
+            </inhaled>
             <oral>
                 <administration>take tablet</administration>
                 <dose>10mg</dose>

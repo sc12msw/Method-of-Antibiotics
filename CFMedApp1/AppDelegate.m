@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DataParser.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,33 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // Change the url string to the site address.
-    // The following block GETS the xml file from the restful service.
-    NSString *url = @"http://192.168.0.12:8080/com.watson.jersey.cfmed/rest/cfmed";
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
-    NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    NSData *data = [[NSData alloc]init];
-    [self connection:urlConnection didReceiveData:data];
-    
+       
        // Override point for customization after application launch.
     return YES;
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString* fileAtPath = [filePath stringByAppendingPathComponent:@"xmlStorage.xml"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:fileAtPath]) {
-        [[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
-    }
 
-    
-    NSString *xmlStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", xmlStr);
-    NSData *data2 = [xmlStr dataUsingEncoding:NSUTF8StringEncoding];
-    [data2  writeToFile:fileAtPath atomically:NO];
-        
-    
-}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
