@@ -16,7 +16,7 @@
 
 +(NSMutableArray *)loadDrugData {
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tester" ofType:@"xml"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"storage" ofType:@"xml"];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     NSLog(@"%@",filePath);
     NSError *error;
@@ -24,7 +24,7 @@
                                                            options:0 error:&error];
     if (doc == nil) { return nil; }
     
-    NSLog(@"%@", doc.rootElement);
+   // NSLog(@"%@", doc.rootElement);
     
     Drug *drug = [[Drug alloc]init];
     NSString *temp = nil;

@@ -42,6 +42,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    //Shows the status code so if its 200 the connection was successful.
     NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
     NSLog(@"%ld",statusCode);
     
@@ -49,9 +50,11 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
+    
+    //Gets the incoming data loads it into a string and saves it to the file in the main bundle.
     NSString *xmlStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", xmlStr);
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tester" ofType:@"xml"];
+   // NSLog(@"%@", xmlStr);
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"storage" ofType:@"xml"];
     NSError *error;
     NSData *data2 = [xmlStr dataUsingEncoding:NSUTF8StringEncoding];
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:data2
