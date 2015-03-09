@@ -12,10 +12,10 @@
 
 
 -(id)init{
-    name = @"bacteria";
-    description = @"I am a bacteria.";
-    firstLine = [NSArray arrayWithObjects:@"antibiotic1", @"antibiotic2",@"antibiotic3", nil];
-    secondLine = [NSArray arrayWithObjects:@"antibiotic4", @"antibiotic5",@"antibiotic6", @"antibiotic7", @"antibiotic8",@"antibiotic9", @"antibiotic10", @"antibiotic11",@"antibiotic12",  nil];
+    name = [[NSString alloc]init];;
+    description =[[NSString alloc]init];
+    firstLine = [[NSArray alloc]init];
+    secondLine = [[NSArray alloc]init];
     return self;
 }
 -(NSString*)getName{
@@ -31,4 +31,19 @@
     return secondLine;
 }
 
+-(void)setDescription:(NSString*) set{
+    description = set;
+}
+-(void)setName:(NSString*) set{
+    name = set;
+    
+}
+-(void)setFirstLine: (NSArray*) set{
+    firstLine = set;
+    
+}
+-(void)setSecondLine:(NSArray*) set{
+    secondLine = set;
+
+}
 @end

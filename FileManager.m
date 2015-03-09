@@ -18,12 +18,12 @@
                                                          NSUserDomainMask, YES);
     NSString *docDirectory = [paths objectAtIndex:0];
     NSString *filePath = [docDirectory
-                               stringByAppendingPathComponent:@"storage.xml"];
+                               stringByAppendingPathComponent:@"cFInfo.xml"];
     if (forSave ||
         [[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         return filePath;
     } else {
-        return [[NSBundle mainBundle] pathForResource:@"storage" ofType:@"xml"];
+        return [[NSBundle mainBundle] pathForResource:@"cFInfo" ofType:@"xml"];
     }
 }
 

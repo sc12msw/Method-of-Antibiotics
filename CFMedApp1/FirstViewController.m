@@ -27,7 +27,6 @@
     
     drugs = [[NSMutableArray alloc]init];
     drugs  = [DataParser loadDrugData];
-    [self.drugTable reloadData];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
