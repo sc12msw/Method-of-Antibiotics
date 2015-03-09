@@ -23,7 +23,6 @@ public class RestLogic {
 		
 		//This fills the objects with data. At the moment there is no database so it just fills the object array with the same strings.
 		CFInfo cfInfo = new CFInfo();
-		PathogenInfo pathoInfo = new PathogenInfo();
 		DrugInfo drugInfo = new DrugInfo();
 		AdultInfo adultInfo = new AdultInfo();
 		PaediatricInfo paediatricInfo = new PaediatricInfo();
@@ -42,31 +41,12 @@ public class RestLogic {
 		drugInfo.setSideEffect("This is a side effect");
 		String[] brands = {"brand 1","brand 2"};
 		drugInfo.setBrandName(brands);
+		ArrayList<DrugInfo> array = new ArrayList<DrugInfo>();
+		array.add(drugInfo);
+		array.add(drugInfo);
+		array.add(drugInfo);
+		cfInfo.setDrug(array);
 		
-		pathoInfo.setName("Bacteria");
-		pathoInfo.setDescription("I am a bacteria");
-		String[] firstline = {"Drug 1", "Drug 2"};
-		String[] secondline= {"Drug 3", "Drug 4"};
-		pathoInfo.setFirstline(firstline);
-		pathoInfo.setSecondline(secondline);
-		
-		ArrayList<PathogenInfo> pathoArray = new ArrayList<PathogenInfo>();
-		pathoArray.add(pathoInfo);
-		pathoArray.add(pathoInfo);
-		pathoArray.add(pathoInfo);
-		pathoArray.add(pathoInfo);
-		ArrayList<DrugInfo> drugArray = new ArrayList<DrugInfo>();
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		cfInfo.setDrug(drugArray);
-		cfInfo.setPathogen(pathoArray);
 		return cfInfo;
 	}
 
