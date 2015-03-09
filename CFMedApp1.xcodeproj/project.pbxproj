@@ -20,6 +20,7 @@
 		9736A7251A8906E1005BCE62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9736A7241A8906E1005BCE62 /* Images.xcassets */; };
 		9736A7281A8906E1005BCE62 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9736A7261A8906E1005BCE62 /* LaunchScreen.xib */; };
 		9736A7341A8906E2005BCE62 /* CFMedApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A7331A8906E2005BCE62 /* CFMedApp1Tests.m */; };
+		974403701AADD37200F1C115 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9744036F1AADD37200F1C115 /* FileManager.m */; };
 		97AE70101A9B4E8F00C899F3 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AE700F1A9B4E8F00C899F3 /* GDataXMLNode.m */; };
 		97AE70131A9B576400C899F3 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AE70121A9B576400C899F3 /* DataParser.m */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,8 @@
 		9736A72D1A8906E2005BCE62 /* CFMedApp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CFMedApp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9736A7321A8906E2005BCE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9736A7331A8906E2005BCE62 /* CFMedApp1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFMedApp1Tests.m; sourceTree = "<group>"; };
+		9744036E1AADD37200F1C115 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileManager.h; path = ../FileManager.h; sourceTree = "<group>"; };
+		9744036F1AADD37200F1C115 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileManager.m; path = ../FileManager.m; sourceTree = "<group>"; };
 		97AE700E1A9B4E8F00C899F3 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		97AE700F1A9B4E8F00C899F3 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		97AE70111A9B576400C899F3 /* DataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 		9736A7131A8906E1005BCE62 /* CFMedApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				9744036E1AADD37200F1C115 /* FileManager.h */,
+				9744036F1AADD37200F1C115 /* FileManager.m */,
 				9736A7181A8906E1005BCE62 /* AppDelegate.h */,
 				9736A7191A8906E1005BCE62 /* AppDelegate.m */,
 				973248801A89289C003570AA /* DrugDetailVC.h */,
@@ -270,6 +275,7 @@
 				97AE70101A9B4E8F00C899F3 /* GDataXMLNode.m in Sources */,
 				9736A7171A8906E1005BCE62 /* main.m in Sources */,
 				9727C0AB1A8CCF7B00EEA769 /* Drug.m in Sources */,
+				974403701AADD37200F1C115 /* FileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "FileManager.h"
 @interface AppDelegate ()
 
 @end
@@ -18,14 +18,52 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-       
-       // Override point for customization after application launch.
+    // Change the url string to the site address.
+    // The following block GETS the xml file from the restful service.
+    NSString *url = @"http://192.168.0.12:8080/com.watson.jersey.cfmed/rest/cfmed";
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    NSMutableData *data = [[NSMutableData alloc]init];
+    [self connection:urlConnection didReceiveData:data];
+    // Override point for customization after application launch.
     return YES;
 }
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    //Shows the status code so if its 200 the connection was successful.
+    NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+    NSLog(@"%ld",statusCode);
+    
+}
 
-
-
-
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    
+    
+    //Gets the incoming data loads it into a string and saves it to the file in the main bundle.
+    NSString *xmlStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", xmlStr);
+    NSString *filePath = [FileManager dataFilePath:TRUE];
+    NSError *error;
+    NSData *data2 = [xmlStr dataUsingEncoding:NSUTF8StringEncoding];
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:data2
+                                                           options:0 error:&error];
+    data2 = doc.XMLData;
+    [data2 writeToFile:filePath atomically:YES];
+    
+}
+- (BOOL) isFirstRun
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"isFirstRun"])
+    {
+        return NO;
+    }
+    
+    [defaults setObject:[NSDate date] forKey:@"isFirstRun"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    return YES;
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

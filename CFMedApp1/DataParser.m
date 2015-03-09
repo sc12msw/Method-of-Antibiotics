@@ -9,6 +9,7 @@
 #import "DataParser.h"
 #import "GDataXMLNode.h"
 #import "Drug.h"
+#import "FileManager.h"
 @implementation DataParser
 
 
@@ -16,7 +17,8 @@
 
 +(NSMutableArray *)loadDrugData {
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"storage" ofType:@"xml"];
+    //NSString *filePath = [[NSBundle mainBundle] pathForResource:@"storage" ofType:@"xml"];
+    NSString *filePath = [FileManager dataFilePath:false];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     NSLog(@"%@",filePath);
     NSError *error;
