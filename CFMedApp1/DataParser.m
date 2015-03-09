@@ -17,7 +17,6 @@
 
 +(NSMutableArray *)loadDrugData {
     
-    //NSString *filePath = [[NSBundle mainBundle] pathForResource:@"storage" ofType:@"xml"];
     NSString *filePath = [FileManager dataFilePath:false];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     NSLog(@"%@",filePath);

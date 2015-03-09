@@ -42,7 +42,7 @@
     //Gets the incoming data loads it into a string and saves it to the file in the main bundle.
     NSString *xmlStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@", xmlStr);
-    NSString *filePath = [FileManager dataFilePath:TRUE];
+    NSString *filePath = [FileManager dataFilePath:true];
     NSError *error;
     NSData *data2 = [xmlStr dataUsingEncoding:NSUTF8StringEncoding];
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:data2
