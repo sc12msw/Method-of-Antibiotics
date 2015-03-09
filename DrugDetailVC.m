@@ -16,6 +16,7 @@
 @synthesize drug;
 @synthesize adminBarDisplay;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self fillFields];
@@ -40,7 +41,7 @@
     [title appendString:@" -Adult"];
     self.navigationItem.title = title;
     
-    self.adultSwitch.backgroundColor = [UIColor blackColor];
+    self.adultSwitch.backgroundColor = UIColorFromRGB(0xFF6600);
     self.adultSwitch.titleLabel.textColor = [UIColor whiteColor];
     self.paedSwitch.backgroundColor = [UIColor whiteColor];
     self.paedSwitch.titleLabel.textColor = [UIColor blueColor];
@@ -99,7 +100,7 @@
     [title appendString:@" -Paediatric"];
     self.navigationItem.title = title;
     
-    self.paedSwitch.backgroundColor = [UIColor blackColor];
+    self.paedSwitch.backgroundColor = UIColorFromRGB(0xFF6600);
     self.paedSwitch.titleLabel.textColor = [UIColor whiteColor];
     self.adultSwitch.backgroundColor = [UIColor whiteColor];
     self.adultSwitch.titleLabel.textColor = [UIColor blueColor];

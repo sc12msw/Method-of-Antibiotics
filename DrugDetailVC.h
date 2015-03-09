@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Drug.h"
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface DrugDetailVC : UIViewController
-
 @property (strong, nonatomic) Drug *drug;
 @property (strong, nonatomic) IBOutlet UIButton *adultSwitch;
 @property (strong, nonatomic) IBOutlet UIButton *paedSwitch;
