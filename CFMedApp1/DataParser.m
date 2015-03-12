@@ -9,6 +9,7 @@
 #import "DataParser.h"
 #import "GDataXMLNode.h"
 #import "Drug.h"
+#import "Pathogen.h"
 #import "FileManager.h"
 @implementation DataParser
 
@@ -19,13 +20,13 @@
     
     NSString *filePath = [FileManager dataFilePath:false];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSLog(@"%@",filePath);
+    
     NSError *error;
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData
                                                            options:0 error:&error];
     if (doc == nil) { return nil; }
     
-   // NSLog(@"%@", doc.rootElement);
+   
     
     Drug *drug = [[Drug alloc]init];
     NSString *temp = nil;
@@ -329,4 +330,71 @@
     
 }
 
+
++(NSMutableArray *)loadPathogenData {
+    
+    NSString *filePath = [FileManager dataFilePath:false];
+    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
+    NSError *error;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData
+                                                           options:0 error:&error];
+    if (doc == nil) { return nil; }
+    
+    
+    Pathogen *pathogen = [[Pathogen alloc]init];
+    NSString *temp = nil;
+    NSMutableArray *tempList = [[NSMutableArray alloc]init];
+    
+    NSMutableArray *pathogenObjects = [[NSMutableArray alloc]init];
+    
+    //String variables for doeses and administration.
+    
+    //Gets all the pathogens from the xml file
+    NSArray *pathogens = [doc.rootElement elementsForName:@"pathogen"];
+    for (GDataXMLElement *obj in pathogens){
+        NSArray *pathogenNames = [obj elementsForName:@"name"];
+        if (pathogens.count > 0) {
+            GDataXMLElement *pathogenXML = (GDataXMLElement *) [pathogenNames objectAtIndex:0];
+            temp = pathogenXML.stringValue;
+            [pathogen setName:temp];
+        }
+        
+        
+        //Gets the descriptions for the pathogens from the xml file
+        NSArray *descriptions =[obj elementsForName:@"description"];
+        if (descriptions.count >0){
+            GDataXMLElement *descriptionXML = (GDataXMLElement *) [descriptions objectAtIndex:0];
+            temp = descriptionXML.stringValue;
+            [pathogen setDescription:temp];
+        }
+        
+        //Gets the first line drugs from the xml file
+        NSArray *firstLineDrugs =[obj elementsForName:@"firstline"];
+        if (firstLineDrugs.count >0){
+            for (GDataXMLElement *fLObj in firstLineDrugs){
+                GDataXMLElement *firstLineDrugsXML = (GDataXMLElement *) fLObj;
+                temp = firstLineDrugsXML.stringValue;
+                [tempList addObject:temp];
+                
+            }
+            [pathogen setFirstLine:tempList];
+            tempList=[[NSMutableArray alloc]init];
+        }
+        
+        //Gets the second line drugs from the xml file
+        NSArray *secondLineDrugs =[obj elementsForName:@"secondline"];
+        if (secondLineDrugs.count >0){
+            for (GDataXMLElement *sLObj in secondLineDrugs){
+                GDataXMLElement *secondLineDrugsXML = (GDataXMLElement *) sLObj;
+                temp = secondLineDrugsXML.stringValue;
+                [tempList addObject:temp];
+                
+            }
+            [pathogen setSecondLine:tempList];
+            tempList=[[NSMutableArray alloc]init];
+        }
+     [pathogenObjects addObject:pathogen];
+    }
+    return pathogenObjects;
+}
 @end

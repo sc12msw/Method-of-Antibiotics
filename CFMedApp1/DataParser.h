@@ -14,5 +14,7 @@
 }
 
 + (NSMutableArray *)loadDrugData;
++ (NSMutableArray *)loadPathogenData;
+
 
 @end

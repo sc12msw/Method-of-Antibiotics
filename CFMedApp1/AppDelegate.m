@@ -32,7 +32,14 @@
 {
     //Shows the status code so if its 200 the connection was successful.
     NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-    NSLog(@"%ld",statusCode);
+    if (!statusCode == 200){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error"
+                                                        message:@"The server could not be contacted to get the update. Please check your internet connection and restart the app."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
 }
 
@@ -41,7 +48,6 @@
     
     //Gets the incoming data loads it into a string and saves it to the file in the main bundle.
     NSString *xmlStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", xmlStr);
     NSString *filePath = [FileManager dataFilePath:true];
     NSError *error;
     NSData *data2 = [xmlStr dataUsingEncoding:NSUTF8StringEncoding];

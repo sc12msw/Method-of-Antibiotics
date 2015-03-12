@@ -10,19 +10,24 @@
 #import "PathogenDetailVC.h"
 #import "Pathogen.h"
 
-@interface PathogenDetailVC ()
+@interface PathogenDetailVC (){
+    NSMutableArray *drugSelectionStorage;
+}
 @end
 
 @implementation PathogenDetailVC
 @synthesize pathogen, firstLinePicker;
-@synthesize picker1Data, picker2Data;
+@synthesize picker1Data;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = pathogen.getName;
     self.descriptionArea.text = pathogen.getDescription;
-    picker1Data = pathogen.getFirstLine;
-    picker2Data = pathogen.getSecondLine;
+    self.descriptionArea.textColor = [UIColor whiteColor];
+    drugSelectionStorage = [[NSMutableArray alloc]init];
+    picker1Data = [[NSMutableArray alloc]init];
+    [picker1Data addObjectsFromArray:pathogen.getFirstLine];
+    [picker1Data addObjectsFromArray:pathogen.getSecondLine];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,40 +40,37 @@
 //1
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 2;
+    return 1;
 }
 //2
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    if (component ==0){
+   
         
     return picker1Data.count;
-    }
-    else return picker2Data.count;
+    
+   
 }
 //3
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if (component ==0){
+    
     return [picker1Data objectAtIndex:row];
-    }
-    else return [picker2Data objectAtIndex:row];
+    
+  
 }
 
 - (IBAction)selectFL:(id)sender {
     NSInteger row;
-    NSString *drug;
+    NSString *drug,*textAreaStr;
     row = [firstLinePicker selectedRowInComponent:0];
     drug = [picker1Data objectAtIndex:row];
-    NSLog(@"%@",drug);    
+    [drugSelectionStorage addObject:drug];
+    textAreaStr = [drugSelectionStorage componentsJoinedByString:@"\n"];
+    self.drugSelection.text = textAreaStr;
+    
 }
-- (IBAction)selectSL:(id)sender {
-    NSInteger row;
-    NSString *drug;
-    row = [firstLinePicker selectedRowInComponent:0];
-    drug = [picker2Data objectAtIndex:row];
-    NSLog(@"%@",drug);
-}
+
 
 
 @end

@@ -9,8 +9,9 @@
 #import "SecondViewController.h"
 #import "PathogenDetailVC.h"
 #import "Pathogen.h"
+#import "DataParser.h"
 @interface SecondViewController (){
-NSArray *pathogenList;
+NSMutableArray *pathogens;
 }
 
 
@@ -21,8 +22,9 @@ NSArray *pathogenList;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Pathogen *pathogenObject = [[Pathogen alloc]init];;
-    pathogenList = [NSArray arrayWithObjects:pathogenObject,pathogenObject, nil];
+   
+    pathogens = [[NSMutableArray alloc]init];
+    pathogens = [DataParser loadPathogenData];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -35,7 +37,7 @@ NSArray *pathogenList;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [pathogenList count];
+    return [pathogens count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -54,7 +56,7 @@ NSArray *pathogenList;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    pathogenObject = [pathogenList objectAtIndex:indexPath.row];
+    pathogenObject = [pathogens objectAtIndex:indexPath.row];
     cell.textLabel.text = pathogenObject.getName;
     return cell;
 }
@@ -69,7 +71,7 @@ NSArray *pathogenList;
     if ([segue.identifier isEqualToString:@"PathogenSegue"]) {
         NSIndexPath *indexPath = [self.pathogenTable indexPathForSelectedRow];
         PathogenDetailVC *dvc = segue.destinationViewController;
-        dvc.pathogen = [pathogenList objectAtIndex:indexPath.row];
+        dvc.pathogen = [pathogens objectAtIndex:indexPath.row];
     }
 
 }
