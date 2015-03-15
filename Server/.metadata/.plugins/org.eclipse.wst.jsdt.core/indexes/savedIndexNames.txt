@@ -1,7 +1,0 @@
-INDEX VERSION 1.3+C:\Users\Alienware1\Documents\Project\Server\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1198641880.index
-493672828.index
-1941944530.index
-2801893108.index
-2276109211.index
-657969835.index
