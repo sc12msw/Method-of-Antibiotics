@@ -121,3 +121,4 @@
 127.0.0.1 - - [15/Mar/2015:18:07:55 +0000] "GET /com.watson.jersey.cfmed/rest/addDrug HTTP/1.1" 200 1210
 127.0.0.1 - - [15/Mar/2015:18:48:30 +0000] "GET /com.watson.jersey.cfmed/rest/addDrug HTTP/1.1" 200 1523
 127.0.0.1 - - [15/Mar/2015:18:49:34 +0000] "GET /com.watson.jersey.cfmed/rest/addDrug HTTP/1.1" 200 1523
+127.0.0.1 - - [15/Mar/2015:18:58:29 +0000] "GET / HTTP/1.1" 404 951
