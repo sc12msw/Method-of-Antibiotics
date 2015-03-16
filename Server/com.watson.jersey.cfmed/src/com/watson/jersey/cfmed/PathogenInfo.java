@@ -1,10 +1,12 @@
 package com.watson.jersey.cfmed;
 
+import java.util.ArrayList;
+
 public class PathogenInfo {
 private String name;
 private String description;
-private String[] firstline;
-private String[] secondline;
+private ArrayList<String> firstline;
+private ArrayList<String> secondline;
 public String getName() {
 	return name;
 }
@@ -17,17 +19,18 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
-public String[] getFirstline() {
+public ArrayList<String> getFirstline() {
 	return firstline;
 }
-public void setFirstline(String[] firstline) {
+public void setFirstline(ArrayList<String> firstline) {
 	this.firstline = firstline;
 }
-public String[] getSecondline() {
+public ArrayList<String> getSecondline() {
 	return secondline;
 }
-public void setSecondline(String[] secondline) {
+public void setSecondline(ArrayList<String> secondline) {
 	this.secondline = secondline;
 }
+
 
 }

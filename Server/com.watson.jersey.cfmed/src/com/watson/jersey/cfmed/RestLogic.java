@@ -47,26 +47,19 @@ public class RestLogic {
 		
 		pathoInfo.setName("Bacteria");
 		pathoInfo.setDescription("I am a bacteria");
-		String[] firstline = {"Drug 1", "Drug 2"};
-		String[] secondline= {"Drug 3", "Drug 4"};
-		pathoInfo.setFirstline(firstline);
-		pathoInfo.setSecondline(secondline);
+		ArrayList <String> firstline = new ArrayList <String>();
+		ArrayList <String> secondline = new ArrayList <String>();
+		String fLDrug = "im a first line drug";
+		String sLDrug = "im a first line drug";
+		firstline.add(fLDrug);
+		secondline.add(sLDrug);
 		
 		ArrayList<PathogenInfo> pathoArray = new ArrayList<PathogenInfo>();
 		pathoArray.add(pathoInfo);
-		pathoArray.add(pathoInfo);
-		pathoArray.add(pathoInfo);
-		pathoArray.add(pathoInfo);
+	
 		ArrayList<DrugInfo> drugArray = new ArrayList<DrugInfo>();
 		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
-		drugArray.add(drugInfo);
+	
 		cfInfo.setDrug(drugArray);
 		cfInfo.setPathogen(pathoArray);
 		return cfInfo;
@@ -78,7 +71,7 @@ public class RestLogic {
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	public File getXML() throws IOException {
 		File file = new File("cfInfo.xml");
-		/*
+		/* Uncomment to create a structured xml file of the objects
 		try{
 
 			JAXBContext jaxbContext = JAXBContext.newInstance(CFInfo.class);
@@ -130,7 +123,7 @@ public class RestLogic {
 		String row = "";
 		String title = "Cystic Fybrosis Information";
 		ArrayList <DrugInfo> array = cfInfo.getDrug();
-		for (int i=0 ; i < array.size()-1 ; i++){
+		for (int i=0 ; i < array.size() ; i++){
 		DrugInfo drugInfo = array.get(i);
 		AdultInfo adultInfo = drugInfo.getAdult();
 		AdminDose adultOral = adultInfo.getOral();
@@ -138,7 +131,8 @@ public class RestLogic {
 		AdminDose pOral = pInfo.getOral();
 		tempArray = drugInfo.getBrandName();
 		for (int j=0; j<tempArray.size(); j++){
-			tempString = tempString +" "+ tempArray.indexOf(j);
+			String temp2 = tempArray.get(j);
+			tempString = tempString +" "+ temp2;
 		}
 		//Puts all drugs into a table
 		row =row + "<tr> <td>"+drugInfo.getName()+"</td>"+"<td>"+tempString+"</td>"+"<td>"+drugInfo.getIndication()+"</td>"+"<td>"+adultOral.getAdministration()+"</td>"+"<td>"+adultOral.getDose()+"</td>"+"<td>"+pOral.getAdministration()+"</td>"+"<td>"+pOral.getDose()+"</td>"+"<td>"+drugInfo.getInteractions()+"</td>";
