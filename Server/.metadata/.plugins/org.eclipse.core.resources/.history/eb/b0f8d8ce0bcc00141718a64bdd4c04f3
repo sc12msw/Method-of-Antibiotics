@@ -70,7 +70,7 @@ public class RestLogic {
 	@GET
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	public File getXML() throws IOException {
-		File file = new File("templates/cfInfo.xml");
+		File file = new File("cfInfo.xml");
 		/* Uncomment to create a structured xml file of the objects
 		try{
 
@@ -96,11 +96,11 @@ public class RestLogic {
 		//Gets the template for the HTML.
 		String htmlString = null;
 		BufferedWriter out = null;
-		File file = new File("templates/template2.html");
+		File file = new File("template2.html");
 		 
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new FileReader("templates/template.html"));
+			br = new BufferedReader(new FileReader("template.html"));
 			  StringBuilder sb = new StringBuilder();
 		        String line = br.readLine();
 

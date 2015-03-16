@@ -69,7 +69,7 @@ public class RestAddDrug {
 	@GET
 	@Produces({MediaType.TEXT_HTML})
 	public File getHTML() throws IOException {
-		File file = new File("templates/adddrugform.html");
+		File file = new File("adddrugform.html");
 		return file;
 	}
 
@@ -240,7 +240,7 @@ public class RestAddDrug {
 		drugArray.add(newDrug);
 		cfInfo.setDrug(drugArray);
 		//Write to output xml
-		File file = new File("templates/cfInfo.xml");
+		File file = new File("cfInfo.xml");
 
 		try{
 

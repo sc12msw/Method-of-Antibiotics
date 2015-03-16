@@ -71,7 +71,7 @@ public class RestAddPathogen {
 	@GET
 	@Produces({MediaType.TEXT_HTML})
 	public File getHTML() throws IOException {
-		File file = new File("templates/addpathogenform.html");
+		File file = new File("addpathogenform.html");
 		return file;
 	}
 
@@ -188,7 +188,7 @@ public class RestAddPathogen {
 		pathogenArray.add(newPathogen);
 		cfInfo.setPathogen(pathogenArray);
 		//Write to output xml
-		File file = new File("templates/cfInfo.xml");
+		File file = new File("cfInfo.xml");
 
 		try{
 
