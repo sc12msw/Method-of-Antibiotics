@@ -121,3 +121,8 @@
 127.0.0.1 - - [16/Mar/2015:16:36:42 +0000] "GET /com.watson.jersey.cfmed/rest/addPathogen HTTP/1.1" 200 2021
 127.0.0.1 - - [16/Mar/2015:16:36:49 +0000] "POST /com.watson.jersey.cfmed/rest/addPathogen HTTP/1.1" 302 -
 127.0.0.1 - - [16/Mar/2015:16:36:49 +0000] "GET /com.watson.jersey.cfmed/rest/cfmed HTTP/1.1" 200 1442
+127.0.0.1 - - [16/Mar/2015:16:44:03 +0000] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [16/Mar/2015:16:44:03 +0000] "GET /com.watson.jersey.cfmed/WEB-INF/classes/com/watson/jersey/cfmed/RestAddPathogen.java HTTP/1.1" 404 949
+127.0.0.1 - - [16/Mar/2015:16:44:11 +0000] "GET /com.watson.jersey.cfmed/rest/addPathogen HTTP/1.1" 200 2021
+127.0.0.1 - - [16/Mar/2015:16:44:21 +0000] "POST /com.watson.jersey.cfmed/rest/addPathogen HTTP/1.1" 302 -
+127.0.0.1 - - [16/Mar/2015:16:44:21 +0000] "GET /com.watson.jersey.cfmed/rest/cfmed HTTP/1.1" 200 1409

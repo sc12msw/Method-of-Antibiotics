@@ -3,6 +3,8 @@
  <head>
   <title>Add a New Drugs</title>
   <script type="text/javascript">
+  
+
   function addField (argument) {
 	
         var brandTable = document.getElementById("brandTable");
@@ -20,12 +22,41 @@
 		}
 
     }
+	function checkBoxes (checkboxID,divID){
+	var divToChange = document.getElementById(divID);
+	var currentCheckbox = document.getElementById(checkboxID).checked;
+	
+	if ( currentCheckbox){
+	divToChange.style.display = 'block';
+	}
+	else {
+	divToChange.style.display = 'none';
+	}
+	}
   </script>
+  <style>
+  .disabled{
+  display:none;
+  }
+  #Adult{
+  float:left;
+  padding: 100px;
+  }
+  #Paediatric{
+  float:left;
+  padding: 100px;
+  }
+  #optionalDiv{
+  float:left;
+  width:100%;
+  }
+  </style>
  </head>
 <body>
+
   <form action="../rest/addDrug" method="POST">
   <label for="name">Name</label>
-  <input name="name" />
+  <input name="name" required/>
   <br/>
    <h2> Brand Names: </h2>
   <table id="brandTable">
@@ -36,22 +67,156 @@
 </table>
 <br/>
  <h2>SideEffects:</h2>
-  <textarea   NAME="sideEffects"></textarea>
+  <textarea   name="sideEffects"></textarea>
   <br/>
   <h2>Indication:</h2>
-  <textarea   NAME="indication"></textarea>
+  <textarea   name="indication" required></textarea>
   <br/>
   <h2>Interactions:</h2>
-  <textarea  NAME="interactions"></textarea>
+  <textarea  name="interactions"></textarea>
   <br/>
   <br/>
-  <h1> Adult</h1>
-  <h2> Oral </h2>
-  <h3> Administration <h3>
-  <textarea  NAME="oralAdmin"></textarea>
-  <br/>
-  <h3> Dose </h3>
-	<textarea  NAME="oralAdmin"></textarea>
+  <div id ="optionalDiv">
+  <div id ="Adult">
+	<h1> Adult</h1>
+	<input id="Ao" type="checkbox" name="AOral" value="Oral" onclick="checkBoxes(&quot;Ao&quot;,&quot;OralAdult&quot;);">Oral 
+    <input id="AiV" type="checkbox" name="AIV" value="IV" onclick="checkBoxes(&quot;AiV&quot;,&quot;IVAdult&quot;);">IV
+	<input id="AiN"type="checkbox" name="AInhaled" value="Inhaled" onclick="checkBoxes(&quot;AiN&quot;,&quot;InhaledAdult&quot;);">Inhaled 
+    <input id="AiM"type="checkbox" name="AIM" value="IM" onclick="checkBoxes(&quot;AiM&quot;,&quot;IMAdult&quot;);">IM
+	<input id="ApR" type="checkbox" name="APR" value="PR" onclick="checkBoxes(&quot;ApR&quot;,&quot;PRAdult&quot;);">PR 
+    <input id="AsC" type="checkbox" name="ASC" value="SC" onclick="checkBoxes(&quot;AsC&quot;,&quot;SCAdult&quot;);">SC
+	
+<div id="OralAdult" class="disabled">	
+	<h2> Oral </h2>
+	<h3> Administration </h3>
+	<textarea  name="oralAdultAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="oralAdultDose"></textarea>
+	<br/>
+</div>
+
+<div id="IVAdult" class="disabled">
+	<h2> IV </h2>
+	<h3> Administration </h3>
+	<textarea  name="iVAdultAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="iVAdultDose"></textarea>
+	<br/>
+</div>
+
+<div id="InhaledAdult" class="disabled">
+	<h2> Inhaled </h2>
+	<h3> Administration </h3>
+	<textarea  name="inhaledAdultAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="inhaledAdultDose"></textarea>
+	<br/>
+</div>	
+
+<div id="IMAdult" class="disabled">
+	<h2> IM </h2>
+	<h3> Administration </h3>
+	<textarea  name="iMAdultAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="iMAdultDose"></textarea>
+	<br/>
+</div>
+	
+<div id ="PRAdult" class="disabled">	
+	<h2> PR </h2>
+	<h3> Administration </h3>
+	<textarea  name="pRAdultAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="pRAdultDose"></textarea>
+	<br/>
+</div>
+	
+<div id="SCAdult" class="disabled">	
+	<h2> SC </h2>
+	<h3> Administration </h3>
+	<textarea  name="sCAdultAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="sCAdultDose"></textarea>
+	<br/>
+	</div>
+ </div>
+  <div id ="Paediatric"/>
+	<h1> Paediatric</h1>
+	<input id="Po" type="checkbox" name="POral" value="Oral" onclick="checkBoxes(&quot;Po&quot;,&quot;OralPaed&quot;);">Oral 
+    <input id="PiV" type="checkbox" name="PIV" value="IV" onclick="checkBoxes(&quot;PiV&quot;,&quot;IVPaed&quot;);">IV
+	<input id="PiN" type="checkbox" name="PInhaled" value="Inhaled" onclick="checkBoxes(&quot;PiN&quot;,&quot;InhaledPaed&quot;);">Inhaled 
+    <input id="PiM" type="checkbox" name="PIM" value="IM" onclick="checkBoxes(&quot;PiM&quot;,&quot;IMPaed&quot;);">IM
+	<input id="PpR" type="checkbox" name="PPR" value="PR" onclick="checkBoxes(&quot;PpR&quot;,&quot;PRPaed&quot;);">PR 
+    <input id="PsC" type="checkbox" name="PSC" value="SC" onclick="checkBoxes(&quot;PsC&quot;,&quot;SCPaed&quot;);">SC
+	
+	<div id="OralPaed" class="disabled">
+	<h2> Oral </h2>
+	<h3> Administration </h3>
+	<textarea  name="oralPaedAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="oralPaedDose"></textarea>
+	<br/>
+	</div>
+	
+	<div id="IVPaed" class="disabled">
+	<h2> IV </h2>
+	<h3> Administration </h3>
+	<textarea  name="iVPaedAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="iVPaedDose"></textarea>
+	<br/>
+	</div>
+	
+	<div id="InhaledPaed" class="disabled">
+	<h2> Inhaled </h2>
+	<h3> Administration </h3>
+	<textarea  name="inhaledPaedAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="inhaledPaedDose"></textarea>
+	<br/>
+	</div>
+	
+	<div id="IMPaed" class="disabled">
+	<h2> IM </h2>
+	<h3> Administration </h3>
+	<textarea  name="iMPaedAdmin"></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="iMPaedDose"></textarea>
+	<br/>
+	</div>
+	
+	<div id="PRPaed" class="disabled">
+	<h2> PR </h2>
+	<h3> Administration </h3>
+	<textarea id="pRPaedAdminTA"  name="pRPaedAdmin" ></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="pRPaedDose" ></textarea>
+	<br/>
+	</div>
+	
+	<div id="SCPaed" class="disabled">
+	<h2> SC </h2>
+	<h3> Administration </h3>
+	<textarea  name="sCPaedAdmin" ></textarea>
+	<br/>
+	<h3> Dose </h3>
+	<textarea  name="sCPaedDose" ></textarea>
+	<br/>
+	</div>
+	
+ </div>
+ </div>
   <input type="submit" value="Submit" />
   </form>
 </body>

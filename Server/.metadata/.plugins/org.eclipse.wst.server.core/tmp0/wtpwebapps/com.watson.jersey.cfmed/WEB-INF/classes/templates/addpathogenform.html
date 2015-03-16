@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Add a New Drugs</title>
+   <script type="text/javascript">
+  
+
+  function addField (argument) {
+	if (argument == "FL" ){
+        var fLTableTable = document.getElementById("fLTable");
+        var currentIndex = fLTable.rows.length;
+        var currentRow = fLTable.insertRow(-1);
+	if (currentIndex <10){
+        var fLBox = document.createElement("input");
+	
+        fLBox.setAttribute("name", "fLDrug" + currentIndex,"required");
+		
+        var currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(fLBox);
+		}else{
+		window.alert("Only 10 first line drugs can be added.");
+		}
+
+    }
+	if (argument == "SL" ){
+        var sLTableTable = document.getElementById("sLTable");
+        var currentIndex = sLTable.rows.length;
+        var currentRow = sLTable.insertRow(-1);
+	if (currentIndex <10){
+        var sLBox = document.createElement("input");
+	
+        sLBox.setAttribute("name", "sLDrug" + currentIndex, "required");
+		
+        var currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(sLBox);
+		}else{
+		window.alert("Only 10 second line drugs can be added.");
+		}
+
+    }
+	}
+	</script>
+  </head>
+<form action="../rest/addPathogen" method="POST">
+  <label for="name">Name</label>
+  <input name="name" required/>
+ 
+  <br/>
+  Description
+  <textarea   name="description" required></textarea>
+  <br/>
+    <h2> First Line Drugs: </h2>
+  <table id="fLTable">
+    <tr>
+        <td><input type="text" name="fLDrug" required></td>
+        <td><input type="button" class="button" value="Add another" onclick="addField(&quot;FL&quot;);" ></td>
+    </tr>
+</table>
+<br/>
+    <h2> Second Line Drugs: </h2>
+  <table id="sLTable">
+    <tr>
+        <td><input type="text" name="sLDrug"></td>
+        <td><input type="button" class="button" value="Add another" onclick="addField(&quot;SL&quot;);" ></td>
+    </tr>
+</table>
+<br/>
+ <input type="submit" value="Submit" />
+ </form>
+ </html>
