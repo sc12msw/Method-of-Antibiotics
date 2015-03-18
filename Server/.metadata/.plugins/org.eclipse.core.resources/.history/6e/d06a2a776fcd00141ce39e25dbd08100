@@ -135,7 +135,7 @@ public class RestLogic {
 			tempString = tempString +" "+ temp2;
 		}
 		//Puts all drugs into a table
-		row =row + "<tr> <td>"+drugInfo.getName()+"</td>"+"<td>"+tempString+"</td>"+"<td>"+drugInfo.getIndication()+"</td>"+"<td>"+adultOral.getAdministration()+"</td>"+"<td>"+adultOral.getDose()+"</td>"+"<td>"+pOral.getAdministration()+"</td>"+"<td>"+pOral.getDose()+"</td>"+"<td>"+drugInfo.getInteractions()+"</td></tr>";
+		row =row + "<tr> <td>"+drugInfo.getName()+"</td>"+"<td>"+tempString+"</td>"+"<td>"+drugInfo.getIndication()+"</td>"+"<td>"+adultOral.getAdministration()+"</td>"+"<td>"+adultOral.getDose()+"</td>"+"<td>"+pOral.getAdministration()+"</td>"+"<td>"+pOral.getDose()+"</td>"+"<td>"+drugInfo.getInteractions()+"</td>";
 		tempString = "";
 		}
 		htmlString = htmlString.replace("$title", title);

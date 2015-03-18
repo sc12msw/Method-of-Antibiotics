@@ -1,223 +1,290 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <title>Add a New Drugs</title>
-  <script type="text/javascript">
-  
+<head>
+    <title>Add a New Drugs</title>
+    <meta charset="utf-8">
 
-  function addField (argument) {
-	
+    <title>Small Business - Start Bootstrap Template</title><!-- Bootstrap Core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
+
+
+    function addField (argument) {
+
         var brandTable = document.getElementById("brandTable");
         var currentIndex = brandTable.rows.length;
         var currentRow = brandTable.insertRow(-1);
-	if (currentIndex <5){
+    if (currentIndex <5){
         var brandBox = document.createElement("input");
-	
+
         brandBox.setAttribute("name", "brand" + currentIndex);
-		
+        
         var currentCell = currentRow.insertCell(-1);
         currentCell.appendChild(brandBox);
-		}else{
-		window.alert("Only 5 brand names can be added.");
-		}
+        }else{
+        window.alert("Only 5 brand names can be added.");
+        }
 
     }
-	function checkBoxes (checkboxID,divID){
-	var divToChange = document.getElementById(divID);
-	var currentCheckbox = document.getElementById(checkboxID).checked;
-	
-	if ( currentCheckbox){
-	divToChange.style.display = 'block';
-	}
-	else {
-	divToChange.style.display = 'none';
-	}
-	}
-  </script>
-  <style>
-  .disabled{
-  display:none;
-  }
-  #Adult{
-  float:left;
-  padding: 100px;
-  }
-  #Paediatric{
-  float:left;
-  padding: 100px;
-  }
-  #optionalDiv{
-  float:left;
-  width:100%;
-  }
-  </style>
- </head>
+    function checkBoxes (checkboxID,divID){
+    var divToChange = document.getElementById(divID);
+    var currentCheckbox = document.getElementById(checkboxID).checked;
+
+    if ( currentCheckbox){
+    divToChange.style.display = 'block';
+    }
+    else {
+    divToChange.style.display = 'none';
+    }
+    }
+    </script>
+    <style>
+.disabled{
+    display:none;
+    }
+    #Adult{
+    float:left;
+    padding: 75px;
+    }
+    #Paediatric{
+    float:left;
+    padding: 75px;
+    }
+    #optionalDiv{
+    float:left;
+    width:100%;
+    }
+    </style>
+</head>
+
 <body>
+    <!-- Navigation -->
 
-  <form action="../rest/addDrug" method="POST">
-  <label for="name">Name</label>
-  <input name="name" required/>
-  <br/>
-   <h2> Brand Names: </h2>
-  <table id="brandTable">
-    <tr>
-        <td><input type="text" name="brand"></td>
-        <td><input type="button" class="button" value="Add another" onclick="addField();"></td>
-    </tr>
-</table>
-<br/>
- <h2>SideEffects:</h2>
-  <textarea   name="sideEffects"></textarea>
-  <br/>
-  <h2>Indication:</h2>
-  <textarea   name="indication" required></textarea>
-  <br/>
-  <h2>Interactions:</h2>
-  <textarea  name="interactions"></textarea>
-  <br/>
-  <br/>
-  <div id ="optionalDiv">
-  <div id ="Adult">
-	<h1> Adult</h1>
-	<input id="Ao" type="checkbox" name="AOral" value="Oral" onclick="checkBoxes(&quot;Ao&quot;,&quot;OralAdult&quot;);">Oral 
-    <input id="AiV" type="checkbox" name="AIV" value="IV" onclick="checkBoxes(&quot;AiV&quot;,&quot;IVAdult&quot;);">IV
-	<input id="AiN"type="checkbox" name="AInhaled" value="Inhaled" onclick="checkBoxes(&quot;AiN&quot;,&quot;InhaledAdult&quot;);">Inhaled 
-    <input id="AiM"type="checkbox" name="AIM" value="IM" onclick="checkBoxes(&quot;AiM&quot;,&quot;IMAdult&quot;);">IM
-	<input id="ApR" type="checkbox" name="APR" value="PR" onclick="checkBoxes(&quot;ApR&quot;,&quot;PRAdult&quot;);">PR 
-    <input id="AsC" type="checkbox" name="ASC" value="SC" onclick="checkBoxes(&quot;AsC&quot;,&quot;SCAdult&quot;);">SC
-	
-<div id="OralAdult" class="disabled">	
-	<h2> Oral </h2>
-	<h3> Administration </h3>
-	<textarea  name="oralAdultAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="oralAdultDose"></textarea>
-	<br/>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+				<li>
+                        <a href="../com.watson.jersey.cfmed">Home</a>
+                    </li>
+                    <li>
+                        <a href="../com.watson.jersey.cfmed/cfmed/html">View Drugs</a>
+                    </li>
+
+                    <li>
+                        <a href="../com.watson.jersey.cfmed/addDrug">Add Drug</a>
+                    </li>
+
+                    <li>
+                        <a href="../com.watson.jersey.cfmed/addPathogen">Add Pathogen</a>
+                    </li>
+					
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="../addDrug" method="post">
+            <div class="form-group">
+                <h2>Name</h2><input name="name" required>
+                <hr>
+
+                <h2>Brand Names:</h2>
+
+                <table id="brandTable">
+                    <tr>
+                        <td><input name="brand" type="text"></td>
+
+                        <td><input class="button" onclick="addField();" type="button" value="Add another"></td>
+                    </tr>
+                </table>
+                <hr>
+
+                <h2>SideEffects:</h2>
+                <textarea cols="50" name="sideEffects" rows="4"></textarea>
+                <hr>
+
+                <h2>Indication:</h2>
+                <textarea cols="50" name="indication" required rows="4"></textarea>
+                <hr>
+
+                <h2>Interactions:</h2>
+                <textarea cols="50" name="interactions" rows="4"></textarea>
+                <hr>
+            </div>
+
+            <div id="optionalDiv">
+			
+                <div id="Adult">
+                    <h1>Adult</h1>
+					<input id="AOral" name="AOral" onclick="checkBoxes(&quot;AOral&quot;,&quot;OralAdult&quot;);" type="checkbox" value="Oral">
+					<label for="AOral">Oral</label>
+					<input id="AiV" name="AIV" onclick="checkBoxes(&quot;AiV&quot;,&quot;IVAdult&quot;);" type="checkbox" value="IV">
+					<label for="AIV">IV</label>
+					<input id="AiN" name="AInhaled" onclick="checkBoxes(&quot;AiN&quot;,&quot;InhaledAdult&quot;);"type="checkbox" value="Inhaled">
+					<label for="AInhaled">Inhaled</label> 
+					<input id="AiM" name="AIM" onclick="checkBoxes(&quot;AiM&quot;,&quot;IMAdult&quot;);" type="checkbox" value="IM">
+					<label for="AIM">IM</label>
+					<input id="ApR" name="APR" onclick="checkBoxes(&quot;ApR&quot;,&quot;PRAdult&quot;);" type="checkbox" value="PR">
+					<label for="APR">PR</label> 
+					<input id="AsC" name="ASC" onclick="checkBoxes(&quot;AsC&quot;,&quot;SCAdult&quot;);" type="checkbox" value="SC">
+					<label for="ASC">SC</label>
+
+                    <div class="disabled" id="OralAdult">
+                        <h2>Oral</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="oralAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="oralAdultDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="IVAdult">
+                        <h2>IV</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="iVAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="iVAdultDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="InhaledAdult">
+                        <h2>Inhaled</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="inhaledAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="inhaledAdultDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="IMAdult">
+                        <h2>IM</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="iMAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="iMAdultDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="PRAdult">
+                        <h2>PR</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="pRAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="pRAdultDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="SCAdult">
+                        <h2>SC</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="sCAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="sCAdultDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+                </div>
+
+                <div id="Paediatric">
+                    <h1>Paediatric</h1>
+					<input id="Po" name="POral" onclick="checkBoxes(&quot;Po&quot;,&quot;OralPaed&quot;);" type="checkbox" value="Oral">
+					<label for="POral">Oral</label>
+					<input id="PiV" name="PIV" onclick="checkBoxes(&quot;PiV&quot;,&quot;IVPaed&quot;);" type="checkbox" value="IV">
+					<label for="PIV">IV</label>
+					<input id="PiN" name="PInhaled" onclick="checkBoxes(&quot;PiN&quot;,&quot;InhaledPaed&quot;);" type="checkbox" value="Inhaled">
+					<label for="PInhaled">Inhaled</label>
+					<input id="PiM" name="PIM" onclick="checkBoxes(&quot;PiM&quot;,&quot;IMPaed&quot;);" type="checkbox" value="IM">
+					<label for="PIM">IM</label> 
+					<input id="PpR" name="PPR" onclick="checkBoxes(&quot;PpR&quot;,&quot;PRPaed&quot;);" type="checkbox" value="PR">
+					<label for="PPR">PR</label>
+					<input id="PsC" name="PSC" onclick="checkBoxes(&quot;PsC&quot;,&quot;SCPaed&quot;);" type="checkbox" value="SC">
+					<label for="PSC">SC</label>
+
+                    <div class="disabled" id="OralPaed">
+                        <h2>Oral</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="oralPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="oralPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="IVPaed">
+                        <h2>IV</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="iVPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="iVPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="InhaledPaed">
+                        <h2>Inhaled</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="inhaledPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="inhaledPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="IMPaed">
+                        <h2>IM</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="iMPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="iMPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="PRPaed">
+                        <h2>PR</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" id="pRPaedAdminTA" name="pRPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="pRPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+
+                    <div class="disabled" id="SCPaed">
+                        <h2>SC</h2>
+
+                        <h3>Administration</h3>
+                        <textarea cols="50" name="sCPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea cols="50" name="sCPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+			<input class="btn btn-primary" type="submit" value="Submit">       
+	   </form>
+    </div>
 </div>
 
-<div id="IVAdult" class="disabled">
-	<h2> IV </h2>
-	<h3> Administration </h3>
-	<textarea  name="iVAdultAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="iVAdultDose"></textarea>
-	<br/>
-</div>
-
-<div id="InhaledAdult" class="disabled">
-	<h2> Inhaled </h2>
-	<h3> Administration </h3>
-	<textarea  name="inhaledAdultAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="inhaledAdultDose"></textarea>
-	<br/>
-</div>	
-
-<div id="IMAdult" class="disabled">
-	<h2> IM </h2>
-	<h3> Administration </h3>
-	<textarea  name="iMAdultAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="iMAdultDose"></textarea>
-	<br/>
-</div>
-	
-<div id ="PRAdult" class="disabled">	
-	<h2> PR </h2>
-	<h3> Administration </h3>
-	<textarea  name="pRAdultAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="pRAdultDose"></textarea>
-	<br/>
-</div>
-	
-<div id="SCAdult" class="disabled">	
-	<h2> SC </h2>
-	<h3> Administration </h3>
-	<textarea  name="sCAdultAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="sCAdultDose"></textarea>
-	<br/>
-	</div>
- </div>
-  <div id ="Paediatric"/>
-	<h1> Paediatric</h1>
-	<input id="Po" type="checkbox" name="POral" value="Oral" onclick="checkBoxes(&quot;Po&quot;,&quot;OralPaed&quot;);">Oral 
-    <input id="PiV" type="checkbox" name="PIV" value="IV" onclick="checkBoxes(&quot;PiV&quot;,&quot;IVPaed&quot;);">IV
-	<input id="PiN" type="checkbox" name="PInhaled" value="Inhaled" onclick="checkBoxes(&quot;PiN&quot;,&quot;InhaledPaed&quot;);">Inhaled 
-    <input id="PiM" type="checkbox" name="PIM" value="IM" onclick="checkBoxes(&quot;PiM&quot;,&quot;IMPaed&quot;);">IM
-	<input id="PpR" type="checkbox" name="PPR" value="PR" onclick="checkBoxes(&quot;PpR&quot;,&quot;PRPaed&quot;);">PR 
-    <input id="PsC" type="checkbox" name="PSC" value="SC" onclick="checkBoxes(&quot;PsC&quot;,&quot;SCPaed&quot;);">SC
-	
-	<div id="OralPaed" class="disabled">
-	<h2> Oral </h2>
-	<h3> Administration </h3>
-	<textarea  name="oralPaedAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="oralPaedDose"></textarea>
-	<br/>
-	</div>
-	
-	<div id="IVPaed" class="disabled">
-	<h2> IV </h2>
-	<h3> Administration </h3>
-	<textarea  name="iVPaedAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="iVPaedDose"></textarea>
-	<br/>
-	</div>
-	
-	<div id="InhaledPaed" class="disabled">
-	<h2> Inhaled </h2>
-	<h3> Administration </h3>
-	<textarea  name="inhaledPaedAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="inhaledPaedDose"></textarea>
-	<br/>
-	</div>
-	
-	<div id="IMPaed" class="disabled">
-	<h2> IM </h2>
-	<h3> Administration </h3>
-	<textarea  name="iMPaedAdmin"></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="iMPaedDose"></textarea>
-	<br/>
-	</div>
-	
-	<div id="PRPaed" class="disabled">
-	<h2> PR </h2>
-	<h3> Administration </h3>
-	<textarea id="pRPaedAdminTA"  name="pRPaedAdmin" ></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="pRPaedDose" ></textarea>
-	<br/>
-	</div>
-	
-	<div id="SCPaed" class="disabled">
-	<h2> SC </h2>
-	<h3> Administration </h3>
-	<textarea  name="sCPaedAdmin" ></textarea>
-	<br/>
-	<h3> Dose </h3>
-	<textarea  name="sCPaedDose" ></textarea>
-	<br/>
-	</div>
-	
- </div>
- </div>
-  <input type="submit" value="Submit" />
-  </form>
+     
 </body>
-</html> 
+</html>

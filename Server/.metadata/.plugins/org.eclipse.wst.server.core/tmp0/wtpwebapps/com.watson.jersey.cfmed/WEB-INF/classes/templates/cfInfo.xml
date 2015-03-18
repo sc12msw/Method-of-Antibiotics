@@ -28,16 +28,28 @@
         </paediatric>
         <sideEffect>This is a side effect</sideEffect>
     </drug>
+    <drug>
+        <adult>
+            <oral>
+                <administration>This drug has oral</administration>
+                <dose>10mg</dose>
+            </oral>
+        </adult>
+        <brandName>Test Brand for new drug</brandName>
+        <brandName>brand 2</brandName>
+        <indication>indication of new drug</indication>
+        <interactions>interation of new drug</interactions>
+        <name>Added New Drug</name>
+        <paediatric>
+            <inhaled>
+                <administration>This drug can only be inhaled for paediatric</administration>
+                <dose>5mg</dose>
+            </inhaled>
+        </paediatric>
+        <sideEffect>side effects for new drug</sideEffect>
+    </drug>
     <pathogen>
         <description>I am a bacteria</description>
-        <firstline>im a first line drug</firstline>
         <name>Bacteria</name>
-        <secondline>im a first line drug</secondline>
-    </pathogen>
-    <pathogen>
-        <description>gaga</description>
-        <firstline>asfaga</firstline>
-        <name>asgag</name>
-        <secondline>asgag</secondline>
     </pathogen>
 </cfInfo>
