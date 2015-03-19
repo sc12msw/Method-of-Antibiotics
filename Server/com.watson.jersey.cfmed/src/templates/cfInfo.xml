@@ -35,9 +35,9 @@
         <secondline>im a first line drug</secondline>
     </pathogen>
     <pathogen>
-        <description>gaga</description>
-        <firstline>asfaga</firstline>
-        <name>asgag</name>
-        <secondline>asgag</secondline>
+        <description>pathogen decription for test</description>
+        <firstline>drug for pathogen test</firstline>
+        <firstline>second drug for pathogen test</firstline>
+        <name>pathogen test</name>
     </pathogen>
 </cfInfo>
