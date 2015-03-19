@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a New Drugs</title>
+    <meta charset="utf-8">
+
+    <title>Small Business - Start Bootstrap Template</title><!-- Bootstrap Core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
+
+
+    function addField (argument) {
+    if (argument == "FL" ){
+        var fLTableTable = document.getElementById("fLTable");
+        var currentIndex = fLTable.rows.length;
+        var currentRow = fLTable.insertRow(-1);
+    if (currentIndex <10){
+        var fLBox = document.createElement("input");
+
+        fLBox.setAttribute("name", "fLDrug" + currentIndex,"required");
+        
+        var currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(fLBox);
+        }else{
+        window.alert("Only 10 first line drugs can be added.");
+        }
+
+    }
+    if (argument == "SL" ){
+        var sLTableTable = document.getElementById("sLTable");
+        var currentIndex = sLTable.rows.length;
+        var currentRow = sLTable.insertRow(-1);
+    if (currentIndex <10){
+        var sLBox = document.createElement("input");
+
+        sLBox.setAttribute("name", "sLDrug" + currentIndex, "required");
+        
+        var currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(sLBox);
+        }else{
+        window.alert("Only 10 second line drugs can be added.");
+        }
+
+    }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../com.watson.jersey.cfmed/">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="../com.watson.jersey.cfmed/cfmed/html">View Drugs</a>
+                    </li>
+
+                    <li>
+                        <a href="../com.watson.jersey.cfmed/addDrug">Add Drug</a>
+                    </li>
+
+                    <li>
+                        <a href="../com.watson.jersey.cfmed/addPathogen">Add Pathogen</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="../addPathogen" method="post">
+            <div class="form-group">
+                <h2>Name</h2><input name="name" required>
+                <hr>
+
+                <h2>Description</h2>
+                <textarea cols="50" name="description" required rows="4">
+</textarea>
+                <hr>
+
+                <h2>First Line Drugs:</h2>
+
+                <table id="fLTable">
+                    <tr>
+                        <td><input name="fLDrug" required type="text"></td>
+
+                        <td><input class="button" onclick="addField(&quot;FL&quot;);" type="button" value="Add another"></td>
+                    </tr>
+                </table>
+                <hr>
+
+                <h2>Second Line Drugs:</h2>
+
+                <table id="sLTable">
+                    <tr>
+                        <td><input name="sLDrug" type="text" ></td>
+
+                        <td><input class="button" onclick="addField(&quot;SL&quot;);" type="button" value="Add another"></td>
+                    </tr>
+                </table>
+                <hr>
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,10 +1,13 @@
 package com.watson.jersey.cfmed;
+
+import java.util.ArrayList;
+
 // Xml Element classes.
 public class DrugInfo {
 	 private AdultInfo ad;
 	 private PaediatricInfo pae;
 	 private String name;
-	 private String[] brandName;
+	 private ArrayList <String> brandName;
 	 private String indication;
 	 private String sideEffect;
 	 private String interactions;
@@ -41,11 +44,11 @@ public class DrugInfo {
 	        this.pae = pae;
 	    }
 
-		public String[] getBrandName() {
+		public ArrayList <String> getBrandName() {
 			return brandName;
 		}
 
-		public void setBrandName(String[] brandName) {
+		public void setBrandName(ArrayList <String> brandName) {
 			this.brandName = brandName;
 		}
 

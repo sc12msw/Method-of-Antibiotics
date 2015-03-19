@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2015-01-12" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.7" locale="en_GB">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2015-01-19" view-index="0" gantt-divider-location="694" resource-divider-location="300" version="2.7" locale="en_GB">
     <description/>
-    <view zooming-state="default:7" id="gantt-chart">
-        <field id="tpd3" name="Name" width="53" order="0"/>
-        <field id="tpd4" name="Begin date" width="24" order="1"/>
-        <field id="tpd5" name="End date" width="21" order="2"/>
-        <option id="color.recent"><![CDATA[#ff0033 #ffff00 #ff0000 #ffff00 #ffff00 #ffff00 #ffff00 #ffff00 #33cc00 #ff0000]]></option>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Name" width="59" order="0"/>
+        <field id="tpd4" name="Begin date" width="20" order="1"/>
+        <field id="tpd5" name="End date" width="20" order="2"/>
+        <option id="taskLabelUp" value="length"/>
+        <option id="taskLabelDown" value="taskDates"/>
+        <option id="taskLabelRight" value="name"/>
+        <option id="color.recent"><![CDATA[#ff6600 #ffff33 #33ff00 #99ff00 #33ff00 #33ff00 #ff0033 #ffff00 #ff0000 #ffff00]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="50" order="0"/>
@@ -15,8 +18,8 @@
         <day-types>
             <day-type id="0"/>
             <day-type id="1"/>
-            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
-            <only-show-weekends value="false"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="true"/>
             <overriden-day-types/>
             <days/>
         </day-types>
@@ -36,25 +39,21 @@
         </taskproperties>
         <task id="0" name="Backgroud reading and requirements gathering" meeting="false" start="2015-01-26" duration="6" complete="0" expand="true"/>
         <task id="1" name="Planning and scoping document" color="#8cb6ce" meeting="false" start="2015-02-03" duration="5" complete="0" expand="true"/>
-        <task id="7" name="Meeting with supervisor" color="#33cc00" meeting="false" start="2015-02-03" duration="1" complete="0" expand="true"/>
-        <task id="41" name="Library Lecture" color="#ffff00" meeting="false" start="2015-02-03" duration="1" complete="0" expand="true"/>
-        <task id="43" name="Nick Lecture" color="#ffff00" meeting="false" start="2015-02-05" duration="1" complete="0" expand="true"/>
         <task id="3" name="Deadline for planning and scoping" color="#ff0000" meeting="false" start="2015-02-09" duration="1" complete="0" priority="2" expand="true"/>
-        <task id="5" name="First iteration IOS" color="#8cb6ce" meeting="false" start="2015-02-10" duration="10" complete="0" expand="true"/>
-        <task id="46" name="Ethics Lecture" color="#ffff00" meeting="false" start="2015-02-19" duration="1" complete="0" expand="true"/>
-        <task id="8" name="Test/'Evaluate polish with supervisor/client" color="#8cb6ce" meeting="false" start="2015-02-24" duration="5" complete="0" expand="true"/>
-        <task id="47" name="Ethics Lecture 2" color="#ffff00" meeting="false" start="2015-02-26" duration="1" complete="0" expand="true"/>
-        <task id="10" name="Seond iteration Server and app imlementation" color="#8cb6ce" meeting="false" start="2015-03-03" duration="10" complete="0" expand="true"/>
-        <task id="49" name="Ethics Lecture 3" color="#ffff00" meeting="false" start="2015-03-05" duration="1" complete="0" expand="true"/>
+        <task id="5" name="First iteration IOS prototype" color="#8cb6ce" meeting="false" start="2015-02-10" duration="14" complete="0" expand="true"/>
+        <task id="8" name="MILESTONE 1 Review progress with client" color="#33ff00" meeting="false" start="2015-02-24" duration="1" complete="0" expand="true"/>
+        <task id="10" name="Seond iteration server and app imlementation" color="#8cb6ce" meeting="false" start="2015-02-25" duration="14" complete="0" expand="true"/>
+        <task id="67" name="MILESTONE 2 Review progress with client" color="#33ff00" meeting="false" start="2015-03-10" duration="1" complete="0" priority="4" expand="true"/>
         <task id="51" name="Progress Deadline" color="#ff0000" meeting="false" start="2015-03-13" duration="1" complete="0" expand="true"/>
-        <task id="12" name="Test/evaluate and polish server app with supervisor/client" color="#8cb6ce" meeting="false" start="2015-03-17" duration="5" complete="0" expand="true"/>
-        <task id="53" name="Lydia Meeting/Lecture" color="#ffff00" meeting="false" start="2015-03-19" duration="1" complete="0" expand="true"/>
-        <task id="33" name="Third Iteration Admin Interface" color="#8cb6ce" meeting="false" start="2015-03-24" duration="10" complete="0" expand="true"/>
-        <task id="35" name="Test/evaluate and polish Admin with client/supervisor" color="#8cb6ce" meeting="false" start="2015-04-07" duration="5" complete="0" expand="true"/>
-        <task id="37" name="Forth Iteration translate IOS to Android" color="#8cb6ce" meeting="false" start="2015-04-14" duration="10" complete="0" expand="true"/>
-        <task id="39" name="Testing Final products Finish report and evaulate performance" color="#8cb6ce" meeting="false" start="2015-04-28" duration="7" complete="0" expand="true"/>
-        <task id="56" name="Proof reading and finishing off" color="#8cb6ce" meeting="false" start="2015-05-07" duration="2" complete="0" expand="true"/>
-        <task id="54" name="DEADLINE!!!!! The End" color="#ff0033" meeting="false" start="2015-05-11" duration="1" complete="0" expand="true"/>
+        <task id="33" name="Third Iteration database implementation" color="#8cb6ce" meeting="false" start="2015-03-11" duration="14" complete="0" expand="true"/>
+        <task id="35" name="MILESTONE 3 Review Progress with client" color="#99ff00" meeting="false" start="2015-03-24" duration="1" complete="0" expand="true"/>
+        <task id="37" name="Forth Iteration add extra features" color="#8cb6ce" meeting="false" start="2015-03-25" duration="14" complete="0" expand="true"/>
+        <task id="39" name="MILESTONE 4 Review progress with client" color="#33ff00" meeting="false" start="2015-04-07" duration="1" complete="0" expand="true"/>
+        <task id="56" name="Evalutation Stage" color="#ffff33" meeting="false" start="2015-04-08" duration="7" complete="0" expand="true"/>
+        <task id="80" name="Fith Iteration polish software" color="#8cb6ce" meeting="false" start="2015-04-15" duration="7" complete="0" expand="true"/>
+        <task id="82" name="Extra allowed time for unforseen problems or Android development" color="#8cb6ce" meeting="false" start="2015-04-22" duration="14" complete="0" expand="true"/>
+        <task id="84" name="Report finalization/ presentation for symposium" color="#ff6600" meeting="false" start="2015-05-06" duration="5" complete="0" expand="true"/>
+        <task id="54" name="Deadline for end of Project" color="#ff0033" meeting="false" start="2015-05-11" duration="1" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
@@ -70,11 +69,28 @@
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="187" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="87" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="75" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="411" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="140" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="139" visible="true"/>
     </taskdisplaycolumns>
-    <previous/>
+    <previous>
+        <previous-tasks name="First Iteration">
+            <previous-task id="0" start="2015-01-26" duration="6" meeting="false" super="false"/>
+            <previous-task id="1" start="2015-02-03" duration="5" meeting="false" super="false"/>
+            <previous-task id="3" start="2015-02-09" duration="1" meeting="false" super="false"/>
+            <previous-task id="5" start="2015-02-10" duration="10" meeting="false" super="false"/>
+            <previous-task id="8" start="2015-02-24" duration="5" meeting="false" super="false"/>
+            <previous-task id="10" start="2015-03-03" duration="10" meeting="false" super="false"/>
+            <previous-task id="51" start="2015-03-13" duration="1" meeting="false" super="false"/>
+            <previous-task id="12" start="2015-03-17" duration="5" meeting="false" super="false"/>
+            <previous-task id="33" start="2015-03-24" duration="10" meeting="false" super="false"/>
+            <previous-task id="35" start="2015-04-07" duration="5" meeting="false" super="false"/>
+            <previous-task id="37" start="2015-04-14" duration="10" meeting="false" super="false"/>
+            <previous-task id="39" start="2015-04-28" duration="7" meeting="false" super="false"/>
+            <previous-task id="56" start="2015-05-07" duration="2" meeting="false" super="false"/>
+            <previous-task id="54" start="2015-05-11" duration="1" meeting="false" super="false"/>
+        </previous-tasks>
+    </previous>
     <roles roleset-name="Default"/>
     <roles roleset-name="SoftwareDevelopment"/>
 </project>

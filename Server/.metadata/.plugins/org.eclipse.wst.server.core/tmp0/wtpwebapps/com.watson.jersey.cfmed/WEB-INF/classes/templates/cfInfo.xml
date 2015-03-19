@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cfInfo>
+    <drug>
+        <adult>
+            <inhaled>
+                <administration>take tablet</administration>
+                <dose>10mg</dose>
+            </inhaled>
+            <oral>
+                <administration>take tablet</administration>
+                <dose>10mg</dose>
+            </oral>
+        </adult>
+        <brandName>brand 1</brandName>
+        <brandName>brand 2</brandName>
+        <indication>For this disease</indication>
+        <interactions>This drug interacts with : 1drug 2drug etc</interactions>
+        <name>Drug name</name>
+        <paediatric>
+            <inhaled>
+                <administration>take tablet</administration>
+                <dose>10mg</dose>
+            </inhaled>
+            <oral>
+                <administration>take tablet</administration>
+                <dose>10mg</dose>
+            </oral>
+        </paediatric>
+        <sideEffect>This is a side effect</sideEffect>
+    </drug>
+    <pathogen>
+        <description>I am a bacteria</description>
+        <firstline>im a first line drug</firstline>
+        <name>Bacteria</name>
+        <secondline>im a first line drug</secondline>
+    </pathogen>
+    <pathogen>
+        <description>gaga</description>
+        <firstline>asfaga</firstline>
+        <name>asgag</name>
+        <secondline>asgag</secondline>
+    </pathogen>
+</cfInfo>
