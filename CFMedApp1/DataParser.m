@@ -18,7 +18,7 @@
 
 +(NSMutableArray *)loadDrugData {
     
-    NSString *filePath = [FileManager dataFilePath:false];
+    NSString *filePath = [FileManager dataFilePath:true];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     
     NSError *error;
@@ -26,7 +26,7 @@
                                                            options:0 error:&error];
     if (doc == nil) { return nil; }
     
-   
+    
     
     Drug *drug = [[Drug alloc]init];
     NSString *temp = nil;
@@ -393,7 +393,8 @@
             [pathogen setSecondLine:tempList];
             tempList=[[NSMutableArray alloc]init];
         }
-     [pathogenObjects addObject:pathogen];
+        [pathogenObjects addObject:pathogen];
+        pathogen = [[Pathogen alloc]init];
     }
     return pathogenObjects;
 }
