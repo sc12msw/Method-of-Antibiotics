@@ -5,7 +5,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -59,7 +58,6 @@ public class RestLogic {
 	
 		ArrayList<DrugInfo> drugArray = new ArrayList<DrugInfo>();
 		drugArray.add(drugInfo);
-	
 		cfInfo.setDrug(drugArray);
 		cfInfo.setPathogen(pathoArray);
 		return cfInfo;
