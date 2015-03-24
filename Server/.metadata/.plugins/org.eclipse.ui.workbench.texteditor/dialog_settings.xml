@@ -2,21 +2,25 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="preparedStatement2" key="selection"/>
+		<item value="Paediatric_Dose" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Paediatric_Administration"/>
+			<item value="Adult_Administration"/>
 			<item value="preparedStatement2"/>
 			<item value="getAdministration"/>
 			<item value="file"/>
 			<item value="fLArray"/>
 			<item value="fLDrug"/>
 			<item value="Adult"/>
-			<item value="interactions"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Paediatric_Dose"/>
+			<item value="Adult_Dose"/>
+			<item value="Paediatric_Administration"/>
 			<item value="getDose"/>
 			<item value="sLArray"/>
 			<item value="sLDrug"/>

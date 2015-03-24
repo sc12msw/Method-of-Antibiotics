@@ -21,50 +21,7 @@ import javax.xml.bind.Marshaller;
 
 @Path ("/addPathogen")
 public class RestAddPathogen {
-	public CFInfo createObj(){
 
-		//This fills the objects with data. At the moment there is no database so it just fills the object array with the same strings.
-		CFInfo cfInfo = new CFInfo();
-		PathogenInfo pathoInfo = new PathogenInfo();
-		DrugInfo drugInfo = new DrugInfo();
-		AdultInfo adultInfo = new AdultInfo();
-		PaediatricInfo paediatricInfo = new PaediatricInfo();
-		AdminDose adminDose = new AdminDose();
-		adminDose.setAdministration("take tablet");
-		adminDose.setDose("10mg");
-		adultInfo.setOral(adminDose);
-		adultInfo.setInhaled(adminDose);
-		paediatricInfo.setOral(adminDose);
-		paediatricInfo.setInhaled(adminDose);
-		drugInfo.setAdult(adultInfo);
-		drugInfo.setPaediatric(paediatricInfo);
-		drugInfo.setName("Drug name");
-		drugInfo.setIndication("For this disease");
-		drugInfo.setInteractions("This drug interacts with : 1drug 2drug etc");
-		drugInfo.setSideEffect("This is a side effect");
-		ArrayList <String> brands = new ArrayList <String>();
-		brands.add("brand 1");
-		brands.add("brand 2");
-		drugInfo.setBrandName(brands);
-
-		pathoInfo.setName("Bacteria");
-		pathoInfo.setDescription("I am a bacteria");
-		ArrayList <String> firstline = new ArrayList <String>();
-		ArrayList <String> secondline = new ArrayList <String>();
-		String fLDrug = "im a first line drug";
-		String sLDrug = "im a first line drug";
-		firstline.add(fLDrug);
-		secondline.add(sLDrug);
-		pathoInfo.setFirstline(firstline);
-		pathoInfo.setSecondline(secondline);
-		ArrayList<PathogenInfo> pathoArray = new ArrayList<PathogenInfo>();
-		pathoArray.add(pathoInfo);
-		ArrayList<DrugInfo> drugArray = new ArrayList<DrugInfo>();
-		drugArray.add(drugInfo);
-		cfInfo.setDrug(drugArray);
-		cfInfo.setPathogen(pathoArray);
-		return cfInfo;
-	}
 
 
 	// This method returns the xml of the objects created on the server. Using JAXB
@@ -108,7 +65,7 @@ public class RestAddPathogen {
 			@Context HttpServletResponse servletResponse) throws IOException {
 
 		//This line is to create dummy data when complete this will be data pull from database
-		CFInfo cfInfo = createObj();
+		CFInfo cfInfo = new CFInfo();
 		//
 		
 		//Create object from form strings

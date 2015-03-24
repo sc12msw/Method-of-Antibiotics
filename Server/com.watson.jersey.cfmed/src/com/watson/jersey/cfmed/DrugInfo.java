@@ -1,6 +1,7 @@
 package com.watson.jersey.cfmed;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 // Xml Element classes.
 public class DrugInfo {
@@ -10,13 +11,14 @@ public class DrugInfo {
 	 private ArrayList <String> brandName;
 	 private String indication;
 	 private String sideEffect;
-	 private String interactions;
-	 
-	  public String getInteractions() {
+	 private Map <String,String> interactions;
+	
+
+	public Map<String, String> getInteractions() {
 		return interactions;
 	}
 
-	public void setInteractions(String interactions) {
+	public void setInteractions(Map<String, String> interactions) {
 		this.interactions = interactions;
 	}
 

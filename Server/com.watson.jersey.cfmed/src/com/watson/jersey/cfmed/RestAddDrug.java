@@ -3,6 +3,8 @@ package com.watson.jersey.cfmed;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
@@ -20,7 +22,7 @@ import javax.xml.bind.Marshaller;
 
 @Path ("/addDrug")
 public class RestAddDrug {
-	
+
 
 
 	// This method returns the xml of the objects created on the server. Using JAXB
@@ -37,14 +39,39 @@ public class RestAddDrug {
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public void newDrugs(@FormParam("name") String name,
+
+			//Only allow 5 brands
 			@FormParam("brand") String brand,
 			@FormParam("brand1") String brand1,
 			@FormParam("brand2") String brand2,
 			@FormParam("brand3") String brand3,
 			@FormParam("brand4") String brand4,
+
+
 			@FormParam("sideEffects") String sideEffects,
 			@FormParam("indication") String indication,
-			@FormParam("interactions") String interactions,
+
+			//Only allow 10 interactions
+			@FormParam("interactionName") String interactionName,
+			@FormParam("interactionDescription") String interactionDescription,
+			@FormParam("interactionName1") String interactionName1,
+			@FormParam("interactionDescription1") String interactionDescription1,
+			@FormParam("interactionName2") String interactionName2,
+			@FormParam("interactionDescription2") String interactionDescription2,
+			@FormParam("interactionName3") String interactionName3,
+			@FormParam("interactionDescription3") String interactionDescription3,
+			@FormParam("interactionName4") String interactionName4,
+			@FormParam("interactionDescription4") String interactionDescription4,
+			@FormParam("interactionName5") String interactionName5,
+			@FormParam("interactionDescription5") String interactionDescription5,
+			@FormParam("interactionName6") String interactionName6,
+			@FormParam("interactionDescription6") String interactionDescription6,
+			@FormParam("interactionName7") String interactionName7,
+			@FormParam("interactionDescription7") String interactionDescription7,
+			@FormParam("interactionName8") String interactionName8,
+			@FormParam("interactionDescription8") String interactionDescription8,
+			@FormParam("interactionName9") String interactionName9,
+			@FormParam("interactionDescription9") String interactionDescription9,
 
 			@FormParam("oralAdultAdmin") String oralAdultAdmin,
 			@FormParam("iVAdultAdmin") String iVAdultAdmin,
@@ -75,21 +102,22 @@ public class RestAddDrug {
 			@FormParam("sCPaedDose") String sCPaedDose,
 			@Context HttpServletResponse servletResponse) throws IOException {
 
-	
-		
+
+
 		//Create object from form strings
 		DrugInfo newDrug = new DrugInfo();
 		AdultInfo adult = new AdultInfo();
 		PaediatricInfo paed = new PaediatricInfo();
 		ArrayList <String> brandNames = new ArrayList<String>();
-
+		Map <String,String> interactions = new HashMap <String,String>();
 		//This try block is to avoid errors where the user has submitted an error in the form.
-		//These are optional fields in the form.
+		//These are optional fields in the form and described as checkers in the code.
 		try {
+			
+			//Brand checkers
 			if(brand != null && !brand.isEmpty()){
 				brandNames.add(brand);
 			}
-
 			if(brand1 != null && !brand1.isEmpty()){
 				brandNames.add(brand1);
 			}
@@ -102,11 +130,74 @@ public class RestAddDrug {
 			if(brand4 != null && !brand4.isEmpty()){
 				brandNames.add(brand4);
 			}
-			if ( interactions != null && !interactions.isEmpty()){
-				newDrug.setInteractions(interactions);
+			//End of brands
+			
+			//Interaction checkers
+			if ( interactionName != null && !interactionName.isEmpty()){
+
+				if ( interactionDescription != null && !interactionDescription.isEmpty()){
+					interactions.put(interactionName,interactionDescription);
+				}
 			}
+			if ( interactionName1 != null && !interactionName1.isEmpty()){
+
+				if ( interactionDescription1 != null && !interactionDescription1.isEmpty()){
+					interactions.put(interactionName1,interactionDescription1);
+				}
+			}
+			if ( interactionName2 != null && !interactionName2.isEmpty()){
+
+				if ( interactionDescription2 != null && !interactionDescription2.isEmpty()){
+					interactions.put(interactionName2,interactionDescription2);
+				}
+			}
+			if ( interactionName3 != null && !interactionName3.isEmpty()){
+
+				if ( interactionDescription3 != null && !interactionDescription3.isEmpty()){
+					interactions.put(interactionName3,interactionDescription3);
+				}
+			}
+			if ( interactionName4 != null && !interactionName4.isEmpty()){
+
+				if ( interactionDescription4 != null && !interactionDescription4.isEmpty()){
+					interactions.put(interactionName4,interactionDescription4);
+				}
+			}
+			if ( interactionName5 != null && !interactionName5.isEmpty()){
+
+				if ( interactionDescription5 != null && !interactionDescription5.isEmpty()){
+					interactions.put(interactionName5,interactionDescription5);
+				}
+			}
+			if ( interactionName6 != null && !interactionName6.isEmpty()){
+
+				if ( interactionDescription6 != null && !interactionDescription6.isEmpty()){
+					interactions.put(interactionName6,interactionDescription6);
+				}
+			}
+			if ( interactionName7 != null && !interactionName7.isEmpty()){
+
+				if ( interactionDescription7 != null && !interactionDescription7.isEmpty()){
+					interactions.put(interactionName7,interactionDescription7);
+				}
+			}
+			if ( interactionName8 != null && !interactionName8.isEmpty()){
+
+				if ( interactionDescription8 != null && !interactionDescription8.isEmpty()){
+					interactions.put(interactionName8,interactionDescription8);
+				}
+			}
+			if ( interactionName9 != null && !interactionName9.isEmpty()){
+
+				if ( interactionDescription9 != null && !interactionDescription9.isEmpty()){
+					interactions.put(interactionName9,interactionDescription9);
+				}
+			}
+			//End of interactions
+			
+			//Side effect and administration checkers
 			if ( sideEffects != null && !sideEffects.isEmpty()){
-			newDrug.setSideEffect(sideEffects);
+				newDrug.setSideEffect(sideEffects);
 			}
 			if ( oralAdultAdmin != null && !oralAdultAdmin.isEmpty()){
 				AdminDose adminDose = new AdminDose();
@@ -181,20 +272,22 @@ public class RestAddDrug {
 				adminDose.setDose(sCPaedDose);
 				paed.setSC(adminDose);
 			}
+			//End of checkers
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 		//set the object
 		newDrug.setIndication(indication);
 		newDrug.setName(name);
 		newDrug.setAdult(adult);
 		newDrug.setPaediatric(paed);
+		newDrug.setInteractions(interactions);
 		newDrug.setBrandName(brandNames);
 		DBManager db = new DBManager();
 		db.addDrug(newDrug);
-	
+
 		/*
 		try{
 
@@ -208,7 +301,7 @@ public class RestAddDrug {
 		}catch (JAXBException e) {
 			e.printStackTrace();
 		}
-		*/
+		 */
 		servletResponse.sendRedirect("../rest/cfmed");
 	}
 }

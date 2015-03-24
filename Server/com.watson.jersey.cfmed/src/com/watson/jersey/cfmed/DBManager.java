@@ -2,6 +2,7 @@ package com.watson.jersey.cfmed;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class DBManager {
 	// JDBC driver name and database URL
@@ -35,7 +36,7 @@ public class DBManager {
 			preparedStatement.setString(3, drug.getSideEffect());
 			preparedStatement.executeUpdate();
 
-			
+
 			sql = "SELECT * FROM Drugs";
 			ResultSet rs = stmt.executeQuery(sql);
 
@@ -46,10 +47,10 @@ public class DBManager {
 				int id  = rs.getInt("ID");
 				lastid = id;
 			}
-			
-				
-				
-			
+
+
+
+
 			//Adult administration section, the following block is how the adult administration data is added to the database.   
 			AdultInfo adult=drug.getAdult();
 			AdminDose oral = adult.getOral();
@@ -202,7 +203,7 @@ public class DBManager {
 			}
 			preparedStatement.executeUpdate();
 
-			
+
 			//Sets the brand name table
 			ArrayList <String> brands = drug.getBrandName();
 			if (brands != null){
@@ -217,26 +218,102 @@ public class DBManager {
 				preparedStatement2.setString(1, "NULL");
 				preparedStatement2.executeUpdate();
 			}
-			
-			
-			sql = "SELECT * FROM Adult_Administration";
-			rs = stmt.executeQuery(sql);
 
-			//STEP 5: Extract data from result set
-			while(rs.next()){
-				//Retrieve by column name
-				int id  = rs.getInt("ID");
-				String name = rs.getString("Oral");
-				String indication = rs.getString("IV");
-				String sideEffects = rs.getString("Inhaled");
-
-				//Display values
-				System.out.print("ID: " + id);
-				System.out.print(", oral: " + name);
-				System.out.print(", IV: " + indication);
-				System.out.println(", Inhaled: " + sideEffects);
+			//Sets the Interaction table
+			Map <String,String> interactions = drug.getInteractions();
+			if (interactions != null){
+				for (Map.Entry<String,String> entry : interactions.entrySet()){
+					preparedStatement = conn.prepareStatement("insert into Interactions values (default ,?, ?,"+lastid+")");
+					preparedStatement.setString(1, (String) entry.getKey());
+					preparedStatement.setString(2, (String) entry.getValue());
+					preparedStatement.executeUpdate();
+				}
 			}
-			
+			else { 
+				PreparedStatement preparedStatement2 = conn.prepareStatement("insert into Interactions values (default ,?, ?,"+lastid+")");
+				preparedStatement2.setString(1, "NULL");
+				preparedStatement2.setString(2, "NULL");
+				preparedStatement2.executeUpdate();
+			}
+
+
+
+			//Close connections
+			rs.close();
+			stmt.close();
+			conn.close();
+		}catch(SQLException se){
+			se.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			//Close connections if no connection was found
+			try{
+				if(stmt!=null)
+					stmt.close();
+			}catch(SQLException se2){
+			}
+			try{
+				if(conn!=null)
+					conn.close();
+			}catch(SQLException se){
+				se.printStackTrace();
+			}
+		}
+	}
+	public void databaseToObject(){
+
+		CFInfo cfInfo = new CFInfo();
+		ArrayList <String> tempArray = new ArrayList<String>();
+		ArrayList <DrugInfo> array = new ArrayList<DrugInfo>();
+		DrugInfo drugInfo = new DrugInfo();
+		AdultInfo adultInfo = new AdultInfo();
+		AdminDose adminDose = new AdminDose();
+		PaediatricInfo paedInfo = new PaediatricInfo();
+		PathogenInfo pathInfo = new PathogenInfo();
+		Connection conn = null;
+		Statement stmt = null;
+		try{
+			// Register JDBC driver
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// Create a connection
+			conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+			//Get all the drugs from drugs table
+			stmt = conn.createStatement();
+			String sql;
+			sql = "SELECT Drugs.ID AS drugID, Drugs.Name As drugName, Drugs.Indication As drugIndi, Drugs.Side_Effects As drugSide,"
+					+ " Adult_Administration.ID AS aIdAd, Adult_Administration.Oral AS aOralAd, Adult_Administration.IV AS aIvAd,"
+					+ " Adult_Administration.Inhaled AS aInhaledAd, Adult_Administration.IM AS aImAd, Adult_Administration.PR AS aPrAd,"
+					+ " Adult_Administration.SC AS aScAd,"
+					+ " Adult_Dose.ID AS aIdDose, Adult_Dose.Oral AS aOralDose, Adult_Dose.IV AS aIvDose,"
+					+ " Adult_Dose.Inhaled AS aInhaledDose, Adult_Dose.IM AS aImDose, Adult_Dose.PR AS aPrDose,"
+					+ " Adult_Dose.SC AS aScDose,"
+					+ " Paediatric_Administration.ID AS pIdAd, Paediatric_Administration.Oral AS pOralAd, Paediatric_Administration.IV AS pIvAd,"
+					+ " Paediatric_Administration.Inhaled AS pInhaledAd, Paediatric_Administration.IM AS pImAd, Paediatric_Administration.PR AS pPrAd,"
+					+ " Paediatric_Administration.SC AS pScAd,"
+					+ " Paediatric_Dose.ID AS pIdDose, Paediatric_Dose.Oral AS pOralDose, Paediatric_Dose.IV AS pIvDose,"
+					+ " Paediatric_Dose.Inhaled AS pInhaledDose, Paediatric_Dose.IM AS pImDose, Paediatric_Dose.PR AS pPrDose,"
+					+ " Paediatric_Dose.SC AS pScDose,"
+					+ " Interactions.ID AS interId, Interactions.Interacting_Drug AS interDrugName, Interactions.Effect AS interDescription,"
+					+ " Brand_Names.ID AS brandId, Brand_Names.Brand_Name AS brandName"
+					+ " FROM Drugs INNER JOIN Adult_Administration ON Drugs.ID = Adult_Administration.Drugs_ID"
+					+ " INNER JOIN Adult_Dose ON Adult_Dose.Drugs_ID = Drugs.ID"
+					+ " INNER JOIN Paediatric_Administration ON Paediatric_Administration.Drugs_ID = Drugs.ID"
+					+ " INNER JOIN Paediatric_Dose ON Paediatric_Dose.Drugs_ID = Drugs.ID"
+					+ " INNER JOIN Interactions ON Interactions.Drugs_ID = Drugs.ID"
+					+ " INNER JOIN Brand_Names ON Brand_Names.Drugs_ID = Drugs.ID";
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()){
+				
+				//Retrieve by column name
+				String name = rs.getString("drugName");
+				String adultOral = rs.getString("aOralAd");
+				System.out.println(name);
+				System.out.println(adultOral);
+
+			}
 			//Close connections
 			rs.close();
 			stmt.close();
