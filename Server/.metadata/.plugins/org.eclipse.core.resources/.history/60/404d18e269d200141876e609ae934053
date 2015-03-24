@@ -264,9 +264,13 @@ public class DBManager {
 	}
 	public ArrayList <DrugInfo> databaseToObject(){
 
-		
+		Map <String,String> interactions = new HashMap<String,String>();
+		ArrayList <String> brandNames = new ArrayList<String>();
 		ArrayList <DrugInfo> drugs = new ArrayList<DrugInfo>();
-	
+		DrugInfo drugInfo = new DrugInfo();
+		AdultInfo adultInfo = new AdultInfo();
+		AdminDose adminDose = new AdminDose();
+		PaediatricInfo paedInfo = new PaediatricInfo();
 		Connection conn = null;
 		Statement stmt = null;
 		try{
@@ -304,16 +308,6 @@ public class DBManager {
 			ResultSet rs = stmt.executeQuery(databaseQuery);
 			while(rs.next()){
 				
-				Map <String,String> interactions = new HashMap<String,String>();
-				ArrayList <String> brandNames = new ArrayList<String>();
-				DrugInfo drugInfo = new DrugInfo();
-				AdultInfo adultInfo = new AdultInfo();
-				AdminDose adminDoseAOral = new AdminDose(),adminDoseAIV = new AdminDose(),adminDoseAInhaled = new AdminDose(),
-						adminDoseAIM = new AdminDose(),adminDoseAPR = new AdminDose(),adminDoseASC = new AdminDose();
-				AdminDose adminDosePOral = new AdminDose(),adminDosePIV = new AdminDose(),adminDosePInhaled = new AdminDose(),
-						adminDosePIM = new AdminDose(),adminDosePPR= new AdminDose(),adminDosePSC = new AdminDose();
-				PaediatricInfo paedInfo = new PaediatricInfo();
-				
 				//Retrieve drug table data
 				int drugId = rs.getInt("drugId");
 				String drugName = rs.getString("drugName");
@@ -321,8 +315,6 @@ public class DBManager {
 				String drugSide = rs.getString("drugSide");
 				
 				//Retrieve adult administration data
-				
-				
 				String aOralAd = rs.getString("aOralAd");
 				String aIvAd = rs.getString("aIvAd");
 				String aInhaledAd = rs.getString("aInhaledAd");
@@ -378,99 +370,74 @@ public class DBManager {
 				
 				
 				//Set drug object
-				
 				drugInfo.setName(drugName); 
 				drugInfo.setIndication(drugIndi); 
 				drugInfo.setSideEffect(drugSide);
 				drugInfo.setInteractions(interactions);
 				drugInfo.setBrandName(brandNames);
 				
-				//Tomorrows work add if NULL statements
 				//Adult data
-				if (!aOralAd.equals("NULL")){
-				adminDoseAOral.setAdministration(aOralAd);
-				adminDoseAOral.setDose(aOralDose);
-				adultInfo.setOral(adminDoseAOral);
-				}
+				adminDose.setAdministration(aOralAd);
+				adminDose.setDose(aOralDose);
+				adultInfo.setOral(adminDose);
+				adminDose = new AdminDose();
 				
-				if (!aIvAd.equals("NULL")){
-				adminDoseAIV.setAdministration(aIvAd);
-				adminDoseAIV.setDose(aIvDose);
-				adultInfo.setIV(adminDoseAIV);
-				}
+				adminDose.setAdministration(aIvAd);
+				adminDose.setDose(aIvDose);
+				adultInfo.setIV(adminDose);
 				
-				if (!aInhaledAd.equals("NULL")){
-				adminDoseAInhaled.setAdministration(aInhaledAd);
-				adminDoseAInhaled.setDose(aInhaledDose);
-				adultInfo.setInhaled(adminDoseAInhaled);
-				}
+				adminDose.setAdministration(aInhaledAd);
+				adminDose.setDose(aInhaledDose);
+				adultInfo.setInhaled(adminDose);
 				
-				if (!aImAd.equals("NULL")){
-				adminDoseAIM.setAdministration(aImAd);
-				adminDoseAIM.setDose(aImDose);
-				adultInfo.setIM(adminDoseAIM);
-				}
+				adminDose.setAdministration(aImAd);
+				adminDose.setDose(aImDose);
+				adultInfo.setIM(adminDose);
 				
-				if (!aPrAd.equals("NULL")){
-				adminDoseAPR.setAdministration(aPrAd);
-				adminDoseAPR.setDose(aPrDose);
-				adultInfo.setPR(adminDoseAPR);
-				}
-				if (!aScAd.equals("NULL")){
-				adminDoseASC.setAdministration(aScAd);
-				adminDoseASC.setDose(aScDose);
-				adultInfo.setSC(adminDoseASC);
-				}
+				adminDose.setAdministration(aPrAd);
+				adminDose.setDose(aPrDose);
+				adultInfo.setPR(adminDose);
+				
+				adminDose.setAdministration(aScAd);
+				adminDose.setDose(aScDose);
+				adultInfo.setSC(adminDose);
+					
 				//Set adult
 				drugInfo.setAdult(adultInfo);
 				
 				
 				//Paediatric data
+				adminDose.setAdministration(pOralAd);
+				adminDose.setDose(pOralDose);
+				paedInfo.setOral(adminDose);
 				
-				if (!pOralAd.equals("NULL")){
-				adminDosePOral.setAdministration(pOralAd);
-				adminDosePOral.setDose(pOralDose);
-				paedInfo.setOral(adminDosePOral);
-				}
+				adminDose = new AdminDose();
 				
-				if (!pIvAd.equals("NULL")){
-				adminDosePIV.setAdministration(pIvAd);
-				adminDosePIV.setDose(pIvDose);
-				paedInfo.setIV(adminDosePIV);
-				}
+				adminDose.setAdministration(pIvAd);
+				adminDose.setDose(pIvDose);
+				paedInfo.setIV(adminDose);
 				
-				if (!pInhaledAd.equals("NULL")){
-				adminDosePInhaled.setAdministration(pInhaledAd);
-				adminDosePInhaled.setDose(pInhaledDose);
-				paedInfo.setInhaled(adminDosePInhaled);
-				}
+				adminDose.setAdministration(pInhaledAd);
+				adminDose.setDose(pInhaledDose);
+				paedInfo.setInhaled(adminDose);
 				
-				if (!pImAd.equals("NULL")){
-				adminDosePIM.setAdministration(pImAd);
-				adminDosePIM.setDose(pImDose);
-				paedInfo.setIM(adminDosePIM);
-				}
+				adminDose.setAdministration(pImAd);
+				adminDose.setDose(pImDose);
+				paedInfo.setIM(adminDose);
 				
-				if (!pPrAd.equals("NULL")){
-				adminDosePPR.setAdministration(pPrAd);
-				adminDosePPR.setDose(pPrDose);
-				paedInfo.setPR(adminDosePPR);
-				}
+				adminDose.setAdministration(pPrAd);
+				adminDose.setDose(pPrDose);
+				paedInfo.setPR(adminDose);
 				
-				if (!pScAd.equals("NULL")){
-				adminDosePSC.setAdministration(pScAd);
-				adminDosePSC.setDose(pScDose);
-				paedInfo.setSC(adminDosePSC);
-				}
+				adminDose.setAdministration(pScAd);
+				adminDose.setDose(pScDose);
+				paedInfo.setSC(adminDose);
 				
 				//Set Paediatric
 				drugInfo.setPaediatric(paedInfo);
 		
 				//Add drug object to drug array
 				drugs.add(drugInfo);
-				
-
-		
 
 			}
 			//Close connections

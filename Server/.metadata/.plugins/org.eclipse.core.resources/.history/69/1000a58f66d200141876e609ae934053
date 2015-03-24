@@ -26,11 +26,9 @@ public class RestLogic {
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	public File getXML() throws IOException {
 		DBManager db = new DBManager();
-		CFInfo cfInfo = new CFInfo();
-		ArrayList <DrugInfo> drugsFromDatabase = new ArrayList <DrugInfo>();
-		drugsFromDatabase = db.databaseToObject();
-		cfInfo.setDrug(drugsFromDatabase);
+		db.databaseToObject();
 		File file = new File("templates/cfInfo.xml");
+		/* Uncomment to create a structured xml file of the objects
 		try{
 
 			JAXBContext jaxbContext = JAXBContext.newInstance(CFInfo.class);
@@ -43,6 +41,7 @@ public class RestLogic {
 		}catch (JAXBException e) {
 			e.printStackTrace();
 		}
+		*/
 		return file;
 	}
 

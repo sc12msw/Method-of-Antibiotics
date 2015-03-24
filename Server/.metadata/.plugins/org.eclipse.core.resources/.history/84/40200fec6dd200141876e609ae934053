@@ -404,64 +404,52 @@ public class DBManager {
 				adminDoseAInhaled.setDose(aInhaledDose);
 				adultInfo.setInhaled(adminDoseAInhaled);
 				}
-				
-				if (!aImAd.equals("NULL")){
 				adminDoseAIM.setAdministration(aImAd);
 				adminDoseAIM.setDose(aImDose);
 				adultInfo.setIM(adminDoseAIM);
-				}
 				
-				if (!aPrAd.equals("NULL")){
 				adminDoseAPR.setAdministration(aPrAd);
 				adminDoseAPR.setDose(aPrDose);
 				adultInfo.setPR(adminDoseAPR);
-				}
-				if (!aScAd.equals("NULL")){
+				
 				adminDoseASC.setAdministration(aScAd);
 				adminDoseASC.setDose(aScDose);
 				adultInfo.setSC(adminDoseASC);
-				}
+					
 				//Set adult
 				drugInfo.setAdult(adultInfo);
 				
 				
 				//Paediatric data
-				
-				if (!pOralAd.equals("NULL")){
 				adminDosePOral.setAdministration(pOralAd);
 				adminDosePOral.setDose(pOralDose);
 				paedInfo.setOral(adminDosePOral);
-				}
 				
-				if (!pIvAd.equals("NULL")){
+
 				adminDosePIV.setAdministration(pIvAd);
 				adminDosePIV.setDose(pIvDose);
 				paedInfo.setIV(adminDosePIV);
-				}
 				
-				if (!pInhaledAd.equals("NULL")){
+				
 				adminDosePInhaled.setAdministration(pInhaledAd);
 				adminDosePInhaled.setDose(pInhaledDose);
 				paedInfo.setInhaled(adminDosePInhaled);
-				}
 				
-				if (!pImAd.equals("NULL")){
+				
 				adminDosePIM.setAdministration(pImAd);
 				adminDosePIM.setDose(pImDose);
 				paedInfo.setIM(adminDosePIM);
-				}
 				
-				if (!pPrAd.equals("NULL")){
+				
 				adminDosePPR.setAdministration(pPrAd);
 				adminDosePPR.setDose(pPrDose);
 				paedInfo.setPR(adminDosePPR);
-				}
 				
-				if (!pScAd.equals("NULL")){
+				
 				adminDosePSC.setAdministration(pScAd);
 				adminDosePSC.setDose(pScDose);
 				paedInfo.setSC(adminDosePSC);
-				}
+				
 				
 				//Set Paediatric
 				drugInfo.setPaediatric(paedInfo);
