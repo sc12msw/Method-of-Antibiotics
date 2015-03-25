@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		971D94791AC2F5F70028231A /* DisclaimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 971D94781AC2F5F70028231A /* DisclaimerVC.m */; };
 		9727C0AB1A8CCF7B00EEA769 /* Drug.m in Sources */ = {isa = PBXBuildFile; fileRef = 9727C0AA1A8CCF7B00EEA769 /* Drug.m */; };
 		9732487F1A89288A003570AA /* DrugDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9732487E1A89288A003570AA /* DrugDetailVC.m */; };
 		973248831A892B0D003570AA /* PathogenDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 973248821A892B0D003570AA /* PathogenDetailVC.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		971D94771AC2F5F70028231A /* DisclaimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisclaimerVC.h; path = ../DisclaimerVC.h; sourceTree = "<group>"; };
+		971D94781AC2F5F70028231A /* DisclaimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisclaimerVC.m; path = ../DisclaimerVC.m; sourceTree = "<group>"; };
 		9727C0A91A8CCF7B00EEA769 /* Drug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drug.h; sourceTree = "<group>"; };
 		9727C0AA1A8CCF7B00EEA769 /* Drug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drug.m; sourceTree = "<group>"; };
 		9732487E1A89288A003570AA /* DrugDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrugDetailVC.m; path = ../DrugDetailVC.m; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 			children = (
 				9744036E1AADD37200F1C115 /* FileManager.h */,
 				9744036F1AADD37200F1C115 /* FileManager.m */,
+				971D94771AC2F5F70028231A /* DisclaimerVC.h */,
+				971D94781AC2F5F70028231A /* DisclaimerVC.m */,
 				9736A7181A8906E1005BCE62 /* AppDelegate.h */,
 				9736A7191A8906E1005BCE62 /* AppDelegate.m */,
 				973248801A89289C003570AA /* DrugDetailVC.h */,
@@ -269,6 +274,7 @@
 				973248831A892B0D003570AA /* PathogenDetailVC.m in Sources */,
 				9736A7201A8906E1005BCE62 /* SecondViewController.m in Sources */,
 				9732A5B21A9397850017CF8E /* Pathogen.m in Sources */,
+				971D94791AC2F5F70028231A /* DisclaimerVC.m in Sources */,
 				9736A71A1A8906E1005BCE62 /* AppDelegate.m in Sources */,
 				9736A71D1A8906E1005BCE62 /* FirstViewController.m in Sources */,
 				9735F33B1A98FB3100FD7D9D /* CalculatorVC.m in Sources */,

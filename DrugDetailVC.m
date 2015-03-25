@@ -40,12 +40,11 @@
     [title appendString:drug.getGenericName];
     [title appendString:@" -Adult"];
     self.navigationItem.title = title;
-    
-    self.adultSwitch.backgroundColor = UIColorFromRGB(0xFF6600);
-    self.adultSwitch.titleLabel.textColor = [UIColor whiteColor];
-    self.paedSwitch.backgroundColor = [UIColor whiteColor];
-    self.paedSwitch.titleLabel.textColor = [UIColor blueColor];
-    
+    [_paedSwitch setBackgroundColor: [UIColor whiteColor]];
+    [_paedSwitch setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [_adultSwitch setBackgroundColor :[UIColor redColor]];
+    [_adultSwitch setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+   
     
     if (drug.isAdult){
         if (!drug.isOralAdult){
@@ -100,10 +99,10 @@
     [title appendString:@" -Paediatric"];
     self.navigationItem.title = title;
     
-    self.paedSwitch.backgroundColor = UIColorFromRGB(0xFF6600);
-    self.paedSwitch.titleLabel.textColor = [UIColor whiteColor];
-    self.adultSwitch.backgroundColor = [UIColor whiteColor];
-    self.adultSwitch.titleLabel.textColor = [UIColor blueColor];
+    [_paedSwitch setBackgroundColor: [UIColor redColor]];
+    [_paedSwitch setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_adultSwitch setBackgroundColor :[UIColor whiteColor]];
+    [_adultSwitch setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     
     if (drug.isPaediatric){
         if (!drug.isOralPaed){
