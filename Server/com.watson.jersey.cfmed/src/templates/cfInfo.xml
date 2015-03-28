@@ -3,81 +3,30 @@
     <drug>
         <adult>
             <oral>
-                <administration>gggggggggggggg</administration>
-                <dose>hhhhhhhhhhhh</dose>
+                <administration>6</administration>
+                <dose>7</dose>
             </oral>
         </adult>
-        <brandName>bbbbbbbbb</brandName>
-        <indication>dddddddddddddd</indication>
+        <brandName>1</brandName>
+        <indication>3</indication>
         <interactions>
             <entry>
-                <key>eeeeeeeeee</key>
-                <value>fffffffffffffffff</value>
+                <key>4</key>
+                <value>5</value>
             </entry>
         </interactions>
-        <name>Aaaaaaaaaaaaa</name>
+        <name>Tester</name>
         <paediatric>
             <oral>
-                <administration>iiiiiiiiiiiiiiii</administration>
-                <dose>jjjjjjjjjjjjjjjjjjjjjjj</dose>
+                <administration>8</administration>
+                <dose>9</dose>
             </oral>
         </paediatric>
-        <sideEffect>ccccccccccccccccc</sideEffect>
+        <sideEffect>2</sideEffect>
     </drug>
-    <drug>
-        <adult>
-            <oral>
-                <administration>does this work 1</administration>
-                <dose>does this work 2</dose>
-            </oral>
-        </adult>
-        <brandName>xxxxxxxxxxxxx</brandName>
-        <indication>vvvvvvvvvvvvvvvvvvvvv</indication>
-        <interactions>
-            <entry>
-                <key>11111111111111</key>
-                <value>2222222222222222</value>
-            </entry>
-            <entry>
-                <key>33333333333333</key>
-                <value>4444444444444444444</value>
-            </entry>
-        </interactions>
-        <name>zzzzzzzzzzzzzzz</name>
-        <paediatric>
-            <oral>
-                <administration>does this work 3</administration>
-                <dose>does this work 4</dose>
-            </oral>
-        </paediatric>
-        <sideEffect>cccccccccccccccccc</sideEffect>
-    </drug>
-    <drug>
-        <adult>
-            <oral>
-                <administration>does this work 1</administration>
-                <dose>does this work 2</dose>
-            </oral>
-        </adult>
-        <brandName>xxxxxxxxxxxxx</brandName>
-        <indication>vvvvvvvvvvvvvvvvvvvvv</indication>
-        <interactions>
-            <entry>
-                <key>11111111111111</key>
-                <value>2222222222222222</value>
-            </entry>
-            <entry>
-                <key>33333333333333</key>
-                <value>4444444444444444444</value>
-            </entry>
-        </interactions>
-        <name>zzzzzzzzzzzzzzz</name>
-        <paediatric>
-            <oral>
-                <administration>does this work 3</administration>
-                <dose>does this work 4</dose>
-            </oral>
-        </paediatric>
-        <sideEffect>cccccccccccccccccc</sideEffect>
-    </drug>
+    <pathogen>
+        <description>1</description>
+        <firstline>Tester</firstline>
+        <name>pathogen test</name>
+    </pathogen>
 </cfInfo>

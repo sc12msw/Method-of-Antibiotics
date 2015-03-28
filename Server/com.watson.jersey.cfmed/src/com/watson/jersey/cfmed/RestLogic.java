@@ -18,9 +18,6 @@ import javax.xml.bind.*;
 @Path("/cfmed")
 public class RestLogic {
 
-	
-	
-
 	// This method returns the xml of the objects created on the server. Using JAXB
 	@GET
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
@@ -28,8 +25,12 @@ public class RestLogic {
 		DBManager db = new DBManager();
 		CFInfo cfInfo = new CFInfo();
 		ArrayList <DrugInfo> drugsFromDatabase = new ArrayList <DrugInfo>();
-		drugsFromDatabase = db.databaseToObject();
+		ArrayList <PathogenInfo> pathogensFromDatabase = new ArrayList <PathogenInfo>();
+		drugsFromDatabase = db.databaseToDrugObject();
+		pathogensFromDatabase = db.databaseToPathogenObject();
 		cfInfo.setDrug(drugsFromDatabase);
+		cfInfo.setPathogen(pathogensFromDatabase);
+		
 		File file = new File("templates/cfInfo.xml");
 		try{
 
@@ -77,7 +78,7 @@ public class RestLogic {
 		//Fills the template with data.
 		CFInfo cfInfo = new CFInfo();
 		DBManager db = new DBManager();
-		ArrayList <DrugInfo> drugArray = db.databaseToObject();
+		ArrayList <DrugInfo> drugArray = db.databaseToDrugObject();
 		cfInfo.setDrug(drugArray);
 		ArrayList <String> tempArray = new ArrayList<String>();
 		String tempString = "";

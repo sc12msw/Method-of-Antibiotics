@@ -15,9 +15,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 
 
 @Path ("/addDrug")
@@ -288,20 +285,6 @@ public class RestAddDrug {
 		DBManager db = new DBManager();
 		db.addDrug(newDrug);
 
-		/*
-		try{
-
-			JAXBContext jaxbContext = JAXBContext.newInstance(CFInfo.class);
-			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			jaxbMarshaller.marshal(cfInfo, file);
-			jaxbMarshaller.marshal(cfInfo, System.out);
-
-
-		}catch (JAXBException e) {
-			e.printStackTrace();
-		}
-		 */
 		servletResponse.sendRedirect("../rest/cfmed");
 	}
 }
