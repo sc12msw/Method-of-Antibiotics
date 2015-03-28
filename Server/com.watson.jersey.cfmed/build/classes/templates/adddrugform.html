@@ -9,7 +9,7 @@
     <script type="text/javascript">
 
 
-    function addField (argument) {
+    function addBrand (argument) {
 
         var brandTable = document.getElementById("brandTable");
         var currentIndex = brandTable.rows.length;
@@ -26,15 +26,39 @@
         }
 
     }
-    function checkBoxes (checkboxID,divID){
+	 function addInteraction (argument) {
+
+        var interactionTable = document.getElementById("interactionTable");
+        var currentIndex = interactionTable.rows.length;
+        var currentRow = interactionTable.insertRow(-1);
+    if (currentIndex <10){
+        var interactionBox = document.createElement("input");
+		var interactionText = document.createElement("textarea");
+		interactionText.cols = "50";
+		interactionText.rows = "4";
+        interactionBox.setAttribute("name", "interactionName" + currentIndex );
+        interactionText.setAttribute("name", "interactionDescription" + currentIndex);
+        var currentCell = currentRow.insertCell(-1);
+		var currentCell2 = currentRow.insertCell(-1);
+        currentCell.appendChild(interactionBox);
+		currentCell2.appendChild(interactionText);
+        }else{
+        window.alert("Only 10 interactions can be added.");
+        }
+
+    }
+    function checkBoxes (checkboxID,divID,divID2){
     var divToChange = document.getElementById(divID);
+	var divToChange2 = document.getElementById(divID2);
     var currentCheckbox = document.getElementById(checkboxID).checked;
 
     if ( currentCheckbox){
     divToChange.style.display = 'block';
+	divToChange2.style.display = 'block';
     }
     else {
     divToChange.style.display = 'none';
+	divToChange2.style.display = 'none';
     }
     }
     </script>
@@ -42,18 +66,11 @@
 .disabled{
     display:none;
     }
-    #Adult{
-    float:left;
-    padding: 75px;
-    }
-    #Paediatric{
-    float:left;
-    padding: 75px;
-    }
-    #optionalDiv{
-    float:left;
-    width:100%;
-    }
+#center{
+width:50%;
+margin:auto;
+padding-bottom:50px;
+ }
     </style>
 </head>
 
@@ -88,199 +105,210 @@
     <div class="container">
         <form action="../rest/addDrug" method="post">
             <div class="form-group">
-                <h2>Name</h2><input name="name" required>
+                <h2>Name</h2><input placeholder="Name of Drug" name="name" required>
                 <hr>
 
                 <h2>Brand Names:</h2>
 
-                <table id="brandTable">
+                <table id="brandTable" class="table table-striped table-bordered">
                     <tr>
-                        <td><input name="brand" type="text"></td>
+                        <td><input placeholder="Brand name" name="brand" type="text"></td>
 
-                        <td><input class="button" onclick="addField();" type="button" value="Add another"></td>
+                        <td><input class="button" onclick="addBrand();" type="button" value="Add another"></td>
                     </tr>
                 </table>
                 <hr>
 
                 <h2>SideEffects:</h2>
-                <textarea cols="50" name="sideEffects" rows="4"></textarea>
+                <textarea  placeholder="If there are no side effects please enter &quot;None&quot; or &quot;N/A&quot;" cols="50" name="sideEffects" rows="4" required></textarea>
                 <hr>
 
                 <h2>Indication:</h2>
-                <textarea cols="50" name="indication" required rows="4"></textarea>
+                <textarea placeholder="Indications for drug." cols="50" name="indication" required rows="4"></textarea>
                 <hr>
 
                 <h2>Interactions:</h2>
-                <textarea cols="50" name="interactions" rows="4"></textarea>
+				<table id="interactionTable" class="table table-striped table-bordered">
+					<tr>
+						<th>Name of Drug</th>
+						<th>Description</th>
+					</tr>
+                    <tr>
+                        <td><input placeholder="Drug name"  name="interactionName" type="text"></td>
+						<td><textarea placeholder="Please enter interaction description for the drug specified."  cols="50" name="interactionDescription" rows="4"></textarea></td>
+                        <td><input  id="formStyle" class="button" onclick="addInteraction();" type="button" value="Add another"></td>
+                    </tr>
+                </table>
+                
                 <hr>
             </div>
 
-            <div id="optionalDiv">
+            <div class="container">
 			
-                <div id="Adult">
-                    <h1>Adult</h1>
-					<input id="AOral" name="AOral" onclick="checkBoxes(&quot;AOral&quot;,&quot;OralAdult&quot;);" type="checkbox" value="Oral">
+                <div class="row">
+					<div id="center">
+					
+                    <h1>Select Routes of Administration</h1>
+					<input id="AOral" name="AOral" onclick="checkBoxes(&quot;AOral&quot;,&quot;OralAdult&quot;,&quot;OralPaed&quot;);" type="checkbox" value="Oral">
 					<label for="AOral">Oral</label>
-					<input id="AiV" name="AIV" onclick="checkBoxes(&quot;AiV&quot;,&quot;IVAdult&quot;);" type="checkbox" value="IV">
+					<input id="AiV" name="AIV" onclick="checkBoxes(&quot;AiV&quot;,&quot;IVAdult&quot;,&quot;IVPaed&quot;);" type="checkbox" value="IV">
 					<label for="AIV">IV</label>
-					<input id="AiN" name="AInhaled" onclick="checkBoxes(&quot;AiN&quot;,&quot;InhaledAdult&quot;);"type="checkbox" value="Inhaled">
+					<input id="AiN" name="AInhaled" onclick="checkBoxes(&quot;AiN&quot;,&quot;InhaledAdult&quot;,&quot;InhaledPaed&quot;);"type="checkbox" value="Inhaled">
 					<label for="AInhaled">Inhaled</label> 
-					<input id="AiM" name="AIM" onclick="checkBoxes(&quot;AiM&quot;,&quot;IMAdult&quot;);" type="checkbox" value="IM">
+					<input id="AiM" name="AIM" onclick="checkBoxes(&quot;AiM&quot;,&quot;IMAdult&quot;,&quot;IMPaed&quot;);" type="checkbox" value="IM">
 					<label for="AIM">IM</label>
-					<input id="ApR" name="APR" onclick="checkBoxes(&quot;ApR&quot;,&quot;PRAdult&quot;);" type="checkbox" value="PR">
+					<input id="ApR" name="APR" onclick="checkBoxes(&quot;ApR&quot;,&quot;PRAdult&quot;,&quot;PRPaed&quot;);" type="checkbox" value="PR">
 					<label for="APR">PR</label> 
-					<input id="AsC" name="ASC" onclick="checkBoxes(&quot;AsC&quot;,&quot;SCAdult&quot;);" type="checkbox" value="SC">
+					<input id="AsC" name="ASC" onclick="checkBoxes(&quot;AsC&quot;,&quot;SCAdult&quot;,&quot;SCPaed&quot;);" type="checkbox" value="SC">
 					<label for="ASC">SC</label>
-
-                    <div class="disabled" id="OralAdult">
-                        <h2>Oral</h2>
+					</div>
+					
+					
+					
+				</div>
+				<div class="row">
+                    <div class="disabled col-md-6" id="OralAdult">
+                        <h2>Adult Oral</h2>
 
                         <h3>Administration</h3>
-                        <textarea cols="50" name="oralAdultAdmin" rows="4"></textarea>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="oralAdultAdmin" rows="4"></textarea>
 
                         <h3>Dose</h3>
-                        <textarea cols="50" name="oralAdultDose" rows="4"></textarea>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="oralAdultDose" rows="4"></textarea>
                         <hr>
                     </div>
 
-                    <div class="disabled" id="IVAdult">
-                        <h2>IV</h2>
+                    <div class="disabled col-md-6" id="OralPaed">
+						
+						<h2>Paediatric Oral</h2>
 
                         <h3>Administration</h3>
-                        <textarea cols="50" name="iVAdultAdmin" rows="4"></textarea>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="oralPaedAdmin" rows="4"></textarea>
 
                         <h3>Dose</h3>
-                        <textarea cols="50" name="iVAdultDose" rows="4"></textarea>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="oralPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+				</div>
+				<div class="row">
+				
+					<div class="disabled col-md-6" id="IVAdult">
+                        <h2>Adult IV</h2>
+
+                        <h3>Administration</h3>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="iVAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="iVAdultDose" rows="4"></textarea>
+                        <hr>
+					</div>
+					
+					<div class="disabled col-md-6" id="IVPaed">
+                        <h2>Paediatric IV</h2>
+
+                        <h3>Administration</h3>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="iVPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="iVPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="disabled col-md-6" id="InhaledAdult">
+                        <h2>Adult Inhaled</h2>
+
+                        <h3>Administration</h3>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="inhaledAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="inhaledAdultDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+					
+					<div class="disabled col-md-6" id="InhaledPaed">
+                        <h2>Paediatric Inhaled</h2>
+
+                        <h3>Administration</h3>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="inhaledPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="inhaledPaedDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="disabled col-md-6" id="IMAdult">
+                        <h2>Adult IM</h2>
+
+                        <h3>Administration</h3>
+                        <textarea  placeholder="Enter administration for this route of administration." cols="50" name="iMAdultAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="iMAdultDose" rows="4"></textarea>
+                        <hr>
+                    </div>
+					<div class="disabled col-md-6" id="IMPaed">
+                        <h2>Paediatric IM</h2>
+
+                        <h3>Administration</h3>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="iMPaedAdmin" rows="4"></textarea>
+
+                        <h3>Dose</h3>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="iMPaedDose" rows="4"></textarea>
                         <hr>
                     </div>
 
-                    <div class="disabled" id="InhaledAdult">
-                        <h2>Inhaled</h2>
+				</div>
+				<div class="row">
+					<div class="disabled col-md-6" id="PRAdult">
+                        <h2>Adult PR</h2>
 
                         <h3>Administration</h3>
-                        <textarea cols="50" name="inhaledAdultAdmin" rows="4"></textarea>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="pRAdultAdmin" rows="4"></textarea>
 
                         <h3>Dose</h3>
-                        <textarea cols="50" name="inhaledAdultDose" rows="4"></textarea>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="pRAdultDose" rows="4"></textarea>
                         <hr>
                     </div>
-
-                    <div class="disabled" id="IMAdult">
-                        <h2>IM</h2>
+					
+					<div class="disabled col-md-6" id="PRPaed">
+                        <h2>Paediatric PR</h2>
 
                         <h3>Administration</h3>
-                        <textarea cols="50" name="iMAdultAdmin" rows="4"></textarea>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" id="pRPaedAdminTA" name="pRPaedAdmin" rows="4"></textarea>
 
                         <h3>Dose</h3>
-                        <textarea cols="50" name="iMAdultDose" rows="4"></textarea>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="pRPaedDose" rows="4"></textarea>
                         <hr>
                     </div>
-
-                    <div class="disabled" id="PRAdult">
-                        <h2>PR</h2>
+				</div>
+				<div class="row">
+				
+					<div class="disabled col-md-6" id="SCAdult">
+                        <h2>Adult SC</h2>
 
                         <h3>Administration</h3>
-                        <textarea cols="50" name="pRAdultAdmin" rows="4"></textarea>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="sCAdultAdmin" rows="4"></textarea>
 
                         <h3>Dose</h3>
-                        <textarea cols="50" name="pRAdultDose" rows="4"></textarea>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="sCAdultDose" rows="4"></textarea>
                         <hr>
                     </div>
-
-                    <div class="disabled" id="SCAdult">
-                        <h2>SC</h2>
+				
+					<div class="disabled col-md-6" id="SCPaed">
+                        <h2>Paediatric SC</h2>
 
                         <h3>Administration</h3>
-                        <textarea cols="50" name="sCAdultAdmin" rows="4"></textarea>
+                        <textarea placeholder="Enter administration for this route of administration." cols="50" name="sCPaedAdmin" rows="4"></textarea>
 
                         <h3>Dose</h3>
-                        <textarea cols="50" name="sCAdultDose" rows="4"></textarea>
+                        <textarea placeholder="Enter dose for this route of administration." cols="50" name="sCPaedDose" rows="4"></textarea>
                         <hr>
                     </div>
-                </div>
-
-                <div id="Paediatric">
-                    <h1>Paediatric</h1>
-					<input id="Po" name="POral" onclick="checkBoxes(&quot;Po&quot;,&quot;OralPaed&quot;);" type="checkbox" value="Oral">
-					<label for="POral">Oral</label>
-					<input id="PiV" name="PIV" onclick="checkBoxes(&quot;PiV&quot;,&quot;IVPaed&quot;);" type="checkbox" value="IV">
-					<label for="PIV">IV</label>
-					<input id="PiN" name="PInhaled" onclick="checkBoxes(&quot;PiN&quot;,&quot;InhaledPaed&quot;);" type="checkbox" value="Inhaled">
-					<label for="PInhaled">Inhaled</label>
-					<input id="PiM" name="PIM" onclick="checkBoxes(&quot;PiM&quot;,&quot;IMPaed&quot;);" type="checkbox" value="IM">
-					<label for="PIM">IM</label> 
-					<input id="PpR" name="PPR" onclick="checkBoxes(&quot;PpR&quot;,&quot;PRPaed&quot;);" type="checkbox" value="PR">
-					<label for="PPR">PR</label>
-					<input id="PsC" name="PSC" onclick="checkBoxes(&quot;PsC&quot;,&quot;SCPaed&quot;);" type="checkbox" value="SC">
-					<label for="PSC">SC</label>
-
-                    <div class="disabled" id="OralPaed">
-                        <h2>Oral</h2>
-
-                        <h3>Administration</h3>
-                        <textarea cols="50" name="oralPaedAdmin" rows="4"></textarea>
-
-                        <h3>Dose</h3>
-                        <textarea cols="50" name="oralPaedDose" rows="4"></textarea>
-                        <hr>
-                    </div>
-
-                    <div class="disabled" id="IVPaed">
-                        <h2>IV</h2>
-
-                        <h3>Administration</h3>
-                        <textarea cols="50" name="iVPaedAdmin" rows="4"></textarea>
-
-                        <h3>Dose</h3>
-                        <textarea cols="50" name="iVPaedDose" rows="4"></textarea>
-                        <hr>
-                    </div>
-
-                    <div class="disabled" id="InhaledPaed">
-                        <h2>Inhaled</h2>
-
-                        <h3>Administration</h3>
-                        <textarea cols="50" name="inhaledPaedAdmin" rows="4"></textarea>
-
-                        <h3>Dose</h3>
-                        <textarea cols="50" name="inhaledPaedDose" rows="4"></textarea>
-                        <hr>
-                    </div>
-
-                    <div class="disabled" id="IMPaed">
-                        <h2>IM</h2>
-
-                        <h3>Administration</h3>
-                        <textarea cols="50" name="iMPaedAdmin" rows="4"></textarea>
-
-                        <h3>Dose</h3>
-                        <textarea cols="50" name="iMPaedDose" rows="4"></textarea>
-                        <hr>
-                    </div>
-
-                    <div class="disabled" id="PRPaed">
-                        <h2>PR</h2>
-
-                        <h3>Administration</h3>
-                        <textarea cols="50" id="pRPaedAdminTA" name="pRPaedAdmin" rows="4"></textarea>
-
-                        <h3>Dose</h3>
-                        <textarea cols="50" name="pRPaedDose" rows="4"></textarea>
-                        <hr>
-                    </div>
-
-                    <div class="disabled" id="SCPaed">
-                        <h2>SC</h2>
-
-                        <h3>Administration</h3>
-                        <textarea cols="50" name="sCPaedAdmin" rows="4"></textarea>
-
-                        <h3>Dose</h3>
-                        <textarea cols="50" name="sCPaedDose" rows="4"></textarea>
-                        <hr>
-                    </div>
-                </div>
-            </div>
+				</div>
+			</div>
+                               
 			<input class="btn btn-primary" type="submit" value="Submit">       
 	   </form>
     </div>

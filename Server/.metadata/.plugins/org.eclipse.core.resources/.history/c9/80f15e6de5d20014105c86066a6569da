@@ -468,6 +468,8 @@ public class DBManager {
 		
 				//Add drug object to drug array
 				drugs.add(drugInfo);
+				
+
 		
 
 			}

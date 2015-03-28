@@ -2,42 +2,82 @@
 <cfInfo>
     <drug>
         <adult>
-            <inhaled>
-                <administration>take tablet</administration>
-                <dose>10mg</dose>
-            </inhaled>
             <oral>
-                <administration>take tablet</administration>
-                <dose>10mg</dose>
+                <administration>gggggggggggggg</administration>
+                <dose>hhhhhhhhhhhh</dose>
             </oral>
         </adult>
-        <brandName>brand 1</brandName>
-        <brandName>brand 2</brandName>
-        <indication>For this disease</indication>
-        <interactions>This drug interacts with : 1drug 2drug etc</interactions>
-        <name>Drug name</name>
+        <brandName>bbbbbbbbb</brandName>
+        <indication>dddddddddddddd</indication>
+        <interactions>
+            <entry>
+                <key>eeeeeeeeee</key>
+                <value>fffffffffffffffff</value>
+            </entry>
+        </interactions>
+        <name>Aaaaaaaaaaaaa</name>
         <paediatric>
-            <inhaled>
-                <administration>take tablet</administration>
-                <dose>10mg</dose>
-            </inhaled>
             <oral>
-                <administration>take tablet</administration>
-                <dose>10mg</dose>
+                <administration>iiiiiiiiiiiiiiii</administration>
+                <dose>jjjjjjjjjjjjjjjjjjjjjjj</dose>
             </oral>
         </paediatric>
-        <sideEffect>This is a side effect</sideEffect>
+        <sideEffect>ccccccccccccccccc</sideEffect>
     </drug>
-    <pathogen>
-        <description>I am a bacteria</description>
-        <firstline>im a first line drug</firstline>
-        <name>Bacteria</name>
-        <secondline>im a first line drug</secondline>
-    </pathogen>
-    <pathogen>
-        <description>pathogen decription for test</description>
-        <firstline>drug for pathogen test</firstline>
-        <firstline>second drug for pathogen test</firstline>
-        <name>pathogen test</name>
-    </pathogen>
+    <drug>
+        <adult>
+            <oral>
+                <administration>does this work 1</administration>
+                <dose>does this work 2</dose>
+            </oral>
+        </adult>
+        <brandName>xxxxxxxxxxxxx</brandName>
+        <indication>vvvvvvvvvvvvvvvvvvvvv</indication>
+        <interactions>
+            <entry>
+                <key>11111111111111</key>
+                <value>2222222222222222</value>
+            </entry>
+            <entry>
+                <key>33333333333333</key>
+                <value>4444444444444444444</value>
+            </entry>
+        </interactions>
+        <name>zzzzzzzzzzzzzzz</name>
+        <paediatric>
+            <oral>
+                <administration>does this work 3</administration>
+                <dose>does this work 4</dose>
+            </oral>
+        </paediatric>
+        <sideEffect>cccccccccccccccccc</sideEffect>
+    </drug>
+    <drug>
+        <adult>
+            <oral>
+                <administration>does this work 1</administration>
+                <dose>does this work 2</dose>
+            </oral>
+        </adult>
+        <brandName>xxxxxxxxxxxxx</brandName>
+        <indication>vvvvvvvvvvvvvvvvvvvvv</indication>
+        <interactions>
+            <entry>
+                <key>11111111111111</key>
+                <value>2222222222222222</value>
+            </entry>
+            <entry>
+                <key>33333333333333</key>
+                <value>4444444444444444444</value>
+            </entry>
+        </interactions>
+        <name>zzzzzzzzzzzzzzz</name>
+        <paediatric>
+            <oral>
+                <administration>does this work 3</administration>
+                <dose>does this work 4</dose>
+            </oral>
+        </paediatric>
+        <sideEffect>cccccccccccccccccc</sideEffect>
+    </drug>
 </cfInfo>

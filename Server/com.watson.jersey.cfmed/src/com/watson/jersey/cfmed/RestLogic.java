@@ -76,6 +76,9 @@ public class RestLogic {
 		
 		//Fills the template with data.
 		CFInfo cfInfo = new CFInfo();
+		DBManager db = new DBManager();
+		ArrayList <DrugInfo> drugArray = db.databaseToObject();
+		cfInfo.setDrug(drugArray);
 		ArrayList <String> tempArray = new ArrayList<String>();
 		String tempString = "";
 		String row = "";
