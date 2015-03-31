@@ -8,11 +8,19 @@ public class DrugInfo {
 	 private AdultInfo ad;
 	 private PaediatricInfo pae;
 	 private String name;
+	 private int id;
 	 private ArrayList <String> brandName;
 	 private String indication;
 	 private String sideEffect;
 	 private Map <String,String> interactions;
-	
+	 
+	 public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public Map<String, String> getInteractions() {
 		return interactions;

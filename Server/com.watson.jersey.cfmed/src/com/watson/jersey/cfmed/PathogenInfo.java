@@ -6,7 +6,14 @@ public class PathogenInfo {
 private String name;
 private String description;
 private ArrayList<String> firstline;
+private int id;
 
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
 public String getName() {
 	return name;
 }

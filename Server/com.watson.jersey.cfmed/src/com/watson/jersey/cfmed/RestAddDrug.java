@@ -285,6 +285,6 @@ public class RestAddDrug {
 		DBManager db = new DBManager();
 		db.addDrug(newDrug);
 
-		servletResponse.sendRedirect("../rest/cfmed");
+		servletResponse.sendRedirect("../rest/drugs");
 	}
 }

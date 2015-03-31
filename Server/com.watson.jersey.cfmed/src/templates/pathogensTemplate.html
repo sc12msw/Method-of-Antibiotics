@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"><!-- Bootstrap Core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <title>$title</title>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+function deletePathogen() {
+	var id = $('#pathogenId').val();
+	$.ajax({
+    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/pathogens/" + id,
+    type: 'DELETE',
+    success: function(result) {
+		location.reload();
+        alert("Pathogen was deleted from database");
+    }
+});
+	
+}
+	</script>
+	
+</head>
+
+<body>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="../cfmed/html">View Drugs</a>
+                    </li>
+
+                    <li>
+                        <a href="../addDrug">Add Drug</a>
+                    </li>
+
+                    <li>
+                        <a href="../addPathogen">Add Pathogen</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>$title</h1>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+
+                    <th>Description</th>
+
+                    <th>Drugs that can treat pathogen</th>
+
+                </tr>
+            </thead>
+
+            <tbody>$tablerow</tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>

@@ -304,22 +304,31 @@ public class DBManager {
 				drugNames.add(drugName);
 				drugIds.add(drugId);
 			}
-			Boolean drugMissing = true;
-			for (int i = 0; i < firstlineArray.size(); i++) {
-				if (drugNames.get(i).equals(firstlineArray.get(i))) {
-					matchedNames.add(firstlineArray.get(i));
-					iDForMatch.add(drugIds.get(i));
-					drugMissing = false;
+			
+			
+			try {
+				for (int i = 0; i < drugNames.size(); i++) {
+					for (int j = 0; j<firstlineArray.size(); j++) {
+						if( drugNames.get(i).equals(firstlineArray.get(j))){
+						matchedNames.add(firstlineArray.get(i));
+						iDForMatch.add(drugIds.get(i));
+					
+						}
+					}
 				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("Error occured you have probably added more drugs to the pathogen than exsist");
+				return error;
 			}
 			// If the drug added to first line is not in the database no data is
 			// added to the database and an error is produced
-			if (drugMissing) {
+			if (matchedNames.size() != firstlineArray.size()) {
 				System.out
-						.println("A drug you entered is not in the database please add before adding this pathogen");
+				.println("A drug you entered is not in the database please add before adding this pathogen");
 				return error;
 			}
-			drugMissing = true;
+			
 
 			// The following code sets the basic data for a pathogen in the
 			// database.
@@ -328,7 +337,7 @@ public class DBManager {
 			preparedStatement.setString(1, pathogen.getName());
 			preparedStatement.setString(2, pathogen.getDescription());
 			preparedStatement.executeUpdate();
-			
+
 			// Get the pathogen id to pass the foreign key to the other tables
 			sql = "SELECT * FROM Pathogens";
 			ResultSet pathRs = stmt.executeQuery(sql);
@@ -404,15 +413,11 @@ public class DBManager {
 					+ " Paediatric_Administration.SC AS pScAd,"
 					+ " Paediatric_Dose.ID AS pIdDose, Paediatric_Dose.Oral AS pOralDose, Paediatric_Dose.IV AS pIvDose,"
 					+ " Paediatric_Dose.Inhaled AS pInhaledDose, Paediatric_Dose.IM AS pImDose, Paediatric_Dose.PR AS pPrDose,"
-					+ " Paediatric_Dose.SC AS pScDose,"
-					+ " Interactions.ID AS interId, Interactions.Interacting_Drug AS interDrugName, Interactions.Effect AS interDescription,"
-					+ " Brand_Names.ID AS brandId, Brand_Names.Brand_Name AS brandName"
+					+ " Paediatric_Dose.SC AS pScDose"
 					+ " FROM Drugs INNER JOIN Adult_Administration ON Drugs.ID = Adult_Administration.Drugs_ID"
 					+ " INNER JOIN Adult_Dose ON Adult_Dose.Drugs_ID = Drugs.ID"
 					+ " INNER JOIN Paediatric_Administration ON Paediatric_Administration.Drugs_ID = Drugs.ID"
-					+ " INNER JOIN Paediatric_Dose ON Paediatric_Dose.Drugs_ID = Drugs.ID"
-					+ " INNER JOIN Interactions ON Interactions.Drugs_ID = Drugs.ID"
-					+ " INNER JOIN Brand_Names ON Brand_Names.Drugs_ID = Drugs.ID";
+					+ " INNER JOIN Paediatric_Dose ON Paediatric_Dose.Drugs_ID = Drugs.ID";
 			ResultSet rs = stmt.executeQuery(databaseQuery);
 			while (rs.next()) {
 
@@ -487,7 +492,7 @@ public class DBManager {
 				}
 
 				// Set drug object
-
+				drugInfo.setId(drugId);
 				drugInfo.setName(drugName);
 				drugInfo.setIndication(drugIndi);
 				drugInfo.setSideEffect(drugSide);
@@ -602,12 +607,12 @@ public class DBManager {
 		}
 		return drugs;
 	}
-	
-	
+
+
 	public ArrayList<PathogenInfo> databaseToPathogenObject() {
 
 		ArrayList<PathogenInfo> pathogens = new ArrayList<PathogenInfo>();
-		ArrayList<String> firstlineNames = new ArrayList<String>();
+		
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -622,30 +627,33 @@ public class DBManager {
 			String databaseQuery;
 			databaseQuery = "SELECT * FROM Pathogens";
 			ResultSet pathRs = stmt.executeQuery(databaseQuery);
-	
+
 			while (pathRs.next()) {
 				PathogenInfo pathogenInfo = new PathogenInfo();
 				// Set data from database to object;
 				int pathoId = pathRs.getInt("Pathogen_ID");			
 				String pathoName = pathRs.getString("Name");
 				String pathoDescription = pathRs.getString("Description");
-				
+
 				// Retrieve data from first line table
 
 				String fLQuery = "SELECT * FROM First_Line WHERE Pathogens_ID ="
 						+ pathoId;
 				Statement fLStmt = conn.createStatement();
 				ResultSet fLRs = fLStmt.executeQuery(fLQuery);
+				ArrayList<String> firstlineNames = new ArrayList<String>();
 				while (fLRs.next()) {
+					
 					String fLName = fLRs.getString("Drug_Name");
 					firstlineNames.add(fLName);
 				}
-				
+
+				pathogenInfo.setId(pathoId);
 				pathogenInfo.setName(pathoName);
 				pathogenInfo.setDescription(pathoDescription);
 				pathogenInfo.setFirstline(firstlineNames);
-				
-				
+
+
 				// Add pathogen object to drug array
 				pathogens.add(pathogenInfo);
 
@@ -673,5 +681,74 @@ public class DBManager {
 			}
 		}
 		return pathogens;
+	}
+
+	public void deleteDrug(int drugId) {
+		Connection conn = null;
+		Statement stmt = null;
+		PreparedStatement preparedStatement = null;
+		try {
+			// Register JDBC driver
+			Class.forName("com.mysql.jdbc.Driver");
+			// Create a connection
+			conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			stmt = conn.createStatement();
+			preparedStatement = conn
+					.prepareStatement("DELETE FROM Drugs WHERE ID="+ drugId +";");
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException se) {
+			se.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// Close connections if no connection was found
+			try {
+				if (stmt != null)
+					stmt.close();
+			} catch (SQLException se2) {
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				se.printStackTrace();
+			}
+		}
+	}
+	
+	
+	public void deletePathogen(int pathoId) {
+		Connection conn = null;
+		Statement stmt = null;
+		PreparedStatement preparedStatement = null;
+		try {
+			// Register JDBC driver
+			Class.forName("com.mysql.jdbc.Driver");
+			// Create a connection
+			conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			stmt = conn.createStatement();
+			preparedStatement = conn
+					.prepareStatement("DELETE FROM Pathogens WHERE Pathogen_ID="+ pathoId +";");
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException se) {
+			se.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// Close connections if no connection was found
+			try {
+				if (stmt != null)
+					stmt.close();
+			} catch (SQLException se2) {
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				se.printStackTrace();
+			}
+		}
 	}
 }

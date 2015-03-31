@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"><!-- Bootstrap Core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Cystic Fybrosis Information</title>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+function deleteDrug() {
+	var id = $('#drugId').val();
+	$.ajax({
+    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/drugs/" + id,
+    type: 'DELETE',
+    success: function(result) {
+		location.reload();
+        alert("Drug was deleted from database");
+    }
+});
+	
+}
+	</script>
+	
+</head>
+
+<body>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="../cfmed/html">View Drugs</a>
+                    </li>
+
+                    <li>
+                        <a href="../addDrug">Add Drug</a>
+                    </li>
+
+                    <li>
+                        <a href="../addPathogen">Add Pathogen</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Cystic Fybrosis Information</h1>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+
+                    <th>Brand Names</th>
+
+                    <th>Indication</th>
+
+                    <th>Interactions</th>
+                </tr>
+            </thead>
+
+            <tbody><tr> <td>tester23</td><td> 1</td><td>3</td><td>{4=5}</td><td width="75px"><input id="drugId" value="10" type="hidden"/><input class="btn btn-primary"onclick="deleteDrug();" type="button" value="Delete"> </td></tr><tr> <td>tester234</td><td> 1</td><td>3</td><td>{4=5}</td><td width="75px"><input id="drugId" value="11" type="hidden"/><input class="btn btn-primary"onclick="deleteDrug();" type="button" value="Delete"> </td></tr></tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>

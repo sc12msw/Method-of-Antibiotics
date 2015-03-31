@@ -96,10 +96,17 @@ public class RestAddPathogen {
 		int check = 0;
 		check = db.addPathogen(newPathogen);
 		if(check == -1){
-			servletResponse.sendRedirect("../rest/noDrug");
+			servletResponse.sendRedirect("../rest/addPathogen/noDrug");
 		}else{
-		servletResponse.sendRedirect("../rest/cfmed");
+		servletResponse.sendRedirect("../rest/pathogens");
 		}
 		}
+	
+	@GET
+	@Path("noDrug")
+	public File noDrug(){
+		File file = new File("templates/noDrug.html");
+		return file;
+	}
 	}
 

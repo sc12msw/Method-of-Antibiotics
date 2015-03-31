@@ -8,6 +8,7 @@
             </oral>
         </adult>
         <brandName>1</brandName>
+        <id>10</id>
         <indication>3</indication>
         <interactions>
             <entry>
@@ -15,7 +16,7 @@
                 <value>5</value>
             </entry>
         </interactions>
-        <name>Tester</name>
+        <name>tester23</name>
         <paediatric>
             <oral>
                 <administration>8</administration>
@@ -24,9 +25,29 @@
         </paediatric>
         <sideEffect>2</sideEffect>
     </drug>
-    <pathogen>
-        <description>1</description>
-        <firstline>Tester</firstline>
-        <name>pathogen test</name>
-    </pathogen>
+    <drug>
+        <adult>
+            <oral>
+                <administration>6</administration>
+                <dose>7</dose>
+            </oral>
+        </adult>
+        <brandName>1</brandName>
+        <id>11</id>
+        <indication>3</indication>
+        <interactions>
+            <entry>
+                <key>4</key>
+                <value>5</value>
+            </entry>
+        </interactions>
+        <name>tester234</name>
+        <paediatric>
+            <oral>
+                <administration>8</administration>
+                <dose>9</dose>
+            </oral>
+        </paediatric>
+        <sideEffect>2</sideEffect>
+    </drug>
 </cfInfo>
