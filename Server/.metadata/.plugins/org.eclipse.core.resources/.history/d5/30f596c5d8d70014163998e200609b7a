@@ -310,7 +310,7 @@ public class DBManager {
 				for (int i = 0; i < drugNames.size(); i++) {
 					for (int j = 0; j<firstlineArray.size(); j++) {
 						if( drugNames.get(i).equals(firstlineArray.get(j))){
-						matchedNames.add(firstlineArray.get(j));
+						matchedNames.add(firstlineArray.get(i));
 						iDForMatch.add(drugIds.get(i));
 					
 						}

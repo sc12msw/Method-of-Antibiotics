@@ -6,6 +6,22 @@
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Cystic Fybrosis Information</title>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+function deleteDrug() {
+	var id = $('#drugId').val();
+	$.ajax({
+    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/drugs/" + id,
+    type: 'DELETE',
+    success: function(result) {
+		location.reload();
+        alert("Drug was deleted from database");
+    }
+});
+	
+}
+	</script>
+	
 </head>
 
 <body>
@@ -47,19 +63,11 @@
 
                     <th>Indication</th>
 
-                    <th>Adult Oral Administration</th>
-
-                    <th>Adult Oral Dose</th>
-
-                    <th>Paediatric Oral Administration</th>
-
-                    <th>Paediatric Oral Dose</th>
-
                     <th>Interactions</th>
                 </tr>
             </thead>
 
-            <tbody><tr> <td>Drug name</td><td> brand 1 brand 2</td><td>For this disease</td><td>take tablet</td><td>10mg</td><td>take tablet</td><td>10mg</td><td>This drug interacts with : 1drug 2drug etc</td></tr></tbody>
+            <tbody><tr> <td>tester23</td><td> 1</td><td>3</td><td>{4=5}</td><td width="75px"><input id="drugId" value="10" type="hidden"/><input class="btn btn-primary"onclick="deleteDrug();" type="button" value="Delete"> </td></tr><tr> <td>tester234</td><td> 1</td><td>3</td><td>{4=5}</td><td width="75px"><input id="drugId" value="11" type="hidden"/><input class="btn btn-primary"onclick="deleteDrug();" type="button" value="Delete"> </td></tr></tbody>
         </table>
     </div>
 

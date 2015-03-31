@@ -4,8 +4,23 @@
 <head>
     <meta charset="utf-8"><!-- Bootstrap Core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-
     <title>$title</title>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+function deletePathogen() {
+	var id = $('#pathogenId').val();
+	$.ajax({
+    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/pathogens/" + id,
+    type: 'DELETE',
+    success: function(result) {
+		location.reload();
+        alert("Pathogen was deleted from database");
+    }
+});
+	
+}
+	</script>
+	
 </head>
 
 <body>
@@ -43,19 +58,10 @@
                 <tr>
                     <th>Name</th>
 
-                    <th>Brand Names</th>
+                    <th>Description</th>
 
-                    <th>Indication</th>
+                    <th>Drugs that can treat pathogen</th>
 
-                    <th>Adult Oral Administration</th>
-
-                    <th>Adult Oral Dose</th>
-
-                    <th>Paediatric Oral Administration</th>
-
-                    <th>Paediatric Oral Dose</th>
-
-                    <th>Interactions</th>
                 </tr>
             </thead>
 
