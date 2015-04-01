@@ -210,6 +210,9 @@
                                         <state key="normal" title="Antibacterial Spectrum">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="7Yi-7M-Pa6" kind="show" identifier="TreatsSegue" id="p85-VN-vMv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzo-wi-Awj">
                                         <rect key="frame" x="291" y="69" width="275" height="50"/>
@@ -305,6 +308,55 @@
             </objects>
             <point key="canvasLocation" x="2227" y="-1139"/>
         </scene>
+        <!--Pathogens For DrugVC-->
+        <scene sceneID="i9V-mw-uh2">
+            <objects>
+                <viewController id="7Yi-7M-Pa6" customClass="PathogensForDrugVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nSV-7L-CHD"/>
+                        <viewControllerLayoutGuide type="bottom" id="b3g-OM-Bw3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="87d-71-p8F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-Qa-MIx">
+                                <rect key="frame" x="8" y="0.0" width="585" height="1250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PathogenCell" id="gFP-xc-Hfc">
+                                        <rect key="frame" x="0.0" y="0.0" width="585" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gFP-xc-Hfc" id="67V-de-wO3">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="oLu-Tv-E8F" kind="show" identifier="drugPathogenSegue" id="wzP-1N-NSg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Yi-7M-Pa6" id="H1h-2n-pyc"/>
+                                    <outlet property="delegate" destination="7Yi-7M-Pa6" id="Ovi-IN-pPW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZTL-Qa-MIx" secondAttribute="trailing" constant="-9" id="1YQ-4m-X8n"/>
+                            <constraint firstItem="ZTL-Qa-MIx" firstAttribute="top" secondItem="87d-71-p8F" secondAttribute="top" id="8UC-Sv-dj2"/>
+                            <constraint firstItem="ZTL-Qa-MIx" firstAttribute="leading" secondItem="87d-71-p8F" secondAttribute="leadingMargin" constant="-8" id="ZEY-vl-wXt"/>
+                            <constraint firstAttribute="bottom" secondItem="ZTL-Qa-MIx" secondAttribute="bottom" id="nBr-34-46b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pathogenTable" destination="ZTL-Qa-MIx" id="b0K-hN-MEo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYg-0e-90e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3560" y="564"/>
+        </scene>
         <!--Pathogens-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -364,7 +416,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4fR-kn-MZB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RLe-a8-3Mz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBl-6D-dQg">
@@ -399,7 +451,7 @@
                                 </connections>
                             </pickerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Drugs to be checked for intertactions" translatesAutoresizingMaskIntoConstraints="NO" id="c3i-qt-dby">
-                                <rect key="frame" x="19" y="416" width="524" height="135"/>
+                                <rect key="frame" x="19" y="416" width="524" height="785"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -432,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63v-YR-UEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584" y="653"/>
+            <point key="canvasLocation" x="2733" y="252"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -888,7 +940,7 @@
                             <constraint firstItem="CMw-zp-5wX" firstAttribute="leading" secondItem="bi3-TJ-bBn" secondAttribute="trailing" constant="10" id="zyJ-0F-P0x"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calculator" id="ImG-eh-CCR"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="rsz_cal" selectedImage="first" id="ImG-eh-CCR"/>
                     <connections>
                         <outlet property="calculatorOutput" destination="g5B-gz-7S5" id="l3D-eM-dXT"/>
                     </connections>
@@ -938,6 +990,10 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="rsz_cal" width="15" height="15"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wzP-1N-NSg"/>
+    </inferredMetricsTieBreakers>
 </document>

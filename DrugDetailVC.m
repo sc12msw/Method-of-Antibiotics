@@ -7,6 +7,7 @@
 //
 
 #import "DrugDetailVC.h"
+#import "PathogensForDrugVC.h"
 
 @interface DrugDetailVC ()
 
@@ -257,6 +258,15 @@
         }
     self.brandNames.text = [drug.getBrandNames componentsJoinedByString:@" "];
     
+}
+
+
+//Sends the drug object to the PathogensForDrug view but only shows the pathogens that are treated with that drug.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"TreatsSegue"]) {
+        PathogensForDrugVC *dvc = segue.destinationViewController;
+        dvc.drug = drug;
+    }
 }
 
 

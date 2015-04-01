@@ -23,11 +23,9 @@
     [super viewDidLoad];
     self.navigationItem.title = pathogen.getName;
     self.descriptionArea.text = pathogen.getDescription;
-    self.descriptionArea.textColor = [UIColor whiteColor];
     drugSelectionStorage = [[NSMutableArray alloc]init];
     picker1Data = [[NSMutableArray alloc]init];
     [picker1Data addObjectsFromArray:pathogen.getFirstLine];
-    [picker1Data addObjectsFromArray:pathogen.getSecondLine];
 }
 
 - (void)didReceiveMemoryWarning {

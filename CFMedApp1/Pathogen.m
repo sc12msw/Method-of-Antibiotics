@@ -15,7 +15,6 @@
     name = [[NSString alloc]init];;
     description =[[NSString alloc]init];
     firstLine = [[NSArray alloc]init];
-    secondLine = [[NSArray alloc]init];
     return self;
 }
 -(NSString*)getName{
@@ -27,9 +26,7 @@
 -(NSArray*)getFirstLine{
     return firstLine;
 }
--(NSArray*)getSecondLine{
-    return secondLine;
-}
+
 
 -(void)setDescription:(NSString*) set{
     description = set;
@@ -42,8 +39,5 @@
     firstLine = set;
     
 }
--(void)setSecondLine:(NSArray*) set{
-    secondLine = set;
 
-}
 @end

@@ -15,9 +15,8 @@
 -(NSString*)getDescription;
 -(NSString*)getName;
 -(NSArray*)getFirstLine;
--(NSArray*)getSecondLine;
 -(void)setDescription:(NSString*) set;
 -(void)setName:(NSString*) set;
 -(void)setFirstLine: (NSArray*) set;
--(void)setSecondLine:(NSArray*) set;
+
 @end

@@ -14,7 +14,7 @@
 }
 
 + (NSMutableArray *)loadDrugData;
-+ (NSMutableArray *)loadPathogenData;
++ (NSMutableArray *)loadPathogenData:(NSString*)nameOfDrug;
 
 
 @end

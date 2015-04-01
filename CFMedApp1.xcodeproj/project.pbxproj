@@ -21,6 +21,7 @@
 		9736A7251A8906E1005BCE62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9736A7241A8906E1005BCE62 /* Images.xcassets */; };
 		9736A7281A8906E1005BCE62 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9736A7261A8906E1005BCE62 /* LaunchScreen.xib */; };
 		9736A7341A8906E2005BCE62 /* CFMedApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A7331A8906E2005BCE62 /* CFMedApp1Tests.m */; };
+		9738459B1ACC139E00C7C4F7 /* PathogensForDrugVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738459A1ACC139E00C7C4F7 /* PathogensForDrugVC.m */; };
 		974403701AADD37200F1C115 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9744036F1AADD37200F1C115 /* FileManager.m */; };
 		97AE70101A9B4E8F00C899F3 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AE700F1A9B4E8F00C899F3 /* GDataXMLNode.m */; };
 		97AE70131A9B576400C899F3 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AE70121A9B576400C899F3 /* DataParser.m */; };
@@ -64,6 +65,8 @@
 		9736A72D1A8906E2005BCE62 /* CFMedApp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CFMedApp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9736A7321A8906E2005BCE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9736A7331A8906E2005BCE62 /* CFMedApp1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFMedApp1Tests.m; sourceTree = "<group>"; };
+		973845991ACC139E00C7C4F7 /* PathogensForDrugVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathogensForDrugVC.h; sourceTree = "<group>"; };
+		9738459A1ACC139E00C7C4F7 /* PathogensForDrugVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathogensForDrugVC.m; sourceTree = "<group>"; };
 		9744036E1AADD37200F1C115 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileManager.h; path = ../FileManager.h; sourceTree = "<group>"; };
 		9744036F1AADD37200F1C115 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileManager.m; path = ../FileManager.m; sourceTree = "<group>"; };
 		97AE700E1A9B4E8F00C899F3 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				9732A5B11A9397850017CF8E /* Pathogen.m */,
 				9736A71B1A8906E1005BCE62 /* FirstViewController.h */,
 				9736A71C1A8906E1005BCE62 /* FirstViewController.m */,
+				973845991ACC139E00C7C4F7 /* PathogensForDrugVC.h */,
+				9738459A1ACC139E00C7C4F7 /* PathogensForDrugVC.m */,
 				9736A71E1A8906E1005BCE62 /* SecondViewController.h */,
 				9736A71F1A8906E1005BCE62 /* SecondViewController.m */,
 				973248811A892B0D003570AA /* PathogenDetailVC.h */,
@@ -278,6 +283,7 @@
 				9736A71A1A8906E1005BCE62 /* AppDelegate.m in Sources */,
 				9736A71D1A8906E1005BCE62 /* FirstViewController.m in Sources */,
 				9735F33B1A98FB3100FD7D9D /* CalculatorVC.m in Sources */,
+				9738459B1ACC139E00C7C4F7 /* PathogensForDrugVC.m in Sources */,
 				97AE70101A9B4E8F00C899F3 /* GDataXMLNode.m in Sources */,
 				9736A7171A8906E1005BCE62 /* main.m in Sources */,
 				9727C0AB1A8CCF7B00EEA769 /* Drug.m in Sources */,
