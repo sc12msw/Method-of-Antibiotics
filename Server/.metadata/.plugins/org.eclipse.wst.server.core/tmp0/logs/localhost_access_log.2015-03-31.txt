@@ -547,3 +547,5 @@
 127.0.0.1 - - [31/Mar/2015:20:07:15 +0100] "GET /com.watson.jersey.cfmed/rest/addPathogen HTTP/1.1" 200 3166
 127.0.0.1 - - [31/Mar/2015:20:07:25 +0100] "POST /com.watson.jersey.cfmed/rest/addPathogen HTTP/1.1" 302 -
 127.0.0.1 - - [31/Mar/2015:20:07:25 +0100] "GET /com.watson.jersey.cfmed/rest/pathogens HTTP/1.1" 200 1926
+127.0.0.1 - - [31/Mar/2015:20:12:46 +0100] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [31/Mar/2015:20:13:04 +0100] "GET /com.watson.jersey.cfmed/rest/pathogens HTTP/1.1" 200 1926
