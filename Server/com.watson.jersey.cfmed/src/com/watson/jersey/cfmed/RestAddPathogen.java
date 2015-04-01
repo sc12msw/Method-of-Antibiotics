@@ -14,9 +14,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 
 
 @Path ("/addPathogen")
@@ -50,28 +47,12 @@ public class RestAddPathogen {
 			@FormParam("fLDrug8") String fLDrug8,
 			@FormParam("fLDrug9") String fLDrug9,
 			
-			@FormParam("sLDrug") String sLDrug,
-			@FormParam("sLDrug1") String sLDrug1,
-			@FormParam("sLDrug2") String sLDrug2,
-			@FormParam("sLDrug3") String sLDrug3,
-			@FormParam("sLDrug4") String sLDrug4,
-			@FormParam("sLDrug5") String sLDrug5,
-			@FormParam("sLDrug6") String sLDrug6,
-			@FormParam("sLDrug7") String sLDrug7,
-			@FormParam("sLDrug8") String sLDrug8,
-			@FormParam("sLDrug9") String sLDrug9,
 		
 			@FormParam("description") String description,
 			@Context HttpServletResponse servletResponse) throws IOException {
-
-		//This line is to create dummy data when complete this will be data pull from database
-		CFInfo cfInfo = new CFInfo();
-		//
 		
 		//Create object from form strings
 		ArrayList <String> fLArray = new ArrayList <String> ();
-		ArrayList <String> sLArray = new ArrayList <String> ();
-		ArrayList <PathogenInfo> pathogenArray = cfInfo.getPathogen();
 		PathogenInfo newPathogen = new PathogenInfo();
 		
 		if(fLDrug != null && !fLDrug.isEmpty()){
@@ -105,62 +86,27 @@ public class RestAddPathogen {
 			fLArray.add(fLDrug9);
 		}
 		
-		if(sLDrug != null && !sLDrug.isEmpty()){
-			sLArray.add(sLDrug);
-		}
-		if(sLDrug1 != null && !sLDrug1.isEmpty()){
-			sLArray.add(sLDrug1);
-		}
-		if(sLDrug2 != null && !sLDrug2.isEmpty()){
-			sLArray.add(sLDrug2);
-		}
-		if(sLDrug3 != null && !sLDrug3.isEmpty()){
-			sLArray.add(sLDrug3);
-		}
-		if(sLDrug4 != null && !sLDrug4.isEmpty()){
-			sLArray.add(sLDrug4);
-		}
-		if(sLDrug5 != null && !sLDrug5.isEmpty()){
-			sLArray.add(sLDrug5);
-		}
-		if(sLDrug6 != null && !sLDrug6.isEmpty()){
-			sLArray.add(sLDrug6);
-		}
-		if(sLDrug7 != null && !sLDrug7.isEmpty()){
-			sLArray.add(sLDrug7);
-		}
-		if(sLDrug8 != null && !sLDrug8.isEmpty()){
-			sLArray.add(sLDrug8);
-		}
-		if(sLDrug9 != null && !sLDrug9.isEmpty()){
-			sLArray.add(sLDrug9);
-		}
+	
 		
 		newPathogen.setFirstline(fLArray);
-		if (!sLArray.isEmpty()){
-			newPathogen.setSecondline(sLArray);
-		}
+		
 		newPathogen.setName(name);
 		newPathogen.setDescription(description);
-		pathogenArray.add(newPathogen);
-		cfInfo.setPathogen(pathogenArray);
-		//Write to output xml
-		File file = new File("templates/cfInfo.xml");
-
-		try{
-
-			JAXBContext jaxbContext = JAXBContext.newInstance(CFInfo.class);
-			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			jaxbMarshaller.marshal(cfInfo, file);
-			jaxbMarshaller.marshal(cfInfo, System.out);
-
-
-		}catch (JAXBException e) {
-			e.printStackTrace();
+		DBManager db = new DBManager();
+		int check = 0;
+		check = db.addPathogen(newPathogen);
+		if(check == -1){
+			servletResponse.sendRedirect("../rest/addPathogen/noDrug");
+		}else{
+		servletResponse.sendRedirect("../rest/pathogens");
 		}
-
-		servletResponse.sendRedirect("../rest/cfmed");
 		}
+	
+	@GET
+	@Path("noDrug")
+	public File noDrug(){
+		File file = new File("templates/noDrug.html");
+		return file;
+	}
 	}
 

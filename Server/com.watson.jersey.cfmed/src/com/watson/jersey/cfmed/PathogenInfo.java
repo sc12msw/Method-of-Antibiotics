@@ -6,7 +6,14 @@ public class PathogenInfo {
 private String name;
 private String description;
 private ArrayList<String> firstline;
-private ArrayList<String> secondline;
+private int id;
+
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
 public String getName() {
 	return name;
 }
@@ -24,12 +31,6 @@ public ArrayList<String> getFirstline() {
 }
 public void setFirstline(ArrayList<String> firstline) {
 	this.firstline = firstline;
-}
-public ArrayList<String> getSecondline() {
-	return secondline;
-}
-public void setSecondline(ArrayList<String> secondline) {
-	this.secondline = secondline;
 }
 
 

@@ -2,42 +2,52 @@
 <cfInfo>
     <drug>
         <adult>
-            <inhaled>
-                <administration>take tablet</administration>
-                <dose>10mg</dose>
-            </inhaled>
             <oral>
-                <administration>take tablet</administration>
-                <dose>10mg</dose>
+                <administration>6</administration>
+                <dose>7</dose>
             </oral>
         </adult>
-        <brandName>brand 1</brandName>
-        <brandName>brand 2</brandName>
-        <indication>For this disease</indication>
-        <interactions>This drug interacts with : 1drug 2drug etc</interactions>
-        <name>Drug name</name>
+        <brandName>1</brandName>
+        <id>10</id>
+        <indication>3</indication>
+        <interactions>
+            <entry>
+                <key>4</key>
+                <value>5</value>
+            </entry>
+        </interactions>
+        <name>tester23</name>
         <paediatric>
-            <inhaled>
-                <administration>take tablet</administration>
-                <dose>10mg</dose>
-            </inhaled>
             <oral>
-                <administration>take tablet</administration>
-                <dose>10mg</dose>
+                <administration>8</administration>
+                <dose>9</dose>
             </oral>
         </paediatric>
-        <sideEffect>This is a side effect</sideEffect>
+        <sideEffect>2</sideEffect>
     </drug>
-    <pathogen>
-        <description>I am a bacteria</description>
-        <firstline>im a first line drug</firstline>
-        <name>Bacteria</name>
-        <secondline>im a first line drug</secondline>
-    </pathogen>
-    <pathogen>
-        <description>pathogen decription for test</description>
-        <firstline>drug for pathogen test</firstline>
-        <firstline>second drug for pathogen test</firstline>
-        <name>pathogen test</name>
-    </pathogen>
+    <drug>
+        <adult>
+            <oral>
+                <administration>6</administration>
+                <dose>7</dose>
+            </oral>
+        </adult>
+        <brandName>1</brandName>
+        <id>11</id>
+        <indication>3</indication>
+        <interactions>
+            <entry>
+                <key>4</key>
+                <value>5</value>
+            </entry>
+        </interactions>
+        <name>tester234</name>
+        <paediatric>
+            <oral>
+                <administration>8</administration>
+                <dose>9</dose>
+            </oral>
+        </paediatric>
+        <sideEffect>2</sideEffect>
+    </drug>
 </cfInfo>
