@@ -14,6 +14,7 @@
 @property (strong, nonatomic) Pathogen *pathogen;
 - (IBAction)selectFL:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextView *drugSelection;
+- (IBAction)checkInter:(id)sender;
 
 @property (strong, nonatomic) NSMutableArray *picker1Data;
 @end

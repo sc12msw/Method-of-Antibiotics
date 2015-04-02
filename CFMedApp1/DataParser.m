@@ -26,11 +26,6 @@
                                                            options:0 error:&error];
     if (doc == nil) { return nil; }
     
-    
-    
-    
-    
-    
     NSMutableArray *drugObjects = [[NSMutableArray alloc]init];
     
     //String variables for doeses and administration.
@@ -38,65 +33,82 @@
     //Gets all the drugs from the xml file
     NSArray *drugs = [doc.rootElement elementsForName:@"drug"];
     for (GDataXMLElement *obj in drugs){
-        NSString *temp = nil;
-        NSMutableArray *tempList = [[NSMutableArray alloc]init];
         Drug *drug = [[Drug alloc]init];
         NSArray *drugNames = [obj elementsForName:@"name"];
         if (drugs.count > 0) {
+            NSString *temp = [[NSString alloc]init];
             GDataXMLElement *drugXML = (GDataXMLElement *) [drugNames objectAtIndex:0];
             temp = drugXML.stringValue;
             [drug setGenericName:temp];
         }
         
         
-        //Gets the types for the drugs from the xml file
-        NSArray *types =[obj elementsForName:@"type"];
-        if (types.count >0){
-            GDataXMLElement *typeXML = (GDataXMLElement *) [types objectAtIndex:0];
-            temp = typeXML.stringValue;
-            [drug setTypeofDrug:temp];
-        }
+        //Gets the types for the drugs from the xml file uncomment if implemented later on.
+        /*
+         NSArray *types =[obj elementsForName:@"type"];
+         if (types.count >0){
+         GDataXMLElement *typeXML = (GDataXMLElement *) [types objectAtIndex:0];
+         temp = typeXML.stringValue;
+         [drug setTypeofDrug:temp];
+         }
+         */
         
         //Gets the side effects for the drugs from the xml file
         NSArray *sideEffects =[obj elementsForName:@"sideEffect"];
         if (sideEffects.count >0){
-            for (GDataXMLElement *sEObj in sideEffects){
-                GDataXMLElement *sideEffectXML = (GDataXMLElement *) sEObj;
-                temp = sideEffectXML.stringValue;
-                [tempList addObject:temp];
-                
-            }
-            [drug setSideEffects:tempList];
-            tempList=[[NSMutableArray alloc]init];
+            NSString *temp = [[NSString alloc]init];
+            GDataXMLElement *sideEffectXML = (GDataXMLElement *) [sideEffects objectAtIndex:0];
+            temp = sideEffectXML.stringValue;
+            [drug setSideEffects:temp];
         }
         
         //Gets the interactions for the drugs from the xml file
         NSArray *interactions =[obj elementsForName:@"interactions"];
         if (interactions.count >0){
+            NSString *tempVal = [[NSString alloc]init];
+            NSString *tempKey = [[NSString alloc]init];
+            NSMutableDictionary* tempList = [[NSMutableDictionary alloc]init];
             for (GDataXMLElement *interactObj in interactions){
                 GDataXMLElement *interactionXML = (GDataXMLElement *) interactObj;
-                temp = interactionXML.stringValue;
-                [tempList addObject:temp];
+                NSArray *interactionChildren = interactionXML.children;
+                
+                NSInteger currentIndex = 1;
+                
+                //Finds the key pairs of the interaction dictionary and saves them to the object.
+                for (GDataXMLElement *interChildObj in interactionChildren){
+                    NSArray *entryChildObj = interChildObj.children;
+                    for (GDataXMLElement *entryPair in entryChildObj){
+                        
+                        if (currentIndex % 2){
+                            tempKey = entryPair.stringValue;
+                        }else{
+                            tempVal = entryPair.stringValue;
+                            [tempList setValue:tempVal forKey:tempKey];
+                        }
+                        currentIndex = currentIndex+1;
+                    }
+                }
             }
             [drug setDrugInteraction:tempList];
-            tempList=[[NSMutableArray alloc]init];
         }
         
         //Gets the brand names for the drugs from the xml file
         NSArray *brandNames =[obj elementsForName:@"brandName"];
         if (brandNames.count >0){
+            NSString *temp = [[NSString alloc]init];
+            NSMutableArray *tempList = [[NSMutableArray alloc]init];
             for (GDataXMLElement *brandObj in brandNames){
                 GDataXMLElement *brandXML = (GDataXMLElement *) brandObj;
                 temp = brandXML.stringValue;
                 [tempList addObject:temp];
             }
             [drug setBrandNames:tempList];
-            tempList=[[NSMutableArray alloc]init];
         }
         
         //Gets the indications from the xml file
         NSArray *indications =[obj elementsForName:@"indication"];
         if (indications.count >0){
+            NSString *temp = [[NSString alloc]init];
             GDataXMLElement *treatXML = (GDataXMLElement *) [indications objectAtIndex:0];
             temp = treatXML.stringValue;
             [drug setIndication:temp];
@@ -111,7 +123,7 @@
             for (GDataXMLElement *adultObj in adult){
                 GDataXMLElement *adultXML = (GDataXMLElement *) adultObj;
                 NSArray *children= [[NSArray alloc]init];
-                NSArray *rOAChildren = [[NSArray alloc]init];
+                
                 
                 //Gets the nested nodes inside adult
                 children = adultXML.children;
@@ -122,6 +134,8 @@
                     
                     //Inhaled is set by finding the node then setting the current index 0.admin and 1.dose to set the data to the object
                     if ([routeOfAdmin isEqualToString:@"inhaled"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -137,6 +151,8 @@
                     }
                     
                     if ([routeOfAdmin isEqualToString:@"oral"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -152,6 +168,8 @@
                     }
                     
                     if ([routeOfAdmin isEqualToString:@"IV"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -167,6 +185,8 @@
                     }
                     
                     if ([routeOfAdmin isEqualToString:@"PR"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -181,6 +201,8 @@
                         }
                     }
                     if ([routeOfAdmin isEqualToString:@"SC"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -195,6 +217,8 @@
                         }
                     }
                     if ([routeOfAdmin isEqualToString:@"IM"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -222,7 +246,7 @@
             for (GDataXMLElement *paedObj in paed){
                 GDataXMLElement *paedXML = (GDataXMLElement *) paedObj;
                 NSArray *children= [[NSArray alloc]init];
-                NSArray *rOAChildren = [[NSArray alloc]init];
+                
                 
                 //Gets the nested nodes inside paed
                 children = paedXML.children;
@@ -233,6 +257,8 @@
                     
                     //Inhaled is set by finding the node then setting the current index 0.admin and 1.dose to set the data to the object
                     if ([routeOfAdmin isEqualToString:@"inhaled"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -248,6 +274,8 @@
                     }
                     
                     if ([routeOfAdmin isEqualToString:@"oral"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -263,6 +291,8 @@
                     }
                     
                     if ([routeOfAdmin isEqualToString:@"IV"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -278,6 +308,8 @@
                     }
                     
                     if ([routeOfAdmin isEqualToString:@"PR"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -292,6 +324,8 @@
                         }
                     }
                     if ([routeOfAdmin isEqualToString:@"SC"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -306,6 +340,8 @@
                         }
                     }
                     if ([routeOfAdmin isEqualToString:@"IM"]){
+                        NSArray *rOAChildren = [[NSArray alloc]init];
+                        NSString *temp = [[NSString alloc]init];
                         rOAChildren = childrenObj.children;
                         int currentIndex = 0;
                         for (GDataXMLElement *rOAObj in rOAChildren){
@@ -340,13 +376,8 @@
                                                            options:0 error:&error];
     if (doc == nil) { return nil; }
     
-    
-    
-    NSString *temp = nil;
     BOOL forTreatment = FALSE;
     BOOL sendArray = FALSE;
-   
-    
     NSMutableArray *pathogenObjects = [[NSMutableArray alloc]init];
     NSMutableArray *pathogenObjectsForTreatment = [[NSMutableArray alloc]init];
     
@@ -354,9 +385,10 @@
     NSArray *pathogens = [doc.rootElement elementsForName:@"pathogen"];
     for (GDataXMLElement *obj in pathogens){
         Pathogen *pathogen = [[Pathogen alloc]init];
-         NSMutableArray *tempList = [[NSMutableArray alloc]init];
+        
         NSArray *pathogenNames = [obj elementsForName:@"name"];
         if (pathogens.count > 0) {
+            NSString *temp = [[NSString alloc]init];
             GDataXMLElement *pathogenXML = (GDataXMLElement *) [pathogenNames objectAtIndex:0];
             temp = pathogenXML.stringValue;
             [pathogen setName:temp];
@@ -366,6 +398,7 @@
         //Gets the descriptions for the pathogens from the xml file
         NSArray *descriptions =[obj elementsForName:@"description"];
         if (descriptions.count >0){
+            NSString *temp = [[NSString alloc]init];
             GDataXMLElement *descriptionXML = (GDataXMLElement *) [descriptions objectAtIndex:0];
             temp = descriptionXML.stringValue;
             [pathogen setDescription:temp];
@@ -374,6 +407,8 @@
         //Gets the first line drugs from the xml file
         NSArray *firstLineDrugs =[obj elementsForName:@"firstline"];
         if (firstLineDrugs.count >0){
+            NSString *temp = [[NSString alloc]init];
+            NSMutableArray *tempList = [[NSMutableArray alloc]init];
             for (GDataXMLElement *fLObj in firstLineDrugs){
                 GDataXMLElement *firstLineDrugsXML = (GDataXMLElement *) fLObj;
                 temp = firstLineDrugsXML.stringValue;

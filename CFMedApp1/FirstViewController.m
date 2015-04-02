@@ -21,20 +21,16 @@
 @synthesize drugTable;
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
-    
-    
     drugs = [[NSMutableArray alloc]init];
     drugs  = [DataParser loadDrugData];
-    // Do any additional setup after loading the view, typically from a nib.
+   
 }
 
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 //Sets up table rows and populates the table.

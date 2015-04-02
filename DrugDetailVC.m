@@ -247,8 +247,15 @@
 - (void) fillFields{
    
     self.indication.text = drug.getIndication;
-    self.sideEffects.text = [drug.getSideEffects componentsJoinedByString:@" "];
-    self.interactions.text = [drug.getDrugInteraction componentsJoinedByString:@" "];
+    self.sideEffects.text = drug.getSideEffects;
+    
+    NSDictionary *interactions = [[NSDictionary alloc]init ];
+    interactions = drug.getDrugInteraction;
+    NSMutableString *interactionsString = [[NSMutableString alloc]init];
+    [interactions enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [interactionsString appendFormat:@"%@ : %@\n", key, obj];
+    }];
+    self.interactions.text = interactionsString;
         if (drug.isOralAdult){
             self.administration.text = drug.getOralAdultAdministration;
             self.doseLabel.text = drug.getOralAdultDose;

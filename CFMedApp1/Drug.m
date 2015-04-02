@@ -372,16 +372,16 @@
 -(void) setIndication : (NSString*) set{
     indication =set;
 }
--(NSArray *) getSideEffects{
+-(NSString *) getSideEffects{
     return sideEffects;
 }
--(void) setSideEffects: (NSArray*) set{
+-(void) setSideEffects: (NSString*) set{
     sideEffects = set;
 }
--(NSArray *) getDrugInteraction{
+-(NSDictionary *) getDrugInteraction{
     return drugInteraction;
 }
--(void) setDrugInteraction: (NSArray*) set{
+-(void) setDrugInteraction: (NSDictionary*) set{
     drugInteraction = set;
 }
 -(id)init{
@@ -389,8 +389,8 @@
     typeOfDrug = [[NSString alloc]init];
     brandNames = [[NSArray alloc]init];
     indication = [[NSString alloc]init];
-    sideEffects = [[NSArray alloc]init];
-    drugInteraction = [[NSArray alloc]init];
+    sideEffects = [[NSString alloc]init];
+    drugInteraction = [[NSDictionary alloc]init];
     oralAdult = false;
     iVAdult = false;
     inhaledAdult = false;

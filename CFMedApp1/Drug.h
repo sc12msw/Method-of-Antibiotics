@@ -19,7 +19,9 @@
     *iMAdultDose,*pRAdultDose,*sCAdultDose,*oralPaedDose,*iVPaedDose,*inhaledPaedDose,*iMPaedDose,*pRPaedDose,
     *sCPaedDose;
     
-    NSArray *brandNames,*sideEffects,*drugInteraction;
+    NSArray *brandNames;
+    NSString *sideEffects;
+    NSDictionary *drugInteraction;
     BOOL oralAdult,iVAdult,inhaledAdult,iMAdult,pRAdult,sCAdult,oralPaed,iVPaed,inhaledPaed,iMPaed,pRPaed,sCPaed,adult,paediatric;
 }
 -(void) setGenericName : (NSString*) set;
@@ -68,8 +70,8 @@
 -(void)setPaediatric: (BOOL*) set;
 -(void) setBrandNames :(NSArray*) set;
 -(void) setIndication:(NSString*) set;
--(void) setSideEffects:(NSArray*) set;
--(void) setDrugInteraction:(NSArray*) set;
+-(void) setSideEffects:(NSString*) set;
+-(void) setDrugInteraction:(NSDictionary*) set;
 
 -(NSString *)getGenericName;
 -(NSString *)getTypeOfDrug;
@@ -117,8 +119,8 @@
 -(BOOL)isPaediatric;
 -(NSArray *) getBrandNames;
 -(NSString *) getIndication;
--(NSArray *) getSideEffects;
--(NSArray *) getDrugInteraction;
+-(NSString *) getSideEffects;
+-(NSDictionary *) getDrugInteraction;
 
 
 
