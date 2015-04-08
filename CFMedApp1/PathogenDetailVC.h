@@ -15,6 +15,7 @@
 - (IBAction)selectFL:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextView *drugSelection;
 - (IBAction)checkInter:(id)sender;
+- (IBAction)removeDrug:(id)sender;
 
 @property (strong, nonatomic) NSMutableArray *picker1Data;
 @end
