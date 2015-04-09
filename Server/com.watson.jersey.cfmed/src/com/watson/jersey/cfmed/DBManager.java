@@ -30,10 +30,11 @@ public class DBManager {
 			// Drug init block, the following code sets the basic data for the
 			// drug in the database.
 			preparedStatement = conn
-					.prepareStatement("insert into  Drugs (Name,Indication,Side_Effects) values (?, ?, ?)");
+					.prepareStatement("insert into  Drugs (Name,Indication,Side_Effects,Type) values (?, ?, ?, ?)");
 			preparedStatement.setString(1, drug.getName());
 			preparedStatement.setString(2, drug.getIndication());
 			preparedStatement.setString(3, drug.getSideEffect());
+			preparedStatement.setString(4, drug.getType());
 			preparedStatement.executeUpdate();
 
 			sql = "SELECT * FROM Drugs";
@@ -401,7 +402,7 @@ public class DBManager {
 			// reading.
 			stmt = conn.createStatement();
 			String databaseQuery;
-			databaseQuery = "SELECT Drugs.ID AS drugId, Drugs.Name As drugName, Drugs.Indication As drugIndi, Drugs.Side_Effects As drugSide,"
+			databaseQuery = "SELECT Drugs.ID AS drugId, Drugs.Name As drugName, Drugs.Indication As drugIndi, Drugs.Side_Effects As drugSide, Drugs.Type As drugType,"
 					+ " Adult_Administration.ID AS aIdAd, Adult_Administration.Oral AS aOralAd, Adult_Administration.IV AS aIvAd,"
 					+ " Adult_Administration.Inhaled AS aInhaledAd, Adult_Administration.IM AS aImAd, Adult_Administration.PR AS aPrAd,"
 					+ " Adult_Administration.SC AS aScAd,"
@@ -434,6 +435,7 @@ public class DBManager {
 				String drugName = rs.getString("drugName");
 				String drugIndi = rs.getString("drugIndi");
 				String drugSide = rs.getString("drugSide");
+				String drugType = rs.getString("drugType");
 
 				// Retrieve adult administration data
 				String aOralAd = rs.getString("aOralAd");
@@ -496,6 +498,7 @@ public class DBManager {
 				drugInfo.setName(drugName);
 				drugInfo.setIndication(drugIndi);
 				drugInfo.setSideEffect(drugSide);
+				drugInfo.setType(drugType);
 				drugInfo.setInteractions(interactions);
 				drugInfo.setBrandName(brandNames);
 

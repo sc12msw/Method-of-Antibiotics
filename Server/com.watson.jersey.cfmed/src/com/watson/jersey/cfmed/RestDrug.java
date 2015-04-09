@@ -7,12 +7,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.regex.Pattern;
+
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-
 import javax.ws.rs.core.MediaType;
 @Path("/drugs")
 public class RestDrug {
@@ -60,8 +62,13 @@ public class RestDrug {
 			tempString = tempString +" "+ temp2;
 		}
 		//Puts all drugs into a table
-		row =row + "<tr> <td>"+drugInfo.getName()+"</td>"+"<td>"+tempString+"</td>"
-				+ "<td>"+drugInfo.getIndication()+"</td>"+"<td>"+drugInfo.getInteractions()
+		Map <String, String> interactions = drugInfo.getInteractions();
+		String interactionString = "";
+		for (Map.Entry entry: interactions.entrySet()){
+			interactionString = interactionString + entry.getKey() + "<br> Description: " + entry.getValue()+"<br><br>";	
+		}
+		row =row + "<tr> <td>"+drugInfo.getName()+"</td>"+ "<td>"+drugInfo.getType()+"</td>" +"<td>"+tempString+"</td>"
+				+ "<td>"+drugInfo.getIndication()+"</td>"+"<td>"+interactionString
 				+"</td><td width=\"75px\"><input class=\"btn btn-primary\""
 				+ "onclick=\"deleteDrug("+drugInfo.getId()+");\" type=\"button\" value=\"Delete\"> </td></tr>";
 		tempString = "";
