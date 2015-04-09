@@ -43,15 +43,15 @@
         }
         
         
-        //Gets the types for the drugs from the xml file uncomment if implemented later on.
-        /*
-         NSArray *types =[obj elementsForName:@"type"];
-         if (types.count >0){
-         GDataXMLElement *typeXML = (GDataXMLElement *) [types objectAtIndex:0];
-         temp = typeXML.stringValue;
-         [drug setTypeofDrug:temp];
-         }
-         */
+        //Gets the types for the drugs from the xml file.
+        NSArray *types =[obj elementsForName:@"type"];
+        if (types.count >0){
+            NSString *temp = [[NSString alloc]init];
+            GDataXMLElement *typeXML = (GDataXMLElement *) [types objectAtIndex:0];
+            temp = typeXML.stringValue;
+            [drug setTypeofDrug:temp];
+        }
+        
         
         //Gets the side effects for the drugs from the xml file
         NSArray *sideEffects =[obj elementsForName:@"sideEffect"];

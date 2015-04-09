@@ -134,38 +134,6 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o0X-kP-RuI">
-                                        <rect key="frame" x="15" y="127" width="546" height="29"/>
-                                        <segments>
-                                            <segment title="Oral"/>
-                                            <segment title="IV"/>
-                                            <segment title="Inhaled"/>
-                                            <segment title="IM"/>
-                                            <segment title="PR"/>
-                                            <segment title="SC"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="adminTypeBar:" destination="mWn-KP-zAy" eventType="valueChanged" id="jqC-Eq-vfC"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edh-6G-BHm">
-                                        <rect key="frame" x="8" y="69" width="275" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Hh0-Dd-fpc"/>
-                                        </constraints>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Adult">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected">
-                                            <color key="titleColor" red="0.050980392159999999" green="0.0" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toggleAdult:" destination="mWn-KP-zAy" eventType="touchUpInside" id="nWu-Vk-4Rv"/>
-                                        </connections>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Warnings about drug" translatesAutoresizingMaskIntoConstraints="NO" id="mVD-pP-g2n">
                                         <rect key="frame" x="5" y="1077" width="570" height="120"/>
                                         <color key="backgroundColor" red="0.88129137810000002" green="0.96198978739999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,8 +182,40 @@
                                             <segue destination="7Yi-7M-Pa6" kind="show" identifier="TreatsSegue" id="p85-VN-vMv"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o0X-kP-RuI">
+                                        <rect key="frame" x="12" y="94" width="546" height="29"/>
+                                        <segments>
+                                            <segment title="Oral"/>
+                                            <segment title="IV"/>
+                                            <segment title="Inhaled"/>
+                                            <segment title="IM"/>
+                                            <segment title="PR"/>
+                                            <segment title="SC"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="adminTypeBar:" destination="mWn-KP-zAy" eventType="valueChanged" id="jqC-Eq-vfC"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edh-6G-BHm">
+                                        <rect key="frame" x="5" y="36" width="275" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="zFt-mU-Zcp"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Adult">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.050980392159999999" green="0.0" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleAdult:" destination="mWn-KP-zAy" eventType="touchUpInside" id="nWu-Vk-4Rv"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzo-wi-Awj">
-                                        <rect key="frame" x="291" y="69" width="275" height="50"/>
+                                        <rect key="frame" x="288" y="36" width="275" height="50"/>
                                         <color key="backgroundColor" red="0.99607849120000003" green="0.99607849120000003" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                         <color key="tintColor" red="0.99607849120000003" green="0.99607849120000003" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                         <state key="normal" title="Paediatric">
@@ -229,48 +229,60 @@
                                             <action selector="togglePaed:" destination="mWn-KP-zAy" eventType="touchUpInside" id="Wvv-lR-xlQ"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drug Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MP-q7-ufe">
+                                        <rect key="frame" x="38" y="130" width="499" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="b6g-NJ-yPu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="edh-6G-BHm" firstAttribute="top" secondItem="56l-S6-Pzj" secondAttribute="top" constant="36" id="1j0-9T-Wra"/>
                                     <constraint firstAttribute="trailing" secondItem="mDt-L0-9bD" secondAttribute="trailing" constant="5" id="1l5-rY-EMa"/>
-                                    <constraint firstItem="Pzo-wi-Awj" firstAttribute="leading" secondItem="edh-6G-BHm" secondAttribute="trailing" constant="8" symbolic="YES" id="1vZ-hX-ndN"/>
-                                    <constraint firstAttribute="trailing" secondItem="o0X-kP-RuI" secondAttribute="trailing" constant="19" id="4Db-3h-b8n"/>
-                                    <constraint firstItem="edh-6G-BHm" firstAttribute="baseline" secondItem="Pzo-wi-Awj" secondAttribute="baseline" id="5Jn-sc-xPH"/>
+                                    <constraint firstAttribute="trailing" secondItem="0MP-q7-ufe" secondAttribute="trailing" constant="43" id="6yt-HF-jE2"/>
                                     <constraint firstItem="pMk-BM-zU7" firstAttribute="top" secondItem="bF3-Zg-LbG" secondAttribute="bottom" constant="1" id="7wz-FE-cwL"/>
                                     <constraint firstItem="g5D-Zc-2jO" firstAttribute="top" secondItem="D19-p2-BFp" secondAttribute="bottom" constant="1" id="8fP-v1-4NT"/>
                                     <constraint firstItem="9tH-wQ-X6z" firstAttribute="trailing" secondItem="mDt-L0-9bD" secondAttribute="trailing" id="AcY-W5-Wew"/>
+                                    <constraint firstItem="0MP-q7-ufe" firstAttribute="leading" secondItem="56l-S6-Pzj" secondAttribute="leading" constant="38" id="Boh-Tf-Vzv"/>
                                     <constraint firstItem="elt-by-37L" firstAttribute="leading" secondItem="56l-S6-Pzj" secondAttribute="leading" constant="10" id="CVG-B7-6a7"/>
                                     <constraint firstItem="mVD-pP-g2n" firstAttribute="trailing" secondItem="Zg3-g0-fXz" secondAttribute="trailing" id="FIq-LG-T1j"/>
                                     <constraint firstItem="elt-by-37L" firstAttribute="top" secondItem="mDt-L0-9bD" secondAttribute="bottom" constant="3" id="FNT-JK-Cxg"/>
                                     <constraint firstItem="9tH-wQ-X6z" firstAttribute="trailing" secondItem="g5D-Zc-2jO" secondAttribute="trailing" id="FqR-il-Qow"/>
-                                    <constraint firstItem="edh-6G-BHm" firstAttribute="top" secondItem="56l-S6-Pzj" secondAttribute="top" constant="69" id="GJT-9J-8j2"/>
-                                    <constraint firstItem="edh-6G-BHm" firstAttribute="leading" secondItem="Umf-PD-BVY" secondAttribute="leading" id="GUq-bp-kIe"/>
+                                    <constraint firstItem="Pzo-wi-Awj" firstAttribute="leading" secondItem="edh-6G-BHm" secondAttribute="trailing" constant="8" id="GVQ-5i-jpg"/>
+                                    <constraint firstItem="o0X-kP-RuI" firstAttribute="top" secondItem="edh-6G-BHm" secondAttribute="bottom" constant="8" symbolic="YES" id="GjY-xs-gJx"/>
                                     <constraint firstItem="g5D-Zc-2jO" firstAttribute="top" secondItem="2d2-yS-uxJ" secondAttribute="bottom" constant="63" id="HfD-Ri-0vC"/>
                                     <constraint firstItem="4Zx-d1-KzJ" firstAttribute="top" secondItem="Zg3-g0-fXz" secondAttribute="bottom" constant="8" symbolic="YES" id="I04-Nq-3F7"/>
-                                    <constraint firstItem="o0X-kP-RuI" firstAttribute="leading" secondItem="56l-S6-Pzj" secondAttribute="leading" constant="15" id="JQ1-Gq-bWB"/>
-                                    <constraint firstItem="Pzo-wi-Awj" firstAttribute="height" secondItem="edh-6G-BHm" secondAttribute="height" id="Jvc-wo-fpq"/>
+                                    <constraint firstItem="o0X-kP-RuI" firstAttribute="leading" secondItem="56l-S6-Pzj" secondAttribute="leading" constant="12" id="JFR-IU-eEe"/>
+                                    <constraint firstAttribute="trailing" secondItem="o0X-kP-RuI" secondAttribute="trailing" constant="22" id="Jmb-0P-60L"/>
+                                    <constraint firstItem="edh-6G-BHm" firstAttribute="height" secondItem="Pzo-wi-Awj" secondAttribute="height" id="MK5-9k-J1i"/>
                                     <constraint firstItem="D19-p2-BFp" firstAttribute="leading" secondItem="elt-by-37L" secondAttribute="leading" id="Nnm-4h-tid"/>
                                     <constraint firstItem="pMk-BM-zU7" firstAttribute="centerX" secondItem="56l-S6-Pzj" secondAttribute="centerX" id="O0t-gp-7Pd"/>
                                     <constraint firstItem="pMk-BM-zU7" firstAttribute="trailing" secondItem="g5D-Zc-2jO" secondAttribute="trailing" id="OHr-SQ-J4Y"/>
-                                    <constraint firstItem="Umf-PD-BVY" firstAttribute="top" secondItem="o0X-kP-RuI" secondAttribute="bottom" constant="56" id="Pkb-YR-QJD"/>
                                     <constraint firstItem="Zg3-g0-fXz" firstAttribute="leading" secondItem="mVD-pP-g2n" secondAttribute="leading" id="QVI-q0-fuz"/>
                                     <constraint firstItem="9tH-wQ-X6z" firstAttribute="top" secondItem="elt-by-37L" secondAttribute="bottom" constant="8" symbolic="YES" id="RJm-0A-tQf"/>
                                     <constraint firstAttribute="bottom" secondItem="mVD-pP-g2n" secondAttribute="bottom" constant="53" id="SQa-4v-nVE"/>
                                     <constraint firstItem="bF3-Zg-LbG" firstAttribute="leading" secondItem="Umf-PD-BVY" secondAttribute="leading" id="UP1-1F-2P6"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pzo-wi-Awj" secondAttribute="trailing" constant="14" id="UXc-gV-luB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pzo-wi-Awj" secondAttribute="trailing" constant="17" id="Vkv-dx-dxC"/>
+                                    <constraint firstItem="edh-6G-BHm" firstAttribute="leading" secondItem="56l-S6-Pzj" secondAttribute="leading" constant="5" id="VqC-6x-UFA"/>
                                     <constraint firstItem="ZrE-OZ-Cxr" firstAttribute="top" secondItem="pMk-BM-zU7" secondAttribute="bottom" constant="8" symbolic="YES" id="Wfu-PQ-qQw"/>
                                     <constraint firstItem="4Zx-d1-KzJ" firstAttribute="leading" secondItem="D19-p2-BFp" secondAttribute="leading" id="aGf-dY-Mrn"/>
                                     <constraint firstItem="2d2-yS-uxJ" firstAttribute="top" secondItem="9tH-wQ-X6z" secondAttribute="bottom" constant="22" id="axe-Md-Hgh"/>
                                     <constraint firstItem="mDt-L0-9bD" firstAttribute="top" secondItem="Umf-PD-BVY" secondAttribute="bottom" constant="8" symbolic="YES" id="ctV-hV-B6w"/>
+                                    <constraint firstItem="0MP-q7-ufe" firstAttribute="top" secondItem="o0X-kP-RuI" secondAttribute="bottom" constant="8" symbolic="YES" id="dxf-vd-h68"/>
+                                    <constraint firstItem="Umf-PD-BVY" firstAttribute="top" secondItem="0MP-q7-ufe" secondAttribute="bottom" constant="41" id="ejy-Jn-awZ"/>
                                     <constraint firstItem="Zg3-g0-fXz" firstAttribute="leading" secondItem="pMk-BM-zU7" secondAttribute="leading" id="fBo-hS-bqJ"/>
+                                    <constraint firstItem="edh-6G-BHm" firstAttribute="width" secondItem="Pzo-wi-Awj" secondAttribute="width" id="fd9-vx-pQr"/>
                                     <constraint firstItem="ZrE-OZ-Cxr" firstAttribute="leading" secondItem="56l-S6-Pzj" secondAttribute="leadingMargin" id="imS-RW-jcD"/>
                                     <constraint firstItem="Zg3-g0-fXz" firstAttribute="top" secondItem="ZrE-OZ-Cxr" secondAttribute="bottom" id="jac-p6-sEE"/>
+                                    <constraint firstItem="edh-6G-BHm" firstAttribute="baseline" secondItem="Pzo-wi-Awj" secondAttribute="baseline" id="nQG-sz-n0B"/>
                                     <constraint firstItem="mDt-L0-9bD" firstAttribute="leading" secondItem="56l-S6-Pzj" secondAttribute="leading" constant="5" id="ni5-CB-VeI"/>
                                     <constraint firstAttribute="trailing" secondItem="2d2-yS-uxJ" secondAttribute="trailing" constant="87" id="o6D-jz-zSR"/>
                                     <constraint firstItem="mVD-pP-g2n" firstAttribute="top" secondItem="4Zx-d1-KzJ" secondAttribute="bottom" constant="2" id="oWt-Yk-RQg"/>
-                                    <constraint firstItem="Pzo-wi-Awj" firstAttribute="width" secondItem="edh-6G-BHm" secondAttribute="width" id="pqK-xP-yrC"/>
                                     <constraint firstItem="bF3-Zg-LbG" firstAttribute="top" secondItem="g5D-Zc-2jO" secondAttribute="bottom" constant="8" symbolic="YES" id="rII-JB-40T"/>
                                     <constraint firstItem="bF3-Zg-LbG" firstAttribute="leading" secondItem="ZrE-OZ-Cxr" secondAttribute="leading" id="rzT-PX-fiR"/>
-                                    <constraint firstItem="o0X-kP-RuI" firstAttribute="top" secondItem="edh-6G-BHm" secondAttribute="bottom" constant="8" symbolic="YES" id="uP7-r4-PCA"/>
                                     <constraint firstItem="g5D-Zc-2jO" firstAttribute="leading" secondItem="9tH-wQ-X6z" secondAttribute="leading" id="uov-8r-dqx"/>
                                     <constraint firstItem="pMk-BM-zU7" firstAttribute="leading" secondItem="g5D-Zc-2jO" secondAttribute="leading" id="wmL-hi-nP1"/>
                                     <constraint firstItem="Zg3-g0-fXz" firstAttribute="trailing" secondItem="pMk-BM-zU7" secondAttribute="trailing" id="ycr-M9-L6z"/>
@@ -302,11 +314,12 @@
                         <outlet property="interactions" destination="mVD-pP-g2n" id="9jH-Ny-aw6"/>
                         <outlet property="paedSwitch" destination="Pzo-wi-Awj" id="UeU-he-v8d"/>
                         <outlet property="sideEffects" destination="Zg3-g0-fXz" id="A0t-7e-3pU"/>
+                        <outlet property="typeLabel" destination="0MP-q7-ufe" id="Giw-CT-8oI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nre-wD-ImU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283" y="-320"/>
+            <point key="canvasLocation" x="2196" y="-314"/>
         </scene>
         <!--Pathogens For DrugVC-->
         <scene sceneID="i9V-mw-uh2">

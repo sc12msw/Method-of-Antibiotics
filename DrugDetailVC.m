@@ -40,6 +40,7 @@
     NSMutableString *title= [[NSMutableString alloc]init];
     [title appendString:drug.getGenericName];
     [title appendString:@" -Adult"];
+    self.typeLabel.text = drug.getTypeOfDrug;
     self.navigationItem.title = title;
     [_paedSwitch setBackgroundColor: [UIColor whiteColor]];
     [_paedSwitch setTitleColor:[UIColor redColor] forState:UIControlStateNormal];

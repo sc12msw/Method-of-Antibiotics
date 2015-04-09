@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *administration;
 @property (strong, nonatomic) IBOutlet UITextView *doseLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *adminBarDisplay;
+@property (strong, nonatomic) IBOutlet UILabel *typeLabel;
 
 - (IBAction)adminTypeBar:(id)sender;
 

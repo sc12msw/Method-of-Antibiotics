@@ -33,6 +33,17 @@
     [super didReceiveMemoryWarning];
 }
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return (UIInterfaceOrientationMaskPortrait);
+}
+
+
 //Button methods
 - (IBAction)seven:(id)sender {
     [storage addObject:[NSNumber numberWithDouble:7]];
