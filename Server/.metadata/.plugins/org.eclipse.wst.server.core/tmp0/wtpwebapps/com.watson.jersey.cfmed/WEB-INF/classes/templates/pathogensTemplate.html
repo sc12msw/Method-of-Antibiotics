@@ -7,10 +7,9 @@
     <title>$title</title>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
-function deletePathogen() {
-	var id = $('#pathogenId').val();
+function deletePathogen(toDelete) {
 	$.ajax({
-    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/pathogens/" + id,
+    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/pathogens/" + toDelete,
     type: 'DELETE',
     success: function(result) {
 		location.reload();

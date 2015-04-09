@@ -7,10 +7,9 @@
     <title>Cystic Fybrosis Information</title>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
-function deletePathogen() {
-	var id = $('#pathogenId').val();
+function deletePathogen(toDelete) {
 	$.ajax({
-    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/pathogens/" + id,
+    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/pathogens/" + toDelete,
     type: 'DELETE',
     success: function(result) {
 		location.reload();
@@ -65,7 +64,7 @@ function deletePathogen() {
                 </tr>
             </thead>
 
-            <tbody><tr> <td>pathogen test</td><td>123</td><td>, tester23, tester234</td><td width="75px"><input id="drugId" value="1" type="hidden"/><input class="btn btn-primary" onclick="deletePathogen();" type="button" value="Delete"> </td></tr></tbody>
+            <tbody><tr> <td>pathogen test</td><td>513513</td><td> Tester</td><td width="75px"><input class="btn btn-primary" onclick="deletePathogen(22);" type="button" value="Delete"> </td></tr></tbody>
         </table>
     </div>
 

@@ -36,7 +36,8 @@ public class RestAddDrug {
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public void newDrugs(@FormParam("name") String name,
-
+			
+			@FormParam("type") String type,
 			//Only allow 5 brands
 			@FormParam("brand") String brand,
 			@FormParam("brand1") String brand1,
@@ -278,6 +279,7 @@ public class RestAddDrug {
 		//set the object
 		newDrug.setIndication(indication);
 		newDrug.setName(name);
+		newDrug.setType(type);
 		newDrug.setAdult(adult);
 		newDrug.setPaediatric(paed);
 		newDrug.setInteractions(interactions);
