@@ -17,7 +17,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 
-@Path ("/addDrug")
+@Path ("secure/addDrug")
 public class RestAddDrug {
 
 

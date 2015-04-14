@@ -16,7 +16,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 
-@Path ("/addPathogen")
+@Path ("secure/addPathogen")
 public class RestAddPathogen {
 
 

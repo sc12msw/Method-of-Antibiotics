@@ -1,10 +1,14 @@
 package com.watson.jersey.cfmed;
 
 
+import javax.annotation.security.PermitAll;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +20,7 @@ public class RestLogic {
 
 	// This method returns the xml of the objects created on the server. Using JAXB
 	@GET
+	@PermitAll
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	public File getXML() throws IOException {
 		DBManager db = new DBManager();
