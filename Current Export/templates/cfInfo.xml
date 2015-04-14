@@ -2,52 +2,28 @@
 <cfInfo>
     <drug>
         <adult>
-            <oral>
-                <administration>6</administration>
-                <dose>7</dose>
-            </oral>
+            <IM>
+                <administration>Im test</administration>
+                <dose>im test dose</dose>
+            </IM>
         </adult>
-        <brandName>1</brandName>
-        <id>10</id>
-        <indication>3</indication>
+        <brandName>Test Brand for new drug</brandName>
+        <id>1</id>
+        <indication>test indic</indication>
         <interactions>
             <entry>
-                <key>4</key>
-                <value>5</value>
+                <key>test interaction</key>
+                <value>test descript for interaction</value>
             </entry>
         </interactions>
-        <name>tester23</name>
+        <name>Drug test</name>
         <paediatric>
-            <oral>
-                <administration>8</administration>
-                <dose>9</dose>
-            </oral>
+            <IM>
+                <administration> im test paed</administration>
+                <dose>im test paed dose</dose>
+            </IM>
         </paediatric>
-        <sideEffect>2</sideEffect>
-    </drug>
-    <drug>
-        <adult>
-            <oral>
-                <administration>6</administration>
-                <dose>7</dose>
-            </oral>
-        </adult>
-        <brandName>1</brandName>
-        <id>11</id>
-        <indication>3</indication>
-        <interactions>
-            <entry>
-                <key>4</key>
-                <value>5</value>
-            </entry>
-        </interactions>
-        <name>tester234</name>
-        <paediatric>
-            <oral>
-                <administration>8</administration>
-                <dose>9</dose>
-            </oral>
-        </paediatric>
-        <sideEffect>2</sideEffect>
+        <sideEffect>test side</sideEffect>
+        <type>Antibiotic</type>
     </drug>
 </cfInfo>

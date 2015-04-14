@@ -19,6 +19,10 @@
 		<web-resource-collection>
 			<web-resource-name>Admin to control database</web-resource-name>
 			<url-pattern>/rest/secure/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+			<http-method>DELETE</http-method>
+			<http-method>PUT</http-method>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>CFAdmin</role-name>
