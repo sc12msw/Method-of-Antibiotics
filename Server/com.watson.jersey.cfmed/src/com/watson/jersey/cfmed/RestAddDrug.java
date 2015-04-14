@@ -17,7 +17,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 
-@Path ("/addDrug")
+@Path ("secure/addDrug")
 public class RestAddDrug {
 
 
@@ -287,6 +287,6 @@ public class RestAddDrug {
 		DBManager db = new DBManager();
 		db.addDrug(newDrug);
 
-		servletResponse.sendRedirect("../rest/drugs");
+		servletResponse.sendRedirect("../secure/drugs");
 	}
 }

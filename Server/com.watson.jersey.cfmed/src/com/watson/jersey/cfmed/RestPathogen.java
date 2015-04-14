@@ -15,7 +15,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import javax.ws.rs.core.MediaType;
-@Path("/pathogens")
+@Path("secure/pathogens")
 public class RestPathogen {
 
 //This method returns html instead of xml to view in web browser. Using the path rest/cfmed/html

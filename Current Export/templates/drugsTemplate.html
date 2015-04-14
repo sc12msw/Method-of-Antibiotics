@@ -10,7 +10,7 @@
 	<script>
 function deleteDrug(toDelete) {
 	$.ajax({
-    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/drugs/" + toDelete,
+    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/secure/drugs/" + toDelete,
     type: 'DELETE',
     success: function(result) {
 		location.reload();
@@ -57,6 +57,8 @@ function deleteDrug(toDelete) {
             <thead>
                 <tr>
                     <th>Name</th>
+					
+					<th>Type</th>
 
                     <th>Brand Names</th>
 

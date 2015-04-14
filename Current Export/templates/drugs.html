@@ -10,7 +10,7 @@
 	<script>
 function deleteDrug(toDelete) {
 	$.ajax({
-    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/drugs/" + toDelete,
+    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/secure/drugs/" + toDelete,
     type: 'DELETE',
     success: function(result) {
 		location.reload();
@@ -57,6 +57,8 @@ function deleteDrug(toDelete) {
             <thead>
                 <tr>
                     <th>Name</th>
+					
+					<th>Type</th>
 
                     <th>Brand Names</th>
 
@@ -66,7 +68,7 @@ function deleteDrug(toDelete) {
                 </tr>
             </thead>
 
-            <tbody><tr> <td>Tester</td><td> 123</td><td>135135</td><td>{13513=136136}</td><td width="75px"><input class="btn btn-primary"onclick="deleteDrug(24);" type="button" value="Delete"> </td></tr></tbody>
+            <tbody><tr> <td>Drug test</td><td>Antibiotic</td><td> Test Brand for new drug</td><td>test indic</td><td>test interaction<br> Description: test descript for interaction<br><br></td><td width="75px"><input class="btn btn-primary"onclick="deleteDrug(1);" type="button" value="Delete"> </td></tr><tr> <td>st</td><td>st</td><td> st</td><td>st</td><td>st<br> Description: st<br><br></td><td width="75px"><input class="btn btn-primary"onclick="deleteDrug(6);" type="button" value="Delete"> </td></tr></tbody>
         </table>
     </div>
 

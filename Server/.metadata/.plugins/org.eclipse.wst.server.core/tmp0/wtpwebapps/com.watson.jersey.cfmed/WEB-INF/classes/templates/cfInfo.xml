@@ -2,52 +2,62 @@
 <cfInfo>
     <drug>
         <adult>
-            <oral>
-                <administration>6</administration>
-                <dose>7</dose>
-            </oral>
+            <IM>
+                <administration>Im test</administration>
+                <dose>im test dose</dose>
+            </IM>
         </adult>
-        <brandName>1</brandName>
-        <id>10</id>
-        <indication>3</indication>
+        <brandName>Test Brand for new drug</brandName>
+        <id>1</id>
+        <indication>test indic</indication>
         <interactions>
             <entry>
-                <key>4</key>
-                <value>5</value>
+                <key>test interaction</key>
+                <value>test descript for interaction</value>
             </entry>
         </interactions>
-        <name>tester23</name>
+        <name>Drug test</name>
         <paediatric>
-            <oral>
-                <administration>8</administration>
-                <dose>9</dose>
-            </oral>
+            <IM>
+                <administration> im test paed</administration>
+                <dose>im test paed dose</dose>
+            </IM>
         </paediatric>
-        <sideEffect>2</sideEffect>
+        <sideEffect>test side</sideEffect>
+        <type>Antibiotic</type>
     </drug>
     <drug>
         <adult>
-            <oral>
-                <administration>6</administration>
-                <dose>7</dose>
-            </oral>
+            <inhaled>
+                <administration>suck it in1</administration>
+                <dose>suck it in dose</dose>
+            </inhaled>
         </adult>
-        <brandName>1</brandName>
-        <id>11</id>
-        <indication>3</indication>
+        <brandName>b1</brandName>
+        <id>2</id>
+        <indication>i1</indication>
         <interactions>
             <entry>
-                <key>4</key>
-                <value>5</value>
+                <key>in2</key>
+                <value>ind2</value>
+            </entry>
+            <entry>
+                <key>in1</key>
+                <value>ind1</value>
+            </entry>
+            <entry>
+                <key>in3</key>
+                <value>ind3</value>
             </entry>
         </interactions>
-        <name>tester234</name>
+        <name>Test Data 2</name>
         <paediatric>
-            <oral>
-                <administration>8</administration>
-                <dose>9</dose>
-            </oral>
+            <inhaled>
+                <administration>suck it in admin paed</administration>
+                <dose>suck it in dose paed</dose>
+            </inhaled>
         </paediatric>
-        <sideEffect>2</sideEffect>
+        <sideEffect>s1</sideEffect>
+        <type>Antibiotic 2</type>
     </drug>
 </cfInfo>

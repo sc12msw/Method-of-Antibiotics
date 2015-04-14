@@ -103,9 +103,12 @@ padding-bottom:50px;
     </nav>
 
     <div class="container">
-        <form action="../rest/addDrug" method="post">
+        <form action="../secure/addDrug" method="post">
             <div class="form-group">
                 <h2>Name</h2><input placeholder="Name of Drug" name="name" required>
+                <hr>
+				
+				<h2>Type</h2><input placeholder="Type of Drug" name="type" required>
                 <hr>
 
                 <h2>Brand Names:</h2>
