@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Matthew Watson. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "PathogenTableVC.h"
 #import "PathogenDetailVC.h"
 #import "Pathogen.h"
 #import "DataParser.h"
-@interface SecondViewController (){
+@interface PathogenTableVC (){
 NSMutableArray *pathogens;
 }
 
 
 @end
 
-@implementation SecondViewController
+@implementation PathogenTableVC
 @synthesize pathogenTable;
 
 - (void)viewDidLoad {

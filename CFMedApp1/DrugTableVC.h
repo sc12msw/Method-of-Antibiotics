@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface DrugTableVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 
 @property (strong, nonatomic) IBOutlet UITableView *drugTable;

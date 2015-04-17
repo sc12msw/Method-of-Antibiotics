@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Matthew Watson. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "DrugTableVC.h"
 #import "DrugDetailVC.h"
 #import "Drug.h"
 #import "DataParser.h"
 #import "AppDelegate.h"
-@interface FirstViewController (){
+@interface DrugTableVC(){
     NSMutableArray *drugs;
 }
 
 @end
 
-@implementation FirstViewController
+@implementation DrugTableVC
 @synthesize drugTable;
 
 - (void)viewDidLoad {

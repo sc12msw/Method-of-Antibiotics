@@ -15,8 +15,8 @@
 		9735F33B1A98FB3100FD7D9D /* CalculatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9735F33A1A98FB3100FD7D9D /* CalculatorVC.m */; };
 		9736A7171A8906E1005BCE62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A7161A8906E1005BCE62 /* main.m */; };
 		9736A71A1A8906E1005BCE62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A7191A8906E1005BCE62 /* AppDelegate.m */; };
-		9736A71D1A8906E1005BCE62 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A71C1A8906E1005BCE62 /* FirstViewController.m */; };
-		9736A7201A8906E1005BCE62 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A71F1A8906E1005BCE62 /* SecondViewController.m */; };
+		9736A71D1A8906E1005BCE62 /* DrugTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A71C1A8906E1005BCE62 /* DrugTableVC.m */; };
+		9736A7201A8906E1005BCE62 /* PathogenTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9736A71F1A8906E1005BCE62 /* PathogenTableVC.m */; };
 		9736A7231A8906E1005BCE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9736A7211A8906E1005BCE62 /* Main.storyboard */; };
 		9736A7251A8906E1005BCE62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9736A7241A8906E1005BCE62 /* Images.xcassets */; };
 		9736A7281A8906E1005BCE62 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9736A7261A8906E1005BCE62 /* LaunchScreen.xib */; };
@@ -55,10 +55,10 @@
 		9736A7161A8906E1005BCE62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9736A7181A8906E1005BCE62 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9736A7191A8906E1005BCE62 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9736A71B1A8906E1005BCE62 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		9736A71C1A8906E1005BCE62 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		9736A71E1A8906E1005BCE62 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		9736A71F1A8906E1005BCE62 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		9736A71B1A8906E1005BCE62 /* DrugTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrugTableVC.h; sourceTree = "<group>"; };
+		9736A71C1A8906E1005BCE62 /* DrugTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrugTableVC.m; sourceTree = "<group>"; };
+		9736A71E1A8906E1005BCE62 /* PathogenTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathogenTableVC.h; sourceTree = "<group>"; };
+		9736A71F1A8906E1005BCE62 /* PathogenTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathogenTableVC.m; sourceTree = "<group>"; };
 		9736A7221A8906E1005BCE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9736A7241A8906E1005BCE62 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9736A7271A8906E1005BCE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -124,12 +124,12 @@
 				9732487E1A89288A003570AA /* DrugDetailVC.m */,
 				9732A5B01A9397850017CF8E /* Pathogen.h */,
 				9732A5B11A9397850017CF8E /* Pathogen.m */,
-				9736A71B1A8906E1005BCE62 /* FirstViewController.h */,
-				9736A71C1A8906E1005BCE62 /* FirstViewController.m */,
+				9736A71B1A8906E1005BCE62 /* DrugTableVC.h */,
+				9736A71C1A8906E1005BCE62 /* DrugTableVC.m */,
 				973845991ACC139E00C7C4F7 /* PathogensForDrugVC.h */,
 				9738459A1ACC139E00C7C4F7 /* PathogensForDrugVC.m */,
-				9736A71E1A8906E1005BCE62 /* SecondViewController.h */,
-				9736A71F1A8906E1005BCE62 /* SecondViewController.m */,
+				9736A71E1A8906E1005BCE62 /* PathogenTableVC.h */,
+				9736A71F1A8906E1005BCE62 /* PathogenTableVC.m */,
 				973248811A892B0D003570AA /* PathogenDetailVC.h */,
 				973248821A892B0D003570AA /* PathogenDetailVC.m */,
 				97AE70111A9B576400C899F3 /* DataParser.h */,
@@ -277,11 +277,11 @@
 				97AE70131A9B576400C899F3 /* DataParser.m in Sources */,
 				9732487F1A89288A003570AA /* DrugDetailVC.m in Sources */,
 				973248831A892B0D003570AA /* PathogenDetailVC.m in Sources */,
-				9736A7201A8906E1005BCE62 /* SecondViewController.m in Sources */,
+				9736A7201A8906E1005BCE62 /* PathogenTableVC.m in Sources */,
 				9732A5B21A9397850017CF8E /* Pathogen.m in Sources */,
 				971D94791AC2F5F70028231A /* DisclaimerVC.m in Sources */,
 				9736A71A1A8906E1005BCE62 /* AppDelegate.m in Sources */,
-				9736A71D1A8906E1005BCE62 /* FirstViewController.m in Sources */,
+				9736A71D1A8906E1005BCE62 /* DrugTableVC.m in Sources */,
 				9735F33B1A98FB3100FD7D9D /* CalculatorVC.m in Sources */,
 				9738459B1ACC139E00C7C4F7 /* PathogensForDrugVC.m in Sources */,
 				97AE70101A9B4E8F00C899F3 /* GDataXMLNode.m in Sources */,

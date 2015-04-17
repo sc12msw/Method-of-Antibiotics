@@ -22,27 +22,13 @@
     
     // Change the url string to the site address.
     // The following block GETS the xml file from the restful service.
-    NSString *url = @"http://192.168.0.8:8080/com.watson.jersey.cfmed/rest/cfmed";
+    NSString *url = @"http://192.168.0.12:8080/cfmed/rest/cfmed";
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     NSMutableData *data = [[NSMutableData alloc]init];
     [self connection:urlConnection didReceiveData:data];
     // Override point for customization after application launch.
     return YES;
-}
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    //Shows the status code so if its 200 the connection was successful.
-    NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-    if (!statusCode == 200){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error"
-                                                        message:@"The server could not be contacted to get the update. Please check your internet connection and restart the app."
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {

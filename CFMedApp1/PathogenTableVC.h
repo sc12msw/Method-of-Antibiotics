@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface PathogenTableVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *pathogenTable;
 
