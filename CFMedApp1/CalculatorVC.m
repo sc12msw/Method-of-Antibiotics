@@ -33,15 +33,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return (UIInterfaceOrientationMaskPortrait);
-}
 
 
 //Button methods
