@@ -1,5 +1,5 @@
 //
-//  FirstViewController.m
+//  DrugTableVC.m
 //  CFMedApp1
 //
 //  Created by Matt Watson on 09/02/2015.
