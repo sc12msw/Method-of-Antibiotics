@@ -10,7 +10,7 @@
 	<script>
 function deleteDrug(toDelete) {
 	$.ajax({
-    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/secure/drugs/" + toDelete,
+    url: "../secure/drugs/" + toDelete,
     type: 'DELETE',
     success: function(result) {
 		location.reload();
@@ -26,7 +26,7 @@ function deleteDrug(toDelete) {
 <body>
     <!-- Navigation -->
 
-    <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -35,20 +35,25 @@ function deleteDrug(toDelete) {
                     </li>
 
                     <li>
-                        <a href="../cfmed/html">View Drugs</a>
+                        <a href="../secure/drugs">View Drugs</a>
+                    </li>
+					
+					<li>
+                        <a href="../secure/pathogens">View Pathogens</a>
+                    </li>
+					
+                    <li>
+                        <a href="../secure/addDrug">Add Drug</a>
                     </li>
 
                     <li>
-                        <a href="../addDrug">Add Drug</a>
-                    </li>
-
-                    <li>
-                        <a href="../addPathogen">Add Pathogen</a>
+                        <a href="../secure/addPathogen">Add Pathogen</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <div class="container">
         <h1>Cystic Fybrosis Information</h1>
@@ -68,7 +73,7 @@ function deleteDrug(toDelete) {
                 </tr>
             </thead>
 
-            <tbody><tr> <td>Drug test</td><td>Antibiotic</td><td> Test Brand for new drug</td><td>test indic</td><td>test interaction<br> Description: test descript for interaction<br><br></td><td width="75px"><input class="btn btn-primary"onclick="deleteDrug(1);" type="button" value="Delete"> </td></tr><tr> <td>st</td><td>st</td><td> st</td><td>st</td><td>st<br> Description: st<br><br></td><td width="75px"><input class="btn btn-primary"onclick="deleteDrug(6);" type="button" value="Delete"> </td></tr></tbody>
+            <tbody><tr> <td>Drug test</td><td>Antibiotic</td><td> Test Brand for new drug</td><td>test indic</td><td>test interaction<br> Description: test descript for interaction<br><br></td><td width="75px"><input class="btn btn-primary"onclick="deleteDrug(1);" type="button" value="Delete"> </td></tr></tbody>
         </table>
     </div>
 

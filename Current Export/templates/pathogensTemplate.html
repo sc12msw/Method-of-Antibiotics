@@ -9,7 +9,7 @@
 	<script>
 function deletePathogen(toDelete) {
 	$.ajax({
-    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/pathogens/" + toDelete,
+    url: "../secure/pathogens/" + toDelete,
     type: 'DELETE',
     success: function(result) {
 		location.reload();
@@ -25,7 +25,7 @@ function deletePathogen(toDelete) {
 <body>
     <!-- Navigation -->
 
-    <nav class="navbar navbar-inverse">
+   <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -34,15 +34,19 @@ function deletePathogen(toDelete) {
                     </li>
 
                     <li>
-                        <a href="../cfmed/html">View Drugs</a>
+                        <a href="../secure/drugs">View Drugs</a>
+                    </li>
+					
+					<li>
+                        <a href="../secure/pathogens">View Pathogens</a>
+                    </li>
+					
+                    <li>
+                        <a href="../secure/addDrug">Add Drug</a>
                     </li>
 
                     <li>
-                        <a href="../addDrug">Add Drug</a>
-                    </li>
-
-                    <li>
-                        <a href="../addPathogen">Add Pathogen</a>
+                        <a href="../secure/addPathogen">Add Pathogen</a>
                     </li>
                 </ul>
             </div>

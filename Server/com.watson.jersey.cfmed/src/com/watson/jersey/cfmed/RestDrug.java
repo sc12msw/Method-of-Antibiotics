@@ -8,7 +8,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
-
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -63,7 +62,7 @@ public class RestDrug {
 		//Puts all drugs into a table
 		Map <String, String> interactions = drugInfo.getInteractions();
 		String interactionString = "";
-		for (Map.Entry entry: interactions.entrySet()){
+		for (Map.Entry <String, String> entry: interactions.entrySet()){
 			interactionString = interactionString + entry.getKey() + "<br> Description: " + entry.getValue()+"<br><br>";	
 		}
 		row =row + "<tr> <td>"+drugInfo.getName()+"</td>"+ "<td>"+drugInfo.getType()+"</td>" +"<td>"+tempString+"</td>"

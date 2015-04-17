@@ -398,8 +398,7 @@ public class DBManager {
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
 			// Get all the drugs from drugs table by joining all tables
-			// together and renaming columns to variable names for ease of
-			// reading.
+			// together and renaming columns to variable names.
 			stmt = conn.createStatement();
 			String databaseQuery;
 			databaseQuery = "SELECT Drugs.ID AS drugId, Drugs.Name As drugName, Drugs.Indication As drugIndi, Drugs.Side_Effects As drugSide, Drugs.Type As drugType,"
@@ -502,7 +501,6 @@ public class DBManager {
 				drugInfo.setInteractions(interactions);
 				drugInfo.setBrandName(brandNames);
 
-				// Tomorrows work add if NULL statements
 				// Adult data
 				if (!aOralAd.equals("NULL")) {
 					adminDoseAOral.setAdministration(aOralAd);

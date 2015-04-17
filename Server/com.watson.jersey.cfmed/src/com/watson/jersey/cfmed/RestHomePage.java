@@ -9,7 +9,7 @@ import java.io.File;
 @Path("/")
 public class RestHomePage {
 
-	
+//This just returns the home page html file.
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public File getHome()  {

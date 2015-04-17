@@ -2,8 +2,6 @@ package com.watson.jersey.cfmed;
 
 
 import javax.annotation.security.PermitAll;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -27,6 +25,7 @@ public class RestLogic {
 		CFInfo cfInfo = new CFInfo();
 		ArrayList <DrugInfo> drugsFromDatabase = new ArrayList <DrugInfo>();
 		ArrayList <PathogenInfo> pathogensFromDatabase = new ArrayList <PathogenInfo>();
+		//Calls database methods to set objects
 		drugsFromDatabase = db.databaseToDrugObject();
 		pathogensFromDatabase = db.databaseToPathogenObject();
 		cfInfo.setDrug(drugsFromDatabase);
@@ -34,7 +33,7 @@ public class RestLogic {
 		
 		File file = new File("templates/cfInfo.xml");
 		try{
-
+			//Creates the xml file from the classes
 			JAXBContext jaxbContext = JAXBContext.newInstance(CFInfo.class);
 			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
