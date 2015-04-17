@@ -10,7 +10,7 @@
 		<item value="511" key="DIALOG_HEIGHT"/>
 	</section>
 	<section name="InferTypeArguments">
-		<item value="true" key="leaveUnconstrainedRaw"/>
+		<item value="false" key="leaveUnconstrainedRaw"/>
 		<item value="true" key="assumeCloneReturnsSameType"/>
 	</section>
 </section>

@@ -96,9 +96,9 @@ public class RestAddPathogen {
 		int check = 0;
 		check = db.addPathogen(newPathogen);
 		if(check == -1){
-			servletResponse.sendRedirect("../rest/addPathogen/noDrug");
+			servletResponse.sendRedirect("../secure/addPathogen/noDrug");
 		}else{
-		servletResponse.sendRedirect("../rest/pathogens");
+		servletResponse.sendRedirect("../secure/pathogens");
 		}
 		}
 	
