@@ -24,7 +24,6 @@
     [super viewDidLoad];
     drugs = [[NSMutableArray alloc]init];
     drugs  = [DataParser loadDrugData];
-   
 }
 
 
@@ -46,6 +45,8 @@
     // Return the number of sections.
     return 1;
 }
+
+//Fills cells with data.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Drug *drugObject;

@@ -28,7 +28,6 @@
     
     NSMutableArray *drugObjects = [[NSMutableArray alloc]init];
     
-    //String variables for doeses and administration.
     
     //Gets all the drugs from the xml file
     NSArray *drugs = [doc.rootElement elementsForName:@"drug"];
@@ -132,7 +131,7 @@
                     //Checks which routes of administration are present
                     NSString *routeOfAdmin = childrenObj.name;
                     
-                    //Inhaled is set by finding the node then setting the current index 0.admin and 1.dose to set the data to the object
+                    //The routes of administration are set by finding the node then setting the current index 0.admin and 1.dose to set the data to the object
                     if ([routeOfAdmin isEqualToString:@"inhaled"]){
                         NSArray *rOAChildren = [[NSArray alloc]init];
                         NSString *temp = [[NSString alloc]init];
@@ -237,7 +236,7 @@
         }
         //////
         
-        //Checks for the adult detail from the xml file
+        //Checks for the paediatric detail from the xml file
         NSArray *paed =[obj elementsForName:@"paediatric"];
         if (paed.count >0){
             BOOL decision = TRUE;
@@ -255,7 +254,7 @@
                     //Checks which routes of administration are present
                     NSString *routeOfAdmin = childrenObj.name;
                     
-                    //Inhaled is set by finding the node then setting the current index 0.admin and 1.dose to set the data to the object
+                    //The routes of administration are set by finding the node then setting the current index 0.admin and 1.dose to set the data to the object
                     if ([routeOfAdmin isEqualToString:@"inhaled"]){
                         NSArray *rOAChildren = [[NSArray alloc]init];
                         NSString *temp = [[NSString alloc]init];
@@ -421,6 +420,7 @@
             }
             [pathogen setFirstLine:tempList];
         }
+        //Gets the pathogens for a particular drug if requested else returns all pathogens
         if (forTreatment){
             [pathogenObjectsForTreatment addObject:pathogen];
             forTreatment = FALSE;

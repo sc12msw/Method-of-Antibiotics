@@ -43,6 +43,8 @@ NSMutableArray *pathogens;
     // Return the number of sections.
     return 1;
 }
+
+//Fills each cell with data
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"PathogenCell";
@@ -64,7 +66,7 @@ NSMutableArray *pathogens;
     return YES;
 }
 
-//Allows data to be passed to detailed cell view, prepare the segue
+//Sends the pathogen object to the detail view.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"PathogenSegue"]) {
         NSIndexPath *indexPath = [self.pathogenTable indexPathForSelectedRow];
