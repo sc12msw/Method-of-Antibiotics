@@ -2,28 +2,32 @@
 <cfInfo>
     <drug>
         <adult>
-            <IM>
-                <administration>Im test</administration>
-                <dose>im test dose</dose>
-            </IM>
+            <IV>
+                <administration>Reconstitute 2 gms in 20 ml water for injection and give as a bolus over 5 minutes or dilute with saline or 5% glucose to 50-200 ml and infuse over 15-30 minutes. </administration>
+                <dose>2 gm tds. (Some patients can only tolerate 1 gm tds usually due to nausea).</dose>
+            </IV>
         </adult>
-        <brandName>Test Brand for new drug</brandName>
-        <id>1</id>
-        <indication>test indic</indication>
+        <brandName>Meronem</brandName>
+        <id>3</id>
+        <indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections. Also active against H.influenza and S.aureus. </indication>
         <interactions>
             <entry>
-                <key>test interaction</key>
-                <value>test descript for interaction</value>
+                <key>Probenecid</key>
+                <value>Excretion of meropenem reduced by probenecid. Avoid concomitant use.</value>
+            </entry>
+            <entry>
+                <key>Valproate</key>
+                <value>Reduces plasma concentration of valproate may lead to subtherapeutic valproate levels.</value>
             </entry>
         </interactions>
-        <name>Drug test</name>
+        <name>Meropenem</name>
         <paediatric>
-            <IM>
-                <administration> im test paed</administration>
-                <dose>im test paed dose</dose>
-            </IM>
+            <IV>
+                <administration>250 mg reconstituted with 5 ml of WFI and administered over at least 5 minutes or given as an infusion. </administration>
+                <dose>120 mg/kg/day in 3 divided doses. Max 2 g tds.</dose>
+            </IV>
         </paediatric>
-        <sideEffect>test side</sideEffect>
+        <sideEffect>Nausea, vomiting, diarrhoea, abdo pain, disturbance in LFTs, thrombocytopenia, leucopenia, eosinophilia, neutropenia, headaches, paraesthesia, hypersensitivity reaction s including rash, pruritus , urticaria, angioedema and anaphylaxis; also reported convulsions, phlebitis,oral and vaginal candidiasis.  </sideEffect>
         <type>Antibiotic</type>
     </drug>
 </cfInfo>
