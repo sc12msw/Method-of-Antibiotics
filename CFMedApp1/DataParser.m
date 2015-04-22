@@ -18,7 +18,7 @@
 
 +(NSMutableArray *)loadDrugData {
     
-    NSString *filePath = [FileManager dataFilePath:true];
+    NSString *filePath = [FileManager dataFilePath:false];
     NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     
     NSError *error;

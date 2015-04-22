@@ -162,6 +162,7 @@
 
 - (IBAction)removeDrug:(id)sender {
     [drugSelectionStorage removeLastObject];
+    [interactionStorage removeLastObject];
     NSString *textAreaStr = [drugSelectionStorage componentsJoinedByString:@"\n"];
     self.drugSelection.text = textAreaStr;
 }

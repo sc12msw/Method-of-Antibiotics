@@ -160,16 +160,6 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Dose" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-Zc-2jO">
-                                        <rect key="frame" x="5" y="627" width="570" height="120"/>
-                                        <color key="backgroundColor" red="0.88129137810000002" green="0.96198978739999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="qWn-t9-NWe"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d2-yS-uxJ">
                                         <rect key="frame" x="295" y="534" width="198" height="30"/>
                                         <constraints>
@@ -238,6 +228,16 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Dose" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-Zc-2jO">
+                                        <rect key="frame" x="5" y="627" width="570" height="120"/>
+                                        <color key="backgroundColor" red="0.88129137810000002" green="0.96198978739999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="qWn-t9-NWe"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="edh-6G-BHm" firstAttribute="top" secondItem="56l-S6-Pzj" secondAttribute="top" constant="36" id="1j0-9T-Wra"/>
@@ -309,7 +309,7 @@
                         <outlet property="administration" destination="pMk-BM-zU7" id="9fv-6M-WG5"/>
                         <outlet property="adultSwitch" destination="edh-6G-BHm" id="Ot2-WH-B90"/>
                         <outlet property="brandNames" destination="mDt-L0-9bD" id="zQj-Qj-KVa"/>
-                        <outlet property="doseLabel" destination="g5D-Zc-2jO" id="8uC-kf-pIh"/>
+                        <outlet property="dose" destination="g5D-Zc-2jO" id="hFA-k2-buB"/>
                         <outlet property="indication" destination="9tH-wQ-X6z" id="ZSw-Ta-Ah1"/>
                         <outlet property="interactions" destination="mVD-pP-g2n" id="9jH-Ny-aw6"/>
                         <outlet property="paedSwitch" destination="Pzo-wi-Awj" id="UeU-he-v8d"/>

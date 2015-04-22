@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cfInfo>
+<drug>
+<adult>
+<IV>
+<administration>Reconstitute 2 gms in 20 ml water for injection and give as a bolus over 5 minutes or dilute with saline or 5% glucose to 50-200 ml and infuse over 15-30 minutes.
+</administration>
+<dose>
+2 gm tds. (Some patients can only tolerate 1 gm tds usually due to nausea).
+</dose>
+</IV>
+</adult>
+<brandName>Meronem</brandName>
+<id>3</id>
+<indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections. Also active against H.influenza and S.aureus.
+</indication>
+<interactions>
+<entry>
+<key>Probenecid</key>
+<value>Excretion of meropenem reduced by probenecid. Avoid concomitant use.
+</value>
+</entry>
+<entry>
+<key>Valproate</key>
+<value>Reduces plasma concentration of valproate may lead to subtherapeutic valproate levels.
+</value>
+</entry>
+</interactions>
+<name>Meropenem</name>
+<paediatric>
+<IV>
+<administration>250 mg reconstituted with 5 ml of WFI and administered over at least 5 minutes or given as an infusion.
+</administration>
+<dose>120 mg/kg/day in 3 divided doses. Max 2 g tds.</dose>
+</IV>
+</paediatric>
+<sideEffect>Nausea, vomiting, diarrhoea, abdo pain, disturbance in LFTs, thrombocytopenia, leucopenia, eosinophilia, neutropenia, headaches, paraesthesia, hypersensitivity reaction s including rash, pruritus , urticaria, angioedema and anaphylaxis; also reported convulsions, phlebitis,oral and vaginal candidiasis.
+</sideEffect>
+<type>Antibiotic</type>
+</drug>
+<drug>
+<adult>
+<oral>
+<administration>a</administration>
+<dose>aa</dose>
+</oral>
+</adult>
+<brandName>a</brandName>
+<id>5</id>
+<indication>a</indication>
+<interactions>
+<entry>
+<key>a</key>
+<value>a</value>
+</entry>
+</interactions>
+<name>aa</name>
+<paediatric>
+<oral>
+<administration>a</administration>
+<dose>a</dose>
+</oral>
+</paediatric>
+<sideEffect>a</sideEffect>
+<type>a</type>
+</drug>
+<drug>
+<adult>
+<IV>
+<administration>11</administration>
+<dose>11d</dose>
+</IV>
+</adult>
+<brandName>1</brandName>
+<id>6</id>
+<indication>11</indication>
+<interactions>
+<entry>
+<key>Drug 2</key>
+<value>interaction</value>
+</entry>
+<entry>
+<key>Drug 3</key>
+<value>interaction</value>
+</entry>
+</interactions>
+<name>drug 1</name>
+<paediatric>
+<IV>
+<administration>11p</administration>
+<dose>11pd</dose>
+</IV>
+</paediatric>
+<sideEffect>111</sideEffect>
+<type>1</type>
+</drug>
+<drug>
+<adult>
+<SC>
+<administration>22</administration>
+<dose>22d</dose>
+</SC>
+</adult>
+<brandName>22</brandName>
+<id>7</id>
+<indication>22</indication>
+<interactions>
+<entry>
+<key>drug 1</key>
+<value>22 interaction</value>
+</entry>
+<entry>
+<key>Drug 3</key>
+<value>22 interaction</value>
+</entry>
+</interactions>
+<name>Drug 2</name>
+<paediatric>
+<SC>
+<administration>22p</administration>
+<dose>22pd</dose>
+</SC>
+</paediatric>
+<sideEffect>22</sideEffect>
+<type>2</type>
+</drug>
+<drug>
+<adult>
+<oral>
+<administration>33</administration>
+<dose>33d</dose>
+</oral>
+</adult>
+<brandName>33</brandName>
+<id>8</id>
+<indication>33</indication>
+<interactions>
+<entry>
+<key>drug 1</key>
+<value>33</value>
+</entry>
+<entry>
+<key>drug 2</key>
+<value>33</value>
+</entry>
+</interactions>
+<name>Drug 3</name>
+<paediatric>
+<oral>
+<administration>33p</administration>
+<dose>33pd</dose>
+</oral>
+</paediatric>
+<sideEffect>33</sideEffect>
+<type>33</type>
+</drug>
+<pathogen>
+<description>a</description>
+<firstline>aa</firstline>
+<id>3</id>
+<name>a</name>
+</pathogen>
+<pathogen>
+<description>aa</description>
+<firstline>aa</firstline>
+<id>4</id>
+<name>ab</name>
+</pathogen>
+<pathogen>
+<description>test</description>
+<firstline>Drug 2</firstline>
+<firstline>Drug 3</firstline>
+<id>5</id>
+<name>Test 1</name>
+</pathogen>
+<pathogen>
+<description>tester 2</description>
+<firstline>drug 1</firstline>
+<firstline>Drug 3</firstline>
+<id>6</id>
+<name>Test 2</name>
+</pathogen>
+</cfInfo>
