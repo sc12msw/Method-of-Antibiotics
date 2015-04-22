@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 @interface DrugTableVC(){
     NSMutableArray *drugs;
+    NSArray *sorter;
 }
 
 @end
@@ -24,6 +25,9 @@
     [super viewDidLoad];
     drugs = [[NSMutableArray alloc]init];
     drugs  = [DataParser loadDrugData];
+    sorter = [drugs sortedArrayUsingComparator:^NSComparisonResult(Drug *a, Drug *b) {
+        return [a.getGenericName caseInsensitiveCompare:b.getGenericName];
+    }];
 }
 
 
@@ -36,7 +40,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [drugs count];
+    return [sorter count];
     
 }
 
@@ -58,7 +62,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    drugObject = [drugs objectAtIndex:indexPath.row];
+    drugObject = [sorter objectAtIndex:indexPath.row];
     NSString *temp = drugObject.getGenericName;
     NSString *newString = [[temp componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
     cell.textLabel.text = newString;
@@ -70,7 +74,7 @@
     if ([segue.identifier isEqualToString:@"DrugSegue"]) {
         NSIndexPath *indexPath = [self.drugTable indexPathForSelectedRow];
         DrugDetailVC *dvc = segue.destinationViewController;
-        dvc.drug = [drugs objectAtIndex:indexPath.row];
+        dvc.drug = [sorter objectAtIndex:indexPath.row];
     }
 }
 @end

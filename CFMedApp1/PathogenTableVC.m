@@ -12,6 +12,7 @@
 #import "DataParser.h"
 @interface PathogenTableVC (){
 NSMutableArray *pathogens;
+NSArray *sorter;
 }
 
 
@@ -25,6 +26,10 @@ NSMutableArray *pathogens;
    
     pathogens = [[NSMutableArray alloc]init];
     pathogens = [DataParser loadPathogenData:@"notForTreatment"];
+    sorter = [pathogens sortedArrayUsingComparator:^NSComparisonResult(Pathogen *a, Pathogen *b) {
+        return [a.getName caseInsensitiveCompare:b.getName];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +40,7 @@ NSMutableArray *pathogens;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [pathogens count];
+    return [sorter count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -56,7 +61,7 @@ NSMutableArray *pathogens;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    pathogenObject = [pathogens objectAtIndex:indexPath.row];
+    pathogenObject = [sorter objectAtIndex:indexPath.row];
     cell.textLabel.text = pathogenObject.getName;
     return cell;
 }
@@ -71,7 +76,7 @@ NSMutableArray *pathogens;
     if ([segue.identifier isEqualToString:@"PathogenSegue"]) {
         NSIndexPath *indexPath = [self.pathogenTable indexPathForSelectedRow];
         PathogenDetailVC *dvc = segue.destinationViewController;
-        dvc.pathogen = [pathogens objectAtIndex:indexPath.row];
+        dvc.pathogen = [sorter objectAtIndex:indexPath.row];
     }
 
 }
