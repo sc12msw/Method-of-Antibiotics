@@ -122,20 +122,22 @@
     //Turns the button presses into numbers and operations separating them.
     @try {
         while (currentIndex < sizeOfArray){
-            
+            //Fills the number string with double values until a string (operator) is found
             while (![[storage objectAtIndex:currentIndex] isKindOfClass:[NSString class]]){
                 [numberStr appendString:[NSString stringWithFormat:@"%@",[storage objectAtIndex:currentIndex]]];
-                
                 currentIndex = currentIndex+1;
+                //If end of calculation break loop
                 if (currentIndex >= sizeOfArray){
                     break;
                 }
                 
             }
+            //Once operator is found or end of calculation add that number to calculation array
             if (![numberStr isEqualToString:@""]) {
                 number = @([numberStr doubleValue]);
                 [calculationArray addObject:number];
             }
+            //The operator is now the current index so add the operator to the array and increment the index.
             if (currentIndex < sizeOfArray){
                 [calculationArray addObject:[storage objectAtIndex:currentIndex]];
                 [numberStr setString:@""];
@@ -182,7 +184,7 @@
                 
                 //Addition operation.
                 if([[calculationArray objectAtIndex:i] isEqualToString:@"+"]){
-                    //Checks to avoid operations such as 5 x - 6 as two operations would confuse it.
+                    //Checks to avoid operations such as 5 + - 6 as two operations would confuse it.
                     //Changes it to 5 + (-6) which is valid.
                     if(![[calculationArray objectAtIndex:currentIndex+1] isKindOfClass:[NSString class]]) {
                         number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);

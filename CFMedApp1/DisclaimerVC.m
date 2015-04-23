@@ -20,7 +20,7 @@
     
     
     [self.tabBarController.tabBar setHidden:YES];
-   [_disclaimerText setContentOffset:CGPointZero animated:YES];
+   [_disclaimerText scrollRangeToVisible: NSMakeRange(0, 1)];
     
 }
 

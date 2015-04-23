@@ -19,6 +19,8 @@
 
 
 - (void)viewDidLoad {
+    
+    //Loads the data into the user interface
     [super viewDidLoad];
     [self fillFields];
     [self adultSetting];

@@ -463,7 +463,7 @@
                                     <outlet property="delegate" destination="oLu-Tv-E8F" id="XiF-DC-IuH"/>
                                 </connections>
                             </pickerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Drugs to be checked for intertactions" translatesAutoresizingMaskIntoConstraints="NO" id="c3i-qt-dby">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Drugs Selected" translatesAutoresizingMaskIntoConstraints="NO" id="c3i-qt-dby">
                                 <rect key="frame" x="19" y="408" width="311" height="135"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
