@@ -431,8 +431,17 @@
             [pathogenObjects addObject:pathogen];
         }
         else if (!forTreatment && ![nameOfDrug isEqualToString:@"notForTreatment"]){
-            //Resets array if nothing is found
-            pathogen  =[[Pathogen alloc]init];
+            //Resets array if nothing is found and notifies user
+            [pathogenObjects removeAllObjects];
+            UIAlertView *pathoAlert = [[UIAlertView alloc] initWithTitle:@"No pathogens"
+                                                                       message:@"No pathogens found for this drug"
+                                                                      delegate:self
+                                                             cancelButtonTitle:@"OK"
+                                                             otherButtonTitles:nil];
+            
+            [pathoAlert show];
+            return pathogenObjects;
+
         }
     }
     if (sendArray){
