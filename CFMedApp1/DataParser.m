@@ -15,7 +15,7 @@
 
 
 
-
+//This method finds all the drugs from the xml file and returns array of drug objects
 +(NSMutableArray *)loadDrugData {
     
     NSString *filePath = [FileManager dataFilePath:false];
@@ -234,7 +234,7 @@
                 }
             }
         }
-        //////
+        
         
         //Checks for the paediatric detail from the xml file
         NSArray *paed =[obj elementsForName:@"paediatric"];
@@ -365,7 +365,9 @@
     
 }
 
-
+//This method finds the pathogen data from the XML file and returns an array of pathogen objects.
+//Returns all pathogens if "notForTreatment" is given.
+//Returns all the pathogens for a particular drug when the drug name is given.
 +(NSMutableArray *)loadPathogenData :(NSString*) nameOfDrug {
     
     NSString *filePath = [FileManager dataFilePath:false];
@@ -429,9 +431,8 @@
             [pathogenObjects addObject:pathogen];
         }
         else if (!forTreatment && ![nameOfDrug isEqualToString:@"notForTreatment"]){
+            //Resets array if nothing is found
             pathogen  =[[Pathogen alloc]init];
-            [pathogen setName:(@"No pathogens found for drug.")];
-            [pathogenObjects addObject:pathogen];
         }
     }
     if (sendArray){
