@@ -8,34 +8,41 @@
 
 #import "AppDelegate.h"
 #import "FileManager.h"
-@interface AppDelegate ()
+@interface AppDelegate (){
+    NSMutableData *dataBuffer;
+}
 
 @end
 
 @implementation AppDelegate
 
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
-    
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     // Change the url string to the site address.
     // The following block GETS the xml file from the restful service.
     NSString *url = @"http://192.168.0.12:8080/cfmedicine/rest/cfmed";
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+  
     NSMutableData *data = [[NSMutableData alloc]init];
+    dataBuffer =[[NSMutableData alloc]init];
     [self connection:urlConnection didReceiveData:data];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
     return YES;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    
-    
+    [dataBuffer appendData:data];
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection*) connection{
     //Gets the incoming data loads it into a string and saves it to the file in the main bundle.
-    NSString *xmlStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *xmlStr = [[NSString alloc] initWithData:dataBuffer encoding:NSUTF8StringEncoding];
     NSString *filePath = [FileManager dataFilePath:true];
     NSError *error;
     NSData *data2 = [xmlStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -43,10 +50,11 @@
                                                            options:0 error:&error];
     data2 = doc.XMLData;
     [data2 writeToFile:filePath atomically:YES];
-    
 }
+
 - (BOOL) isFirstRun
 {
+    //Stores the a variable which shows if the application has been run for the first time.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"isFirstRun"])
     {
