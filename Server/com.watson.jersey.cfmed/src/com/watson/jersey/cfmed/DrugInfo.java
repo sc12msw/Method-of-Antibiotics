@@ -9,15 +9,7 @@ public class DrugInfo {
 	 private PaediatricInfo pae;
 	 private String name;
 	 private String type;
-	 public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	private int id;
+	 private int id;
 	 private ArrayList <String> brandName;
 	 private String indication;
 	 private String sideEffect;
@@ -31,6 +23,13 @@ public class DrugInfo {
 		this.id = id;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 	public Map<String, String> getInteractions() {
 		return interactions;
 	}
