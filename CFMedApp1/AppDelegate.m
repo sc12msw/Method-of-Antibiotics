@@ -37,6 +37,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    //Appends the global variable for each chunk of data recieved from the server to download the complete file.
     [dataBuffer appendData:data];
 }
 
