@@ -27,6 +27,13 @@
     //Initalises global variables
     storage = [[NSMutableArray alloc] init];
     answer = [[NSNumber alloc]init];
+    UIAlertView *usageAlert = [[UIAlertView alloc] initWithTitle:@"Usage"
+                                                         message:@"Simple left to right calculator. No order of operations. Example 5+2x6+2/8 becomes ((((5+2)x6)+2)/8)"
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+    
+    [usageAlert show];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,8 +139,21 @@
                 }
                 
             }
-            //Once operator is found or end of calculation add that number to calculation array
+            //Once operator is found or end of calculation add that number to calculation array and string is not empty
             if (![numberStr isEqualToString:@""]) {
+                
+                //If a number leads with 0 for example 09 for the end of x.09 add 0 separately to array as 09 is just 9 when loaded into a double
+                int tempcount = 1;
+                for(int count=0; count<[numberStr length]; count++){
+                    
+                    NSRange range = NSMakeRange(count, tempcount);
+                    NSString *d_places = [numberStr substringWithRange:range];
+                    if ([d_places isEqualToString:@"0"]){
+                        NSNumber *d_temp = @([d_places doubleValue]);
+                        [calculationArray addObject:d_temp];
+                    }else break;
+                }
+                
                 number = @([numberStr doubleValue]);
                 [calculationArray addObject:number];
             }
@@ -155,13 +175,48 @@
                 //Checks if a . exsists then replaces the operation with a double number.
                 if ([[calculationArray objectAtIndex:i] isEqualToString:@"."]){
                     number =@([[calculationArray objectAtIndex:i+1]doubleValue]);
-                    number2=@([[calculationArray objectAtIndex:i-1]doubleValue]);
-                    NSString *tempStr = [NSString stringWithFormat:@"%@%@%@",number2,@".",number];
-                    number = @([tempStr doubleValue]);
-                    [calculationArray removeObjectAtIndex:i+1];
-                    [calculationArray replaceObjectAtIndex:i withObject:number];
-                    [calculationArray removeObjectAtIndex:i-1];
                     
+                    //Looks for leading zeros after the decimal point while the number is a leading zero
+                    //the number of zeros are counted until a number is found.
+                    int tempcount = i+1;
+                    double d_places = 0;
+                    double numberToDelete =0;
+                    while ([number isEqual:@(0)]){
+                        d_places = d_places +1;
+                        tempcount = tempcount +1;
+                        number =@([[calculationArray objectAtIndex:tempcount]doubleValue]);
+                    }
+                    //The the number of zeros are counted the number before the decimal is found
+                    number2=@([[calculationArray objectAtIndex:i-1]doubleValue]);
+                    
+                    //If the there are leading zeros find the size of the number after the zeros else print the decimal as normal
+                    if (d_places > 0){
+                        NSString *sizeOfNumber = [number stringValue];
+                        double sizeInt = [sizeOfNumber length];
+                        
+                        //Make that number (x) 0.x by using the size of the number to divide by a power of 10
+                        sizeInt = pow(10,sizeInt);
+                        number = @([number doubleValue]/sizeInt);
+                        //Divide it further by the count of zeros by a power of 10
+                        numberToDelete=d_places;
+                        d_places = pow(10,d_places);
+                        number =@([number doubleValue] /d_places);
+                        
+                        //Add the number behing the point to the one infront.
+                        number = @([number doubleValue] + [number2 doubleValue]);
+                    }else{
+                        NSString *tempStr = [NSString stringWithFormat:@"%@%@%@",number2,@".",number];
+                        number = @([tempStr doubleValue]);
+                    }
+                    //Replace the string "." with a number and remove zeros and other number
+                    [calculationArray removeObjectAtIndex:i-1];
+                    [calculationArray replaceObjectAtIndex:i-1 withObject:number];
+                    if (numberToDelete == 0){
+                        [calculationArray removeObjectAtIndex:i];
+                    }
+                    for (int j =0; j<numberToDelete+1;j++){
+                        [calculationArray removeObjectAtIndex:i];
+                    }
                     //Checks if a - exists then replaces the operation with a + and makes the number negative.
                 }else if ([[calculationArray objectAtIndex:i ] isEqualToString:@"-"]){
                     if ([[calculationArray objectAtIndex:i ] isEqualToString:@"-"]){
@@ -192,7 +247,7 @@
                         [calculationArray removeObjectAtIndex:currentIndex+1];
                         number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
                     }
-                    number =@([[calculationArray objectAtIndex:currentIndex+1]doubleValue]);
+                    
                     
                     if (currentIndex>0){
                         number2 = @([[calculationArray objectAtIndex:currentIndex-1]doubleValue]);
@@ -201,7 +256,11 @@
                         if(!operationArray.count>0){
                             number = @([number2 doubleValue] + [number doubleValue]);
                             [operationArray addObject:number];
-                        }else [operationArray addObject:number];
+                        }else{
+                            number =@([[operationArray lastObject]doubleValue] + [number doubleValue]);
+                            [operationArray removeLastObject];
+                            [operationArray addObject:number];
+                        }
                     }
                     //Multiplication operation.
                 }else if ([[calculationArray objectAtIndex:i] isEqualToString:@"x"]){
@@ -274,7 +333,6 @@
                                                         message:@"This calculation is not possible on this application, sorry."
                                                        delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
         [alert show];
-        NSLog(@"%@", exception.reason);
     }
     @finally {
         
