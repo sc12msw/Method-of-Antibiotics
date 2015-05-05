@@ -92,7 +92,7 @@ CREATE TABLE `brand_names` (
   `Drugs_ID` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `fk_Brand_Names_Drugs1_idx` (`Drugs_ID`),
-  CONSTRAINT `fk_Brand_Names_Drugs1` FOREIGN KEY (`Drugs_ID`) REFERENCES `drugs` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Brand_Names_Drugs1` FOREIGN KEY (`Drugs_ID`) REFERENCES `drugs` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -148,8 +148,8 @@ CREATE TABLE `first_line` (
   PRIMARY KEY (`ID`),
   KEY `fk_First_Line_Pathogens1_idx` (`Pathogens_Pathogen_ID`),
   KEY `fk_First_Line_Drugs1_idx` (`Drugs_ID`),
-  CONSTRAINT `fk_First_Line_Drugs1` FOREIGN KEY (`Drugs_ID`) REFERENCES `drugs` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_First_Line_Pathogens1` FOREIGN KEY (`Pathogens_Pathogen_ID`) REFERENCES `pathogens` (`Pathogen_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_First_Line_Drugs1` FOREIGN KEY (`Drugs_ID`) REFERENCES `drugs` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_First_Line_Pathogens1` FOREIGN KEY (`Pathogens_Pathogen_ID`) REFERENCES `pathogens` (`Pathogen_ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -176,7 +176,7 @@ CREATE TABLE `interactions` (
   `Drugs_ID` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `fk_Interactions_Drugs1_idx` (`Drugs_ID`),
-  CONSTRAINT `fk_Interactions_Drugs1` FOREIGN KEY (`Drugs_ID`) REFERENCES `drugs` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Interactions_Drugs1` FOREIGN KEY (`Drugs_ID`) REFERENCES `drugs` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
