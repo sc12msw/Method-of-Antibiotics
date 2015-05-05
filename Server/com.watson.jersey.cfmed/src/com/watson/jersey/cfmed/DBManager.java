@@ -14,6 +14,7 @@ public class DBManager {
 	static final String USER = "admin";
 	static final String PASS = "#S3cret999";
 
+    //Method to add a drug to the database when a drug object is given as an argument.
 	public void addDrug(DrugInfo drug) {
 		Connection conn = null;
 		Statement stmt = null;
@@ -272,7 +273,8 @@ public class DBManager {
 			}
 		}
 	}
-
+    
+    //Method to add a pathogen to the database when a pathogen object is given as an argument.
 	public int addPathogen(PathogenInfo pathogen) {
 		Connection conn = null;
 		Statement stmt = null;
@@ -383,7 +385,8 @@ public class DBManager {
 		}
 		return success;
 	}
-
+    
+    //Method to convert the drug data on the database to an array of drug objects.
 	public ArrayList<DrugInfo> databaseToDrugObject() {
 
 		ArrayList<DrugInfo> drugs = new ArrayList<DrugInfo>();
@@ -609,7 +612,7 @@ public class DBManager {
 		return drugs;
 	}
 
-
+    //Method to convert pathogen data in the database to an array of pathogen objects
 	public ArrayList<PathogenInfo> databaseToPathogenObject() {
 
 		ArrayList<PathogenInfo> pathogens = new ArrayList<PathogenInfo>();
@@ -683,7 +686,7 @@ public class DBManager {
 		}
 		return pathogens;
 	}
-
+    //Method to delete a drug from the database when the id of the record is given as an argument
 	public void deleteDrug(int drugId) {
 		Connection conn = null;
 		Statement stmt = null;
@@ -718,7 +721,7 @@ public class DBManager {
 		}
 	}
 	
-	
+	//Method to delete a pathogen from the database when the id is given as an argument
 	public void deletePathogen(int pathoId) {
 		Connection conn = null;
 		Statement stmt = null;
