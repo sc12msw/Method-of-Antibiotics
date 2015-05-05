@@ -30,8 +30,7 @@
     interactionStorage = [[NSMutableArray alloc]init];
     picker1Data = [[NSMutableArray alloc]init];
     [picker1Data addObjectsFromArray:pathogen.getFirstLine];
-    
-}
+    [_descriptionArea scrollRangeToVisible: NSMakeRange(0, 1)];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -96,7 +95,7 @@
 //Button to compare interactions
 
 - (IBAction)checkInter:(id)sender {
-    
+    BOOL message = false;
     
     //Checks if there are enough drugs selected to check for interactions
     if ([interactionStorage count]<2){
@@ -107,7 +106,7 @@
                                                          otherButtonTitles:nil];
         
         [interactionAlert show];
-        
+        message = true;
         
     }else{
         //Arrays to store the names of the drugs affected. This is to avoid the problem of A=B and B=A being displayed as it is only needed once.
@@ -151,12 +150,22 @@
                                                              otherButtonTitles:nil];
             
             [interactionAlert show];
-            
+            message = true;
             
             
         }
         
         
+    }
+    ///If no message has been shown there must be no interactions so show this to user
+    if (!message){
+        UIAlertView *interactionAlert = [[UIAlertView alloc] initWithTitle:@"No Interaction"
+                                                                   message:@"No interactions were found"
+                                                                  delegate:self
+                                                         cancelButtonTitle:@"OK"
+                                                         otherButtonTitles:nil];
+        
+        [interactionAlert show];
     }
 }
 

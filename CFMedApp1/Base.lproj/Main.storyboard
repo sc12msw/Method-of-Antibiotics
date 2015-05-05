@@ -464,27 +464,27 @@
                                 </connections>
                             </pickerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Drugs Selected" translatesAutoresizingMaskIntoConstraints="NO" id="c3i-qt-dby">
-                                <rect key="frame" x="19" y="408" width="311" height="135"/>
+                                <rect key="frame" x="19" y="409" width="573" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WT-9d-fc4">
-                                <rect key="frame" x="371" y="483" width="156" height="30"/>
-                                <state key="normal" title="Check For Interactions">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="checkInter:" destination="oLu-Tv-E8F" eventType="touchUpInside" id="kgL-JG-dBv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpl-2d-N6s">
-                                <rect key="frame" x="151" y="371" width="94" height="30"/>
+                                <rect key="frame" x="116" y="371" width="94" height="30"/>
                                 <state key="normal" title="Remove Drug">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="removeDrug:" destination="oLu-Tv-E8F" eventType="touchUpInside" id="qna-1O-Iqm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WT-9d-fc4">
+                                <rect key="frame" x="444" y="371" width="156" height="30"/>
+                                <state key="normal" title="Check For Interactions">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkInter:" destination="oLu-Tv-E8F" eventType="touchUpInside" id="kgL-JG-dBv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -493,22 +493,21 @@
                             <constraint firstItem="TBl-6D-dQg" firstAttribute="top" secondItem="MXb-Q7-JsR" secondAttribute="bottom" constant="29" id="4EK-zB-EgV"/>
                             <constraint firstItem="TBl-6D-dQg" firstAttribute="trailing" secondItem="E77-bM-muJ" secondAttribute="trailing" id="Cme-fc-qc5"/>
                             <constraint firstAttribute="trailing" secondItem="7P9-Rq-DJF" secondAttribute="trailing" id="E75-db-MV1"/>
-                            <constraint firstItem="c3i-qt-dby" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leadingMargin" constant="3" id="L5w-gP-tmh"/>
+                            <constraint firstItem="Lpl-2d-N6s" firstAttribute="leading" secondItem="E77-bM-muJ" secondAttribute="trailing" constant="16" id="Gyv-wI-P9S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c3i-qt-dby" secondAttribute="trailing" constant="-8" id="HEQ-Jh-hUh"/>
+                            <constraint firstItem="c3i-qt-dby" firstAttribute="top" secondItem="E77-bM-muJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Iwg-ZJ-YdC"/>
                             <constraint firstItem="E77-bM-muJ" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leadingMargin" constant="3" id="RHW-jD-sA2"/>
                             <constraint firstItem="7P9-Rq-DJF" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leading" id="Rr9-zf-gP3"/>
-                            <constraint firstItem="c3i-qt-dby" firstAttribute="top" secondItem="Lpl-2d-N6s" secondAttribute="bottom" constant="7" id="WGd-in-70M"/>
-                            <constraint firstItem="Lpl-2d-N6s" firstAttribute="baseline" secondItem="E77-bM-muJ" secondAttribute="baseline" id="Y9W-0f-Rtc"/>
-                            <constraint firstItem="4fR-kn-MZB" firstAttribute="top" secondItem="c3i-qt-dby" secondAttribute="bottom" constant="8" symbolic="YES" id="ZET-xE-vqh"/>
-                            <constraint firstItem="c3i-qt-dby" firstAttribute="leading" secondItem="E77-bM-muJ" secondAttribute="trailing" constant="-81" id="ZPe-sJ-7ne"/>
-                            <constraint firstItem="2WT-9d-fc4" firstAttribute="leading" secondItem="c3i-qt-dby" secondAttribute="trailing" constant="41" id="dey-tc-lao"/>
+                            <constraint firstItem="2WT-9d-fc4" firstAttribute="trailing" secondItem="7P9-Rq-DJF" secondAttribute="trailing" id="Vyg-VK-aAf"/>
                             <constraint firstItem="7P9-Rq-DJF" firstAttribute="centerX" secondItem="kBP-z6-kt4" secondAttribute="centerX" id="eyr-2A-KUn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2WT-9d-fc4" secondAttribute="trailing" constant="57" id="fXU-ug-0nv"/>
-                            <constraint firstItem="4fR-kn-MZB" firstAttribute="top" secondItem="2WT-9d-fc4" secondAttribute="bottom" constant="38" id="fxN-m8-jMs"/>
+                            <constraint firstItem="2WT-9d-fc4" firstAttribute="baseline" secondItem="Lpl-2d-N6s" secondAttribute="baseline" id="pdU-CA-eFu"/>
+                            <constraint firstItem="c3i-qt-dby" firstAttribute="leading" secondItem="E77-bM-muJ" secondAttribute="leading" id="q42-u7-yEg"/>
                             <constraint firstItem="E77-bM-muJ" firstAttribute="top" secondItem="kBP-z6-kt4" secondAttribute="bottom" constant="26" id="qRL-vz-IUI"/>
                             <constraint firstItem="kBP-z6-kt4" firstAttribute="leading" secondItem="RLe-a8-3Mz" secondAttribute="leadingMargin" constant="-1" id="tTO-XU-V0H"/>
+                            <constraint firstItem="4fR-kn-MZB" firstAttribute="top" secondItem="c3i-qt-dby" secondAttribute="bottom" constant="17" id="tUY-x2-sBP"/>
+                            <constraint firstItem="Lpl-2d-N6s" firstAttribute="baseline" secondItem="E77-bM-muJ" secondAttribute="baseline" id="vNp-AN-ikX"/>
                             <constraint firstItem="kBP-z6-kt4" firstAttribute="top" secondItem="TBl-6D-dQg" secondAttribute="bottom" constant="69" id="wSH-xU-Dhd"/>
                             <constraint firstItem="7P9-Rq-DJF" firstAttribute="top" secondItem="TBl-6D-dQg" secondAttribute="bottom" constant="8" symbolic="YES" id="y5I-EX-NV9"/>
-                            <constraint firstItem="Lpl-2d-N6s" firstAttribute="leading" secondItem="E77-bM-muJ" secondAttribute="trailing" constant="51" id="zNj-md-xoV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4xq-U0-EeP"/>
@@ -520,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63v-YR-UEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3074" y="1050"/>
+            <point key="canvasLocation" x="2997" y="967"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -561,7 +560,7 @@
                                     <constraint firstAttribute="height" constant="53" id="Yud-wK-6lI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <color key="textColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antibiotic Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGD-YW-c2h">
