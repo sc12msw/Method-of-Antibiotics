@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //Initailise variables and set text fields.
     self.navigationItem.title = pathogen.getName;
     self.descriptionArea.text = pathogen.getDescription;
     drugSelectionStorage = [[NSMutableArray alloc]init];
