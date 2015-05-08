@@ -141,7 +141,7 @@
             }
             
         }
-        
+        //Displays a pop up for the interactions
         for (int i=0; i<[drugA count]; i++){
             NSDictionary *interaction = [[drugB objectAtIndex:i] getDrugInteraction];
             NSString *interactingDrugName = [NSString stringWithFormat:@"%@ interacts with %@. \n Description: %@",[[drugA objectAtIndex:i] getGenericName],[[drugB objectAtIndex:i] getGenericName], [interaction valueForKey:[[drugA objectAtIndex:i] getGenericName]]];
