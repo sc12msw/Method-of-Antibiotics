@@ -24,14 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //Initailise variables and set text fields.
     self.navigationItem.title = pathogen.getName;
     self.descriptionArea.text = pathogen.getDescription;
     drugSelectionStorage = [[NSMutableArray alloc]init];
     interactionStorage = [[NSMutableArray alloc]init];
     picker1Data = [[NSMutableArray alloc]init];
     [picker1Data addObjectsFromArray:pathogen.getFirstLine];
-    
-}
+    [_descriptionArea scrollRangeToVisible: NSMakeRange(0, 1)];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -96,7 +96,7 @@
 //Button to compare interactions
 
 - (IBAction)checkInter:(id)sender {
-    
+    BOOL message = false;
     
     //Checks if there are enough drugs selected to check for interactions
     if ([interactionStorage count]<2){
@@ -107,7 +107,7 @@
                                                          otherButtonTitles:nil];
         
         [interactionAlert show];
-        
+        message = true;
         
     }else{
         //Arrays to store the names of the drugs affected. This is to avoid the problem of A=B and B=A being displayed as it is only needed once.
@@ -143,7 +143,8 @@
         }
         
         for (int i=0; i<[drugA count]; i++){
-            NSString *interactingDrugName = [NSString stringWithFormat:@"%@ interacts with %@. \n Description: %@",[[drugA objectAtIndex:i] getGenericName],[[drugB objectAtIndex:i] getGenericName], [[[drugA objectAtIndex:i] getDrugInteraction] objectForKey:[[drugB objectAtIndex:i] getGenericName]]];
+            NSDictionary *interaction = [[drugB objectAtIndex:i] getDrugInteraction];
+            NSString *interactingDrugName = [NSString stringWithFormat:@"%@ interacts with %@. \n Description: %@",[[drugA objectAtIndex:i] getGenericName],[[drugB objectAtIndex:i] getGenericName], [interaction valueForKey:[[drugA objectAtIndex:i] getGenericName]]];
             UIAlertView *interactionAlert = [[UIAlertView alloc] initWithTitle:@"Interaction found"
                                                                        message:interactingDrugName
                                                                       delegate:self
@@ -151,12 +152,22 @@
                                                              otherButtonTitles:nil];
             
             [interactionAlert show];
-            
+            message = true;
             
             
         }
         
         
+    }
+    ///If no message has been shown there must be no interactions so show this to user
+    if (!message){
+        UIAlertView *interactionAlert = [[UIAlertView alloc] initWithTitle:@"No Interaction"
+                                                                   message:@"No interactions were found"
+                                                                  delegate:self
+                                                         cancelButtonTitle:@"OK"
+                                                         otherButtonTitles:nil];
+        
+        [interactionAlert show];
     }
 }
 

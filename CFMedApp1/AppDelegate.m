@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     // Change the url string to the site address.
     // The following block GETS the xml file from the restful service.
-    NSString *url = @"http://192.168.0.12:8080/cfmedicine/rest/cfmed";
+    NSString *url = @"http://localhost:8080/cfmedicine/rest/cfmed";
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
   
@@ -37,6 +37,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    //Appends the global variable for each chunk of data recieved from the server to download the complete file.
     [dataBuffer appendData:data];
 }
 

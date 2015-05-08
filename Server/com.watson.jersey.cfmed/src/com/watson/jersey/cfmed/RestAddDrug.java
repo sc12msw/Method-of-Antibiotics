@@ -31,7 +31,7 @@ public class RestAddDrug {
 	}
 
 
-
+    // This method retrieves the data from the form to load into variables then adds the data to the database.
 	@POST
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)

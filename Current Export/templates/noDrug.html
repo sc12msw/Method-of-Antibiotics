@@ -2,24 +2,11 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8"><!-- Bootstrap Core CSS -->
+    <meta charset="utf-8">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <title>$title</title>
+    <title>No drug found</title>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script>
-function deletePathogen() {
-	var id = $('#pathogenId').val();
-	$.ajax({
-    url: "http://localhost:8080/com.watson.jersey.cfmed/rest/pathogens/" + id,
-    type: 'DELETE',
-    success: function(result) {
-		location.reload();
-        alert("Pathogen was deleted from database");
-    }
-});
-	
-}
-	</script>
+
 	
 </head>
 

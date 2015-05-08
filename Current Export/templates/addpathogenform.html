@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add a New Drugs</title>
+    <title>Add a New Pathogen</title>
     <meta charset="utf-8">
-
-    <title>Small Business - Start Bootstrap Template</title><!-- Bootstrap Core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript">
 
@@ -79,13 +77,14 @@
 
 
     <div class="container">
+    	<h1> Add a Pathogen</h1>
         <form action="../secure/addPathogen" method="post">
             <div class="form-group">
-                <h2>Name</h2><input name="name" required>
+                <h2>Name</h2><input name="name"  placeholder="Name of Pathogen" required>
                 <hr>
 
                 <h2>Description</h2>
-                <textarea cols="50" name="description" required rows="4">
+                <textarea cols="50" name="description"  placeholder="Description of Pathogen" required rows="4">
 </textarea>
                 <hr>
 
@@ -93,7 +92,7 @@
 
                 <table id="fLTable">
                     <tr>
-                        <td><input name="fLDrug" required type="text"></td>
+                        <td><input name="fLDrug"  placeholder="Name of Drug" required type="text"></td>
 
                         <td><input class="button" onclick="addField(&quot;FL&quot;);" type="button" value="Add another"></td>
                     </tr>

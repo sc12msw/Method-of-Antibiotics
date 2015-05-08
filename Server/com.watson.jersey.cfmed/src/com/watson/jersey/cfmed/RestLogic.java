@@ -19,7 +19,7 @@ public class RestLogic {
 	// This method returns the xml of the objects created on the server. Using JAXB
 	@GET
 	@PermitAll
-	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@Produces(MediaType.APPLICATION_XML)
 	public File getXML() throws IOException {
 		DBManager db = new DBManager();
 		CFInfo cfInfo = new CFInfo();
