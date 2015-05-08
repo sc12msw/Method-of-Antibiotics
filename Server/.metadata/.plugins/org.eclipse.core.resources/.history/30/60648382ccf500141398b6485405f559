@@ -84,7 +84,7 @@
 			 interactionName
              interactionDescription
              
-             This can be used do add up to 20 interactions starting from 0 "interactionName" and "interactionDescription" to "interactionName19" and "interactionDescription19".
+             This can be used do add up to 10 interactions starting from 0 "interactionName" and "interactionDescription" to "interactionName9" and "interactionDescription9".
              </li>
             <li class="list-group-item">
 			 

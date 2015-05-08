@@ -42,7 +42,7 @@
         currentCell.appendChild(interactionBox);
 		currentCell2.appendChild(interactionText);
         }else{
-        window.alert("Only 10 interactions can be added.");
+        window.alert("Only 20 interactions can be added.");
         }
 
     }
@@ -144,10 +144,9 @@
                     <tr>
                         <td><input placeholder="Drug name"  name="interactionName" type="text"></td>
 						<td><textarea placeholder="Please enter interaction description for the drug specified."  cols="50" name="interactionDescription" rows="4"></textarea></td>
-                        <td><input  id="formStyle" class="button" onclick="addInteraction();" type="button" value="Add another"></td>
                     </tr>
                 </table>
-                
+                <input  id="formStyle" class="button" onclick="addInteraction();" type="button" value="Add another">
                 <hr>
             </div>
 
