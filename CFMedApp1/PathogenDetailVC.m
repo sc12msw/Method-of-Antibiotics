@@ -143,7 +143,8 @@
         }
         
         for (int i=0; i<[drugA count]; i++){
-            NSString *interactingDrugName = [NSString stringWithFormat:@"%@ interacts with %@. \n Description: %@",[[drugA objectAtIndex:i] getGenericName],[[drugB objectAtIndex:i] getGenericName], [[[drugA objectAtIndex:i] getDrugInteraction] objectForKey:[[drugB objectAtIndex:i] getGenericName]]];
+            NSDictionary *interaction = [[drugB objectAtIndex:i] getDrugInteraction];
+            NSString *interactingDrugName = [NSString stringWithFormat:@"%@ interacts with %@. \n Description: %@",[[drugA objectAtIndex:i] getGenericName],[[drugB objectAtIndex:i] getGenericName], [interaction valueForKey:[[drugA objectAtIndex:i] getGenericName]]];
             UIAlertView *interactionAlert = [[UIAlertView alloc] initWithTitle:@"Interaction found"
                                                                        message:interactingDrugName
                                                                       delegate:self
