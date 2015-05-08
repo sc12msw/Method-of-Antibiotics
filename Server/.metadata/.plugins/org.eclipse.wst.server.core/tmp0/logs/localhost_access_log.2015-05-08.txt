@@ -1,0 +1,7 @@
+127.0.0.1 - - [08/May/2015:23:10:29 +0100] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [08/May/2015:23:10:29 +0100] "GET /com.watson.jersey.cfmed/index.html HTTP/1.1" 200 3978
+127.0.0.1 - - [08/May/2015:23:10:40 +0100] "GET /rest/cfmed HTTP/1.1" 404 971
+127.0.0.1 - - [08/May/2015:23:10:48 +0100] "GET /rest/secure/drugs HTTP/1.1" 404 985
+127.0.0.1 - - [08/May/2015:23:11:00 +0100] "GET /rest/cfmed HTTP/1.1" 404 971
+127.0.0.1 - - [08/May/2015:23:12:44 +0100] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [08/May/2015:23:12:54 +0100] "GET /com.watson.jersey.cfmed/index.html HTTP/1.1" 200 333

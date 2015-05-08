@@ -49,7 +49,7 @@ public class RestAddDrug {
 			@FormParam("sideEffects") String sideEffects,
 			@FormParam("indication") String indication,
 
-			//Only allow 10 interactions
+			//Only allow 20 interactions
 			@FormParam("interactionName") String interactionName,
 			@FormParam("interactionDescription") String interactionDescription,
 			@FormParam("interactionName1") String interactionName1,
@@ -70,6 +70,26 @@ public class RestAddDrug {
 			@FormParam("interactionDescription8") String interactionDescription8,
 			@FormParam("interactionName9") String interactionName9,
 			@FormParam("interactionDescription9") String interactionDescription9,
+			@FormParam("interactionName10") String interactionName10,
+			@FormParam("interactionDescription10") String interactionDescription10,
+			@FormParam("interactionName11") String interactionName11,
+			@FormParam("interactionDescription11") String interactionDescription11,
+			@FormParam("interactionName12") String interactionName12,
+			@FormParam("interactionDescription12") String interactionDescription12,
+			@FormParam("interactionName13") String interactionName13,
+			@FormParam("interactionDescription13") String interactionDescription13,
+			@FormParam("interactionName14") String interactionName14,
+			@FormParam("interactionDescription14") String interactionDescription14,
+			@FormParam("interactionName15") String interactionName15,
+			@FormParam("interactionDescription15") String interactionDescription15,
+			@FormParam("interactionName16") String interactionName16,
+			@FormParam("interactionDescription16") String interactionDescription16,
+			@FormParam("interactionName17") String interactionName17,
+			@FormParam("interactionDescription17") String interactionDescription17,
+			@FormParam("interactionName18") String interactionName18,
+			@FormParam("interactionDescription18") String interactionDescription18,
+			@FormParam("interactionName19") String interactionName19,
+			@FormParam("interactionDescription19") String interactionDescription19,
 
 			@FormParam("oralAdultAdmin") String oralAdultAdmin,
 			@FormParam("iVAdultAdmin") String iVAdultAdmin,
@@ -189,6 +209,66 @@ public class RestAddDrug {
 
 				if ( interactionDescription9 != null && !interactionDescription9.isEmpty()){
 					interactions.put(interactionName9,interactionDescription9);
+				}
+			}
+			if ( interactionName10 != null && !interactionName10.isEmpty()){
+
+				if ( interactionDescription10 != null && !interactionDescription10.isEmpty()){
+					interactions.put(interactionName10,interactionDescription10);
+				}
+			}
+			if ( interactionName11 != null && !interactionName11.isEmpty()){
+
+				if ( interactionDescription11 != null && !interactionDescription11.isEmpty()){
+					interactions.put(interactionName11,interactionDescription11);
+				}
+			}
+			if ( interactionName12 != null && !interactionName12.isEmpty()){
+
+				if ( interactionDescription12 != null && !interactionDescription12.isEmpty()){
+					interactions.put(interactionName12,interactionDescription12);
+				}
+			}
+			if ( interactionName13 != null && !interactionName13.isEmpty()){
+
+				if ( interactionDescription13 != null && !interactionDescription13.isEmpty()){
+					interactions.put(interactionName13,interactionDescription13);
+				}
+			}
+			if ( interactionName14 != null && !interactionName14.isEmpty()){
+
+				if ( interactionDescription14 != null && !interactionDescription14.isEmpty()){
+					interactions.put(interactionName14,interactionDescription14);
+				}
+			}
+			if ( interactionName15 != null && !interactionName15.isEmpty()){
+
+				if ( interactionDescription15 != null && !interactionDescription15.isEmpty()){
+					interactions.put(interactionName15,interactionDescription15);
+				}
+			}
+			if ( interactionName16 != null && !interactionName16.isEmpty()){
+
+				if ( interactionDescription16 != null && !interactionDescription16.isEmpty()){
+					interactions.put(interactionName16,interactionDescription16);
+				}
+			}
+			if ( interactionName17 != null && !interactionName17.isEmpty()){
+
+				if ( interactionDescription17 != null && !interactionDescription17.isEmpty()){
+					interactions.put(interactionName17,interactionDescription17);
+				}
+			}
+			if ( interactionName18 != null && !interactionName18.isEmpty()){
+
+				if ( interactionDescription18 != null && !interactionDescription18.isEmpty()){
+					interactions.put(interactionName18,interactionDescription18);
+				}
+			}
+			if ( interactionName19 != null && !interactionName19.isEmpty()){
+
+				if ( interactionDescription19 != null && !interactionDescription19.isEmpty()){
+					interactions.put(interactionName19,interactionDescription19);
 				}
 			}
 			//End of interactions

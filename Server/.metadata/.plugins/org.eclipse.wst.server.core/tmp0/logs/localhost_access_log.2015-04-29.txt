@@ -1,0 +1,11 @@
+127.0.0.1 - - [29/Apr/2015:19:22:44 +0100] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [29/Apr/2015:19:22:44 +0100] "GET /com.watson.jersey.cfmed/WEB-INF/classes/com/watson/jersey/cfmed/RestLogic.java HTTP/1.1" 404 949
+127.0.0.1 - - [29/Apr/2015:19:22:55 +0100] "GET /com.watson.jersey.cfmed/rest/secure/drugs HTTP/1.1" 401 951
+127.0.0.1 - CFAdmin [29/Apr/2015:19:22:58 +0100] "GET /com.watson.jersey.cfmed/rest/secure/drugs HTTP/1.1" 200 2167
+127.0.0.1 - - [29/Apr/2015:19:22:58 +0100] "GET /favicon.ico HTTP/1.1" 404 973
+127.0.0.1 - - [29/Apr/2015:19:23:00 +0100] "GET /com.watson.jersey.cfmed/rest/ HTTP/1.1" 200 2522
+127.0.0.1 - CFAdmin [29/Apr/2015:19:23:00 +0100] "GET /com.watson.jersey.cfmed/rest/secure/drugs HTTP/1.1" 200 2167
+127.0.0.1 - CFAdmin [29/Apr/2015:19:23:02 +0100] "GET /com.watson.jersey.cfmed/rest/secure/pathogens HTTP/1.1" 200 2007
+127.0.0.1 - CFAdmin [29/Apr/2015:19:23:03 +0100] "GET /com.watson.jersey.cfmed/rest/secure/addDrug HTTP/1.1" 200 13582
+127.0.0.1 - CFAdmin [29/Apr/2015:19:23:05 +0100] "GET /com.watson.jersey.cfmed/rest/secure/addPathogen HTTP/1.1" 200 3286
+127.0.0.1 - CFAdmin [29/Apr/2015:19:23:07 +0100] "GET /com.watson.jersey.cfmed/rest/secure/addDrug HTTP/1.1" 200 13582
