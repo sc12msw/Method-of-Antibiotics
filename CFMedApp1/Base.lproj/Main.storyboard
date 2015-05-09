@@ -846,18 +846,6 @@
                                     <action selector="add:" destination="rI0-ma-lKB" eventType="touchUpInside" id="w1A-ox-tQN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3z0-dU-zDk">
-                                <rect key="frame" x="361" y="303" width="101" height="101"/>
-                                <color key="backgroundColor" red="0.062745098040000002" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="x">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="multiply:" destination="rI0-ma-lKB" eventType="touchUpInside" id="8s3-XG-0db"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFv-mf-04q">
                                 <rect key="frame" x="249" y="414" width="102" height="102"/>
                                 <color key="backgroundColor" red="0.062745098040000002" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -868,6 +856,18 @@
                                 </state>
                                 <connections>
                                     <action selector="ans:" destination="rI0-ma-lKB" eventType="touchUpInside" id="L4t-Wb-bNG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3z0-dU-zDk">
+                                <rect key="frame" x="361" y="303" width="101" height="101"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="multiply:" destination="rI0-ma-lKB" eventType="touchUpInside" id="8s3-XG-0db"/>
                                 </connections>
                             </button>
                         </subviews>
