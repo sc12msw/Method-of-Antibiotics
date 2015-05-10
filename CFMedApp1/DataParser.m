@@ -117,7 +117,7 @@
         NSArray *adult =[obj elementsForName:@"adult"];
         if (adult.count >0){
             BOOL decision = TRUE;
-            [drug setAdult:&decision];
+            [drug setAdult:decision];
             
             for (GDataXMLElement *adultObj in adult){
                 GDataXMLElement *adultXML = (GDataXMLElement *) adultObj;
@@ -240,7 +240,7 @@
         NSArray *paed =[obj elementsForName:@"paediatric"];
         if (paed.count >0){
             BOOL decision = TRUE;
-            [drug setPaediatric:&decision];
+            [drug setPaediatric:decision];
             
             for (GDataXMLElement *paedObj in paed){
                 GDataXMLElement *paedXML = (GDataXMLElement *) paedObj;
@@ -379,6 +379,7 @@
     
     BOOL forTreatment = FALSE;
     BOOL sendArray = FALSE;
+    BOOL noPathogens = FALSE;
     NSMutableArray *pathogenObjects = [[NSMutableArray alloc]init];
     NSMutableArray *pathogenObjectsForTreatment = [[NSMutableArray alloc]init];
     
@@ -426,23 +427,26 @@
         if (forTreatment){
             [pathogenObjectsForTreatment addObject:pathogen];
             forTreatment = FALSE;
+            noPathogens = FALSE;
         }
         else if([nameOfDrug isEqualToString:@"notForTreatment"]){
             [pathogenObjects addObject:pathogen];
         }
         else if (!forTreatment && ![nameOfDrug isEqualToString:@"notForTreatment"]){
-            //Resets array if nothing is found and notifies user
-            [pathogenObjects removeAllObjects];
-            UIAlertView *pathoAlert = [[UIAlertView alloc] initWithTitle:@"No pathogens"
-                                                                       message:@"No pathogens found for this drug"
-                                                                      delegate:self
-                                                             cancelButtonTitle:@"OK"
-                                                             otherButtonTitles:nil];
-            
-            [pathoAlert show];
-            return pathogenObjects;
-
+            //Sets the no pathogen to true if no pathogen is found in this loop.
+                noPathogens = TRUE;
         }
+    }
+    //If after the loop has finished still no pathogens have been found notify the user.
+    if (noPathogens){
+        [pathogenObjects removeAllObjects];
+        UIAlertView *pathoAlert = [[UIAlertView alloc] initWithTitle:@"No pathogens"
+                                                         message:@"No pathogens found for this drug"
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+    
+        [pathoAlert show];
     }
     if (sendArray){
         return pathogenObjectsForTreatment;

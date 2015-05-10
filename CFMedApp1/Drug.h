@@ -54,20 +54,20 @@
 -(void) setSCPaedDose : (NSString*) set;
 
 
--(void)setOralAdult : (BOOL*) set;
--(void)setIVAdult : (BOOL*) set;
--(void)setInhaledAdult : (BOOL*) set;
--(void)setIMAdult : (BOOL*) set;
--(void)setPRAdult : (BOOL*) set;
--(void)setSCAdult : (BOOL*) set;
--(void)setOralPaed : (BOOL*) set;
--(void)setIVPaed : (BOOL*) set;
--(void)setInhaledPaed : (BOOL*) set;
--(void)setIMPaed : (BOOL*) set;
--(void)setPRPaed : (BOOL*) set;
--(void)setSCPaed : (BOOL*) set;
--(void)setAdult : (BOOL*) set;
--(void)setPaediatric: (BOOL*) set;
+-(void)setOralAdult : (BOOL) set;
+-(void)setIVAdult : (BOOL) set;
+-(void)setInhaledAdult : (BOOL) set;
+-(void)setIMAdult : (BOOL) set;
+-(void)setPRAdult : (BOOL) set;
+-(void)setSCAdult : (BOOL) set;
+-(void)setOralPaed : (BOOL) set;
+-(void)setIVPaed : (BOOL) set;
+-(void)setInhaledPaed : (BOOL) set;
+-(void)setIMPaed : (BOOL) set;
+-(void)setPRPaed : (BOOL) set;
+-(void)setSCPaed : (BOOL) set;
+-(void)setAdult : (BOOL) set;
+-(void)setPaediatric: (BOOL) set;
 -(void) setBrandNames :(NSArray*) set;
 -(void) setIndication:(NSString*) set;
 -(void) setSideEffects:(NSString*) set;

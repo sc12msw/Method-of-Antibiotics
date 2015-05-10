@@ -17,6 +17,7 @@
     firstLine = [[NSArray alloc]init];
     return self;
 }
+//Pathogen Getters
 -(NSString*)getName{
     return name;
 }
@@ -27,7 +28,7 @@
     return firstLine;
 }
 
-
+//Pathogen Setters
 -(void)setDescription:(NSString*) set{
     description = set;
 }

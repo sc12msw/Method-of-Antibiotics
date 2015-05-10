@@ -277,85 +277,85 @@
 -(BOOL)isOralAdult{
     return oralAdult;
 }
--(void)setOralAdult : (BOOL*) set{
+-(void)setOralAdult : (BOOL) set{
     oralAdult =set;
 }
 -(BOOL)isIVAdult{
     return iVAdult;
 }
--(void)setIVAdult : (BOOL*) set{
+-(void)setIVAdult : (BOOL) set{
     iVAdult =set;
 }
 -(BOOL)isInhaledAdult{
     return inhaledAdult;
 }
--(void)setInhaledAdult : (BOOL*) set{
+-(void)setInhaledAdult : (BOOL) set{
     inhaledAdult =set;
 }
 -(BOOL)isIMAdult{
     return iMAdult;
 }
--(void)setIMAdult : (BOOL*) set{
+-(void)setIMAdult : (BOOL) set{
     iMAdult =set;
 }
 -(BOOL)isPRAdult{
     return pRAdult;
 }
--(void)setPRAdult : (BOOL*) set{
+-(void)setPRAdult : (BOOL) set{
     pRAdult =set;
 }
 -(BOOL)isSCAdult{
     return sCAdult;
 }
--(void)setSCAdult : (BOOL*) set{
+-(void)setSCAdult : (BOOL) set{
     sCAdult =set;
 }
 -(BOOL)isOralPaed{
     return oralPaed;
 }
--(void) setOralPaed : (BOOL*) set{
+-(void) setOralPaed : (BOOL) set{
     oralPaed = set;
 }
 -(BOOL)isIVPaed{
     return iVPaed;
 }
--(void)setIVPaed:(BOOL*) set{
+-(void)setIVPaed:(BOOL) set{
     iVPaed =set;
 }
 -(BOOL)isInhaledPaed{
     return inhaledPaed;
 }
--(void)setInhaledPaed:(BOOL*) set{
+-(void)setInhaledPaed:(BOOL) set{
     inhaledPaed =set;
 }
 -(BOOL)isIMPaed{
     return iMPaed;
 }
--(void)setIMPaed : (BOOL*) set{
+-(void)setIMPaed : (BOOL) set{
     iMPaed =set;
 }
 -(BOOL)isPRPaed{
     return pRPaed;
 }
--(void)setPRPaed : (BOOL*) set{
+-(void)setPRPaed : (BOOL) set{
     pRPaed =set;
 }
 -(BOOL)isSCPaed{
     return sCPaed;
 }
--(void)setSCPaed : (BOOL*) set{
+-(void)setSCPaed : (BOOL) set{
     sCPaed =set;
 }
 -(BOOL)isAdult{
     return adult;
 }
--(void)setAdult : (BOOL*) set{
+-(void)setAdult : (BOOL) set{
     adult =set;
 }
 -(BOOL)isPaediatric{
     return paediatric;
 }
--(void)setPaediatric:(BOOL*) set{
+-(void)setPaediatric:(BOOL) set{
     paediatric = set;
 }
 

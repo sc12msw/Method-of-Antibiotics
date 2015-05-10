@@ -1,183 +1,581 @@
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <cfInfo>
-<drug>
-<adult>
-<IV>
-<administration>Reconstitute 2 gms in 20 ml water for injection and give as a bolus over 5 minutes or dilute with saline or 5% glucose to 50-200 ml and infuse over 15-30 minutes.
-</administration>
-<dose>
-2 gm tds. (Some patients can only tolerate 1 gm tds usually due to nausea).
-</dose>
-</IV>
-</adult>
-<brandName>Meronem</brandName>
-<id>3</id>
-<indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections. Also active against H.influenza and S.aureus.
-</indication>
-<interactions>
-<entry>
-<key>Probenecid</key>
-<value>Excretion of meropenem reduced by probenecid. Avoid concomitant use.
-</value>
-</entry>
-<entry>
-<key>Valproate</key>
-<value>Reduces plasma concentration of valproate may lead to subtherapeutic valproate levels.
-</value>
-</entry>
-</interactions>
-<name>Meropenem</name>
-<paediatric>
-<IV>
-<administration>250 mg reconstituted with 5 ml of WFI and administered over at least 5 minutes or given as an infusion.
-</administration>
-<dose>120 mg/kg/day in 3 divided doses. Max 2 g tds.</dose>
-</IV>
-</paediatric>
-<sideEffect>Nausea, vomiting, diarrhoea, abdo pain, disturbance in LFTs, thrombocytopenia, leucopenia, eosinophilia, neutropenia, headaches, paraesthesia, hypersensitivity reaction s including rash, pruritus , urticaria, angioedema and anaphylaxis; also reported convulsions, phlebitis,oral and vaginal candidiasis.
-</sideEffect>
-<type>Antibiotic</type>
-</drug>
-<drug>
-<adult>
-<oral>
-<administration>a</administration>
-<dose>aa</dose>
-</oral>
-</adult>
-<brandName>a</brandName>
-<id>5</id>
-<indication>a</indication>
-<interactions>
-<entry>
-<key>a</key>
-<value>a</value>
-</entry>
-</interactions>
-<name>aa</name>
-<paediatric>
-<oral>
-<administration>a</administration>
-<dose>a</dose>
-</oral>
-</paediatric>
-<sideEffect>a</sideEffect>
-<type>a</type>
-</drug>
-<drug>
-<adult>
-<IV>
-<administration>11</administration>
-<dose>11d</dose>
-</IV>
-</adult>
-<brandName>1</brandName>
-<id>6</id>
-<indication>11</indication>
-<interactions>
-<entry>
-<key>Drug 2</key>
-<value>interaction</value>
-</entry>
-<entry>
-<key>Drug 3</key>
-<value>interaction</value>
-</entry>
-</interactions>
-<name>drug 1</name>
-<paediatric>
-<IV>
-<administration>11p</administration>
-<dose>11pd</dose>
-</IV>
-</paediatric>
-<sideEffect>111</sideEffect>
-<type>1</type>
-</drug>
-<drug>
-<adult>
-<SC>
-<administration>22</administration>
-<dose>22d</dose>
-</SC>
-</adult>
-<brandName>22</brandName>
-<id>7</id>
-<indication>22</indication>
-<interactions>
-<entry>
-<key>drug 1</key>
-<value>22 interaction</value>
-</entry>
-<entry>
-<key>Drug 3</key>
-<value>22 interaction</value>
-</entry>
-</interactions>
-<name>Drug 2</name>
-<paediatric>
-<SC>
-<administration>22p</administration>
-<dose>22pd</dose>
-</SC>
-</paediatric>
-<sideEffect>22</sideEffect>
-<type>2</type>
-</drug>
-<drug>
-<adult>
-<oral>
-<administration>33</administration>
-<dose>33d</dose>
-</oral>
-</adult>
-<brandName>33</brandName>
-<id>8</id>
-<indication>33</indication>
-<interactions>
-<entry>
-<key>drug 1</key>
-<value>33</value>
-</entry>
-<entry>
-<key>drug 2</key>
-<value>33</value>
-</entry>
-</interactions>
-<name>Drug 3</name>
-<paediatric>
-<oral>
-<administration>33p</administration>
-<dose>33pd</dose>
-</oral>
-</paediatric>
-<sideEffect>33</sideEffect>
-<type>33</type>
-</drug>
-<pathogen>
-<description>a</description>
-<firstline>aa</firstline>
-<id>3</id>
-<name>a</name>
-</pathogen>
-<pathogen>
-<description>aa</description>
-<firstline>aa</firstline>
-<id>4</id>
-<name>ab</name>
-</pathogen>
-<pathogen>
-<description>test</description>
-<firstline>Drug 2</firstline>
-<firstline>Drug 3</firstline>
-<id>5</id>
-<name>Test 1</name>
-</pathogen>
-<pathogen>
-<description>tester 2</description>
-<firstline>drug 1</firstline>
-<firstline>Drug 3</firstline>
-<id>6</id>
-<name>Test 2</name>
-</pathogen>
+    <drug>
+        <adult>
+            <IV>
+                <administration>Reconstitute 2 gms in 20 ml water for injection and give as a bolus over 5 minutes or dilute with saline or 5% glucose to 50-200 ml and infuse over 15-30 minutes. </administration>
+                <dose>2 gm tds. (Some patients can only tolerate 1 gm tds usually due to nausea).</dose>
+            </IV>
+        </adult>
+        <brandName>Meronem</brandName>
+        <id>1</id>
+        <indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections. Also active against H.influenza and S.aureus. </indication>
+        <interactions>
+            <entry>
+                <key>Probenecid</key>
+                <value>Excretion of Meropenem reduced by probenecid. Avoid concomitant use.</value>
+            </entry>
+            <entry>
+                <key>Valproate</key>
+                <value>Reduces plasma concentration of valproate may lead to subtherapeutic valproate levels. </value>
+            </entry>
+        </interactions>
+        <name>Meropenem</name>
+        <paediatric>
+            <IV>
+                <administration>250 mg reconstituted with 5 ml of WFI and administered over at least 5 minutes or given as an infusion.</administration>
+                <dose>120 mg/kg/day in 3 divided doses. Max 2 g tds.</dose>
+            </IV>
+        </paediatric>
+        <sideEffect>Nausea, vomiting, diarrhoea, abdo pain, disturbance in LFTs, thrombocytopenia, leucopenia, eosinophilia, neutropenia, headaches, paraesthesia, hypersensitivity reaction s including rash, pruritus , urticaria, angioedema and anaphylaxis; also reported convulsions, phlebitis,oral and vaginal candidiasis. </sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <IV>
+                <administration>Infuse over 60 minutes.</administration>
+                <dose>400 mg bd.</dose>
+            </IV>
+            <oral>
+                <administration>Treat for 2 weeks for acute pseudomonal infection. Treat for 3 months for eradication of P.aeruginosa in combination with nebulised colistin. Available as 100 mg, 250 mg, 500 mg and 750 mg tablets or 250 mg/5ml suspension. </administration>
+                <dose>750 bd.</dose>
+            </oral>
+        </adult>
+        <brandName>Ciproxin</brandName>
+        <id>3</id>
+        <indication>Treatment of Pseudomonas aeruginosa respiratory infections. Part of Pseudomonas aeruginosa eradication protocol. Treatment of community acquired pneumonia. Relatively poor activity against S. pneumoniae. </indication>
+        <interactions>
+            <entry>
+                <key>Warfarin</key>
+                <value>Increase INR</value>
+            </entry>
+            <entry>
+                <key>Cyclosporin</key>
+                <value>Increase risk of nephrotoxicity.</value>
+            </entry>
+            <entry>
+                <key>NSAID </key>
+                <value>Increased risk of convulsions.</value>
+            </entry>
+            <entry>
+                <key>Calcium salts</key>
+                <value>Reduced absorption of Ciprofloxacin.&#xD;
+                </value>
+            </entry>
+            <entry>
+                <key>Magnesium salts </key>
+                <value>Reduced absorption of Ciprofloxacin.</value>
+            </entry>
+            <entry>
+                <key>Ferrous sulphate</key>
+                <value>Reduced absorption of Ciprofloxacin.</value>
+            </entry>
+            <entry>
+                <key>Antacids</key>
+                <value>Reduce absorption of Ciprofloxacin.</value>
+            </entry>
+            <entry>
+                <key>Theophylline</key>
+                <value>Increases theophylline level, increases risk of convulsions. </value>
+            </entry>
+            <entry>
+                <key>Probenecid</key>
+                <value>Reduces excretion of Ciprofloxacin. </value>
+            </entry>
+        </interactions>
+        <name>Ciprofloxacin</name>
+        <paediatric>
+            <IV>
+                <administration>Infuse over 60 minutes.</administration>
+                <dose>10 mg/kg tds (maximum total daily dose 1200 mg). </dose>
+            </IV>
+            <oral>
+                <administration>Treat for 2 weeks for acute pseudomonal infection. Treat for 3 months for eradication of P.aeruginosa in combination with nebulised colistin. Available as 100 mg, 250 mg, 500 mg and 750 mg tablets or 250 mg/5ml suspension. </administration>
+                <dose>20 mg/kg bd (licenced aged 5-17 years). Max dose 750 mg bd. Unlicensed in children under 5 years. Eradication of new P.aeruginosa 25-50 mg/kg/day.</dose>
+            </oral>
+        </paediatric>
+        <sideEffect>Nausea, vomiting, dyspesia, abdo pain, diarrhoea, headaches, dizziness, UV hypersensitivity, transient disturbance in LFTs, increase in urea and creatinine,drowsiness (caution driving),convulsions, confusion, hypersensitivity reactions,eosinophilia, leucopenia, thrombocytopenia, disturbance in taste, vision, hearing,arthralgia, myalgia, tachycardia, tendon inflammation and damage.  </sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <IV>
+                <administration>Reconstitute vials to 10ml with water then either dilute to 50ml with NaCl 0.9% and infuse over 30 minutes, or inject the 10ml as a bolus over 3 minutes.</administration>
+                <dose>2.5 grams tds.</dose>
+            </IV>
+        </adult>
+        <brandName>Azactam</brandName>
+        <id>4</id>
+        <indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections (covers H. influenzae).</indication>
+        <interactions>
+            <entry>
+                <key>Warfarin</key>
+                <value>May increae INR</value>
+            </entry>
+        </interactions>
+        <name>Aztreonam</name>
+        <paediatric>
+            <IV>
+                <administration>Reconstitute vials to 10ml with water then either dilute to 50ml with NaCl 0.9% and infuse over 30 minutes, or inject the 10ml as a bolus over 3 minutes.</administration>
+                <dose>200-250 mg/kg/day in 3 divided doses. Max: 8 grams/day. &#xD;
+                </dose>
+            </IV>
+        </paediatric>
+        <sideEffect>Rash, pruritus, eosinophilia, increase in PT time, thrombocytopenia, neutropenia, jaundice, hepatitis, transient elevations of hepatic transaminases and alk phos, diarrhoea, nausea, mouth ulcers, altered taste. Reduce dose in renal failure, anaemia,vaginitis, candidiasis, hypotension, weakness, confusion, vertigo, sweating, headaches, halitosis, headaches, fever, malaise, sneezing. </sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <IV>
+                <administration>2 g reconstituted with 10 ml 0.9% saline (3g/15 ml ) and given as a bolus over 3-5 minutes or after reconstituting with water for injection dilute to 50 ml with saline and infuse over 20-30 minutes. Best given over 30 minutes.</administration>
+                <dose>150-200 mg/kg/24 hrs given in 2 to 3 doses. Maximum dose 12 g/day.</dose>
+            </IV>
+        </adult>
+        <brandName>Fortum</brandName>
+        <brandName>Kefadim</brandName>
+        <id>5</id>
+        <indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections (covers H.influenzae). </indication>
+        <interactions>
+            <entry>
+                <key>Warfarin</key>
+                <value>Enhances effect of warfarin </value>
+            </entry>
+            <entry>
+                <key>Probenecid </key>
+                <value>Excretion of cephalosporins reduced.</value>
+            </entry>
+            <entry>
+                <key>Oestrogens</key>
+                <value>Possibly reduce contraceptive effect of oestrogen.</value>
+            </entry>
+        </interactions>
+        <name>Ceftazidime</name>
+        <paediatric>
+            <IV>
+                <administration>2 g reconstituted with 10 ml 0.9% saline (3g/15 ml ) and given as a bolus over 3-5 minutes or after reconstituting with water for injection dilute to 50 ml with saline and infuse over 20-30 minutes. Best given over 30 minutes.</administration>
+                <dose>150-200 mg/kg/day in 2 to 3 doses.Give over 20 to 30 mins. Max: 12g/day. </dose>
+            </IV>
+        </paediatric>
+        <sideEffect>Diarrhoea and vomiting, colitis, abdominal pain, headaches, hypersensitivity, erythema multiforme, abnormal liver function, cholestatic jaundice, eosinophilia, thrombocytopenia, leucopenia, agranulocytosis, aplastic anaemia, candidiasis, vaginitis,nephritis, confusion, hypertonia, dizziness, bad taste, convulsions, encephalopathy.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <IV>
+                <administration>Infusion-dilute with 50 ml 0.9% saline and infuse over 30 minutes. If neurological side-effects are a problem,use 75,000 units/kg/day in 3 divided doses instead of 2 MU three times a dayBolus dose-dilute 2 million units in 10 ml NaCl 0.9% and give over 3-5 minutes through central access (adult only).</administration>
+                <dose>75,000 units/kg/day Standard adult dose (over 60 kg) 2 million units tds. Reduce dose in renal failure or when used with an aminoglycoside (avoid if possible).</dose>
+            </IV>
+            <inhaled>
+                <administration>Reconstitute 1x1 MU vial with 2 ml WFI and 1x1 MU vial with 2 ml NaCl 0.9% and mix together. If administered via the i - neb reconstitute one vial of Promixin with 1 ml of WFI.</administration>
+                <dose>1-2 million units bd. 1 million units bd if administered via the i-neb.</dose>
+            </inhaled>
+        </adult>
+        <brandName>Colomycin</brandName>
+        <brandName>Promixin</brandName>
+        <id>6</id>
+        <indication>Treatment, prophylaxis and eradication of Pseudomonas aeruginosa infection.</indication>
+        <interactions>
+            <entry>
+                <key>Alendronate, Etidronate</key>
+                <value>Increased risk of hypocalcaemia.</value>
+            </entry>
+            <entry>
+                <key>Muscle relaxants</key>
+                <value>Enhance muscle relaxant effect.</value>
+            </entry>
+            <entry>
+                <key>Loop diuretics</key>
+                <value>Increased risk of ototoxicity. </value>
+            </entry>
+            <entry>
+                <key>Amphotericin</key>
+                <value>Increased risk of nephrotoxicity.</value>
+            </entry>
+            <entry>
+                <key>Pyridostigmine, Neostigmine</key>
+                <value>Antagonised effect.</value>
+            </entry>
+            <entry>
+                <key>Aminoglycosides</key>
+                <value>Increases risk of nephrotoxicity, reduces doses if concurrent use essential.</value>
+            </entry>
+            <entry>
+                <key>Ciclosporin</key>
+                <value>Increased risk of nephrotoxicity.</value>
+            </entry>
+            <entry>
+                <key>Vancomycin</key>
+                <value>Increased risk of nephrotoxicity.</value>
+            </entry>
+            <entry>
+                <key>Teicoplanin</key>
+                <value>Increased risk of nephrotoxicity and ototoxicity.</value>
+            </entry>
+        </interactions>
+        <name>Colistin</name>
+        <paediatric>
+            <inhaled>
+                <administration>Reconstitute 1x1 MU vial with 2 ml WFI and 1x1 MU vial with 2 ml NaCl 0.9% and mix together. If administered via the i - neb reconstitute one vial of Promixin with 1 ml of WFI.</administration>
+                <dose>Children &lt;2 years: 500,000 - 1 million units bd. 1 million units bd if administered via the i-neb. Children &gt; 2 years: 1-2 million units bd.</dose>
+            </inhaled>
+        </paediatric>
+        <sideEffect>Neurotoxicity especially with excessive doses (including perioral &amp; peripheral paraesthesia, vertigo, muscle weakness, slurred speech, visual disturbance, apnoea, confusion and psychosis),nephrotoxicity, hypersensitivity reactions including rash. Inhaled therapy may cause sore throat , cough and bronchospasm which may be negated by the use of inhaled beta agonists. Bolus Colomycin should only be administered via a central line.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult/>
+        <brandName>Primaxin</brandName>
+        <id>7</id>
+        <indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections. Also active against community acquired bacteria such as H.influenzae, Streptococcus and S aureus. Broad spectrum of activity which includes many aerobic and anaerobic gram positive and gram negative bacteria.</indication>
+        <interactions>
+            <entry>
+                <key>Ganciclovir</key>
+                <value>Increased toxicity with ganciclovir with possible convulsions.</value>
+            </entry>
+            <entry>
+                <key>Probenecid</key>
+                <value>Probenecid can double the plasma level and half life of cilastatin. probenecid only slightly increases plasma level and half life of imipenem.</value>
+            </entry>
+        </interactions>
+        <name>Imipenem and Cilastatin</name>
+        <paediatric/>
+        <sideEffect>Nausea, vomiting, diarrhoea (antibiotic associated colitis reported), abdo pain, disturbance in LFTs, headaches, paraesthesia.Hypersensitivity (partial cross allergenicity with other betalactam antibiotics, penicillins and cephalosporins), including rash,pruritis,urticaria, Stevens -Johnson syndrome, fever, anaphylactic reactions, rarley toxic epidermal necrolysis, exfoliative dermatitis. Convulsions, myoclonus, tremor, phlebitis. Increases in creatinine and urea,oliguria, polyuria, taste disturbance, hypotension, palpitations, tachycardia, polyarthralgia, asthenia, red coloration of urine in children.tTooth or tonugue discoloraion, positive Coombs test, blood disorders.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <IV>
+                <administration>Tazocin can be diluted with 20 ml water and infused over 3 to 5 minutes or reconstituted in 50 ml saline and given over 30 minutes.</administration>
+                <dose>Tazocin given as 4.5 gm tds.</dose>
+            </IV>
+        </adult>
+        <brandName>Tazocin</brandName>
+        <id>8</id>
+        <indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections. Activity against H influenzae.</indication>
+        <interactions>
+            <entry>
+                <key>Muscle relaxants</key>
+                <value>Enhanced by piperacillin.</value>
+            </entry>
+            <entry>
+                <key>Methotrexate</key>
+                <value>Increased risk of toxicity.</value>
+            </entry>
+            <entry>
+                <key>Probenecid</key>
+                <value>Reduced piperacillin excretion.</value>
+            </entry>
+        </interactions>
+        <name>Piperacillin and Tazobactam</name>
+        <paediatric>
+            <IV>
+                <administration>Tazocin can be diluted with 20 ml water and infused over 3 to 5 minutes or reconstituted in 50 ml saline and given over 30 minutes.</administration>
+                <dose>300 mg/kg/day in 3-4 divided doses, max: 4g tds.</dose>
+            </IV>
+        </paediatric>
+        <sideEffect>Hypersensitivity reaction, haemolytic anaemia, nephritis erythema multiforme, Steven-Johnson syndrome, leucopenia, thrombocytopenia, paraesthesia, diarrhoea, colitis, hepatitis, cholestatic jaundice, increased LFT.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <IV>
+                <administration>Infuse over 30 to 40 minutes.</administration>
+                <dose>3.2 g every 6-8 hourly (max 3.2 g every 4 hours).</dose>
+            </IV>
+        </adult>
+        <brandName>Timentin</brandName>
+        <id>9</id>
+        <indication>Treatment of Pseudomonas aeruginosa and Burkholderia respiratory infections. Activity against H influenzae.</indication>
+        <interactions>
+            <entry>
+                <key>Probenecid</key>
+                <value>Reduces excretion of penicillins.</value>
+            </entry>
+        </interactions>
+        <name>Ticarcillin and Clavulanic acid</name>
+        <paediatric>
+            <IV>
+                <administration>Infuse over 30 to 40 minutes.</administration>
+                <dose>80 mg/ kg (max 3.2 g )every 6 to 8 hourly.</dose>
+            </IV>
+        </paediatric>
+        <sideEffect>Nausea, vomiting, diarrhoea, colitis, coagulation disorders, heamorragic cystitis (more common in children), injection site reactions, Hypersensitivity reactions, haemolytic anaemia (rare), nephritis, erythema multiforme, Steven-Johnson syndrome, leucopenia, thrombocytopenia, confusion, hypokaleamia.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <IV>
+                <administration>Once daily dosing: take trough concentration immediately before next dose is due. Ensure trough is less than 1mg/litre. Give dose over 30 - 60 mins in 50ml - 100 mls sodium chloride 0.9%. Three times a day dosing: ensure trough is less 2 mg/litre, peak at one hour is 8-12mg/litre. Give dose as bolus or in 50ml NaCl 0.9% over 15 mins.</administration>
+                <dose>10 mg/kg/24 hrs given as a single dose or as three separate doses.</dose>
+            </IV>
+        </adult>
+        <id>10</id>
+        <indication>Treatment of Pseudomonas aeruginosa and Burkholderia cepacia respiratory infections. Prophylaxis for Pseudomonas aeruginosa infection.</indication>
+        <interactions>
+            <entry>
+                <key>Cyclosporin</key>
+                <value>Increased risk of nephrotoxicity.</value>
+            </entry>
+            <entry>
+                <key>Muscle relaxants</key>
+                <value>Enhanced effect.</value>
+            </entry>
+            <entry>
+                <key>Vancomycin and Teicoplanin</key>
+                <value>Increased risk of nephrotoxicity and ototoxicity.</value>
+            </entry>
+            <entry>
+                <key>Colistin</key>
+                <value>Increased risk of nephrotoxicity.</value>
+            </entry>
+            <entry>
+                <key>Loop diuretics</key>
+                <value>Increased risk of ototoxicity.</value>
+            </entry>
+            <entry>
+                <key>Tacrolimus</key>
+                <value>Increased risk of nephrotoxicity.</value>
+            </entry>
+            <entry>
+                <key>Amphotericin</key>
+                <value>Increased risk of nephrotoxicity.</value>
+            </entry>
+            <entry>
+                <key>Bisphosphonates</key>
+                <value>Increased risk of hypocalcaemia.</value>
+            </entry>
+        </interactions>
+        <name>Tobramycin</name>
+        <paediatric>
+            <IV>
+                <administration>Once daily dosing: take trough concentration immediately before next dose is due. Ensure trough is less than 1mg/litre. Give dose over 30 - 60 mins in 50ml - 100 mls sodium chloride 0.9%. Three times a day dosing: ensure trough is less 2 mg/litre, peak at one hour is 8-12mg/litre. Give dose as bolus or in 50ml NaCl 0.9% over 15 mins.</administration>
+                <dose>12 mg/kg/day in 3 divided doses or 10 mg/kg/day as a single dose. Titrate according to levels.</dose>
+            </IV>
+        </paediatric>
+        <sideEffect>Vestibular and auditory damage, nephrotoxicity, hypomagnesaemia, hypokalemia,antibiotic associated colitis, nausea, vomiting,diarrhoea, hypersensitivity (fever, rash), raised LFT and bilirubin,haematological disorders,headaches, confusion.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <inhaled>
+                <administration>Ready prepared, needs no further dilution. Pari LC Plus nebuliser and filters provided by the manufacturer free of charge.</administration>
+                <dose>300 mg bd on a cyclical basis ( 28 days of tobramycin followed by a 28 day tobramycin free interval).</dose>
+            </inhaled>
+        </adult>
+        <brandName>Tobi</brandName>
+        <id>11</id>
+        <indication>Nebulised anti pseudomonal treatment.</indication>
+        <interactions>
+            <entry>
+                <key>Mannitol</key>
+                <value>Enhanced aminoglycoside toxicity</value>
+            </entry>
+            <entry>
+                <key>Ethacrynic acid</key>
+                <value>Enhanced aminoglycoside toxicity.</value>
+            </entry>
+            <entry>
+                <key>Frusemide</key>
+                <value>Enhanced aminoglycoside toxicity.</value>
+            </entry>
+        </interactions>
+        <name>Tobramycin (TOBI)</name>
+        <paediatric>
+            <inhaled>
+                <administration>Although only licensed for children over 6 years, this dose has been used in children over the age of 6 months.</administration>
+                <dose>Over 6 years: 300 mg bd on a cyclical basis ( 28 days of tobramycin followed by a 28 day tobramycin free interval).</dose>
+            </inhaled>
+        </paediatric>
+        <sideEffect>Bronchospasm, cough, tinnitus, haemoptysis, voice alteration and mouth ulcers.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult/>
+        <id>12</id>
+        <indication>Treatment of Pseudomonas auriginosa</indication>
+        <interactions/>
+        <name>Fosfomycin</name>
+        <paediatric/>
+        <sideEffect>Nausea</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <oral>
+                <administration>Take with plenty of water. Swallow whole with plenty of fluid during meal while sitting or standing. Available as 50mg and 100 mg capsules and 100 mg dispersible tablets.</administration>
+                <dose>200mg od or 100 mg bd.</dose>
+            </oral>
+        </adult>
+        <brandName>Vibramycin</brandName>
+        <id>13</id>
+        <indication>Sensitive Haemophilus influenzae and Staph aureus infections. Used in combination to treat Burkholderia cepacia, Stenotrophomonas maltophilia and Achromobacter (Alcaligenes) xylosoxidans</indication>
+        <interactions>
+            <entry>
+                <key>Aluminium hydroxide</key>
+                <value>Reduced absorption. Take 2-3 hours apart.</value>
+            </entry>
+            <entry>
+                <key>Quinapril</key>
+                <value>Reduced absorption of doxycycline.</value>
+            </entry>
+            <entry>
+                <key>Warfarin</key>
+                <value>Altered INR.</value>
+            </entry>
+            <entry>
+                <key>Cyclosporin</key>
+                <value>Possible increased cyclosporin levels.</value>
+            </entry>
+            <entry>
+                <key>Phenindone</key>
+                <value>Altered INR.</value>
+            </entry>
+            <entry>
+                <key>Iron</key>
+                <value>Reduced absorption. Take 2-3 hours apart.</value>
+            </entry>
+            <entry>
+                <key>Retinoids</key>
+                <value>Increased risk of benign intracranial hypertension.</value>
+            </entry>
+            <entry>
+                <key>Zinc</key>
+                <value>Reduced absorption of doxycycline.</value>
+            </entry>
+            <entry>
+                <key>Calcium supplements</key>
+                <value>Reduced absorption. Take 2-3 hours apart.</value>
+            </entry>
+            <entry>
+                <key>Sucralfate</key>
+                <value>Reduced absorption of doxycycline.</value>
+            </entry>
+            <entry>
+                <key>Contraceptives (oral)</key>
+                <value>Risk of reduced contraceptive effect.</value>
+            </entry>
+            <entry>
+                <key>Magnesium salts</key>
+                <value>Educed absorption. Take 2-3 hours apart.</value>
+            </entry>
+            <entry>
+                <key>Antacids</key>
+                <value>Increased metabolism of doxycycline.</value>
+            </entry>
+            <entry>
+                <key>Dairy Products</key>
+                <value>Reduced absorption. Take 2-3 hours apart.</value>
+            </entry>
+        </interactions>
+        <name>Doxycycline</name>
+        <paediatric>
+            <oral>
+                <administration>Do not give to children under 12 as deposition of tetracyclines into growing teeth and bones (by binding to calcium)causes staining and occasionally dental hypoplasia. Also avoid in pregnant and breast feeding women.</administration>
+                <dose>Children &gt; 12 years 100-200 mg od.</dose>
+            </oral>
+        </paediatric>
+        <sideEffect>Nausea, vomiting, diarrhoea (antibiotic associated colitis), dysphagia,anorexia and oesophageal irritation. other rare side-effects include hepatotoxicity, blood dyscrasias, photosensitivity, reactions (including rash, exfoliative dermatitis, urticaria, angioedema, anaphylaxis, pericarditis). headache and visual disturbances may indicate benign intracranial hypertension (discontinue treatment). </sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult>
+            <IV>
+                <administration>Can be given as a bolus injection or an infusion in Glucose 5% or sodium chloridr 0.9%.</administration>
+                <dose>50 mg/kg daily in 4 divided doses. Avoid repeated courses and prolonged treatment. Monitor blood counts before and periodically during treatment.</dose>
+            </IV>
+            <oral>
+                <administration>Comes as 250 mg capsules.</administration>
+                <dose>Doses of 25mg/kg in 4 divided doses. Reduce dose in hepatic or renal impairment. Usually use 500 mg tds or qds.</dose>
+            </oral>
+        </adult>
+        <id>14</id>
+        <indication>Serious infections unresponsive to other antibiotics including B.cepacia. Active against H.influenzae and Staph aureus. Caution must be taken.</indication>
+        <interactions>
+            <entry>
+                <key>Warfarin</key>
+                <value>Increased INR.</value>
+            </entry>
+            <entry>
+                <key>Rifampicin</key>
+                <value>Lowers plasma concentration of chloramphenicol.</value>
+            </entry>
+            <entry>
+                <key>Tacrolimus</key>
+                <value>Possibly increases tacrolimus levels.</value>
+            </entry>
+            <entry>
+                <key>Sulphonylureas</key>
+                <value>Sulphonylureas effect enhanced.</value>
+            </entry>
+            <entry>
+                <key>Ciclosporin</key>
+                <value>Possibly increases ciclosporin levels.</value>
+            </entry>
+            <entry>
+                <key>Phenobarbitone</key>
+                <value>metabolism of chloramphenicol enhanced.</value>
+            </entry>
+            <entry>
+                <key>Phenytoin</key>
+                <value>Increased phenytoin plasma levels.</value>
+            </entry>
+        </interactions>
+        <name>Chloramphenicol</name>
+        <paediatric>
+            <IV>
+                <administration>Plasma concentration monitoring required in neonates and preferred in those under 4 years of age. Peak plasma concentation (approx 1 hour after infusion): 15-25 mg/litre; predose (trough) concentration should not exceed 15 mg/litre.</administration>
+                <dose>Haemophilus epiglottis and pyogenic meningitis 50-100 mg/kg daily in divided doses(high dosages decreased as soon as clinically indicated). Infants under 2 weeks: 25 mg/kg daily in 4 divided doses, 2 weeks to 1 year 50 mg/kg daily in 4 divided doses.</dose>
+            </IV>
+            <oral>
+                <administration>Comes as 250 mg capsules.</administration>
+                <dose>Over 1 year 25 mg/kg 6 hrly, up to 500 mg qds.</dose>
+            </oral>
+        </paediatric>
+        <sideEffect>Blood dycrasias including reversible and irreversible aplastic anaemia, hypoplastic anaemia, thrombocytopenia, agranulocytosis, nausea, vomiting,glossitis, stomatitis, diarrhoea, erythema multiforme, optic and peripheral neuropathy. Monitor blood count before and periodically during treatment.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <drug>
+        <adult/>
+        <brandName>Negban</brandName>
+        <id>15</id>
+        <indication>Temocillin is a ?-lactamase resistant penicillin with activity against Burkholderia cepacia. The drug has limited efficacy in patients infected with Pseudomonas aeruginosa.</indication>
+        <interactions/>
+        <name>Temocillin</name>
+        <paediatric/>
+        <sideEffect>Adverse effects like any ?-lactam antibiotic, angioedema, anaphylaxis in penicillin allergic patients, convulsions.</sideEffect>
+        <type>Antibiotic</type>
+    </drug>
+    <pathogen>
+        <description>A gram negative bacterium. "Pseudomonas infection is caused by strains of bacteria found widely in the environment; the most common type causing infections in humans is called Pseudomonas aeruginosa." - http://www.cdc.gov/hai/organisms/pseudomonas.html</description>
+        <firstline>Meropenem</firstline>
+        <firstline>Ciprofloxacin</firstline>
+        <firstline>Aztreonam</firstline>
+        <firstline>Ceftazidime</firstline>
+        <firstline>Colistin</firstline>
+        <firstline>Imipenem and Cilastatin</firstline>
+        <firstline>Piperacillin and Tazobactam</firstline>
+        <firstline>Ticarcillin and Clavulanic acid</firstline>
+        <firstline>Tobramycin</firstline>
+        <firstline>Tobramycin (TOBI)</firstline>
+        <id>5</id>
+        <name>Pseudomonas aeruginosa</name>
+    </pathogen>
+    <pathogen>
+        <description>Burkholderia cepacia complex (BCC) is a group of Gram negative bacteria composed of different genomovars. Examples include B. cepacia, multivorans, B. cenocepacia, B. vietnamiensis, B. stabilis.</description>
+        <firstline>Meropenem</firstline>
+        <firstline>Ciprofloxacin</firstline>
+        <firstline>Aztreonam</firstline>
+        <firstline>Colistin</firstline>
+        <firstline>Imipenem and Cilastatin</firstline>
+        <firstline>Piperacillin and Tazobactam</firstline>
+        <firstline>Ticarcillin and Clavulanic acid</firstline>
+        <firstline>Tobramycin</firstline>
+        <firstline>Tobramycin (TOBI)</firstline>
+        <firstline>Doxycycline</firstline>
+        <firstline>Chloramphenicol</firstline>
+        <firstline>Temocillin</firstline>
+        <id>6</id>
+        <name>Burkholderia Cepacia complex</name>
+    </pathogen>
 </cfInfo>
