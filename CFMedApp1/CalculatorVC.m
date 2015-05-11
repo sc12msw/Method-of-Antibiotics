@@ -155,7 +155,10 @@
                 }
                 
                 number = @([numberStr doubleValue]);
+                //checks that the number isn't 0 as this was added before.
+                if (![number isEqualToNumber:@(0)]){
                 [calculationArray addObject:number];
+                }
             }
             //The operator is now the current index so add the operator to the array and increment the index.
             if (currentIndex < sizeOfArray){
